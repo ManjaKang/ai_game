@@ -18,7 +18,7 @@ import {
   View,
 } from 'react-native';
 
-import MainButtonNew from './src/components/main/button/new/index.js';
+import StartPage from './src/pages/start/index.js';
 // import MainButtonNew from './android/app/src/test/index.js';
 
 import {
@@ -64,7 +64,7 @@ const App: () => Node = () => {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <MainButtonNew />
+      <StartPage />
       {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
