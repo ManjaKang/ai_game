@@ -7,8 +7,8 @@
  */
 
 import React from 'react';
-import { NavigationContainer, StackActions } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import {NavigationContainer, StackActions} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import type {Node} from 'react';
 import {
   SafeAreaView,
@@ -22,6 +22,7 @@ import {
 
 import StartPage from './src/pages/start/index.js';
 import MainPage from './src/pages/main/index.js';
+import EpisodePage from './src/components/episode/page/index.js';
 // import MainButtonNew from './android/app/src/test/index.js';
 
 import {
@@ -70,11 +71,24 @@ const App: () => Node = () => {
   return (
     <NavigationContainer>
       {/* <SafeAreaView style={backgroundStyle}> */}
-        {/* <MainPage /> */}
-        <Stack.Navigator>
-          <Stack.Screen name="Main" component={MainPage} options={{headerShown: false}}/>
-          <Stack.Screen name="Start" component={StartPage} options={{headerShown: false}}/>
-        </Stack.Navigator>
+      {/* <MainPage /> */}
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Start"
+          component={StartPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Main"
+          component={MainPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="EpisodePage"
+          component={EpisodePage}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
       {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
