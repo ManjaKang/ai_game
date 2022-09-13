@@ -7,6 +7,8 @@
  */
 
 import React from 'react';
+import { NavigationContainer, StackActions } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import type {Node} from 'react';
 import {
   SafeAreaView,
@@ -19,6 +21,7 @@ import {
 } from 'react-native';
 
 import StartPage from './src/pages/start/index.js';
+import MainPage from './src/pages/main/index.js';
 // import MainButtonNew from './android/app/src/test/index.js';
 
 import {
@@ -55,6 +58,8 @@ const Section = ({children, title}): Node => {
   );
 };
 
+const Stack = createNativeStackNavigator();
+
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -63,8 +68,13 @@ const App: () => Node = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StartPage />
+    <NavigationContainer>
+      {/* <SafeAreaView style={backgroundStyle}> */}
+        {/* <MainPage /> */}
+        <Stack.Navigator>
+          <Stack.Screen name="Main" component={MainPage} options={{headerShown: false}}/>
+          <Stack.Screen name="Start" component={StartPage} options={{headerShown: false}}/>
+        </Stack.Navigator>
       {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
@@ -90,7 +100,8 @@ const App: () => Node = () => {
           <LearnMoreLinks />
         </View>
       </ScrollView> */}
-    </SafeAreaView>
+      {/* </SafeAreaView> */}
+    </NavigationContainer>
   );
 };
 
