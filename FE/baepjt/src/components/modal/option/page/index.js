@@ -13,7 +13,9 @@ function ModalOption(props) {
         >
             <SafeAreaView style={styles.view}>
                 <Text>모달창</Text>
-                <ModalOptionButtonBack />
+                <ModalOptionButtonBack 
+                setter={props.setter}
+                />
             </SafeAreaView>
         </Modal>
     )

@@ -9,7 +9,8 @@ function MainButtonOption() {
     <View style={styles.button}>
       <ModalOption
       visible={settingModal}
-      hideModalContentWhileAnimating={true}>
+      hideModalContentWhileAnimating={true}
+      setter={setSettingModal}>
       </ModalOption>
       <Button
       title="Settings"
