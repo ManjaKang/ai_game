@@ -20,9 +20,10 @@ import {
   View,
 } from 'react-native';
 
-import StartPage from './src/pages/start/index.js';
-import MainPage from './src/pages/main/index.js';
-import EpisodePage from './src/components/episode/page/index.js';
+import StartPage from './src/pages/start/index';
+import MainPage from './src/pages/main';
+import EpisodePage from './src/components/episode/page';
+import IngamePage from './src/pages/ingame';
 // import MainButtonNew from './android/app/src/test/index.js';
 
 import {
@@ -70,6 +71,7 @@ const App: () => Node = () => {
 
   return (
     <NavigationContainer>
+      <StatusBar animated hidden />
       {/* <SafeAreaView style={backgroundStyle}> */}
       {/* <MainPage /> */}
       <Stack.Navigator>
