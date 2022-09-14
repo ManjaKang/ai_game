@@ -7,18 +7,13 @@ import {
   SafeAreaView,
   Button,
 } from 'react-native';
-import MainTextTitle from '../../components/main/text/title';
+import MainTextTitle from '../../components/main/text/title/index.js';
 import MainButtonNew from '../../components/main/button/new/index.js';
 import MainButtonLoad from '../../components/main/button/load';
 import MainButtonOption from '../../components/main/button/option';
 import MainButtonAccount from '../../components/main/button/account';
-import EpisodePage from '../../components/episode/page';
-const MainPage = () => {
-  const [shouldShow, setShouldShow] = useState(true);
-  const showtohidden = shouldShow => {
-    setShouldShow(shouldShow);
-  };
 
+const MainPage = () => {
   return (
     <SafeAreaView>
       <ImageBackground
@@ -33,24 +28,15 @@ const MainPage = () => {
             <MainButtonOption />
             <MainButtonAccount />
           </View>
-          {shouldShow ? (
-            <View style={styles.viewcontainer}>
-              <Text style={{textAlign: 'center', fontWeight: 'bold'}}>
-                <MainTextTitle />
-              </Text>
-              <View style={styles.fixbutton}>
-                <MainButtonNew
-                  shouldShow={shouldShow}
-                  showtohidden={showtohidden}
-                />
-                <MainButtonLoad />
-              </View>
+          <View style={styles.viewcontainer}>
+            <Text style={{textAlign: 'center', fontWeight: 'bold'}}>
+              <MainTextTitle />
+            </Text>
+            <View style={styles.fixbutton}>
+              <MainButtonNew />
+              <MainButtonLoad />
             </View>
-          ) : (
-            <View style={styles.viewcontainer}>
-              <EpisodePage shouldShow={shouldShow} setShow={setShouldShow} />
-            </View>
-          )}
+          </View>
         </View>
       </ImageBackground>
     </SafeAreaView>

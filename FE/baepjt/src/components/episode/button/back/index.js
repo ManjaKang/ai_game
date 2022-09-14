@@ -1,11 +1,11 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Button} from 'react-native';
+import {Button, StyleSheet} from 'react-native';
 
-function EpisodeButtonBack(props) {
+function EpisodeButtonBack() {
+  const navigation = useNavigation();
   const onClick = () => {
-    props.setShow(true);
-    // let hideToShow = !props.shouldShow;
-    // console.log(hideToShow);
+    navigation.navigate('Main');
   };
   return (
     <Button title="뒤로가기" onPress={onClick}>
@@ -13,4 +13,5 @@ function EpisodeButtonBack(props) {
     </Button>
   );
 }
+
 export default EpisodeButtonBack;

@@ -9,11 +9,10 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-function MainButtonNew({shouldShow, showtohidden}) {
+function MainButtonNew() {
   const navigation = useNavigation();
   const onClick = () => {
-    console.log(shouldShow, 'child에서 print');
-    showtohidden(!shouldShow);
+    navigation.navigate('EpisodePage');
   };
   return (
     <View style={styles.button}>
