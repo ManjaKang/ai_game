@@ -34,18 +34,20 @@ const MainPage = () => {
             <MainButtonAccount />
           </View>
           {shouldShow ? (
-            <View>
-              <Text>
+            <View style={styles.viewcontainer}>
+              <Text style={{textAlign: 'center', fontWeight: 'bold'}}>
                 <MainTextTitle />
               </Text>
-              <MainButtonNew
-                shouldShow={shouldShow}
-                showtohidden={showtohidden}
-              />
-              <MainButtonLoad />
+              <View style={styles.fixbutton}>
+                <MainButtonNew
+                  shouldShow={shouldShow}
+                  showtohidden={showtohidden}
+                />
+                <MainButtonLoad />
+              </View>
             </View>
           ) : (
-            <View>
+            <View style={styles.viewcontainer}>
               <EpisodePage shouldShow={shouldShow} setShow={setShouldShow} />
             </View>
           )}
@@ -56,23 +58,19 @@ const MainPage = () => {
 };
 
 const styles = StyleSheet.create({
-  title: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
+  viewcontainer: {
+    marginTop: '10%',
   },
   setbox: {
     top: 10,
     left: 10,
     position: 'absolute',
     flexDirection: 'row',
+  },
+  fixbutton: {
+    marginTop: 30,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
   },
 });
 export default MainPage;
