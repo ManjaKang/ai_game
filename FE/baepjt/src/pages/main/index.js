@@ -16,46 +16,40 @@ const MainPage = () => {
   const [shouldShow, setShouldShow] = useState(true);
   const showtohidden = shouldShow => {
     setShouldShow(shouldShow);
-    console.log(shouldShow, 'parent에서print');
   };
 
   return (
     <SafeAreaView>
-      <View>
-        <MainButtonOption />
-        {shouldShow ? (
-          <View>
-            <Text>
-              <MainTextTitle />
-            </Text>
-            <MainButtonNew
-              shouldShow={shouldShow}
-              showtohidden={showtohidden}
-            />
-            <MainButtonLoad />
-          </View>
-        ) : (
-          <View>
-            <EpisodePage />
-          </View>
-        )}
-      </View>
+      <ImageBackground
+        source={{
+          // uri: 'https://image.shutterstock.com/image-photo/flat-lay-composition-evidences-crime-600w-1859010208.jpg',
+          uri: 'https://ak.picdn.net/shutterstock/videos/1069224121/thumb/5.jpg?ip=x480',
+          cache: 'only-if-cached',
+        }}
+        style={{width: '100%', height: '100%'}}>
+        <View>
+          <MainButtonOption />
+          {shouldShow ? (
+            <View>
+              <Text>
+                <MainTextTitle />
+              </Text>
+              <MainButtonNew
+                shouldShow={shouldShow}
+                showtohidden={showtohidden}
+              />
+              <MainButtonLoad />
+            </View>
+          ) : (
+            <View>
+              <EpisodePage shouldShow={shouldShow} setShow={setShouldShow} />
+            </View>
+          )}
+        </View>
+      </ImageBackground>
     </SafeAreaView>
   );
 };
-{
-  /* <ImageBackground
-      source={{
-        // uri: 'https://image.shutterstock.com/image-photo/flat-lay-composition-evidences-crime-600w-1859010208.jpg',
-        uri: 'https://media.istockphoto.com/photos/yellow-police-line-do-not-cross-on-concrete-wall-background-with-copy-picture-id1366991815',
-        cache: 'only-if-cached',
-      }}
-      style={{width: '100%', height: '100%'}}> */
-}
-
-{
-  /* </ImageBackground> */
-}
 
 const styles = StyleSheet.create({
   title: {
