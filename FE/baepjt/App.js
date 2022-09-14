@@ -23,6 +23,7 @@ import {
 import StartPage from './src/pages/start/index';
 import MainPage from './src/pages/main';
 import EpisodePage from './src/pages/episode';
+import ChapterPage from './src/pages/chapter';
 import IngamePage from './src/pages/ingame';
 // import MainButtonNew from './android/app/src/test/index.js';
 
@@ -88,6 +89,11 @@ const App: () => Node = () => {
         <Stack.Screen
           name="EpisodePage"
           component={EpisodePage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="ChapterPage"
+          component={ChapterPage}
           options={{headerShown: false}}
         />
         <Stack.Screen

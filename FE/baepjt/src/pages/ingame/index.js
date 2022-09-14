@@ -5,7 +5,8 @@ import IngameBarLoading from '../../components/ingame/bar/loading';
 import IngameTextTitle from '../../components/ingame/text/title';
 
 function IngamePage(props) {
-  console.log(props.route.params.name);
+  console.log("props data", props)
+  console.log("important",props.route.params.name);
   const [isReady, setReady] = useState(false);
   const onFinish = () => setReady(true);
 
@@ -32,7 +33,7 @@ function IngamePage(props) {
       }}
       style={{width: '100%', height: '100%'}}>
       <View style={styles.loadingbox}>
-        <IngameTextTitle name={props.route.params.name} />
+        <IngameTextTitle name={props.route.params.name} episode={props.route.params.episode}/>
         <IngameBarLoading />
       </View>
     </ImageBackground>
