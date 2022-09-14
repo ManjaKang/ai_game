@@ -23,9 +23,6 @@ function MainButtonOption() {
 
 const styles = StyleSheet.create({
   button: {
-    top: 10,
-    left: 10,
-    position: "absolute",
   }
 });
 export default MainButtonOption;

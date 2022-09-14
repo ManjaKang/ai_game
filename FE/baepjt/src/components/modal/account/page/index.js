@@ -1,10 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet, SafeAreaView, Modal } from "react-native";
-import ModalOptionButtonBack from "../button/back";
-import ModalSliderAudio from "../slider/audio";
-import ModalOptionTextAudio from "../text/audio";
-function ModalOption(props) {
-    return (
+import ModalAccountButtonBack from "../button/back";
+import ModalAccountButtonInventory from "../button/inventory";
+import ModalAccountButtonLogout from "../button/logout";
+
+function ModalAccount(props) {
+    return(
         <Modal style={styles.modal}
         // isVisible={props.isVisible}
         visible={props.visible}
@@ -13,15 +14,11 @@ function ModalOption(props) {
         transparent={true}
         >
             <SafeAreaView style={styles.view}>
-                <ModalOptionButtonBack 
+                <ModalAccountButtonBack
                 setter={props.setter}
                 />
-                <ModalOptionTextAudio text="배경음" />
-                <ModalSliderAudio />
-                <ModalOptionTextAudio text="효과음" />
-                <ModalSliderAudio />
-                <ModalOptionTextAudio text="음성" />
-                <ModalSliderAudio />
+                <ModalAccountButtonInventory />
+                <ModalAccountButtonLogout />
             </SafeAreaView>
         </Modal>
     )
@@ -40,4 +37,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ModalOption;
+export default ModalAccount;
