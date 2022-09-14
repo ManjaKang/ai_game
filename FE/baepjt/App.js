@@ -22,7 +22,7 @@ import {
 
 import StartPage from './src/pages/start/index';
 import MainPage from './src/pages/main';
-import EpisodePage from './src/components/episode/page';
+import EpisodePage from './src/pages/episode';
 import IngamePage from './src/pages/ingame';
 // import MainButtonNew from './android/app/src/test/index.js';
 
