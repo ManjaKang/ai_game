@@ -11,6 +11,7 @@ import MainTextTitle from '../../components/main/text/title';
 import MainButtonNew from '../../components/main/button/new/index.js';
 import MainButtonLoad from '../../components/main/button/load';
 import MainButtonOption from '../../components/main/button/option';
+import MainButtonAccount from '../../components/main/button/account';
 import EpisodePage from '../../components/episode/page';
 const MainPage = () => {
   const [shouldShow, setShouldShow] = useState(true);
@@ -28,7 +29,10 @@ const MainPage = () => {
         }}
         style={{width: '100%', height: '100%'}}>
         <View>
-          <MainButtonOption />
+          <View style={styles.setbox}>
+            <MainButtonOption />
+            <MainButtonAccount />
+          </View>
           {shouldShow ? (
             <View>
               <Text>
@@ -63,6 +67,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-evenly',
+  },
+  setbox: {
+    top: 10,
+    left: 10,
+    position: 'absolute',
+    flexDirection: 'row',
   },
 });
 export default MainPage;
