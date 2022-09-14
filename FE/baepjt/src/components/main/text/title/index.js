@@ -11,12 +11,12 @@ function MainTextTitle() {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 300,
+    marginTop: 70,
   },
   text: {
     fontSize: 60,
-    // font: ,
-    color: 'rgba(200,100,100,1)',
+    color: 'white',
+    // 텍스트 가운데 정렬
     textAlign: 'center',
   },
 });

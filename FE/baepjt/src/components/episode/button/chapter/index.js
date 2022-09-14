@@ -4,12 +4,16 @@ import Category from './Category.js';
 const EpisodeButton = () => {
   return (
     <ScrollView>
-      <View style={{flex: 1, backgroundColor: 'white', paddingTop: 20}}>
-        <View style={{height: 130, marginTop: 20}}>
+      <View style={{flex: 1, backgroundColor: '(0, 0, 0, 10)', paddingTop: 20}}>
+        <View style={{marginTop: 20}}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <Category name="공원"></Category>
-            <Category name="도서관"></Category>
-            <Category name="장소1"></Category>
+            <Category name="OCD 살인사건"></Category>
+            <Category name="SSAFY"></Category>
+            <Category name="교회"></Category>
+            <Category name="송삼 오피스텔"></Category>
+            <Category name="HUFS"></Category>
+            <Category name="장소2"></Category>
+            <Category name="장소2"></Category>
             <Category name="장소2"></Category>
           </ScrollView>
         </View>

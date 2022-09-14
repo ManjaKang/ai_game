@@ -90,6 +90,11 @@ const App: () => Node = () => {
           component={EpisodePage}
           options={{headerShown: false}}
         />
+        <Stack.Screen
+          name="IngamePage"
+          component={IngamePage}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
       {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
