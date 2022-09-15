@@ -19,6 +19,8 @@ target 'baepjt' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
   target 'baepjtTests' do
     inherit! :complete
     # Pods for testing

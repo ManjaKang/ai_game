@@ -7,6 +7,8 @@
  */
 
 import React from 'react';
+import {NavigationContainer, StackActions} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import type {Node} from 'react';
 import {
   SafeAreaView,
@@ -18,7 +20,10 @@ import {
   View,
 } from 'react-native';
 
-import StartPage from './src/pages/start/index.js';
+import StartPage from './src/pages/start/index';
+import MainPage from './src/pages/main';
+import EpisodePage from './src/pages/episode';
+import IngamePage from './src/pages/ingame';
 // import MainButtonNew from './android/app/src/test/index.js';
 
 import {
@@ -55,6 +60,8 @@ const Section = ({children, title}): Node => {
   );
 };
 
+const Stack = createNativeStackNavigator();
+
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -63,8 +70,32 @@ const App: () => Node = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StartPage />
+    <NavigationContainer>
+      <StatusBar animated hidden />
+      {/* <SafeAreaView style={backgroundStyle}> */}
+      {/* <MainPage /> */}
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Start"
+          component={StartPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Main"
+          component={MainPage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="EpisodePage"
+          component={EpisodePage}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="IngamePage"
+          component={IngamePage}
+          options={{headerShown: false}}
+        />
+      </Stack.Navigator>
       {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
@@ -90,7 +121,8 @@ const App: () => Node = () => {
           <LearnMoreLinks />
         </View>
       </ScrollView> */}
-    </SafeAreaView>
+      {/* </SafeAreaView> */}
+    </NavigationContainer>
   );
 };
 
