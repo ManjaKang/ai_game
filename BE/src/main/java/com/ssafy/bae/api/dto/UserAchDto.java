@@ -10,7 +10,7 @@ import lombok.*;
 @ToString
 public class UserAchDto {
 
-    int idx;
+    long idx;
     String userId;  // 유저 아이디
     String name;  // 업적 이름
 

@@ -10,7 +10,7 @@ import lombok.*;
 @ToString
 public class AchieveDto {
 
-    int idx;
+    long idx;
     String name;  // 업적명
     String description;  // 업적 설명
     String condition;  // 업적 달성 조건
