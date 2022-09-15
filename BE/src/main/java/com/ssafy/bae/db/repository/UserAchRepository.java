@@ -11,5 +11,4 @@ public interface UserAchRepository extends JpaRepository<UserAch,Integer> {
 
     public List<UserAch> findAllByUserId(String userId);  // 유저 업적 전체 조회
 
-    public UserAch save(UserAch userAch);  // 유저 업적 달성
 }
