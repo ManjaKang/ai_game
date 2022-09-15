@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Builder
 public class UserAch extends BaseEntity{
 
-    @Column(name = "user_id", columnDefinition = "varchar(30) NOTNULL UNIQUE")
+    @Column(name = "user_id", columnDefinition = "varchar(30) NOTNULL")
     String userId;
     @Column(name = "name", columnDefinition = "varchar(30) NOTNULL")
     String name;
