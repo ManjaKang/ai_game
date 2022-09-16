@@ -4,7 +4,7 @@ import {View, Text, StyleSheet} from 'react-native';
 function IngameTextTitle(props) {
   return (
     <View style={styles.title}>
-      <Text style={styles.text}>{props.name} 여기 들어갑니다.</Text>
+      <Text style={styles.text}>{props.episode} {props.name} 여기 들어갑니다.</Text>
     </View>
   );
 }
