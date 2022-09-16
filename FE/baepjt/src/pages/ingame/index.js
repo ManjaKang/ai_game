@@ -2,11 +2,21 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, ImageBackground, StyleSheet} from 'react-native';
 import * as Progress from 'react-native-progress';
 import IngameBarLoading from '../../components/ingame/bar/loading';
+import IngameButtonItems from '../../components/ingame/button/items';
+import IngameButtonOption from '../../components/ingame/button/option';
+import IngameButtonToolbar from '../../components/ingame/button/toolbar';
 import IngameTextTitle from '../../components/ingame/text/title';
+import ModalDialog from '../../components/modal/dialog/page';
+import ModalOption from '../../components/modal/option/page';
+import ModalTool from '../../components/modal/tool/page';
 
 function IngamePage(props) {
-  console.log(props.route.params.name);
+  console.log("props data", props)
+  console.log("important",props.route.params.name);
   const [isReady, setReady] = useState(false);
+  const [toolState,setToolState] = useState(false);
+  const [optionState,setOptionState] = useState(false);
+  const [dialogState,setDialogState] = useState(true);
   const onFinish = () => setReady(true);
 
   useEffect(() => {
@@ -22,7 +32,17 @@ function IngamePage(props) {
         uri: 'https://media.istockphoto.com/photos/yellow-police-line-do-not-cross-on-concrete-wall-background-with-copy-picture-id1366991815',
         cache: 'only-if-cached',
       }}
-      style={{width: '100%', height: '100%'}}></ImageBackground>
+      style={{width: '100%', height: '100%'}}>
+        <View style={styles.leftbox}>
+          <IngameButtonOption setstate={setOptionState}/>
+        </View>
+        <ModalOption visible={optionState} hideModalContentWhileAnimating={true} setter={setOptionState}/>
+        <ModalDialog visible={dialogState} hideModalContentWhileAnimating={true} setter={setDialogState}/>
+        <View style={styles.toolbox}>
+          <IngameButtonToolbar state={toolState} setstate={setToolState}/>
+          <ModalTool state={toolState}/>
+        </View>
+      </ImageBackground>
   ) : (
     <ImageBackground
       source={{
@@ -32,7 +52,7 @@ function IngamePage(props) {
       }}
       style={{width: '100%', height: '100%'}}>
       <View style={styles.loadingbox}>
-        <IngameTextTitle name={props.route.params.name} />
+        <IngameTextTitle name={props.route.params.name} episode={props.route.params.episode}/>
         <IngameBarLoading />
       </View>
     </ImageBackground>
@@ -43,6 +63,22 @@ const styles = StyleSheet.create({
   loadingbox: {
     flex: 1,
     justifyContent: 'center',
+  },
+  leftbox: {
+    height: "10%",
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: "absolute",
+    top: 0,
+    left: 0,
+  },
+  toolbox: {
+    position: "absolute",
+    width: "100%",
+    height: "100%",
+    // alignItems: "flex-end",
+    justifyContent: "flex-end",
+    flexDirection: "row",
   },
 });
 

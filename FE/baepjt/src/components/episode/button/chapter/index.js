@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, FlatList, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import Category from './Category.js';
 const EpisodeButton = () => {
   return (
