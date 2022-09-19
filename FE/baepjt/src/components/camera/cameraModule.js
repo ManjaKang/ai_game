@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {
   View,
+  Text,
   TouchableOpacity,
   StyleSheet,
   ToastAndroid,
   ImageBackground,
-  Button,
 } from 'react-native';
 import {RNCamera} from 'react-native-camera';
 import CameraRoll from '@react-native-community/cameraroll';
@@ -57,14 +57,19 @@ function CameraPage() {
             />
           </View>
           <View style={styles.ButtonContainer}>
-            <Button
+            {/* <Button
               title="뒤로가기"
               style={styles.exitButtonStyle}
-              onPress={exitButton}></Button>
-            <View style={{justifyContent: 'center'}}>
+              onPress={exitButton}></Button> */}
+            <View style={styles.innerButton}>
               <TouchableOpacity
                 onPress={takePicture}
                 style={styles.buttonStyle}></TouchableOpacity>
+              <TouchableOpacity
+                style={styles.exitButtonStyle}
+                onPress={exitButton}>
+                  <Text>뒤로가기</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -74,13 +79,19 @@ function CameraPage() {
 }
 const styles = StyleSheet.create({
   container: {flex: 1, alignItems: 'center', justifyContent: 'center'},
-  ButtonContainer: {  marginRight: 20, height: '100%'},
+  ButtonContainer: {  width: 120, height: '100%', alignItems: 'center', justifyContent: 'center'},
   viewStyle: {
     flexDirection: 'row',
     display: 'flex',
     flex: 1,
     height: '100%',
     width: '100%',
+  },
+  innerButton: {
+    margin: 0,
+    height: 220,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   buttonStyle: {
     width: 100,
@@ -93,12 +104,16 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderColor: 'gray',
     backgroundColor: 'pink',
-    position: 'absolute',
-    right: 20,
-    top: 120,
   },
   exitButtonStyle: {
+    width: "80%",
+    height: 0,
+    backgroundColor: "rgba(109,121,246,1)",
+    position: 'absolute',
+    height:40,
     top: 0,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 export default CameraPage;

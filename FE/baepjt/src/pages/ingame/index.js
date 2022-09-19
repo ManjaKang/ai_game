@@ -6,7 +6,9 @@ import IngameButtonItems from '../../components/ingame/button/items';
 import IngameButtonOption from '../../components/ingame/button/option';
 import IngameButtonToolbar from '../../components/ingame/button/toolbar';
 import IngameTextTitle from '../../components/ingame/text/title';
+import ModalBacklog from '../../components/modal/backlog/page';
 import ModalDialog from '../../components/modal/dialog/page';
+import ModalGotomain from '../../components/modal/gotomain/page';
 import ModalOption from '../../components/modal/option/page';
 import ModalTool from '../../components/modal/tool/page';
 
@@ -17,6 +19,81 @@ function IngamePage(props) {
   const [toolState,setToolState] = useState(false);
   const [optionState,setOptionState] = useState(false);
   const [dialogState,setDialogState] = useState(true);
+  const [titleState,setTitleState] = useState(false);
+  const [backlogState,setBacklogState] = useState(false);
+  const dialog = [
+    {
+      name:"name1",
+      text:"text1",
+      type:0,
+      img:0,
+      face:0,
+    },
+    {
+      name:"name2",
+      text:"text2",
+      type:1,
+      img:1,
+      face:0,
+    },
+    {
+      name:"name3",
+      text:"text3",
+      type:2,
+      img:2,
+      face:0,
+    },
+    {
+      name:"name3",
+      text:"text3",
+      type:2,
+      img:2,
+      face:0,
+    },
+    {
+      name:"name3",
+      text:"text3",
+      type:2,
+      img:2,
+      face:0,
+    },
+    {
+      name:"name6",
+      text:"text6",
+      type:2,
+      img:2,
+      face:0,
+    },
+    {
+      name:"name7",
+      text:"text7",
+      type:2,
+      img:2,
+      face:0,
+    },
+    {
+      name:"name8",
+      text:"text8",
+      type:2,
+      img:2,
+      face:0,
+    },
+    {
+      name:"name3",
+      text:"text3",
+      type:2,
+      img:2,
+      face:0,
+    },
+    {
+      name:"name10",
+      text:"text10",
+      type:2,
+      img:2,
+      face:0,
+    },
+  ]
+
   const onFinish = () => setReady(true);
 
   useEffect(() => {
@@ -40,8 +117,10 @@ function IngamePage(props) {
         <ModalDialog visible={dialogState} hideModalContentWhileAnimating={true} setter={setDialogState}/>
         <View style={styles.toolbox}>
           <IngameButtonToolbar state={toolState} setstate={setToolState}/>
-          <ModalTool state={toolState}/>
+          <ModalTool state={toolState} titlestate={setTitleState} backlogstate={setBacklogState}/>
         </View>
+        <ModalBacklog visible={backlogState} hideModalContentWhileAnimating={true} setter={setBacklogState} data={dialog}/>
+        <ModalGotomain visible={titleState} hideModalContentWhileAnimating={true} setter={setTitleState}/>
       </ImageBackground>
   ) : (
     <ImageBackground

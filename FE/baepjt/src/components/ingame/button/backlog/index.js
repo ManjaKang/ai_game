@@ -1,9 +1,10 @@
 import React from "react";
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
 
-function IngameButtonBacklog() {
+function IngameButtonBacklog(props) {
     return (
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}
+        onPress={()=>props.setter(true)}>
             <Text>백로그</Text>
         </TouchableOpacity>
     )
