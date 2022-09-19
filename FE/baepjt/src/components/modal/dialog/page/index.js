@@ -1,45 +1,28 @@
-import React, {useState} from 'react';
-import {
-  View,
-  Text,
-  Modal,
-  StyleSheet,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
-import IngameTextDialog from '../../../ingame/text/dialog';
-import IngameTextName from '../../../ingame/text/name';
+import React from "react";
+import { View, Text, Modal, StyleSheet } from "react-native";
+import IngameTextDialog from "../../../ingame/text/dialog";
+import IngameTextName from "../../../ingame/text/name";
+
 function ModalDialog(props) {
-  console.log('modaldialog setter', props.state);
-  return (
-    props.visible && (
-      <View style={styles.modal}>
-        {/* {props.data && props.data.map(D => <IngameTextName data={D} />)} */}
-        <IngameTextName dialog={props.data[props.state].name} />
-        <IngameTextDialog dialog={props.data[props.state].text} />
-      </View>
+    return (
+        props.visible && (
+        <View style={styles.modal}>
+            <IngameTextName name={"이름공간"} />
+            <IngameTextDialog dialog={"props.data가 들어갈 예정"} />
+        </View>
+        )
     )
-  );
 }
 
 const styles = StyleSheet.create({
-  modal: {
-    backgroundColor: 'rgba(192,192,192,1)',
-    width: '100%',
-    height: '30%',
-    position: 'absolute',
-    bottom: 0,
-    left: 0,
-  },
-  button: {
-    position: 'absolute',
-    width: 50,
-    height: 50,
-    borderColor: 'blue',
-    borderWidth: 5,
-    top: 5,
-    right: 5,
-  },
-});
+    modal: {
+        backgroundColor: "rgba(192,192,192,1)",
+        width: "100%",
+        height: "30%",
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+    }
+})
 
 export default ModalDialog;
