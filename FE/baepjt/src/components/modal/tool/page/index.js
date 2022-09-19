@@ -12,7 +12,7 @@ function ModalTool (props) {
                     <IngameButtonGotomain setter={props.titlestate}/>
                     <IngameButtonCamera/>
                     <IngameButtonBacklog setter={props.backlogstate}/>
-                    <IngameButtonItems/>
+                    <IngameButtonItems setter={props.inventorystate}/>
                 </View>
             )
     )

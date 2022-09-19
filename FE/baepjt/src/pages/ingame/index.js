@@ -150,6 +150,7 @@ function IngamePage(props) {
             state={toolState}
             titlestate={setTitleState}
             backlogstate={setBacklogState}
+            inventorystate={setInventoryState}
           />
         </View>
         <ModalBacklog

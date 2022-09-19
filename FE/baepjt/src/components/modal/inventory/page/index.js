@@ -5,6 +5,8 @@ import ModalInventoryButtonBack from "../button/back";
 import ModalInventoryCard from "../card";
 
 function ModalInventory(props) {
+    
+    console.log(props)
     const [selectedItem,setSelectedItem] = useState(0);
     return (
         // <Modal style={styles.modal}
