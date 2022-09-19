@@ -9,6 +9,7 @@ import IngameTextTitle from '../../components/ingame/text/title';
 import ModalBacklog from '../../components/modal/backlog/page';
 import ModalDialog from '../../components/modal/dialog/page';
 import ModalGotomain from '../../components/modal/gotomain/page';
+import ModalInventory from '../../components/modal/inventory/page';
 import ModalOption from '../../components/modal/option/page';
 import ModalTool from '../../components/modal/tool/page';
 
@@ -21,6 +22,8 @@ function IngamePage(props) {
   const [dialogState,setDialogState] = useState(true);
   const [titleState,setTitleState] = useState(false);
   const [backlogState,setBacklogState] = useState(false);
+  const [inventoryState,setInventoryState] = useState(false);
+  const items = ["1","2"]
   const dialog = [
     {
       name:"name1",
@@ -120,6 +123,7 @@ function IngamePage(props) {
           <ModalTool state={toolState} titlestate={setTitleState} backlogstate={setBacklogState}/>
         </View>
         <ModalBacklog visible={backlogState} hideModalContentWhileAnimating={true} setter={setBacklogState} data={dialog}/>
+        <ModalInventory visible={inventoryState} hideModalContentWhileAnimating={true} setter={setInventoryState} items={items}/>
         <ModalGotomain visible={titleState} hideModalContentWhileAnimating={true} setter={setTitleState}/>
       </ImageBackground>
   ) : (
