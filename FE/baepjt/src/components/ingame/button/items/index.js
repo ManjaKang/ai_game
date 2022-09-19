@@ -1,9 +1,10 @@
 import React from "react";
 import { Text, StyleSheet, TouchableOpacity } from "react-native";
 
-function IngameButtonItems() {
+function IngameButtonItems(props) {
     return (
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button}
+        onPress={()=>props.setter(true)}>
             <Text>인벤토리</Text>
         </TouchableOpacity>
     )
