@@ -9,9 +9,9 @@ function ModalTool (props) {
     return (
             props.state && (
                 <View style={styles.view}>
-                    <IngameButtonGotomain/>
+                    <IngameButtonGotomain setter={props.titlestate}/>
                     <IngameButtonCamera/>
-                    <IngameButtonBacklog/>
+                    <IngameButtonBacklog setter={props.backlogstate}/>
                     <IngameButtonItems/>
                 </View>
             )
