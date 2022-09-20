@@ -115,7 +115,7 @@ function IngamePage(props) {
   useEffect(() => {
     setTimeout(() => {
       onFinish();
-    }, 5000);
+    }, 3000);
   });
 
   return isReady ? (
