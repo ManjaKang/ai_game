@@ -5,10 +5,10 @@ import * as Progress from 'react-native-progress'
 function IngameBarLoading() {
     return (
         <View style={styles.box}>
-            <Progress.Pie
+            <Progress.Bar
             style={styles.bar}
             indeterminate={true}
-            size={100}
+            width={100}
             />
         </View>
     )

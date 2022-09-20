@@ -15,11 +15,12 @@ const styles = StyleSheet.create({
   view: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: '20%',
+    flex: 1,
   },
   text: {
-    width: '70%',
+    width: '80%',
     height: '100%',
+    fontSize: 22,
   },
 });
 

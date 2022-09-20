@@ -14,9 +14,11 @@ function ModalDialog(props) {
   return (
     props.visible && (
       <View style={styles.modal}>
-        {/* {props.data && props.data.map(D => <IngameTextName data={D} />)} */}
-        <IngameTextName dialog={props.data[props.state].name} />
-        <IngameTextDialog dialog={props.data[props.state].text} />
+        <View style={styles.view}>
+          {/* {props.data && props.data.map(D => <IngameTextName data={D} />)} */}
+          <IngameTextName dialog={props.data[props.state].name} />
+          <IngameTextDialog dialog={props.data[props.state].text} />
+        </View>
       </View>
     )
   );
@@ -24,12 +26,19 @@ function ModalDialog(props) {
 
 const styles = StyleSheet.create({
   modal: {
-    backgroundColor: 'rgba(192,192,192,1)',
+    // backgroundColor: 'rgba(192,192,192,1)',
     width: '100%',
-    height: '30%',
+    height: '28%',
     position: 'absolute',
     bottom: 0,
     left: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  view: {
+    width: '80%',
+    height: '100%',
+    backgroundColor: 'rgba(84,84,84,0.4)',
   },
   button: {
     position: 'absolute',

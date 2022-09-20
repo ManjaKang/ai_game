@@ -13,11 +13,13 @@ const styles = StyleSheet.create({
     view: {
         justifyContent: "center",
         alignItems: "center",
-        height: "80%",
+        // height: "80%",
+        flex: 3,
     },
     text: {
-        width: "80%",
+        width: "90%",
         height: "100%",
+        fontSize: 18,
     }
 })
 
