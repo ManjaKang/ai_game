@@ -15,11 +15,7 @@ function EpisodePage(props) {
   return (
     <SafeAreaView>
       <ImageBackground
-        source={{
-          // uri: 'https://image.shutterstock.com/image-photo/flat-lay-composition-evidences-crime-600w-1859010208.jpg',
-          uri: 'https://ak.picdn.net/shutterstock/videos/1069224121/thumb/5.jpg?ip=x480',
-          cache: 'only-if-cached',
-        }}
+        source={require('../../images/background.jpg')}
         style={{width: '100%', height: '100%'}}>
         <View style={{height: 400}}>
           <View style={styles.setbox}>
