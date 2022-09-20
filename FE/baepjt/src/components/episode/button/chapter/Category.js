@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
   ImageBackground,
+  Alert,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -18,9 +19,7 @@ function Category(props) {
       {isblocked == 'true' ? (
         <TouchableOpacity
           style={styles.button}
-          onPress={() =>
-            navigation.navigate('ChapterPage', {name: props.name})
-          }>
+          onPress={() => Alert.alert('전 에피소드를 끝내야 실행 가능합니다.')}>
           <ImageBackground
             // source={imageURI}
             source={props.imageUri}
