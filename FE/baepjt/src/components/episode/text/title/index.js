@@ -3,7 +3,7 @@ import {View, Text, StyleSheet} from 'react-native';
 
 function EpisodeText() {
   return (
-    <View style={styles.container}>
+    <View>
       <Text style={styles.text}>에피소드</Text>
     </View>
   );
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     fontSize: 60,
     color: 'white',
     textAlign: 'center',
-    fontWeight: 'bold',
+    fontFamily: 'HeirofLightRegular',
   },
 });
 
