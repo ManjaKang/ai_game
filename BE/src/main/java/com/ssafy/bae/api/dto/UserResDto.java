@@ -18,6 +18,12 @@ public class UserResDto {
     int episode;
     int chapter;
 
+    public UserResDto(String userId, String tokenId, String service){
+        this.userId = userId;
+        this.tokenId = tokenId;
+        this.service = service;
+    }
+
     public UserResDto(User user){
         userId = user.getUserId();
         tokenId = user.getTokenId();
