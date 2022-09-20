@@ -12,8 +12,8 @@ function MainButtonAccount() {
         hideModalContentWhileAnimating={true}
         setter={setSettingModal}></ModalAccount>
       <Icon
-        name="person-outline"
-        color="rgba(255,123,0,0.7)"
+        name="person"
+        color="rgba(255,255,255,1)"
         onPress={() => setSettingModal(true)}
         size={35}
       />
