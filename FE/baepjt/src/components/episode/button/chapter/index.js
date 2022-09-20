@@ -7,14 +7,30 @@ const EpisodeButton = () => {
       <View style={{flex: 1, backgroundColor: '(0, 0, 0, 10)', paddingTop: 20}}>
         <View style={{marginTop: 20}}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <Category name="OCD 살인사건"></Category>
-            <Category name="SSAFY"></Category>
-            <Category name="교회"></Category>
-            <Category name="송삼 오피스텔"></Category>
-            <Category name="HUFS"></Category>
-            <Category name="장소2"></Category>
-            <Category name="장소2"></Category>
-            <Category name="장소2"></Category>
+            <Category
+              imageUri="../../../../images/뇌.jpg"
+              name="OCD 살인"></Category>
+            <Category
+              imageUri="../../../../images/뇌.jpg"
+              name="몽환화"></Category>
+            <Category
+              imageUri="../../../../images/뇌.jpg"
+              name="침대 위 인형"></Category>
+            <Category
+              imageUri="../../../../images/뇌.jpg"
+              name="고글 쓴 남자"></Category>
+            <Category
+              imageUri="../../../../images/뇌.jpg"
+              name="백설공주"></Category>
+            <Category
+              imageUri="../../../../images/뇌.jpg"
+              name="세번째 피해자"></Category>
+            <Category
+              imageUri="../../../../images/뇌.jpg"
+              name="은밀한 사진관"></Category>
+            <Category
+              imageUri="../../../../images/뇌.jpg"
+              name="붉은 낙엽"></Category>
           </ScrollView>
         </View>
       </View>

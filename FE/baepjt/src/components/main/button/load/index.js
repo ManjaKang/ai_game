@@ -8,17 +8,20 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from 'react-native';
-
-const ImageURI = {uri: './'};
 function MainButtonLoad() {
   return (
     <View>
       <TouchableOpacity
+        activeOpacity={1}
         style={styles.button}
-        title="Load"
-        color="rgba(100,200,200,0.6)"
         onPress={() => Alert.alert('불러오기 누름!')}>
-        <Text style={{color: 'black', fontSize: 30}}>LOAD</Text>
+        <ImageBackground
+          source={require('../../../../images/road.jpg')}
+          style={{width: '100%', height: '100%', borderRadius: 40}}>
+          <View style={{marginTop: 130}}>
+            <Text style={styles.text}>LOAD</Text>
+          </View>
+        </ImageBackground>
       </TouchableOpacity>
     </View>
   );
@@ -26,14 +29,20 @@ function MainButtonLoad() {
 
 const styles = StyleSheet.create({
   button: {
-    borderWidth: 3,
-    borderColor: 'rgba(0,0,0,0.2)',
+    marginTop: 20,
     alignItems: 'center',
     justifyContent: 'center',
-    width: 180,
-    height: 180,
-    backgroundColor: 'rgba(255,255,0,0.7)',
-    borderRadius: 40,
+    width: 170,
+    height: 170,
+  },
+  container: {
+    backgroundColor: 'black',
+  },
+  text: {
+    color: 'white',
+    fontSize: 30,
+    textAlign: 'center',
+    fontFamily: 'AssetBold',
   },
 });
 export default MainButtonLoad;

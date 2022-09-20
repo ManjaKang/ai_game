@@ -1,16 +1,19 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Button, StyleSheet} from 'react-native';
-
+import Icon from 'react-native-vector-icons/Ionicons';
 function EpisodeButtonBack() {
   const navigation = useNavigation();
   const onClick = () => {
     navigation.navigate('Main');
   };
   return (
-    <Button title="뒤로가기" onPress={onClick}>
-      뒤로 가기
-    </Button>
+    <Icon
+      name="arrow-back-circle-outline"
+      size={30}
+      color="white"
+      onPress={onClick}
+    />
   );
 }
 
