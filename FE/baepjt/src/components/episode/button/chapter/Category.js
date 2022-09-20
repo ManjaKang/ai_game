@@ -11,16 +11,15 @@ import {
 
 function Category(props) {
   const navigation = useNavigation();
-  console.log(props.imageUri);
   const imageURI = props.imageUri;
-  console.log(typeof imageURI);
   return (
     <View>
       <TouchableOpacity
         style={styles.button}
         onPress={() => navigation.navigate('ChapterPage', {name: props.name})}>
         <Image
-          source={imageURI}
+          // source={imageURI}
+          source={props.imageUri}
           style={{
             width: '100%',
             height: '100%',
