@@ -5,8 +5,8 @@ import {
   ImageBackground,
   StyleSheet,
   TouchableOpacity,
+  Image,
 } from 'react-native';
-
 import * as Progress from 'react-native-progress';
 import IngameBarLoading from '../../components/ingame/bar/loading';
 import IngameButtonItems from '../../components/ingame/button/items';
@@ -21,6 +21,8 @@ import ModalOption from '../../components/modal/option/page';
 import ModalTool from '../../components/modal/tool/page';
 import * as RNFS from 'react-native-fs';
 
+import e101 from '../../data/e101.js';
+
 function IngamePage(props) {
   console.log('props data', props);
   console.log('important', props.route.params.name);
@@ -34,78 +36,6 @@ function IngamePage(props) {
   const [backlogState, setBacklogState] = useState(false);
   const [inventoryState, setInventoryState] = useState(false);
   const items = ['1', '2'];
-  // const dialog = [
-  //   {
-  //     name: 'name1',
-  //     text: 'text1',
-  //     type: 0,
-  //     img: 0,
-  //     face: 0,
-  //   },
-  //   {
-  //     name: 'name2',
-  //     text: 'text2',
-  //     type: 1,
-  //     img: 1,
-  //     face: 0,
-  //   },
-  //   {
-  //     name: 'name3',
-  //     text: 'text3',
-  //     type: 2,
-  //     img: 2,
-  //     face: 0,
-  //   },
-  //   {
-  //     name: 'name3',
-  //     text: 'text3',
-  //     type: 2,
-  //     img: 2,
-  //     face: 0,
-  //   },
-  //   {
-  //     name: 'name3',
-  //     text: 'text3',
-  //     type: 2,
-  //     img: 2,
-  //     face: 0,
-  //   },
-  //   {
-  //     name: 'name6',
-  //     text: 'text6',
-  //     type: 2,
-  //     img: 2,
-  //     face: 0,
-  //   },
-  //   {
-  //     name: 'name7',
-  //     text: 'text7',
-  //     type: 2,
-  //     img: 2,
-  //     face: 0,
-  //   },
-  //   {
-  //     name: 'name8',
-  //     text: 'text8',
-  //     type: 2,
-  //     img: 2,
-  //     face: 0,
-  //   },
-  //   {
-  //     name: 'name3',
-  //     text: 'text3',
-  //     type: 2,
-  //     img: 2,
-  //     face: 0,
-  //   },
-  //   {
-  //     name: 'name10',
-  //     text: 'text10',
-  //     type: 2,
-  //     img: 2,
-  //     face: 0,
-  //   },
-  // ];
   const [dialog, setDialog] = useState();
 
   const orderIncrease = () => {
@@ -113,24 +43,12 @@ function IngamePage(props) {
   };
 
   const onFinish = () => setReady(true);
-  const JsonData = require("../../data/e1_1.json");
-  console.log(JsonData);
 
-  readFiles = () => {
-    RNFS.readFile('../../data/e1_1.json', 'ascii')
-      .then((res) => {
-        console.log(res);
-        const d = JSON.parse(res);
-        // this.setState({ content: res, fruitType: d.type });
-        setDialog(d);
-        console.log(dialog);
-      })
-      .catch((err) => {
-        console.log(err.message, err.code);
-      });
-  }
+  //json불러오기
+  const dataa = e101;
+  const epiImgBg = dataa.setting.chapterbg;
+  console.log(epiImgBg);
   useEffect(() => {
-    readFiles();
     setTimeout(() => {
       onFinish();
     }, 3000);
@@ -139,11 +57,7 @@ function IngamePage(props) {
   return isReady ? (
     <TouchableOpacity activeOpacity={1} onPress={orderIncrease}>
       <ImageBackground
-        source={{
-          // uri: 'https://image.shutterstock.com/image-photo/flat-lay-composition-evidences-crime-600w-1859010208.jpg',
-          uri: 'https://media.istockphoto.com/photos/yellow-police-line-do-not-cross-on-concrete-wall-background-with-copy-picture-id1366991815',
-          cache: 'only-if-cached',
-        }}
+        source={epiImgBg}
         style={{width: '100%', height: '100%'}}>
         <View style={styles.leftbox}>
           <IngameButtonOption setstate={setOptionState} />
@@ -153,15 +67,6 @@ function IngamePage(props) {
           hideModalContentWhileAnimating={true}
           setter={setOptionState}
         />
-        {/* <ModalDialog
-          visible={dialogState}
-          hideModalContentWhileAnimating={true}
-          setter={setDialogState}
-          data={dialog}
-          state={nameOrder}
-          setstate={setNameOrder}
-        /> */}
-
         <View style={styles.toolbox}>
           <IngameButtonToolbar state={toolState} setstate={setToolState} />
           <ModalTool
@@ -171,13 +76,6 @@ function IngamePage(props) {
             inventorystate={setInventoryState}
           />
         </View>
-        {/* <ModalBacklog
-          visible={backlogState}
-          hideModalContentWhileAnimating={true}
-          setter={setBacklogState}
-          data={dialog}
-        /> */}
-
         <ModalInventory
           visible={inventoryState}
           hideModalContentWhileAnimating={true}
@@ -192,13 +90,7 @@ function IngamePage(props) {
       </ImageBackground>
     </TouchableOpacity>
   ) : (
-    <ImageBackground
-      source={{
-        // uri: 'https://image.shutterstock.com/image-photo/flat-lay-composition-evidences-crime-600w-1859010208.jpg',
-        uri: 'https://media.istockphoto.com/photos/yellow-police-line-do-not-cross-on-concrete-wall-background-with-copy-picture-id1366991815',
-        cache: 'only-if-cached',
-      }}
-      style={{width: '100%', height: '100%'}}>
+    <ImageBackground source={epiImgBg} style={{width: '100%', height: '100%'}}>
       <View style={styles.loadingbox}>
         <IngameTextTitle
           name={props.route.params.name}
