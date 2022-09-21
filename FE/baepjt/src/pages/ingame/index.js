@@ -19,6 +19,7 @@ import ModalGotomain from '../../components/modal/gotomain/page';
 import ModalInventory from '../../components/modal/inventory/page';
 import ModalOption from '../../components/modal/option/page';
 import ModalTool from '../../components/modal/tool/page';
+import * as RNFS from 'react-native-fs';
 
 function IngamePage(props) {
   console.log('props data', props);
@@ -33,86 +34,103 @@ function IngamePage(props) {
   const [backlogState, setBacklogState] = useState(false);
   const [inventoryState, setInventoryState] = useState(false);
   const items = ['1', '2'];
-  const dialog = [
-    {
-      name: 'name1',
-      text: 'text1',
-      type: 0,
-      img: 0,
-      face: 0,
-    },
-    {
-      name: 'name2',
-      text: 'text2',
-      type: 1,
-      img: 1,
-      face: 0,
-    },
-    {
-      name: 'name3',
-      text: 'text3',
-      type: 2,
-      img: 2,
-      face: 0,
-    },
-    {
-      name: 'name3',
-      text: 'text3',
-      type: 2,
-      img: 2,
-      face: 0,
-    },
-    {
-      name: 'name3',
-      text: 'text3',
-      type: 2,
-      img: 2,
-      face: 0,
-    },
-    {
-      name: 'name6',
-      text: 'text6',
-      type: 2,
-      img: 2,
-      face: 0,
-    },
-    {
-      name: 'name7',
-      text: 'text7',
-      type: 2,
-      img: 2,
-      face: 0,
-    },
-    {
-      name: 'name8',
-      text: 'text8',
-      type: 2,
-      img: 2,
-      face: 0,
-    },
-    {
-      name: 'name3',
-      text: 'text3',
-      type: 2,
-      img: 2,
-      face: 0,
-    },
-    {
-      name: 'name10',
-      text: 'text10',
-      type: 2,
-      img: 2,
-      face: 0,
-    },
-  ];
+  // const dialog = [
+  //   {
+  //     name: 'name1',
+  //     text: 'text1',
+  //     type: 0,
+  //     img: 0,
+  //     face: 0,
+  //   },
+  //   {
+  //     name: 'name2',
+  //     text: 'text2',
+  //     type: 1,
+  //     img: 1,
+  //     face: 0,
+  //   },
+  //   {
+  //     name: 'name3',
+  //     text: 'text3',
+  //     type: 2,
+  //     img: 2,
+  //     face: 0,
+  //   },
+  //   {
+  //     name: 'name3',
+  //     text: 'text3',
+  //     type: 2,
+  //     img: 2,
+  //     face: 0,
+  //   },
+  //   {
+  //     name: 'name3',
+  //     text: 'text3',
+  //     type: 2,
+  //     img: 2,
+  //     face: 0,
+  //   },
+  //   {
+  //     name: 'name6',
+  //     text: 'text6',
+  //     type: 2,
+  //     img: 2,
+  //     face: 0,
+  //   },
+  //   {
+  //     name: 'name7',
+  //     text: 'text7',
+  //     type: 2,
+  //     img: 2,
+  //     face: 0,
+  //   },
+  //   {
+  //     name: 'name8',
+  //     text: 'text8',
+  //     type: 2,
+  //     img: 2,
+  //     face: 0,
+  //   },
+  //   {
+  //     name: 'name3',
+  //     text: 'text3',
+  //     type: 2,
+  //     img: 2,
+  //     face: 0,
+  //   },
+  //   {
+  //     name: 'name10',
+  //     text: 'text10',
+  //     type: 2,
+  //     img: 2,
+  //     face: 0,
+  //   },
+  // ];
+  const [dialog, setDialog] = useState();
 
   const orderIncrease = () => {
     setNameOrder(nameOrder + 1);
   };
 
   const onFinish = () => setReady(true);
+  const JsonData = require("../../data/e1_1.json");
+  console.log(JsonData);
 
+  readFiles = () => {
+    RNFS.readFile('../../data/e1_1.json', 'ascii')
+      .then((res) => {
+        console.log(res);
+        const d = JSON.parse(res);
+        // this.setState({ content: res, fruitType: d.type });
+        setDialog(d);
+        console.log(dialog);
+      })
+      .catch((err) => {
+        console.log(err.message, err.code);
+      });
+  }
   useEffect(() => {
+    readFiles();
     setTimeout(() => {
       onFinish();
     }, 3000);
@@ -135,14 +153,14 @@ function IngamePage(props) {
           hideModalContentWhileAnimating={true}
           setter={setOptionState}
         />
-        <ModalDialog
+        {/* <ModalDialog
           visible={dialogState}
           hideModalContentWhileAnimating={true}
           setter={setDialogState}
           data={dialog}
           state={nameOrder}
           setstate={setNameOrder}
-        />
+        /> */}
 
         <View style={styles.toolbox}>
           <IngameButtonToolbar state={toolState} setstate={setToolState} />
@@ -153,12 +171,12 @@ function IngamePage(props) {
             inventorystate={setInventoryState}
           />
         </View>
-        <ModalBacklog
+        {/* <ModalBacklog
           visible={backlogState}
           hideModalContentWhileAnimating={true}
           setter={setBacklogState}
           data={dialog}
-        />
+        /> */}
 
         <ModalInventory
           visible={inventoryState}
