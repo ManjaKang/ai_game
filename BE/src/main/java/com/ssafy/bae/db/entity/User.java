@@ -28,4 +28,6 @@ public class User extends BaseEntity{
     int episode;
     @Column(name = "chapter", columnDefinition = "int default(1)")
     int chapter;
+    @Column(name = "refresh_id", columnDefinition = "varchar(200) NOTNULL")
+    String refreshId;
 }

@@ -17,11 +17,13 @@ public class UserResDto {
     int point;
     int episode;
     int chapter;
+    String refreshId;
 
-    public UserResDto(String userId, String tokenId, String service){
+    public UserResDto(String userId, String tokenId, String refreshId, String service){
         this.userId = userId;
         this.tokenId = tokenId;
         this.service = service;
+        this.refreshId = refreshId;
     }
 
     public UserResDto(User user){
@@ -31,6 +33,7 @@ public class UserResDto {
         point = user.getPoint();
         episode = user.getEpisode();
         chapter = user.getChapter();
+        refreshId = user.getRefreshId();
     }
 
     public User toEntity(){
@@ -41,6 +44,7 @@ public class UserResDto {
                 .point(point)
                 .episode(episode)
                 .chapter(chapter)
+                .refreshId(refreshId)
                 .build();
     }
 }
