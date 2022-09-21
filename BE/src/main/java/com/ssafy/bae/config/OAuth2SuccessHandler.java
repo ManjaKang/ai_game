@@ -34,24 +34,40 @@ public class OAuth2SuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
         System.out.println("OAuth2SuccessHandler");
         OAuth2User oAuth2User = (OAuth2User)authentication.getPrincipal();
         System.out.println("OAuth2SuccessHandler OAuth2User : " + oAuth2User);
+        Token token = null;
+
         if(!userDao.existsByUserId(oAuth2User.getName())){
-            UserResDto user = new UserResDto(oAuth2User.getName(), "dagadsfgarfds", "kakao");
+
+            log.info("토큰 발행 시작");
+
+            token = tokenService.generateToken(oAuth2User.getName(), "USER");
+            log.info("{}", token);
+
+            UserResDto user = new UserResDto(oAuth2User.getName(), token.getToken(), token.getRefreshToken(), "kakao");
             userDao.save(user.toEntity());
+        } else {
+            token = new Token(userDao.findByUserId(oAuth2User.getName()).getTokenId(),userDao.findByUserId(oAuth2User.getName()).getRefreshId());
         }
 
-        String targetUrl;
-        log.info("토큰 발행 시작");
+//        UserResDto user = new UserResDto(oAuth2User.getName(), "dagadsfgarfds", "kakao");
+//        userDao.save(user.toEntity());
 
-        Token token = tokenService.generateToken(oAuth2User.getName(), "USER");
-        log.info("{}", token);
+//        log.info("토큰 발행 시작");
+//
+//        token = tokenService.generateToken(oAuth2User.getName(), "USER");
+//        log.info("{}", token);
 
-        //writeTokenResponse(response, token);
+        response.addHeader("Auth", token.getToken());
+        response.addHeader("Refresh", token.getRefreshToken());
+        response.setContentType("application/json;charset=UTF-8");
 
-        targetUrl = UriComponentsBuilder.fromUriString("")
-                .queryParam("Auth", token.getToken())
-                .queryParam("Refresh", token.getRefreshToken())
-                .build().toUriString();
-        getRedirectStrategy().sendRedirect(request, response, targetUrl);
+        writeTokenResponse(response, token);
+
+//        String targetUrl = UriComponentsBuilder.fromUriString("http://localhost:3000/oauth/redirect")
+//                .queryParam("email", oAuth2User.getName())
+//                .build().toUriString();
+//        log.info(targetUrl);
+//        getRedirectStrategy().sendRedirect(request, response, targetUrl);
 
 //        targetUrl = UriComponentsBuilder.fromUriString("/home")
 //                .queryParam("token", "token")

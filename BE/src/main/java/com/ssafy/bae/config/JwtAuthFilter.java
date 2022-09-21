@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Arrays;
 
@@ -21,13 +22,14 @@ public class JwtAuthFilter extends GenericFilterBean {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        System.out.println("JwtAuthFilter doFilter : " + ((HttpServletRequest)request).getRequestURI().toString());
+        System.out.println("JwtAuthFilter doFilter : " + ((HttpServletRequest)request));
         String token = ((HttpServletRequest)request).getHeader("Auth");
         System.out.println(token);
 
         if (token != null && tokenService.verifyToken(token)) {
             System.out.println("JwtAuthFilter doFilter if문 안");
             String email = tokenService.getUid(token);
+            System.out.println(email);
 
             // DB연동을 안했으니 이메일 정보로 유저를 만들어주겠습니다
             UserDto userDto = UserDto.builder()
