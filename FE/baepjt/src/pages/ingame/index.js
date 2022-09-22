@@ -52,10 +52,12 @@ function IngamePage(props) {
   const orderIncrease = () => {
     setNameOrder(nameOrder + 1);
     if (scripts[nameOrder].position != null) {
-      setCharacterList(scripts[nameOrder].character[0]);
+      setCharacterList(scripts[nameOrder+1].character[0]);
     }
+    console.log("스크립트!",scripts[nameOrder]);
   };
   const [dialog, setDialog] = useState(scripts);
+  console.log("다이아로그!",dialog);
   const epiImgBg = dataa.setting.chapterbg;
 
   useEffect(() => {
@@ -65,18 +67,10 @@ function IngamePage(props) {
   });
 
   return isReady ? (
-    <TouchableOpacity activeOpacity={1} onPress={orderIncrease}>
+    <View>
       <ImageBackground
         source={epiImgBg}
         style={{width: '100%', height: '100%'}}>
-        <View style={styles.leftbox}>
-          <IngameButtonOption setstate={setOptionState} />
-        </View>
-        <ModalOption
-          visible={optionState}
-          hideModalContentWhileAnimating={true}
-          setter={setOptionState}
-        />
         <ModalDialog
           visible={dialogState}
           hideModalContentWhileAnimating={true}
@@ -86,6 +80,15 @@ function IngamePage(props) {
           setstate={setNameOrder}
         />
         <ModalCharacter state={characterList}></ModalCharacter>
+        <TouchableOpacity style={styles.touch} activeOpacity={1} onPress={orderIncrease}></TouchableOpacity>
+        <View style={styles.leftbox}>
+          <IngameButtonOption setstate={setOptionState} />
+        </View>
+        <ModalOption
+          visible={optionState}
+          hideModalContentWhileAnimating={true}
+          setter={setOptionState}
+        />
 
         <View style={styles.toolbox}>
           <IngameButtonToolbar state={toolState} setstate={setToolState} />
@@ -115,7 +118,7 @@ function IngamePage(props) {
           setter={setTitleState}
         />
       </ImageBackground>
-    </TouchableOpacity>
+    </View>
   ) : (
     <ImageBackground source={epiImgBg} style={{width: '100%', height: '100%'}}>
       <View style={styles.loadingbox}>
@@ -151,6 +154,11 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     flexDirection: 'row',
   },
+  touch: {
+    position: 'absolute',
+    width: "100%",
+    height: "100%",
+  }
 });
 
 export default IngamePage;
