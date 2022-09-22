@@ -19,9 +19,12 @@ import ModalGotomain from '../../components/modal/gotomain/page';
 import ModalInventory from '../../components/modal/inventory/page';
 import ModalOption from '../../components/modal/option/page';
 import ModalTool from '../../components/modal/tool/page';
+import ModalCharacter from '../../components/modal/character/page';
 import * as RNFS from 'react-native-fs';
 
-import e101 from '../../data/e101.js';
+// import e101 from '../../data/e101.js';
+
+import importJs from './import';
 
 function IngamePage(props) {
   console.log('props data', props);
@@ -36,18 +39,25 @@ function IngamePage(props) {
   const [backlogState, setBacklogState] = useState(false);
   const [inventoryState, setInventoryState] = useState(false);
   const items = ['1', '2'];
-  const [dialog, setDialog] = useState();
-
-  const orderIncrease = () => {
-    setNameOrder(nameOrder + 1);
-  };
 
   const onFinish = () => setReady(true);
 
   //json불러오기
-  const dataa = e101;
+  const dataa = importJs[1];
+  const setting = dataa.setting;
+  const clue = dataa.clue;
+  const backgroundsetting = dataa.backgroundsetting;
+  const scripts = dataa.scripts;
+  const [characterList, setCharacterList] = useState('');
+  const orderIncrease = () => {
+    setNameOrder(nameOrder + 1);
+    if (scripts[nameOrder].position != null) {
+      setCharacterList(scripts[nameOrder].character[0]);
+    }
+  };
+  const [dialog, setDialog] = useState(scripts);
   const epiImgBg = dataa.setting.chapterbg;
-  console.log(epiImgBg);
+
   useEffect(() => {
     setTimeout(() => {
       onFinish();
@@ -67,6 +77,16 @@ function IngamePage(props) {
           hideModalContentWhileAnimating={true}
           setter={setOptionState}
         />
+        <ModalDialog
+          visible={dialogState}
+          hideModalContentWhileAnimating={true}
+          setter={setDialogState}
+          data={dialog}
+          state={nameOrder}
+          setstate={setNameOrder}
+        />
+        <ModalCharacter state={characterList}></ModalCharacter>
+
         <View style={styles.toolbox}>
           <IngameButtonToolbar state={toolState} setstate={setToolState} />
           <ModalTool
@@ -76,6 +96,13 @@ function IngamePage(props) {
             inventorystate={setInventoryState}
           />
         </View>
+        <ModalBacklog
+          visible={backlogState}
+          hideModalContentWhileAnimating={true}
+          setter={setBacklogState}
+          data={dialog}
+        />
+
         <ModalInventory
           visible={inventoryState}
           hideModalContentWhileAnimating={true}
