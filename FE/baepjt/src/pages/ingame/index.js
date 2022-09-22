@@ -43,7 +43,8 @@ function IngamePage(props) {
   const onFinish = () => setReady(true);
 
   //json불러오기
-  const dataa = importJs[1];
+  const dataa = importJs[props.route.params.order];
+  console.log(dataa);
   const setting = dataa.setting;
   const clue = dataa.clue;
   const backgroundsetting = dataa.backgroundsetting;
@@ -52,12 +53,12 @@ function IngamePage(props) {
   const orderIncrease = () => {
     setNameOrder(nameOrder + 1);
     if (scripts[nameOrder].position != null) {
-      setCharacterList(scripts[nameOrder+1].character[0]);
+      setCharacterList(scripts[nameOrder + 1].character[0]);
     }
-    console.log("스크립트!",scripts[nameOrder]);
+    console.log('스크립트!', scripts[nameOrder]);
   };
   const [dialog, setDialog] = useState(scripts);
-  console.log("다이아로그!",dialog);
+  console.log('다이아로그!', dialog);
   const epiImgBg = dataa.setting.chapterbg;
 
   useEffect(() => {
@@ -80,7 +81,10 @@ function IngamePage(props) {
           setstate={setNameOrder}
         />
         <ModalCharacter state={characterList}></ModalCharacter>
-        <TouchableOpacity style={styles.touch} activeOpacity={1} onPress={orderIncrease}></TouchableOpacity>
+        <TouchableOpacity
+          style={styles.touch}
+          activeOpacity={1}
+          onPress={orderIncrease}></TouchableOpacity>
         <View style={styles.leftbox}>
           <IngameButtonOption setstate={setOptionState} />
         </View>
@@ -125,6 +129,7 @@ function IngamePage(props) {
         <IngameTextTitle
           name={props.route.params.name}
           episode={props.route.params.episode}
+          order={props.route.params.order}
         />
 
         <IngameBarLoading />
@@ -156,9 +161,9 @@ const styles = StyleSheet.create({
   },
   touch: {
     position: 'absolute',
-    width: "100%",
-    height: "100%",
-  }
+    width: '100%',
+    height: '100%',
+  },
 });
 
 export default IngamePage;

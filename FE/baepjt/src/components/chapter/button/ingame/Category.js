@@ -20,6 +20,7 @@ function Category(props) {
           navigation.navigate('IngamePage', {
             name: props.name,
             episode: props.episode,
+            order: props.order,
           })
         }>
         <Image
