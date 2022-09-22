@@ -1,0 +1,70 @@
+const e102 = {
+  setting: {
+    chapterbg: require('../images/inventorybg.png'),
+    background: ['../images/background/ep1_toilet.jpg'],
+    episode: 1,
+    chapter: 1,
+  },
+  clue: [
+    {
+      name: 'bottle',
+      start_index: [8, 11],
+      isasaved: 1,
+      image: '../images/clue/ep1_bottle.jpg',
+      isdetected: 0,
+    },
+  ],
+  backgroundsetting: {
+    index: 0,
+    location: ['80%', '60%'],
+    size: ['20%', '25%'],
+  },
+  scripts: [
+    {
+      name: '배교수',
+      text: '이건 chapter2',
+      img: require('../images/prof.png'),
+      type: 0,
+      audio: '',
+      sfx: '',
+      index: 0,
+      position: [0],
+      character: [require('../images/prof.png')],
+    },
+    {
+      name: '오종오',
+      text: '으악',
+      img: require('../images/die.png'),
+      type: 1,
+      audio: '',
+      sfx: '',
+      index: 1,
+      position: [1],
+      character: [require('../images/die.png')],
+    },
+    {
+      name: '배교수',
+      text: '죽었군',
+      img: require('../images/prof.png'),
+      type: 0,
+      audio: '',
+      sfx: '',
+      index: 2,
+      position: [],
+      character: [require('../images/prof.png')],
+    },
+    {
+      name: '김세영',
+      text: '난 아니에영',
+      img: require('../images/three.png'),
+      type: 1,
+      audio: '',
+      sfx: '',
+      index: 3,
+      position: [1],
+      character: [require('../images/three.png')],
+    },
+  ],
+};
+
+export default e102;

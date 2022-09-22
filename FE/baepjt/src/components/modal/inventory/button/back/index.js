@@ -1,27 +1,30 @@
-import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import React from 'react';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-function ModalInventoryButtonBack (props) {
-    return (
-        <TouchableOpacity style={styles.button}
-        onPress={()=>props.setter(false)}
-        >
-            <Text>뒤로가기</Text>
-        </TouchableOpacity>
-    )
+function ModalInventoryButtonBack(props) {
+  return (
+    <View style={styles.container}>
+      <Icon
+        name="close-circle-outline"
+        size={30}
+        color="orange"
+        onPress={() => props.setter(false)}
+      />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    button:{
-        backgroundColor: "rgba(255,255,255,1)",
-        position: "absolute",
-        width: 100,
-        height: "10%",
-        top: 0,
-        right: 0,
-        alignItems: "center",
-        justifyContent: "center",
-    }
-})
+  container: {
+    position: 'absolute',
+    width: 100,
+    height: '10%',
+    top: 10,
+    right: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 export default ModalInventoryButtonBack;

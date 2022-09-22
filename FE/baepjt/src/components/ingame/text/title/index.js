@@ -4,8 +4,10 @@ import {View, Text, StyleSheet} from 'react-native';
 function IngameTextTitle(props) {
   return (
     <View style={styles.title}>
-      <Text style={styles.textchapter}> chapter1. {props.episode}</Text>
-      <Text style={styles.textepisode}> episode1. {props.name} </Text>
+      <Text style={styles.textchapter}> Episode 1. {props.episode}</Text>
+      <Text style={styles.textepisode}>
+        Chapter {props.order}. {props.name}
+      </Text>
     </View>
   );
 }
