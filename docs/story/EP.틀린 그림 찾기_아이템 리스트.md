@@ -33,16 +33,10 @@
 31. 공책 (notebook) -> 책이랑 중복 정답으로 인정하는 용도라서 어려우면 안 해도 됨.
 32. 페트병 (plastic bottle 또는 pet bottle)
 33. 냄비 (pot)
-34. 
-35. 우산 (umbrella)
-36. 포크 (fork)
-37. 칼 (knife)
-38. 마우스 (mouse)
-39. 키보드 (keyboard)
-40. 리모컨 (remote)
-41. 침대 (bed)
-42. 소파 (sofa)
-43. 시계 (clock)
-44. 서랍장 (drawers)
-45. 의자 (chair)
-46. 선풍기 (fan)
+34. 침대 (bed)
+35. 의자 (chair)
+36. 서랍장 (drawers)
+37. 선풍기 (fan)
+38. 가방 (backpack)
+39. 우산 (umbrella) -> 찾기 힘들면 안 찾아도 됨. 중요한 단서 아님.
+40. 시계 (clock)
