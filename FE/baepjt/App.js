@@ -10,6 +10,8 @@ import React from 'react';
 import {NavigationContainer, StackActions} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import type {Node} from 'react';
+import { Provider } from 'react-redux';
+import store from './src/redux/store/store';
 import {
   SafeAreaView,
   ScrollView,
@@ -72,6 +74,7 @@ const App: () => Node = () => {
   };
 
   return (
+    <Provider store={store}>
     <NavigationContainer>
       <StatusBar animated hidden />
       {/* <SafeAreaView style={backgroundStyle}> */}
@@ -135,6 +138,7 @@ const App: () => Node = () => {
       </ScrollView> */}
       {/* </SafeAreaView> */}
     </NavigationContainer>
+    </Provider>
   );
 };
 
