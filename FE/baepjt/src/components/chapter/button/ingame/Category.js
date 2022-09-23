@@ -11,7 +11,6 @@ import {
 
 function Category(props) {
   const navigation = useNavigation();
-  console.log('prop ready', props.episode, props.name);
   return (
     <View>
       <TouchableOpacity

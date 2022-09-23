@@ -13,14 +13,15 @@ function IngameTextName(props) {
 
 const styles = StyleSheet.create({
   view: {
-    justifyContent: 'center',
-    alignItems: 'center',
+    marginTop: '1%',
+    marginLeft: '3%',
     flex: 1,
   },
   text: {
     width: '80%',
     height: '100%',
-    fontSize: 22,
+    fontSize: 23,
+    fontFamily: 'AssetBold',
   },
 });
 

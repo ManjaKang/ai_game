@@ -2,7 +2,6 @@ import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
 function ChapterText(props) {
-  console.log('chaptertext', props);
   return (
     <View>
       <Text style={styles.text}>{props.name}</Text>

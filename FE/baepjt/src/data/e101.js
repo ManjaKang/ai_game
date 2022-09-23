@@ -23,13 +23,13 @@ const e101 = {
     {
       name: '배교수',
       text: '살인 사건이 발생했네',
-      img: require('../images/prof.png'),
+      img: require('../images/face.png'),
       type: 0,
       audio: '',
       sfx: '',
       index: 0,
       position: [0],
-      character: [require('../images/prof.png')],
+      character: [require('../images/back_preview.png')],
     },
     {
       name: '오종오',
@@ -40,7 +40,7 @@ const e101 = {
       sfx: '',
       index: 1,
       position: [1],
-      character: [require('../images/die.png')],
+      character: [require('../images/all_preview.png')],
     },
     {
       name: '배교수',

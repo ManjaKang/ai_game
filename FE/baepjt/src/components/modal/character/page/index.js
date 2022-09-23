@@ -2,20 +2,22 @@ import React from 'react';
 import {Text, StyleSheet, View, Image} from 'react-native';
 
 function ModalCharacter(props) {
-  console.log(props.state);
+  const imageUri = props.data[props.state].character[0];
   const propsstate = props.state;
-  return propsstate != '' ? (
-    <Image source={props.state} style={styles.image}></Image>
-  ) : null;
+  return <Image source={imageUri} style={styles.image}></Image>;
+
+  // propsstate != '' ? (
+  //   <Image source={imageUri} style={styles.image}></Image>
+  // ) : null;
 }
 
 const styles = StyleSheet.create({
   image: {
-    width: '50%',
-    height: '50%',
+    width: '60%',
+    height: '100%',
     position: 'absolute',
-    borderColor: 'red',
-    borderWidth: 2,
+    top: '2%',
+    left: '2%',
   },
 });
 export default ModalCharacter;
