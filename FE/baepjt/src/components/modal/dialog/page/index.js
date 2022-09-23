@@ -10,7 +10,6 @@ import {
 import IngameTextDialog from '../../../ingame/text/dialog';
 import IngameTextName from '../../../ingame/text/name';
 function ModalDialog(props) {
-  console.log('modaldialog setter', props.state);
   return (
     props.visible && (
       <View style={styles.modal}>
@@ -38,7 +37,11 @@ const styles = StyleSheet.create({
   view: {
     width: '80%',
     height: '100%',
-    backgroundColor: 'rgba(84,84,84,0.4)',
+    backgroundColor: 'rgba(84,84,84,0.8)',
+    borderColor: 'white',
+    borderWidth: 1,
+    borderStyle: 'dashed',
+    borderRadius: 9,
   },
   button: {
     position: 'absolute',

@@ -30,7 +30,7 @@ function IngamePage(props) {
   console.log('props data', props);
   console.log('important', props.route.params.name);
   const [nameOrder, setNameOrder] = useState(0);
-
+  const [imageOrder, setImageOrder] = useState(0);
   const [isReady, setReady] = useState(false);
   const [toolState, setToolState] = useState(false);
   const [optionState, setOptionState] = useState(false);
@@ -42,23 +42,23 @@ function IngamePage(props) {
 
   const onFinish = () => setReady(true);
 
-  //json불러오기
+  //js 불러오기
   const dataa = importJs[props.route.params.order];
-  console.log(dataa);
   const setting = dataa.setting;
   const clue = dataa.clue;
   const backgroundsetting = dataa.backgroundsetting;
   const scripts = dataa.scripts;
   const [characterList, setCharacterList] = useState('');
+
+  // 클릭할 때마다 다음 대사로 넘어가기
   const orderIncrease = () => {
     setNameOrder(nameOrder + 1);
-    if (scripts[nameOrder].position != null) {
-      setCharacterList(scripts[nameOrder + 1].character[0]);
+    setImageOrder(imageOrder + 1);
+    if (scripts[imageOrder].position != null) {
+      setCharacterList(scripts[imageOrder].character[0]);
     }
-    console.log('스크립트!', scripts[nameOrder]);
   };
   const [dialog, setDialog] = useState(scripts);
-  console.log('다이아로그!', dialog);
   const epiImgBg = dataa.setting.chapterbg;
 
   useEffect(() => {
@@ -72,6 +72,10 @@ function IngamePage(props) {
       <ImageBackground
         source={epiImgBg}
         style={{width: '100%', height: '100%'}}>
+        <ModalCharacter
+          state={imageOrder}
+          setstate={setImageOrder}
+          data={dialog}></ModalCharacter>
         <ModalDialog
           visible={dialogState}
           hideModalContentWhileAnimating={true}
@@ -80,7 +84,6 @@ function IngamePage(props) {
           state={nameOrder}
           setstate={setNameOrder}
         />
-        <ModalCharacter state={characterList}></ModalCharacter>
         <TouchableOpacity
           style={styles.touch}
           activeOpacity={1}
