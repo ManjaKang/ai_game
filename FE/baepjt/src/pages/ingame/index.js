@@ -20,6 +20,7 @@ import ModalInventory from '../../components/modal/inventory/page';
 import ModalOption from '../../components/modal/option/page';
 import ModalTool from '../../components/modal/tool/page';
 import ModalCharacter from '../../components/modal/character/page';
+import IngameBackground from '../../components/ingame/background';
 import * as RNFS from 'react-native-fs';
 
 // import e101 from '../../data/e101.js';
@@ -70,8 +71,8 @@ function IngamePage(props) {
   return isReady ? (
     <View>
       <ImageBackground
-        source={epiImgBg}
-        style={{width: '100%', height: '100%'}}>
+        source={setting.background_just[scripts[imageOrder].bg]}
+        style={{height: '100%', width: '100%'}}>
         <ModalCharacter
           state={imageOrder}
           setstate={setImageOrder}

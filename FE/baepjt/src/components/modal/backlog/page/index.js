@@ -5,6 +5,7 @@ import {
   ScrollView,
   StyleSheet,
   TouchableOpacity,
+  ImageBackground,
 } from 'react-native';
 import ModalBacklogButtonBack from '../button/back';
 import ModalBacklogCard from '../card';
@@ -16,7 +17,10 @@ function ModalBacklog(props) {
         <ScrollView
           showsHorizontalScrollIndicator={false}
           style={styles.scroll}>
-          {props.data && props.data.map(D => <ModalBacklogCard data={D} />)}
+          {props.data &&
+            props.data.map((D, index) => (
+              <ModalBacklogCard key={index} data={D} />
+            ))}
         </ScrollView>
         <ModalBacklogButtonBack setter={props.setter} />
       </View>
