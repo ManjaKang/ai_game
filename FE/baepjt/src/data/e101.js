@@ -9,6 +9,7 @@ const e101 = {
     ],
     episode: 1,
     chapter: 1,
+    initial: [{index: 0, value: false}, {index: 1, value: false}, {index: 2, value: false}],
   },
   clue: [
     {
@@ -27,12 +28,12 @@ const e101 = {
     },
     {
       index: 1,
-      location: ['80%', '60%'],
+      location: ['40%', '30%'],
       size: ['20%', '25%'],
     },
     {
       index: 2,
-      location: ['80%', '60%'],
+      location: ['10%', '20%'],
       size: ['20%', '25%'],
     },
   ],

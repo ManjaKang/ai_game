@@ -4,6 +4,7 @@ const e102 = {
     background: ['../images/background/ep1_toilet.jpg'],
     episode: 1,
     chapter: 1,
+    initial: [{index:0, value:false}],
   },
   clue: [
     {

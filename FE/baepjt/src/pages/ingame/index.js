@@ -20,12 +20,13 @@ import ModalInventory from '../../components/modal/inventory/page';
 import ModalOption from '../../components/modal/option/page';
 import ModalTool from '../../components/modal/tool/page';
 import ModalCharacter from '../../components/modal/character/page';
-import IngameBackground from '../../components/ingame/background';
 import * as RNFS from 'react-native-fs';
 
 // import e101 from '../../data/e101.js';
 
 import importJs from './import';
+import IngameButtonBackground from '../../components/ingame/button/background';
+import ModalBackground from '../../components/modal/background/page';
 
 function IngamePage(props) {
   console.log('props data', props);
@@ -46,6 +47,7 @@ function IngamePage(props) {
   //js 불러오기
   const dataa = importJs[props.route.params.order];
   const setting = dataa.setting;
+  const [visible, setVisible] = useState(setting.initial);
   const clue = dataa.clue;
   const backgroundsetting = dataa.backgroundsetting;
   const scripts = dataa.scripts;
@@ -65,6 +67,7 @@ function IngamePage(props) {
   useEffect(() => {
     setTimeout(() => {
       onFinish();
+      console.log("visible data",visible);
     }, 3000);
   });
 
@@ -92,6 +95,20 @@ function IngamePage(props) {
         <View style={styles.leftbox}>
           <IngameButtonOption setstate={setOptionState} />
         </View>
+        {
+          backgroundsetting && (
+            backgroundsetting.map((B, index) => (
+                <IngameButtonBackground key={index} data={B} visible={visible} setVisible={setVisible}/>
+            ))
+          )
+        }
+        {
+          backgroundsetting && (
+            backgroundsetting.map((BC, index) => (
+              <ModalBackground key={index} data={BC.index} visible={visible}/>
+            ))
+          )
+        }
         <ModalOption
           visible={optionState}
           hideModalContentWhileAnimating={true}
