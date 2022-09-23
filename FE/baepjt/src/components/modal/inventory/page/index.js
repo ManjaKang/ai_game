@@ -30,7 +30,7 @@ function ModalInventory(props) {
       <View style={styles.full}>
         <ImageBackground
           source={require('../../../../images/inventorybg.png')}
-          style={{width: '90%', height: '90%'}}>
+          style={{width: '90%', height: '94%', marginLeft: '8%'}}>
           <ModalInventoryButtonBack setter={props.setter} />
           <View style={styles.view}>
             <View style={styles.left}>
@@ -89,15 +89,15 @@ function ModalInventory(props) {
 const styles = StyleSheet.create({
   modal: {},
   full: {
-    width: '95%',
-    height: '90%',
+    width: '100%',
+    height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '5%',
+    backgroundColor: 'rgba(0,0,0,0.9)',
   },
   view: {
-    width: '85%',
-    height: '85%',
+    width: '90%',
+    height: '100%',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-end',
@@ -115,10 +115,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   document: {
-    marginTop: '25%',
-    marginLeft: '10%',
-    width: '60%',
-    height: '70%',
+    marginTop: '10%',
+    width: '70%',
+    height: '65%',
+    marginRight: '10%',
   },
   infotext: {
     color: 'black',
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 3,
   },
   itembox: {
-    width: '80%',
+    width: '90%',
     // height: "80%",
     aspectRatio: 1,
     // borderWidth: 3,
@@ -151,7 +151,6 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
   },
   grid: {
-    marginTop: 2,
     width: '19%',
     height: '18%',
     // width: 20,
