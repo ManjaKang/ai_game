@@ -67,7 +67,7 @@ function IngamePage(props) {
   useEffect(() => {
     setTimeout(() => {
       onFinish();
-      console.log("visible data",visible);
+      console.log('visible data', visible);
     }, 3000);
   });
 
@@ -95,20 +95,26 @@ function IngamePage(props) {
         <View style={styles.leftbox}>
           <IngameButtonOption setstate={setOptionState} />
         </View>
-        {
-          backgroundsetting && (
-            backgroundsetting.map((B, index) => (
-                <IngameButtonBackground key={index} data={B} visible={visible} setVisible={setVisible}/>
-            ))
-          )
-        }
-        {
-          backgroundsetting && (
-            backgroundsetting.map((BC, index) => (
-              <ModalBackground key={index} data={BC.index} visible={visible}/>
-            ))
-          )
-        }
+        {backgroundsetting &&
+          backgroundsetting.map((B, index) => (
+            <IngameButtonBackground
+              key={index}
+              data={B}
+              visible={visible}
+              setVisible={setVisible}
+            />
+          ))}
+
+        {backgroundsetting &&
+          backgroundsetting.map((BC, index) => (
+            <ModalBackground
+              key={index}
+              dataa={BC}
+              data={BC.index}
+              visible={visible}
+              setVisible={setVisible}
+            />
+          ))}
         <ModalOption
           visible={optionState}
           hideModalContentWhileAnimating={true}

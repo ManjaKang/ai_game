@@ -9,7 +9,11 @@ const e101 = {
     ],
     episode: 1,
     chapter: 1,
-    initial: [{index: 0, value: false}, {index: 1, value: false}, {index: 2, value: false}],
+    initial: [
+      {index: 0, value: false},
+      {index: 1, value: false},
+      {index: 2, value: false},
+    ],
   },
   clue: [
     {
@@ -24,17 +28,20 @@ const e101 = {
     {
       index: 0,
       location: ['80%', '60%'], // 버튼 위치
-      size: ['20%', '25%'], // 버튼 사이즈
+      size: ['20%', '25%'],
+      bgimage: require('../images/room.png'), // 버튼 사이즈
     },
     {
       index: 1,
       location: ['40%', '30%'],
       size: ['20%', '25%'],
+      bgimage: require('../images/flower.jpg'),
     },
     {
       index: 2,
       location: ['10%', '20%'],
       size: ['20%', '25%'],
+      bgimage: require('../images/goggle.jpg'),
     },
   ],
   scripts: [
