@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   scroll: {
     width: '80%',
     height: '100%',
-    backgroundColor: 'rgba(190,190,190,1)',
+    // backgroundColor: 'rgba(190,190,190,1)',
   },
 });
 

@@ -10,8 +10,6 @@ import {
 } from 'react-native';
 
 function ModalBackground(props) {
-  console.log('모달 백그라운드', props.dataa.bgimage);
-  console.log(props.data);
   return (
     props.visible[props.data].value && (
       <View style={styles.view}>
@@ -35,7 +33,7 @@ function ModalBackground(props) {
                   ),
                 );
               }}></Button>
-            <Text>{props.data}</Text>
+            {/* <Text>{props.data}</Text> */}
           </ImageBackground>
         </View>
       </View>
@@ -58,9 +56,8 @@ const styles = StyleSheet.create({
   screen: {
     // 실제적으로 보이는 범위! css 수정할것!
     width: '100%',
-    height: '70%',
+    height: '100%',
     backgroundColor: 'gray',
-    marginBottom: '15%',
   },
 });
 

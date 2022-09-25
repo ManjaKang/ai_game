@@ -1,26 +1,26 @@
-import React from "react";
-import { Text, StyleSheet, TouchableOpacity } from "react-native";
-
+import React from 'react';
+import {Text, StyleSheet, TouchableOpacity, View} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 function ModalBacklogButtonBack(props) {
-    return (
-        <TouchableOpacity style={styles.button}
-        onPress={()=>props.setter(false)}>
-            <Text>뒤로가기</Text>
-        </TouchableOpacity>
-    )
+  return (
+    <View style={styles.button}>
+      <Icon
+        name="backspace-outline"
+        size={30}
+        onPress={() => props.setter(false)}
+        color="white"></Icon>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    button: {
-        backgroundColor: "rgba(255,255,255,1)",
-        position: "absolute",
-        width: 100,
-        height: 30,
-        top: "5%",
-        right: "1%",
-        alignItems: "center",
-        justifyContent: "center",
-    }
-})
+  button: {
+    position: 'absolute',
+    top: '5%',
+    right: '5%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 export default ModalBacklogButtonBack;
