@@ -21,7 +21,7 @@ function ModalAccount(props) {
       hideModalContentWhileAnimating={props.hideModalContentWhileAnimating}
       transparent={true}>
       <ImageBackground
-        source={require('../../../../images/optionbackground.png')}
+        source={require('../../../../images/modal/optionbackground.png')}
         style={{
           height: '90%',
           width: '90%',

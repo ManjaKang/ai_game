@@ -2,11 +2,10 @@ import React from 'react';
 import {View, Text, StyleSheet, Image, ImageBackground} from 'react-native';
 
 function ModalBacklogCard(props) {
-  console.log('나 열림');
-  console.log(props);
   return (
     <View style={styles.full}>
-      <ImageBackground source={require('../../../../images/backlogbg.png')}>
+      <ImageBackground
+        source={require('../../../../images/modal/backlogbg.png')}>
         {props.data.type == 0 ? (
           <View style={styles.left}>
             <Text style={styles.nameplateleft}>{props.data.name}</Text>

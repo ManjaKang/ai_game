@@ -18,9 +18,7 @@ function StartPage({navigation}) {
       activeOpacity={1}
       onPress={() => navigation.navigate('Main')}>
       <ImageBackground
-        source={{
-          uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKqSpCdnXNE1VVBcnKOW_yV9bzWQ5MeQCnqQ&usqp=CAU',
-        }}
+        source={require('../../images/start_page/background.jpg')}
         style={{width: '100%', height: '100%'}}>
         <View style={styles.container}>
           <Text style={styles.text}>게임을 시작하려면 화면을 터치하세요</Text>

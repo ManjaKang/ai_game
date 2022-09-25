@@ -16,7 +16,7 @@ function MainButtonLoad() {
         style={styles.button}
         onPress={() => Alert.alert('불러오기 누름!')}>
         <ImageBackground
-          source={require('../../../../images/road.jpg')}
+          source={require('../../../../images/main_page/road.jpg')}
           style={{width: '100%', height: '100%', borderRadius: 40}}>
           <View style={{marginTop: 130}}>
             <Text style={styles.text}>LOAD</Text>

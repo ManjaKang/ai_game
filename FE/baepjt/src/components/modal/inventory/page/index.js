@@ -29,7 +29,7 @@ function ModalInventory(props) {
     props.visible && (
       <View style={styles.full}>
         <ImageBackground
-          source={require('../../../../images/inventorybg.png')}
+          source={require('../../../../images/modal/inventorybg.png')}
           style={{width: '90%', height: '94%', marginLeft: '8%'}}>
           <ModalInventoryButtonBack setter={props.setter} />
           <View style={styles.view}>

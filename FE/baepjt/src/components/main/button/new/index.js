@@ -22,7 +22,7 @@ function MainButtonNew() {
         style={styles.button}
         onPress={onClick}>
         <ImageBackground
-          source={require('../../../../images/door.jpg')}
+          source={require('../../../../images/main_page/door.jpg')}
           style={{width: '100%', height: '100%', borderRadius: 40}}>
           <View style={{marginTop: 130}}>
             <Text style={styles.text}>NEW</Text>
