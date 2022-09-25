@@ -25,7 +25,7 @@ function ModalBacklogCard(props) {
         ) : (
           props.data.type == 2 && (
             <View style={styles.None}>
-              <Text style={styles.textplate}>{props.data.text}</Text>
+              <Text style={styles.textplatenone}>{props.data.text}</Text>
             </View>
           )
         )}
@@ -37,33 +37,43 @@ function ModalBacklogCard(props) {
 const styles = StyleSheet.create({
   full: {
     width: '100%',
-    // height: 100,
-    marginVertical: 12,
   },
+  // 이름 css
   nameplateleft: {
     marginLeft: '7%',
     width: '15%',
-    minWidth: 50,
-    padding: 3,
     marginTop: 6,
     marginHorizontal: 25,
     fontFamily: 'AssetBold',
     fontSize: 20,
-    color: 'rgba(21,19, 60, 0.9)',
+    color: 'black',
   },
   nameplateright: {
     marginRight: '8%',
     width: '15%',
-    minWidth: 50,
-    padding: 3,
     marginTop: 6,
     marginHorizontal: 25,
     fontFamily: 'AssetBold',
     fontSize: 20,
-    color: 'rgba(21,19, 60, 0.9)',
+    color: 'black',
+  },
+  // 대사css
+  textplatenone: {
+    marginTop: '3%',
+    width: '80%',
+    marginVertical: 3,
+    paddingTop: 15,
+    height: 80,
+    fontFamily: 'AssetLight',
+    color: 'black',
+    fontSize: 18,
+    backgroundColor: 'rgba(254, 177, 57, 0.7)',
+    borderRadius: 20,
+    textAlign: 'center',
   },
   textplateleft: {
-    width: '85%',
+    marginLeft: '3%',
+    width: '80%',
     padding: 3,
     paddingTop: 15,
     height: 80,
@@ -81,9 +91,10 @@ const styles = StyleSheet.create({
     fontFamily: 'AssetLight',
     color: 'black',
     fontSize: 18,
-    backgroundColor: 'rgba(254, 177, 57, 0.7)',
+    backgroundColor: 'rgba(32, 83, 117, 0.7)',
     borderRadius: 20,
   },
+  // 이미지 css
   img: {
     height: 50,
     width: 50,
@@ -92,16 +103,6 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     marginLeft: '6%',
-  },
-  left: {
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    paddingHorizontal: '8%',
-  },
-  right: {
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
-    paddingHorizontal: '8%',
   },
   leftImg: {
     position: 'absolute',
@@ -113,23 +114,36 @@ const styles = StyleSheet.create({
     top: 0,
     right: '4%',
   },
+  // 이미지, 이름, 대사를 위에있는 view css
+  left: {
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    paddingHorizontal: '8%',
+  },
+  right: {
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+    paddingHorizontal: '8%',
+  },
   None: {
     justifyContent: 'center',
     alignItems: 'center',
-    // paddingHorizontal: '4%',
   },
-  name1: {
-    color: 'red',
-  },
-  name2: {
-    color: 'blue',
-  },
-  text1: {
-    color: 'red',
-  },
-  text2: {
-    color: 'blue',
-  },
+
+  // name1: {
+  //   color: 'red',
+  //   borderColor: 'red',
+  //   borderWidth: 1,
+  // },
+  // name2: {
+  //   color: 'blue',
+  // },
+  // text1: {
+  //   color: 'red',
+  // },
+  // text2: {
+  //   color: 'blue',
+  // },
 });
 
 export default ModalBacklogCard;

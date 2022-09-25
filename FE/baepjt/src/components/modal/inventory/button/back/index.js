@@ -4,11 +4,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 function ModalInventoryButtonBack(props) {
   return (
-    <View style={styles.container}>
+    <View style={styles.button}>
       <Icon
-        name="close-circle-outline"
+        name="backspace-outline"
         size={30}
-        color="orange"
+        color="white"
         onPress={() => props.setter(false)}
       />
     </View>
@@ -16,12 +16,10 @@ function ModalInventoryButtonBack(props) {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  button: {
     position: 'absolute',
-    width: 100,
-    height: '10%',
-    top: 10,
-    right: 0,
+    top: '5%',
+    right: '3%',
     alignItems: 'center',
     justifyContent: 'center',
   },

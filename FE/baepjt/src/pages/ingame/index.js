@@ -29,8 +29,6 @@ import IngameButtonBackground from '../../components/ingame/button/background';
 import ModalBackground from '../../components/modal/background/page';
 
 function IngamePage(props) {
-  console.log('props data', props);
-  console.log('important', props.route.params.name);
   const [nameOrder, setNameOrder] = useState(0);
   const [imageOrder, setImageOrder] = useState(0);
   const [isReady, setReady] = useState(false);
@@ -52,7 +50,6 @@ function IngamePage(props) {
   const backgroundsetting = dataa.backgroundsetting;
   const scripts = dataa.scripts;
   const [characterList, setCharacterList] = useState('');
-
   // 클릭할 때마다 다음 대사로 넘어가기
   const orderIncrease = () => {
     setNameOrder(nameOrder + 1);
@@ -67,7 +64,6 @@ function IngamePage(props) {
   useEffect(() => {
     setTimeout(() => {
       onFinish();
-      console.log('visible data', visible);
     }, 3000);
   });
 
@@ -76,18 +72,23 @@ function IngamePage(props) {
       <ImageBackground
         source={setting.background_just[scripts[imageOrder].bg]}
         style={{height: '100%', width: '100%'}}>
-        <ModalCharacter
-          state={imageOrder}
-          setstate={setImageOrder}
-          data={dialog}></ModalCharacter>
-        <ModalDialog
-          visible={dialogState}
-          hideModalContentWhileAnimating={true}
-          setter={setDialogState}
-          data={dialog}
-          state={nameOrder}
-          setstate={setNameOrder}
-        />
+        {scripts[nameOrder].name === 'end' ? null : (
+          <ModalCharacter
+            state={imageOrder}
+            setstate={setImageOrder}
+            data={dialog}></ModalCharacter>
+        )}
+        {scripts[nameOrder].name === 'end' ? null : (
+          <ModalDialog
+            visible={dialogState}
+            hideModalContentWhileAnimating={true}
+            setter={setDialogState}
+            data={dialog}
+            state={nameOrder}
+            setstate={setNameOrder}
+          />
+        )}
+
         <TouchableOpacity
           style={styles.touch}
           activeOpacity={1}
@@ -95,15 +96,18 @@ function IngamePage(props) {
         <View style={styles.leftbox}>
           <IngameButtonOption setstate={setOptionState} />
         </View>
-        {backgroundsetting &&
-          backgroundsetting.map((B, index) => (
-            <IngameButtonBackground
-              key={index}
-              data={B}
-              visible={visible}
-              setVisible={setVisible}
-            />
-          ))}
+
+        {scripts[nameOrder].text === 'end'
+          ? backgroundsetting &&
+            backgroundsetting.map((B, index) => (
+              <IngameButtonBackground
+                key={index}
+                data={B}
+                visible={visible}
+                setVisible={setVisible}
+              />
+            ))
+          : null}
 
         {backgroundsetting &&
           backgroundsetting.map((BC, index) => (
