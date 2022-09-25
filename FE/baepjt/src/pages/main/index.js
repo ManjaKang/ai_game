@@ -17,7 +17,7 @@ const MainPage = () => {
   return (
     <SafeAreaView>
       <ImageBackground
-        source={require('../../images/background.jpg')}
+        source={require('../../images/start_page/background.jpg')}
         style={{width: '100%', height: '100%'}}>
         <View>
           <View style={styles.setbox}>

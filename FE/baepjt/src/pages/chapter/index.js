@@ -17,7 +17,7 @@ function ChapterPage(props) {
   return (
     <SafeAreaView>
       <ImageBackground
-        source={require('../../images/background.jpg')}
+        source={require('../../images/start_page/background.jpg')}
         style={{width: '100%', height: '100%'}}>
         <View style={{height: 400}}>
           <View style={styles.setbox}>

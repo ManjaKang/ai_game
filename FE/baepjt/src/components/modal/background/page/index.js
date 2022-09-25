@@ -48,8 +48,6 @@ const styles = StyleSheet.create({
     // width, height, justify, align 이외 값만 변경할것!
     width: '100%',
     height: '100%',
-    borderColor: 'red',
-    borderWidth: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -59,13 +57,10 @@ const styles = StyleSheet.create({
   },
   screen: {
     // 실제적으로 보이는 범위! css 수정할것!
-    width: '80%',
-    height: '60%',
+    width: '100%',
+    height: '70%',
     backgroundColor: 'gray',
     marginBottom: '15%',
-
-    borderColor: 'red',
-    borderWidth: 1,
   },
 });
 

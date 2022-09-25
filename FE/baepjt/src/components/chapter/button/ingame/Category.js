@@ -23,7 +23,7 @@ function Category(props) {
           })
         }>
         <Image
-          source={require('../../../../images/흰색.png')}
+          source={props.imageUri}
           style={{
             width: '100%',
             height: '100%',

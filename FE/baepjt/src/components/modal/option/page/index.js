@@ -10,10 +10,10 @@ import {
 import ModalOptionButtonBack from '../button/back';
 import ModalSliderAudio from '../slider/audio';
 import ModalOptionTextAudio from '../text/audio';
-import { useSelector } from 'react-redux'
+import {useSelector} from 'react-redux';
 function ModalOption(props) {
-  const Sound = useSelector((state)=>state.sound.value)
-  console.log("소리값",Sound)
+  const Sound = useSelector(state => state.sound.value);
+  console.log('소리값', Sound);
   return (
     <Modal
       style={styles.modal}
@@ -23,7 +23,7 @@ function ModalOption(props) {
       hideModalContentWhileAnimating={props.hideModalContentWhileAnimating}
       transparent={true}>
       <ImageBackground
-        source={require('../../../../images/optionbackground.png')}
+        source={require('../../../../images/modal/optionbackground.png')}
         style={{
           height: '90%',
           width: '90%',
@@ -34,12 +34,12 @@ function ModalOption(props) {
         <ModalOptionButtonBack setter={props.setter} />
         <View style={styles.container}>
           <Text style={styles.volumetext}>음향조절</Text>
-          <ModalOptionTextAudio text="배경음"/>
-          <ModalSliderAudio volume={Sound.bgm} sound={"bgm"}/>
-          <ModalOptionTextAudio text="효과음"/>
-          <ModalSliderAudio volume={Sound.sfx} sound={"sfx"}/>
+          <ModalOptionTextAudio text="배경음" />
+          <ModalSliderAudio volume={Sound.bgm} sound={'bgm'} />
+          <ModalOptionTextAudio text="효과음" />
+          <ModalSliderAudio volume={Sound.sfx} sound={'sfx'} />
           <ModalOptionTextAudio text="음성" />
-          <ModalSliderAudio volume={Sound.voice} sound={"voice"}/>
+          <ModalSliderAudio volume={Sound.voice} sound={'voice'} />
         </View>
       </ImageBackground>
     </Modal>
