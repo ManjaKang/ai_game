@@ -19,9 +19,9 @@ const e101 = {
     {
       name: 'bottle',
       start_index: [8, 11],
-      isasaved: 1,
+      isimportant: 0, // 중요한거
       image: '../images/clue/ep1_bottle.jpg',
-      isdetected: 0,
+      isdetected: 0, // 조사한지
     },
   ],
   backgroundsetting: [
