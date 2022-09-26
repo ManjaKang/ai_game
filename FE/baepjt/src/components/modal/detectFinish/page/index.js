@@ -3,8 +3,6 @@ import React from 'react';
 import {View, Text, StyleSheet, Modal, TouchableOpacity} from 'react-native';
 
 function ModalDetectFinish(props) {
-  console.log(props);
-  const navigation = useNavigation();
   return (
     <Modal
       style={styles.modal}
@@ -15,11 +13,9 @@ function ModalDetectFinish(props) {
       <View style={styles.view}>
         <View style={styles.box}>
           <Text style={styles.check}>정말로 조사를 마치겠습니까?</Text>
-          <Text style={styles.sub}>이번 chapter가 끝납니다!</Text>
+          <Text style={styles.sub}>이번 조사가 끝납니다!</Text>
           <View style={styles.boxset}>
-            <TouchableOpacity
-              style={styles.ok}
-              onPress={() => navigation.navigate('Main')}>
+            <TouchableOpacity style={styles.ok} onPress={() => props.func(100)}>
               <Text style={styles.yesorno}>예!</Text>
             </TouchableOpacity>
             <TouchableOpacity
