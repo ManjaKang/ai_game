@@ -137,6 +137,7 @@ function IngamePage(props) {
               data={BC.index}
               visible={visible}
               setVisible={setVisible}
+              func={orderIncrease}
             />
           ))}
 
