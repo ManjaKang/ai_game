@@ -7,8 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class ImageDto {
-    String base64;
-    String fileName;
-    String Name;
+public class ImageResDto {
+
+    int result;
 }
