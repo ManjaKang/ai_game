@@ -8,6 +8,7 @@ import {
   Button,
   ImageBackground,
 } from 'react-native';
+import IngameButtonCamera from '../../../ingame/button/camera';
 
 function ModalBackground(props) {
   return (
@@ -15,6 +16,14 @@ function ModalBackground(props) {
       <View style={styles.view}>
         <View style={styles.screen}>
           <ImageBackground source={props.dataa.bgimage} style={styles.imgbg}>
+            <TouchableOpacity
+              style={styles.touchBackground}
+              onPress={props.orderIncrease()}
+              activeOpacity={1}
+            />
+            <View style={styles.buttonLayer}>
+              <IngameButtonCamera />
+            </View>
             <TouchableOpacity
               style={styles.button}
               onPress={() => {
@@ -70,6 +79,19 @@ const styles = StyleSheet.create({
     marginLeft: '21%',
     fontSize: 20,
     fontFamily: 'HeirofLightRegular',
+  },
+  buttonLayer: {
+    position: 'absolute',
+    top: 5,
+    width: "100%",
+    height: "20%",
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  touchBackground: {
+    position: 'absolute',
+    width: "100%",
+    height: "100%",
   },
 });
 
