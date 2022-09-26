@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     height: '100%',
     fontSize: 23,
     fontFamily: 'AssetBold',
+    color: 'white',
   },
 });
 

@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
   textepisode: {
     fontSize: 30,
     fontFamily: 'AssetLight',
+    color: 'white',
   },
 });
 

@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     height: '100%',
     fontSize: 20,
     fontFamily: 'AssetLight',
+    color: 'white',
   },
 });
 
