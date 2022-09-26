@@ -15,24 +15,22 @@ function ModalBackground(props) {
       <View style={styles.view}>
         <View style={styles.screen}>
           <ImageBackground source={props.dataa.bgimage} style={styles.imgbg}>
-            <Button
-              title="뒤로가기"
-              style={{
-                borderColor: 'blue',
-                borderWidth: 3,
-                position: 'absolute',
-                top: 3,
-                right: 3,
-                width: 20,
-                height: 20,
-              }}
+            <TouchableOpacity
+              style={styles.button}
               onPress={() => {
                 props.setVisible(
                   props.visible.map(it =>
                     it.index == props.data ? {...it, value: false} : it,
                   ),
                 );
-              }}></Button>
+              }}>
+              <ImageBackground
+                source={require('../../../../images/modal/button.png')}
+                style={{width: '100%', height: '100%'}}>
+                <Text style={styles.text}>뒤로가기</Text>
+              </ImageBackground>
+            </TouchableOpacity>
+
             {/* <Text>{props.data}</Text> */}
           </ImageBackground>
         </View>
@@ -58,6 +56,20 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     backgroundColor: 'gray',
+  },
+  button: {
+    borderRadius: 50,
+    position: 'absolute',
+    bottom: '5%',
+    right: '5%',
+    width: '21%',
+    height: '16%',
+  },
+  text: {
+    marginTop: '15%',
+    marginLeft: '21%',
+    fontSize: 20,
+    fontFamily: 'HeirofLightRegular',
   },
 });
 
