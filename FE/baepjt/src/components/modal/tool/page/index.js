@@ -11,8 +11,8 @@ function ModalTool(props) {
       <View style={styles.view}>
         <IngameButtonGotomain setter={props.titlestate} />
         <Text style={styles.text}>메인으로</Text>
-        <IngameButtonCamera />
-        <Text style={styles.text}>카메라</Text>
+        {/* <IngameButtonCamera />
+        <Text style={styles.text}>카메라</Text> */}
         <IngameButtonBacklog setter={props.backlogstate} />
         <Text style={styles.text}>대화기록</Text>
         <IngameButtonItems setter={props.inventorystate} />

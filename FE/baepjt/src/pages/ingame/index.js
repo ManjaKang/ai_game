@@ -53,10 +53,15 @@ function IngamePage(props) {
   const [characterList, setCharacterList] = useState('');
   // 클릭할 때마다 다음 대사로 넘어가기
   const orderIncrease = () => {
-    setNameOrder(nameOrder + 1);
-    setImageOrder(imageOrder + 1);
-    if (scripts[imageOrder].position != null) {
-      setCharacterList(scripts[imageOrder].character[0]);
+    if (dialogState) {
+      setNameOrder(nameOrder + 1);
+      setImageOrder(imageOrder + 1);
+      if (scripts[imageOrder].position != null) {
+        setCharacterList(scripts[imageOrder].character[0]);
+      }
+      if (scripts[nameOrder].text=="end") {
+        setDialogState(false);
+      }
     }
   };
   const [dialog, setDialog] = useState(scripts);
@@ -93,24 +98,10 @@ function IngamePage(props) {
             data={dialog}></ModalCharacter>
         )}
 
-        {scripts[nameOrder].name === 'end' ? null : (
-          <ModalDialog
-            visible={dialogState}
-            hideModalContentWhileAnimating={true}
-            setter={setDialogState}
-            data={dialog}
-            state={nameOrder}
-            setstate={setNameOrder}
-          />
-        )}
-
         <TouchableOpacity
           style={styles.touch}
           activeOpacity={1}
           onPress={orderIncrease}></TouchableOpacity>
-        <View style={styles.leftbox}>
-          <IngameButtonOption setstate={setOptionState} />
-        </View>
 
         {scripts[nameOrder].text === 'end'
           ? backgroundsetting &&
@@ -134,6 +125,21 @@ function IngamePage(props) {
               setVisible={setVisible}
             />
           ))}
+
+        <View style={styles.leftbox}>
+          <IngameButtonOption setstate={setOptionState} />
+        </View>
+
+        {scripts[nameOrder].name === 'end' ? null : (
+          <ModalDialog
+            visible={dialogState}
+            hideModalContentWhileAnimating={true}
+            setter={setDialogState}
+            data={dialog}
+            state={nameOrder}
+            setstate={setNameOrder}
+          />
+        )}
         <ModalOption
           visible={optionState}
           hideModalContentWhileAnimating={true}
