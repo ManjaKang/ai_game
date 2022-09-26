@@ -66,11 +66,19 @@ function IngameButtonCamera() {
 }
 
 const styles = StyleSheet.create({
+  // button: {
+  //   borderColor: 'rgba(192,192,192,1)',
+  //   borderWidth: 1,
+  //   height: '18%',
+  //   marginTop: '10%',
+  //   aspectRatio: 1,
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  // },
   button: {
     borderColor: 'rgba(192,192,192,1)',
     borderWidth: 1,
-    height: '18%',
-    marginTop: '10%',
+    height: '100%',
     aspectRatio: 1,
     alignItems: 'center',
     justifyContent: 'center',
