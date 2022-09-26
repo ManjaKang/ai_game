@@ -28,7 +28,8 @@ import * as RNFS from 'react-native-fs';
 import importJs from './import';
 import IngameButtonBackground from '../../components/ingame/button/background';
 import ModalBackground from '../../components/modal/background/page';
-
+import ModalDetectFinish from '../../components/modal/detectFinish/page';
+import ModalDetectFinishButton from '../../components/modal/detectFinish/button';
 function IngamePage(props) {
   const [nameOrder, setNameOrder] = useState(0);
   const [imageOrder, setImageOrder] = useState(0);
@@ -39,6 +40,7 @@ function IngamePage(props) {
   const [titleState, setTitleState] = useState(false);
   const [backlogState, setBacklogState] = useState(false);
   const [inventoryState, setInventoryState] = useState(false);
+  const [detectState, setDetectState] = useState(false);
   const items = ['1', '2'];
 
   const onFinish = () => setReady(true);
@@ -59,7 +61,7 @@ function IngamePage(props) {
       if (scripts[imageOrder].position != null) {
         setCharacterList(scripts[imageOrder].character[0]);
       }
-      if (scripts[nameOrder].text=="end") {
+      if (scripts[nameOrder].text == 'end') {
         setDialogState(false);
       }
     }
@@ -78,7 +80,12 @@ function IngamePage(props) {
       <ImageBackground
         source={setting.background_just[scripts[imageOrder].bg]}
         style={{height: '100%', width: '100%'}}>
-        <TouchableOpacity
+        <ModalDetectFinish
+          visible={detectState}
+          hideModalContentWhileAnimating={true}
+          setter={setDetectState}
+        />
+        {/* <TouchableOpacity
           style={{
             width: '15%',
             height: '15%',
@@ -90,7 +97,7 @@ function IngamePage(props) {
             backgroundColor: 'blue',
           }}>
           <Text>조사 마치기</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         {scripts[nameOrder].name === 'end' ? null : (
           <ModalCharacter
             state={imageOrder}
@@ -102,6 +109,11 @@ function IngamePage(props) {
           style={styles.touch}
           activeOpacity={1}
           onPress={orderIncrease}></TouchableOpacity>
+
+        {scripts[nameOrder].text === 'end' ? (
+          <ModalDetectFinishButton
+            setstate={setDetectState}></ModalDetectFinishButton>
+        ) : null}
 
         {scripts[nameOrder].text === 'end'
           ? backgroundsetting &&
