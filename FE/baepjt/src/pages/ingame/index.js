@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
+  Button,
 } from 'react-native';
 import * as Progress from 'react-native-progress';
 import IngameBarLoading from '../../components/ingame/bar/loading';
@@ -72,12 +73,26 @@ function IngamePage(props) {
       <ImageBackground
         source={setting.background_just[scripts[imageOrder].bg]}
         style={{height: '100%', width: '100%'}}>
+        <TouchableOpacity
+          style={{
+            width: '15%',
+            height: '15%',
+            position: 'absolute',
+            right: '10%',
+            top: '3%',
+            borderColor: 'red',
+            borderWidth: 3,
+            backgroundColor: 'blue',
+          }}>
+          <Text>조사 마치기</Text>
+        </TouchableOpacity>
         {scripts[nameOrder].name === 'end' ? null : (
           <ModalCharacter
             state={imageOrder}
             setstate={setImageOrder}
             data={dialog}></ModalCharacter>
         )}
+
         {scripts[nameOrder].name === 'end' ? null : (
           <ModalDialog
             visible={dialogState}
