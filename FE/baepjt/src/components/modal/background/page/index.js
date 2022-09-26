@@ -11,6 +11,7 @@ import {
 import IngameButtonCamera from '../../../ingame/button/camera';
 
 function ModalBackground(props) {
+  console.log('bg이미지', props);
   return (
     props.visible[props.data].value && (
       <View style={styles.view}>
@@ -18,7 +19,7 @@ function ModalBackground(props) {
           <ImageBackground source={props.dataa.bgimage} style={styles.imgbg}>
             <TouchableOpacity
               style={styles.touchBackground}
-              onPress={props.orderIncrease()}
+              onPress={props.func}
               activeOpacity={1}
             />
             <View style={styles.buttonLayer}>
@@ -83,15 +84,15 @@ const styles = StyleSheet.create({
   buttonLayer: {
     position: 'absolute',
     top: 5,
-    width: "100%",
-    height: "20%",
+    width: '100%',
+    height: '20%',
     alignItems: 'center',
     justifyContent: 'center',
   },
   touchBackground: {
     position: 'absolute',
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
   },
 });
 
