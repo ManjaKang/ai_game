@@ -30,6 +30,7 @@ import IngameButtonBackground from '../../components/ingame/button/background';
 import ModalBackground from '../../components/modal/background/page';
 import ModalDetectFinish from '../../components/modal/detectFinish/page';
 import ModalDetectFinishButton from '../../components/modal/detectFinish/button';
+import {useNavigation} from '@react-navigation/native';
 function IngamePage(props) {
   const [nameOrder, setNameOrder] = useState(0);
   const [imageOrder, setImageOrder] = useState(0);
@@ -42,7 +43,6 @@ function IngamePage(props) {
   const [inventoryState, setInventoryState] = useState(false);
   const [detectState, setDetectState] = useState(false);
   const items = ['1', '2'];
-
   const onFinish = () => setReady(true);
 
   //js 불러오기
@@ -53,6 +53,8 @@ function IngamePage(props) {
   const backgroundsetting = dataa.backgroundsetting;
   const scripts = dataa.scripts;
   const [characterList, setCharacterList] = useState('');
+
+  const navigation = useNavigation();
   // 클릭할 때마다 다음 대사로 넘어가기
   const orderIncrease = () => {
     if (dialogState) {
@@ -65,7 +67,18 @@ function IngamePage(props) {
         setDialogState(false);
       }
     }
+    if (scripts[nameOrder + 1].text == 'gotoMain') {
+      navigation.navigate('ChapterPage', {name: props.route.params.episode});
+    }
   };
+  // dialog의 특정 인덱스로 보내기
+  function goIndexDialog(index) {
+    var iindex = scripts.findIndex(i => i.index == index);
+    setNameOrder(iindex);
+    setImageOrder(iindex);
+    setDialogState(true);
+    setDetectState(false);
+  }
   const [dialog, setDialog] = useState(scripts);
   const epiImgBg = dataa.setting.chapterbg;
 
@@ -84,20 +97,9 @@ function IngamePage(props) {
           visible={detectState}
           hideModalContentWhileAnimating={true}
           setter={setDetectState}
+          // D={scripts}
+          func={goIndexDialog}
         />
-        {/* <TouchableOpacity
-          style={{
-            width: '15%',
-            height: '15%',
-            position: 'absolute',
-            right: '10%',
-            top: '3%',
-            borderColor: 'red',
-            borderWidth: 3,
-            backgroundColor: 'blue',
-          }}>
-          <Text>조사 마치기</Text>
-        </TouchableOpacity> */}
         {scripts[nameOrder].name === 'end' ? null : (
           <ModalCharacter
             state={imageOrder}
