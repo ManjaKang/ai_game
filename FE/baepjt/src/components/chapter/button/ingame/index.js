@@ -15,12 +15,12 @@ function ChapterButton(props) {
               order={1}></Category>
             <Category
               name="용의자 조사"
-              imageUri={require('../../../../images/chapter/investigation.jpg')}
+              imageUri={require('../../../../images/background/chapter1/room.png')}
               episode={props.name}
               order={2}></Category>
             <Category
               name="피해자방 조사"
-              imageUri={require('../../../../images/white.png')}
+              imageUri={require('../../../../images/background/chapter3/room.png')}
               episode={props.name}
               order={3}></Category>
             <Category
@@ -30,7 +30,7 @@ function ChapterButton(props) {
               order={4}></Category>
             <Category
               name="임이지의 집"
-              imageUri={require('../../../../images/white.png')}
+              imageUri={require('../../../../images/background/chapter5/2doors.png')}
               episode={props.name}
               order={5}></Category>
             <Category
@@ -45,6 +45,7 @@ function ChapterButton(props) {
               order={7}></Category>
             <Category
               name="범인은 바로 너"
+              imageUri={require('../../../../images/white.png')}
               episode={props.name}
               order={8}></Category>
           </ScrollView>
