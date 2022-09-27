@@ -18,8 +18,4 @@ public class UserServiceImpl implements UserService {
         return new UserResDto(user);
     }
 
-    @Override
-    public int updatePoint(int point, String userId) {
-        return dao.updatePoint(point, userId);
-    }
 }

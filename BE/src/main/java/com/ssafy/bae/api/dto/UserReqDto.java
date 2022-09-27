@@ -15,13 +15,11 @@ public class UserReqDto {
 
     public UserReqDto(User user){
         userId = user.getUserId();
-        point = user.getPoint();
     }
 
     public User toEntity(){
         return User.builder()
                 .userId(userId)
-                .point(point)
                 .build();
     }
 }

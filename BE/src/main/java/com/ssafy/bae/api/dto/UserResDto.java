@@ -12,39 +12,28 @@ public class UserResDto {
 
     long idx;
     String userId;
-    String tokenId;
-    String service;
-    int point;
+    String password;
     int episode;
     int chapter;
-    String refreshId;
 
-    public UserResDto(String userId, String tokenId, String refreshId, String service){
+    public UserResDto(String userId, String password){
         this.userId = userId;
-        this.tokenId = tokenId;
-        this.service = service;
-        this.refreshId = refreshId;
+        this.password = password;
     }
 
     public UserResDto(User user){
         userId = user.getUserId();
-        tokenId = user.getTokenId();
-        service = user.getService();
-        point = user.getPoint();
+        password = user.getPassword();
         episode = user.getEpisode();
         chapter = user.getChapter();
-        refreshId = user.getRefreshId();
     }
 
     public User toEntity(){
         return User.builder()
                 .userId(userId)
-                .tokenId(tokenId)
-                .service(service)
-                .point(point)
+                .password(password)
                 .episode(episode)
                 .chapter(chapter)
-                .refreshId(refreshId)
                 .build();
     }
 }

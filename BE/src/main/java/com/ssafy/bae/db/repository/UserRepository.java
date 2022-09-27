@@ -13,10 +13,5 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     public User findByUserId(String userId);
 
-    @Modifying
-    @Transactional
-    @Query(value = "UPDATE users SET point = point + ? WHERE user_id = ?", nativeQuery = true)
-    public int updatePoint(int point, String userId);
-
     public boolean existsByUserId(String userId);
 }
