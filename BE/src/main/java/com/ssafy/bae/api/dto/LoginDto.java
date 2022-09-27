@@ -8,24 +8,22 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class UserResDto {
+public class LoginDto {
 
-    long idx;
     String userId;
-    int episode;
-    int chapter;
+    String password;
 
-    public UserResDto(User user){
+    public LoginDto(User user){
         userId = user.getUserId();
-        episode = user.getEpisode();
-        chapter = user.getChapter();
+        password = user.getPassword();
     }
 
     public User toEntity(){
         return User.builder()
                 .userId(userId)
-                .episode(episode)
-                .chapter(chapter)
+                .password(password)
+                .episode(1)
+                .chapter(1)
                 .build();
     }
 }

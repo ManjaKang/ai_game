@@ -1,7 +1,7 @@
 package com.ssafy.bae.api.service;
 
-import com.ssafy.bae.api.dto.UserReqDto;
-import com.ssafy.bae.api.dto.UserResDto;
+import com.ssafy.bae.api.dto.LoginDto;
+import com.ssafy.bae.api.dto.UserDto;
 import com.ssafy.bae.db.entity.User;
 import com.ssafy.bae.db.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +14,9 @@ public class UserServiceImpl implements UserService {
     UserRepository dao;
 
     @Override
-    public UserResDto findByUserId(String userId) {
+    public UserDto findByUserId(String userId) {
         User user = dao.findByUserId(userId);
-        return new UserResDto(user);
+        return new UserDto(user);
     }
 
     @Override
@@ -25,18 +25,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserResDto signup(UserReqDto userReqDto) {
-        User user = dao.save(userReqDto.toEntity());
-        return new UserResDto(user);
+    public UserDto signup(LoginDto loginDto) {
+        User user = dao.save(loginDto.toEntity());
+        return new UserDto(user);
     }
 
     @Override
-    public UserResDto login(UserReqDto userReqDto) {
-        UserResDto result = new UserResDto();
-        if(existByUserId(userReqDto.getUserId())){
-            User user = dao.findByUserId(userReqDto.getUserId());
-            if(user.getPassword().equals(userReqDto.getPassword())){
-                result = new UserResDto(user);
+    public UserDto login(LoginDto loginDto) {
+        UserDto result = new UserDto();
+        if(existByUserId(loginDto.getUserId())){
+            User user = dao.findByUserId(loginDto.getUserId());
+            if(user.getPassword().equals(loginDto.getPassword())){
+                result = new UserDto(user);
             } else {
                 result.setUserId("wrong password");
             }
@@ -44,6 +44,11 @@ public class UserServiceImpl implements UserService {
             result.setUserId("wrong userId");
         }
         return result;
+    }
+
+    @Override
+    public int updateProgress(UserDto userDto) {
+        return dao.updateProgress(userDto.getEpisode(), userDto.getChapter(), userDto.getUserId());
     }
 
 }

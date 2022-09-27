@@ -7,8 +7,7 @@ import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.PumpStreamHandler;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
+import java.io.*;
 
 import org.python.core.PyFunction;
 import org.python.core.PyObject;
@@ -17,9 +16,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
 
 @RestController
 public class TestController {
@@ -47,15 +43,13 @@ public class TestController {
         String str = "sum(" + a + "," + b + ")";
 
         interpreter = new PythonInterpreter();
-        interpreter.execfile("C:\\Users\\SSAFY\\Documents\\Common\\S07P22E102-front\\AI\\sum.py");
+        StringWriter out = new StringWriter();
+        interpreter.execfile("/Users/baechanbi/Documents/Common/FE/sum.py");
+        interpreter.setOut(out);
         interpreter.exec(str);
-
-
-        PyFunction pyFunction = interpreter.get("sum", PyFunction.class);
-        PyObject pyObject = pyFunction.__call__();
-//        String realResult = (String) pyObject.__tojava__(String.class);
-//
-//        System.out.println(realResult);
+        String result = out.toString();
+        System.out.println("result : " +result);
+        
 
         return "pythonconnet";
     }
