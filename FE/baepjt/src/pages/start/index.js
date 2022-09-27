@@ -16,7 +16,7 @@ function StartPage({navigation}) {
     // 다음페이지로 넘어가기
     <TouchableOpacity
       activeOpacity={1}
-      onPress={() => navigation.navigate('Main')}>
+      onPress={() => navigation.navigate('Login')}>
       <ImageBackground
         source={require('../../images/start_page/background.jpg')}
         style={{width: '100%', height: '100%'}}>
