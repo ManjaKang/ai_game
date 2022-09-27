@@ -213,8 +213,8 @@ const e101 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1,3],
+      character: [require('../images/character/prof/body/whole.png'),require('../images/character/examiner/body/whole.png')],
       bg: 1,
     },
     {

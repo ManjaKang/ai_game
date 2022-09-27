@@ -31,6 +31,7 @@ import ModalBackground from '../../components/modal/background/page';
 import ModalDetectFinish from '../../components/modal/detectFinish/page';
 import ModalDetectFinishButton from '../../components/modal/detectFinish/button';
 import {useNavigation} from '@react-navigation/native';
+import IngameTextIdle from '../../components/ingame/text/idle';
 function IngamePage(props) {
   const [nameOrder, setNameOrder] = useState(0);
   const [imageOrder, setImageOrder] = useState(0);
@@ -111,6 +112,10 @@ function IngamePage(props) {
           style={styles.touch}
           activeOpacity={1}
           onPress={orderIncrease}></TouchableOpacity>
+
+        {scripts[nameOrder].text === 'end' ? (
+          <IngameTextIdle />
+        ) : null}
 
         {scripts[nameOrder].text === 'end' ? (
           <ModalDetectFinishButton
