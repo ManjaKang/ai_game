@@ -37,23 +37,4 @@ public class UserController {
         }
     }
 
-    @Operation(summary = "포인트 변경", description = "포인트를 얻거나 사용했을 때 변경.")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "OK !!"),
-            @ApiResponse(responseCode = "400", description = "BAD REQUEST !!"),
-            @ApiResponse(responseCode = "404", description = "NOT FOUND !!"),
-            @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR !!")
-    })
-    @PutMapping("/users/point")
-    public ResponseEntity<Integer> updatePoint(@RequestBody UserReqDto userReqDto){
-        int result = 0;
-        try {
-            result = service.updatePoint(userReqDto.getPoint(), userReqDto.getUserId());
-            return new ResponseEntity<>(result, HttpStatus.OK);
-        } catch (Exception e){
-            e.printStackTrace();
-            return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
 }

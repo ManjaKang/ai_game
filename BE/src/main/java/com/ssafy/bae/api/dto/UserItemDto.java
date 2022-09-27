@@ -13,22 +13,22 @@ public class UserItemDto {
     long idx;
     String name;
     String userId;
-    int episode;
-    int chapter;
+    String description;
+    long index;
 
     public UserItemDto(UserItem userItem){
         name = userItem.getName();
         userId = userItem.getUserId();
-        episode = userItem.getEpisode();
-        chapter = userItem.getChapter();
+        description = userItem.getDescription();
+        index = userItem.getIndex();
     }
 
     public UserItem toEntity(){
         return UserItem.builder()
                 .name(name)
                 .userId(userId)
-                .episode(episode)
-                .chapter(chapter)
+                .description(description)
+                .index(index)
                 .build();
     }
 }

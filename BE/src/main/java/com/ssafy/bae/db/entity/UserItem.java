@@ -20,9 +20,9 @@ public class UserItem extends BaseEntity {
     String name;
     @Column(name = "user_id", columnDefinition = "varchar(30) NOTNULL")
     String userId;
-    @Column(name = "episode", columnDefinition = "int")
-    int episode;
-    @Column(name = "chapter", columnDefinition = "int")
-    int chapter;
+    @Column(name = "description", columnDefinition = "varchar(100) NOTNULL")
+    String description;
+    @Column(name = "item_idx", columnDefinition = "BIGINT")
+    long index;
 
 }
