@@ -11,15 +11,19 @@ import lombok.*;
 public class UserReqDto {
 
     String userId;
-    int point;
+    String password;
 
     public UserReqDto(User user){
         userId = user.getUserId();
+        password = user.getPassword();
     }
 
     public User toEntity(){
         return User.builder()
                 .userId(userId)
+                .password(password)
+                .episode(1)
+                .chapter(1)
                 .build();
     }
 }
