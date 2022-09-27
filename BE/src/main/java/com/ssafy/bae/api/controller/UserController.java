@@ -1,7 +1,7 @@
 package com.ssafy.bae.api.controller;
 
-import com.ssafy.bae.api.dto.UserReqDto;
-import com.ssafy.bae.api.dto.UserResDto;
+import com.ssafy.bae.api.dto.LoginDto;
+import com.ssafy.bae.api.dto.UserDto;
 import com.ssafy.bae.api.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -26,8 +26,8 @@ public class UserController {
             @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR !!")
     })
     @GetMapping("/users/{userId}")
-    public ResponseEntity<UserResDto> findAllByUserId(@PathVariable String userId){
-        UserResDto result = new UserResDto();
+    public ResponseEntity<UserDto> findAllByUserId(@PathVariable String userId){
+        UserDto result = new UserDto();
         try {
             result = service.findByUserId(userId);
             return new ResponseEntity<>(result, HttpStatus.OK);
@@ -64,10 +64,10 @@ public class UserController {
             @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR !!")
     })
     @PostMapping("/users/signup")
-    public ResponseEntity<UserResDto> singup(@RequestBody UserReqDto userReqDto){
-        UserResDto result = new UserResDto();
+    public ResponseEntity<UserDto> singup(@RequestBody LoginDto loginDto){
+        UserDto result = new UserDto();
         try {
-            result = service.signup(userReqDto);
+            result = service.signup(loginDto);
             return new ResponseEntity<>(result, HttpStatus.OK);
         } catch (Exception e){
             e.printStackTrace();
@@ -83,10 +83,29 @@ public class UserController {
             @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR !!")
     })
     @PostMapping("/users/login")
-    public ResponseEntity<UserResDto> login(@RequestBody UserReqDto userReqDto){
-        UserResDto result = new UserResDto();
+    public ResponseEntity<UserDto> login(@RequestBody LoginDto loginDto){
+        UserDto result = new UserDto();
         try {
-            result = service.login(userReqDto);
+            result = service.login(loginDto);
+            return new ResponseEntity<>(result, HttpStatus.OK);
+        } catch (Exception e){
+            e.printStackTrace();
+            return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @Operation(summary = "진행상황 업데이트", description = "에피소드, 챕터들을 완료했을 때 업데이트")
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "OK !!"),
+            @ApiResponse(responseCode = "400", description = "BAD REQUEST !!"),
+            @ApiResponse(responseCode = "404", description = "NOT FOUND !!"),
+            @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR !!")
+    })
+    @PutMapping("/users/progress")
+    public ResponseEntity<Integer> updateProgress(@RequestBody UserDto userDto){
+        int result = 0;
+        try {
+            result = service.updateProgress(userDto);
             return new ResponseEntity<>(result, HttpStatus.OK);
         } catch (Exception e){
             e.printStackTrace();

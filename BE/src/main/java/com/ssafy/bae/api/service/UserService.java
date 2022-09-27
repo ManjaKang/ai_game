@@ -1,15 +1,17 @@
 package com.ssafy.bae.api.service;
 
-import com.ssafy.bae.api.dto.UserReqDto;
-import com.ssafy.bae.api.dto.UserResDto;
+import com.ssafy.bae.api.dto.LoginDto;
+import com.ssafy.bae.api.dto.UserDto;
 
 public interface UserService {
 
-    public UserResDto findByUserId(String userId);
+    public UserDto findByUserId(String userId);
 
     public boolean existByUserId(String userId);
 
-    public UserResDto signup(UserReqDto userReqDto);
+    public UserDto signup(LoginDto loginDto);
 
-    public UserResDto login(UserReqDto userReqDto);
+    public UserDto login(LoginDto loginDto);
+
+    public int updateProgress(UserDto userDto);
 }

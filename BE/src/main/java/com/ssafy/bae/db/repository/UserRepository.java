@@ -15,4 +15,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     public boolean existsByUserId(String userId);
 
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE users SET episode = ? , chapter = ? WHERE user_id = ?", nativeQuery = true)
+    public int updateProgress(int episode, int chapter, String userId);
 }
