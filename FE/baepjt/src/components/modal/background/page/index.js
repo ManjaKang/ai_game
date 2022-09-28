@@ -11,7 +11,6 @@ import {
 import IngameButtonCamera from '../../../ingame/button/camera';
 
 function ModalBackground(props) {
-  console.log('bg이미지', props);
   return (
     props.visible[props.data].value && (
       <View style={styles.view}>

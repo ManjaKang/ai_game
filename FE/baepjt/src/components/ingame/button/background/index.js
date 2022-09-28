@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, StyleSheet, View} from 'react-native';
-
+import Icon from 'react-native-vector-icons/Ionicons';
 function IngameButtonBackground(props) {
   const index = props.data.index;
   console.log('인게임 버튼', props);
@@ -12,8 +12,10 @@ function IngameButtonBackground(props) {
         height: props.data.size[1],
         top: props.data.location[0],
         left: props.data.location[1],
-        borderWidth: 10,
-        borderColor: 'red',
+        justifyContent: 'center',
+        alignItems: 'center',
+        // borderWidth: 10,
+        // borderColor: 'red',
       }}
       onPress={() => {
         props.setVisible(
@@ -21,8 +23,9 @@ function IngameButtonBackground(props) {
             it.index == index ? {...it, value: true} : it,
           ),
         );
-      }}
-    />
+      }}>
+      <Icon name="search" size={30}></Icon>
+    </TouchableOpacity>
   );
 }
 

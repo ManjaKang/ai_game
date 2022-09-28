@@ -1,11 +1,11 @@
 const e106 = {
   setting: {
-    chapterbg: require('../images/background/chapter5/2doors.png'),
+    chapterbg: require('../images/background/chapter6/background.jpg'),
     // background_touch: [require('../images/background/ep1_toilet.jpg')],
     background_just: [
-      require('../images/background/chapter5/2doors.png'),
-      require('../images/background/chapter1/room.png'),
-      require('../images/background/chapter1/room_info.png'),
+      require('../images/background/chapter6/background.jpg'),
+      require('../images/background/chapter6/paintingroom.png'),
+      require('../images/background/chapter6/sy_room.png'),
     ],
     episode: 1,
     chapter: 1,
@@ -27,15 +27,16 @@ const e106 = {
   backgroundsetting: [
     {
       index: 0,
-      location: ['14%', '58%'], // 버튼 위치
+      location: ['14%', '10%'], // 버튼 위치
       size: ['20%', '80%'], // 버튼 사이즈
-      bgimage: require('../images/background/chapter1/room.png'),
+      bgimage: require('../images/background/chapter6/paintingroom.png'),
     },
     {
       index: 1,
-      location: ['14%', '22%'],
-      size: ['20%', '80%'],
-      bgimage: require('../images/background/chapter1/desk.png'),
+
+      location: ['5%', '80%'],
+      size: ['20%', '75%'],
+      bgimage: require('../images/background/chapter6/sy_room.png'),
     },
   ],
   scripts: [
@@ -49,6 +50,11 @@ const e106 = {
       index: 0,
       position: [],
       character: [],
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
       bg: 0,
     },
     {
