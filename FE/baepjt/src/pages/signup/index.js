@@ -18,7 +18,7 @@ const SignUpPage = () => {
   const [pw, onChangePw] = React.useState(null);
   const [pwCheck, onChangePwCheck] = React.useState(null);
   const axiosSignup = async() => {
-    if (length == '' || pw == '' || pwCheck == '') {
+    if (id == '' || pw == '' || pwCheck == '') {
       onChangeId('');
       onChangePw('');
       onChangePwCheck('');
