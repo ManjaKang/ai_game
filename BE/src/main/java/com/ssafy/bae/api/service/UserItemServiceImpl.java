@@ -2,6 +2,7 @@ package com.ssafy.bae.api.service;
 
 import com.ssafy.bae.api.dto.UserAchDto;
 import com.ssafy.bae.api.dto.UserItemDto;
+import com.ssafy.bae.api.dto.UserItemReqDto;
 import com.ssafy.bae.db.entity.Item;
 import com.ssafy.bae.db.entity.UserAch;
 import com.ssafy.bae.db.entity.UserItem;
@@ -36,22 +37,29 @@ public class UserItemServiceImpl implements UserItemService {
     }
 
     @Override
-    public UserItemDto insert(UserItemDto userItemDto) {
+    public int insert(UserItemReqDto userItemReqDto) {
 
-        boolean isExist = dao.existsByUserIdAndName(userItemDto.getUserId(), userItemDto.getName());
-        if(!isExist){
-            Item item = itemRepository.findByName(userItemDto.getName());
+        int result = 0;
 
-            UserItem userItem = new UserItem();
-            userItem.setUserId(userItemDto.getUserId());
-            userItem.setName(userItemDto.getName());
-            userItem.setDescription(item.getDescription());
-            userItem.setIndex(item.getIdx());
+        for(UserItemDto userItemDto : userItemReqDto.getItems()){
+            boolean isExist = dao.existsByUserIdAndName(userItemReqDto.getUserId(), userItemDto.getName());
+            if(!isExist){
+                System.out.println(userItemDto);
 
-           UserItem result = dao.save(userItem);
-            return new UserItemDto(result);
-        } else {
-            return userItemDto;
+                UserItem userItem = new UserItem();
+                userItem.setUserId(userItemReqDto.getUserId());
+                userItem.setEpisode(userItemReqDto.getEpisode());
+                userItem.setChapter(userItemReqDto.getChapter());
+
+                userItem.setName(userItemDto.getName());
+                userItem.setDescription(userItemDto.getDescription());
+                userItem.setIndex(userItemDto.getIndex());
+
+                dao.save(userItem);
+
+                result++;
+            }
         }
+        return result;
     }
 }

@@ -15,12 +15,16 @@ public class UserItemDto {
     String userId;
     String description;
     long index;
+    int episode;
+    int chapter;
 
     public UserItemDto(UserItem userItem){
         name = userItem.getName();
         userId = userItem.getUserId();
         description = userItem.getDescription();
         index = userItem.getIndex();
+        episode = userItem.getEpisode();
+        chapter = userItem.getChapter();
     }
 
     public UserItem toEntity(){
@@ -29,6 +33,8 @@ public class UserItemDto {
                 .userId(userId)
                 .description(description)
                 .index(index)
+                .episode(episode)
+                .chapter(chapter)
                 .build();
     }
 }
