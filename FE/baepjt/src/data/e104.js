@@ -27,13 +27,13 @@ const e104 = {
   backgroundsetting: [
     {
       index: 0,
-      location: ['65%', '90%'], // 버튼 위치
-      size: ['10%', '25%'], // 버튼 사이즈
+      location: ['45%', '15%'], // 버튼 위치
+      size: ['40%', '20%'], // 버튼 사이즈
       bgimage: require('../images/background/chapter4/chapter4_bedroom.png'),
     },
     {
       index: 1,
-      location: ['55%', '40%'],
+      location: ['45%', '50%'],
       size: ['40%', '20%'],
       bgimage: require('../images/background/chapter4/chapter4_wardrobe.png'),
     },
@@ -93,7 +93,7 @@ const e104 = {
     },
     {
       name: '백지현',
-      text: '여기 왼쪽 문을 열면 침실이 나오고, 오른쪽 문을 열면 침실이에요.',
+      text: '여기 왼쪽 문을 열면 침실이 나오고, 오른쪽 문을 열면 옷방이에요.',
       img: require('../images/character/prof/face/emotionless.png'),
       type: 2,
       audio: '',
@@ -110,6 +110,23 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: '배교수',
+      text: '백지현의 방은 여기까지 보도록 하지',
+      img: require('../images/character/prof/face/emotionless.png'),
+      type: 2,
+      audio: '',
+      sfx: '',
+      index: 100,
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
     {name: 'end', text: 'gotoMain', bg: 0},

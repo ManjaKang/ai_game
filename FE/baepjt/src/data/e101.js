@@ -30,21 +30,21 @@ const e101 = {
   backgroundsetting: [
     {
       index: 0,
-      location: ['65%', '90%'], // 버튼 위치
+      location: ['55%', '20%'], // 버튼 위치
       size: ['10%', '25%'], // 버튼 사이즈
-      bgimage: require('../images/background/chapter1/room.png'),
+      bgimage: require('../images/background/chapter1/death.png'),
     },
     {
       index: 1,
       location: ['55%', '40%'],
       size: ['40%', '20%'],
-      bgimage: require('../images/background/chapter1/desk.png'),
+      bgimage: require('../images/background/chapter1/table.jpg'),
     },
     {
       index: 2,
       location: ['24%', '2%'],
       size: ['12%', '40%'],
-      bgimage: require('../images/background/chapter1/bedroom.png'),
+      bgimage: require('../images/background/chapter1/door.png'),
     },
   ],
   scripts: [
