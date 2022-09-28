@@ -10,6 +10,7 @@ import {
 import {RNCamera} from 'react-native-camera';
 import CameraRoll from '@react-native-community/cameraroll';
 import {useNavigation} from '@react-navigation/native';
+import axios from 'axios';
 
 function CameraPage() {
   const [camera, setCamera] = useState(null);
@@ -22,7 +23,13 @@ function CameraPage() {
       const options = {quality: 0.5, base64: true};
       const data = await camera.takePictureAsync(options);
       console.log('data : ' + data.uri);
+      const arr = data.uri.split("/");
       if (data) {
+        const res = await axios.post('http://10.0.2.2:8080/image', {  // localhost 환경
+          base64: data.base64,
+          fileName: arr[arr.length-1],  // 파일 이
+        });
+        console.log("사진 분석 결과",res);
         CameraRoll.save(data.uri, 'photo')
           .then(onfulfilled => {
             ToastAndroid.show(onfulfilled, ToastAndroid.SHORT);
