@@ -8,12 +8,38 @@ import {
   View,
   Text,
   TouchableOpacity,
+  Alert,
 } from 'react-native';
+import axios from 'axios';
 
 const LoginPage = () => {
   const navigation = useNavigation();
   const [id, onChangeId] = React.useState(null);
   const [pw, onChangePw] = React.useState(null);
+
+  const axiosLogin = async() => {
+    try {
+      const response = await axios.post('http://10.0.2.2:8080/users/login',{
+        "userId" : id,
+        "password" : pw,  
+      });
+      if (response.status === 200) {
+        console.log(response);
+        console.log(response.data.userId);
+        if (response.data.userId == 'wrong userId' || response.data.userId == 'wrong password') {
+          Alert.alert('아이디나 비밀번호가 틀렸습니다!');
+          onChangeId('');
+          onChangePw('');
+        }
+        else {
+          navigation.navigate('Main');  
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
@@ -47,7 +73,9 @@ const LoginPage = () => {
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.button}
-              onPress={() => navigation.navigate('Main')}>
+              // onPress={() => navigation.navigate('Main')}
+              onPress={() => axiosLogin()}
+              >
               <ImageBackground
                 source={require('../../images/modal/button.png')}
                 style={{height: '100%', width: '100%'}}>
@@ -79,8 +107,8 @@ const styles = StyleSheet.create({
     margin: 12,
     borderWidth: 1,
     padding: 10,
-    color: 'black',
     borderColor: 'white',
+    backgroundColor: 'white',
   },
   button: {
     width: '30%',
@@ -90,6 +118,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'HeirofLightRegular',
     fontSize: 40,
+    color: 'white',
   },
   logintext: {
     marginLeft: '20%',
