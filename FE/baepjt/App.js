@@ -10,6 +10,8 @@ import React from 'react';
 import {NavigationContainer, StackActions} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import type {Node} from 'react';
+import {Provider} from 'react-redux';
+import store from './src/redux/store/store';
 import {
   SafeAreaView,
   ScrollView,
@@ -21,11 +23,14 @@ import {
 } from 'react-native';
 
 import StartPage from './src/pages/start/index';
+import LoginPage from './src/pages/login';
+import SignUpPage from './src/pages/signup';
 import MainPage from './src/pages/main';
 import EpisodePage from './src/pages/episode';
 import ChapterPage from './src/pages/chapter';
 import IngamePage from './src/pages/ingame';
 import CameraPage from './src/pages/camera';
+
 // import MainButtonNew from './android/app/src/test/index.js';
 
 import {
@@ -72,43 +77,54 @@ const App: () => Node = () => {
   };
 
   return (
-    <NavigationContainer>
-      <StatusBar animated hidden />
-      {/* <SafeAreaView style={backgroundStyle}> */}
-      {/* <MainPage /> */}
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Start"
-          component={StartPage}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="Main"
-          component={MainPage}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="EpisodePage"
-          component={EpisodePage}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="ChapterPage"
-          component={ChapterPage}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="IngamePage"
-          component={IngamePage}
-          options={{headerShown: false}}
-        />
-        <Stack.Screen
-          name="CameraPage"
-          component={CameraPage}
-          options={{headerShown: false}}
-        />
-      </Stack.Navigator>
-      {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+    <Provider store={store}>
+      <NavigationContainer>
+        <StatusBar animated hidden />
+        {/* <SafeAreaView style={backgroundStyle}> */}
+        {/* <MainPage /> */}
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Start"
+            component={StartPage}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="SignUp"
+            component={SignUpPage}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Login"
+            component={LoginPage}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Main"
+            component={MainPage}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="EpisodePage"
+            component={EpisodePage}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="ChapterPage"
+            component={ChapterPage}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="IngamePage"
+            component={IngamePage}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="CameraPage"
+            component={CameraPage}
+            options={{headerShown: false}}
+          />
+        </Stack.Navigator>
+        {/* <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
@@ -133,8 +149,9 @@ const App: () => Node = () => {
           <LearnMoreLinks />
         </View>
       </ScrollView> */}
-      {/* </SafeAreaView> */}
-    </NavigationContainer>
+        {/* </SafeAreaView> */}
+      </NavigationContainer>
+    </Provider>
   );
 };
 

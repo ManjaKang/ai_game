@@ -7,52 +7,86 @@ import {
   Image,
   TouchableOpacity,
   ImageBackground,
+  Alert,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 function Category(props) {
   const navigation = useNavigation();
+  const isblocked = props.blocked;
   return (
-    <View
-      Style={{
-        height: 200,
-        width: 200,
-        marginLeft: 20,
-        borderWidth: 0.5,
-        borderColor: '#dddddd',
-      }}>
-      <View style={{flex: 2}}>
+    <View>
+      {isblocked == 'true' ? (
         <TouchableOpacity
-          style={{
-            borderWidth: 3,
-            borderColor: 'rgba(0,0,0,0.2)',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: 160,
-            height: 160,
-            backgroundColor: '#fff',
-            borderRadius: 10,
-          }}
-          onPress={() => navigation.navigate('ChapterPage', {name: props.name})}>
-          <Image
-            source={{
-              uri: 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fen.pimg.jp%2F060%2F049%2F526%2F1%2F60049526.jpg&imgrefurl=https%3A%2F%2Fkr.pixtastock.com%2Fillustration%2F60049526&tbnid=AzUf1vZX8HMbxM&vet=12ahUKEwj9wZ7xyJP6AhUEVJQKHd64BD4QMygDegUIARDNAQ..i&docid=RIVGhZOqVlrG8M&w=450&h=389&q=%ED%9A%8C%EC%8B%9D%20%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8&hl=ko&ved=2ahUKEwj9wZ7xyJP6AhUEVJQKHd64BD4QMygDegUIARDNAQ',
-              cache: 'only-if-cached',
-            }}
+          style={styles.button}
+          onPress={() => Alert.alert('전 에피소드를 끝내야 실행 가능합니다.')}>
+          <ImageBackground
+            // source={imageURI}
+            source={props.imageUri}
             style={{
-              flex: 1,
-              width: null,
-              height: null,
-              resizeMode: 'cover',
-            }}></Image>
-          <View style={{flex: 1, marginTop: 70, paddingLeft: 10}}>
-            <Text style={{color: 'black', fontSize: 20, textAlign: 'center'}}>
-              {props.name}
-            </Text>
+              width: '100%',
+              height: '100%',
+              flex: 4,
+              borderRadius: 40,
+            }}
+            imageStyle={{borderRadius: 35}}>
+            <View
+              style={{
+                marginTop: 5,
+                alignItems: 'center',
+              }}>
+              <Icon name="lock-closed-outline" size={100} color="orange" />
+            </View>
+          </ImageBackground>
+          <View style={styles.textcontainer}>
+            <Text style={styles.text}> {props.name} </Text>
           </View>
         </TouchableOpacity>
-      </View>
+      ) : (
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() =>
+            navigation.navigate('ChapterPage', {name: props.name})
+          }>
+          <ImageBackground
+            // source={imageURI}
+            source={props.imageUri}
+            style={{
+              width: '100%',
+              height: '100%',
+              flex: 4,
+              borderRadius: 40,
+            }}
+            imageStyle={{borderRadius: 35}}></ImageBackground>
+          <View style={styles.textcontainer}>
+            <Text style={styles.text}> {props.name} </Text>
+          </View>
+        </TouchableOpacity>
+      )}
     </View>
   );
 }
+const styles = StyleSheet.create({
+  button: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 170,
+    height: 170,
+    borderRadius: 10,
+    marginLeft: 10,
+    backgroundColor: 'black',
+  },
+  textcontainer: {
+    marginTop: 3,
+    flex: 1,
+  },
+  text: {
+    fontSize: 25,
+    color: 'white',
+    // 텍스트 가운데 정렬
+    textAlign: 'center',
+    fontFamily: 'AssetBold',
+  },
+});
 
 export default Category;

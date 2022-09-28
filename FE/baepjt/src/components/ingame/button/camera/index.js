@@ -3,6 +3,7 @@ import {Text, StyleSheet, TouchableOpacity, Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {launchImageLibrary, launchCamera} from 'react-native-image-picker';
 import UploadModeModal from "../../../camera/cameraModal";
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const imagePickerOption = {
   mediaType: 'photo',
@@ -50,7 +51,9 @@ function IngameButtonCamera() {
 
   return (
     <TouchableOpacity style={styles.button} onPress={modalOpen}>
-        <Text>카메라</Text>
+        <Icon style={styles.icon}
+                name="camera"
+            />
         <UploadModeModal
         visible={modalVisible}
         statusBarTranslucent={true}
@@ -63,15 +66,27 @@ function IngameButtonCamera() {
 }
 
 const styles = StyleSheet.create({
+  // button: {
+  //   borderColor: 'rgba(192,192,192,1)',
+  //   borderWidth: 1,
+  //   height: '18%',
+  //   marginTop: '10%',
+  //   aspectRatio: 1,
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  // },
   button: {
-    backgroundColor: 'rgba(0,192,192,0.4)',
-    // width: "80%",
-    height: '18%',
-    marginTop: '15%',
+    borderColor: 'rgba(192,192,192,1)',
+    borderWidth: 1,
+    height: '100%',
     aspectRatio: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
+  icon: {
+    color: 'rgba(255,255,255,1)',
+    fontSize: 64,
+  }
 });
 
 export default IngameButtonCamera;

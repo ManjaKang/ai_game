@@ -17,11 +17,7 @@ const MainPage = () => {
   return (
     <SafeAreaView>
       <ImageBackground
-        source={{
-          // uri: 'https://image.shutterstock.com/image-photo/flat-lay-composition-evidences-crime-600w-1859010208.jpg',
-          uri: 'https://ak.picdn.net/shutterstock/videos/1069224121/thumb/5.jpg?ip=x480',
-          cache: 'only-if-cached',
-        }}
+        source={require('../../images/start_page/background.jpg')}
         style={{width: '100%', height: '100%'}}>
         <View>
           <View style={styles.setbox}>
@@ -56,7 +52,7 @@ const styles = StyleSheet.create({
   fixbutton: {
     marginTop: 30,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
   },
 });
 export default MainPage;
