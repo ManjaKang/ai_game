@@ -2,6 +2,7 @@ package com.ssafy.bae.api.controller;
 
 import com.ssafy.bae.api.dto.UserAchDto;
 import com.ssafy.bae.api.dto.UserItemDto;
+import com.ssafy.bae.api.dto.UserItemReqDto;
 import com.ssafy.bae.api.service.UserItemService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -48,10 +49,10 @@ public class UserItemController {
             @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR !!")
     })
     @PostMapping("/users/items")
-    public ResponseEntity<UserItemDto> insert(@RequestBody UserItemDto userItemDto){
-        UserItemDto result = new UserItemDto();
+    public ResponseEntity<Integer> insert(@RequestBody UserItemReqDto userItemReqDto){
+        int result = 0;
         try {
-            result = service.insert(userItemDto);
+            result = service.insert(userItemReqDto);
             return new ResponseEntity<>(result, HttpStatus.OK);
         } catch (Exception e){
             e.printStackTrace();
