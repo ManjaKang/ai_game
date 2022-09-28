@@ -42,7 +42,7 @@ const e107 = {
     {
       name: '',
       text: '날씨가 꽤 좋다.',
-      img: require('../images/character/user/face/emotionless.png'),
+      img: require('../images/character/prof/face/emotionless.png'),
       type: 2,
       audio: '',
       sfx: '',

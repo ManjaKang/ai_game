@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Image,
   Button,
+  Alert,
 } from 'react-native';
 import * as Progress from 'react-native-progress';
 import IngameBarLoading from '../../components/ingame/bar/loading';
@@ -69,6 +70,7 @@ function IngamePage(props) {
       }
     }
     if (scripts[nameOrder + 1].text == 'gotoMain') {
+      Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
       navigation.navigate('ChapterPage', {name: props.route.params.episode});
     }
   };
@@ -113,9 +115,7 @@ function IngamePage(props) {
           activeOpacity={1}
           onPress={orderIncrease}></TouchableOpacity>
 
-        {scripts[nameOrder].text === 'end' ? (
-          <IngameTextIdle />
-        ) : null}
+        {scripts[nameOrder].text === 'end' ? <IngameTextIdle /> : null}
 
         {scripts[nameOrder].text === 'end' ? (
           <ModalDetectFinishButton
