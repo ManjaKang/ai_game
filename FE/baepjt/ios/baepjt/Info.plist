@@ -54,6 +54,10 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>ChosunKm.TTF</string>
+		<string>AssetBold.ttf</string>
+		<string>AssetLight.ttf</string>
+		<string>HeirofLightRegular.ttf</string>
+		<string>SimKyungha.ttf</string>
 	</array>
 </dict>
 </plist>

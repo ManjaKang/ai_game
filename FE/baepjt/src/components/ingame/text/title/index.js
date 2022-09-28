@@ -4,7 +4,10 @@ import {View, Text, StyleSheet} from 'react-native';
 function IngameTextTitle(props) {
   return (
     <View style={styles.title}>
-      <Text style={styles.text}>{props.episode} {props.name} 여기 들어갑니다.</Text>
+      <Text style={styles.textchapter}> Episode 1. {props.episode}</Text>
+      <Text style={styles.textepisode}>
+        Chapter {props.order}. {props.name}
+      </Text>
     </View>
   );
 }
@@ -14,9 +17,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  text: {
-    fontSize: 27,
+  textchapter: {
+    fontSize: 50,
     margin: 8,
+    fontFamily: 'HeirofLightRegular',
+  },
+  textepisode: {
+    fontSize: 30,
+    fontFamily: 'AssetLight',
+    color: 'white',
   },
 });
 

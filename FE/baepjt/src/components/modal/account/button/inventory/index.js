@@ -1,18 +1,26 @@
-import React from "react";
-import { Button, StyleSheet } from "react-native";
-
-function ModalAccountButtonInventory () {
-    return (
-        <Button style={styles.button}
-        title="ModalAccountButtonInventory"
-        />
-    )
+import React from 'react';
+import {Button, StyleSheet, TouchableOpacity, View, Text} from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
+function ModalAccountButtonInventory() {
+  return (
+    <View>
+      <TouchableOpacity>
+        <Text style={styles.text}>
+          {' '}
+          <Icon size={35} name="construct-outline" />
+          인벤토리 확인
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    button: {
-
-    }
-})
+  text: {
+    fontFamily: 'AssetLight',
+    color: 'black',
+    fontSize: 30,
+  },
+});
 
 export default ModalAccountButtonInventory;
