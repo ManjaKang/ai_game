@@ -4,6 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import {launchImageLibrary, launchCamera} from 'react-native-image-picker';
 import UploadModeModal from "../../../camera/cameraModal";
 import Icon from 'react-native-vector-icons/Ionicons';
+import axios from 'axios';
 
 const imagePickerOption = {
   mediaType: 'photo',
@@ -17,11 +18,16 @@ function IngameButtonCamera() {
   const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation();
 
-  const onPickImage = res => {
+  const onPickImage = async(res) => {
     if (res.didCancel || !res) {
       return;
     }
     console.log('PickImage', res);
+    const res = await axios.post('http://10.0.2.2:8080/image', { // localhost 환경
+      base64: res.assets[0].base64,
+      fileName: res.assets[0].fileName,  // 파일 이름
+    });
+    console.log("사진 분석 결과 : ", res);
   };
 
   // 카메라 촬영

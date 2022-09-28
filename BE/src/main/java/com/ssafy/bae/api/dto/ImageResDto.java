@@ -9,5 +9,6 @@ import lombok.*;
 @ToString
 public class ImageResDto {
 
-    int result;
+    String name;
+    float percent;
 }
