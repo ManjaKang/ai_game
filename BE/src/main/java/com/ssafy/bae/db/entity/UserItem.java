@@ -24,5 +24,9 @@ public class UserItem extends BaseEntity {
     String description;
     @Column(name = "item_idx", columnDefinition = "BIGINT")
     long index;
+    @Column(name = "episode", columnDefinition = "INT")
+    int episode;
+    @Column(name = "chapter", columnDefinition = "INT")
+    int chapter;
 
 }

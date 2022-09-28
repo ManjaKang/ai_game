@@ -13,6 +13,9 @@ public class ItemDto {
     long idx;
     String name;
     String description;
+    String engName;
+    int episode;
+    int chapter;
 
     public ItemDto(Item item){
         name = item.getName();
