@@ -35,7 +35,7 @@ function ChapterButton(props) {
               order={5}></Category>
             <Category
               name="김세영의 집"
-              imageUri={require('../../../../images/white.png')}
+              imageUri={require('../../../../images/background/chapter6/background.jpg')}
               episode={props.name}
               order={6}></Category>
             <Category
