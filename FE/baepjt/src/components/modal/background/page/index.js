@@ -9,8 +9,10 @@ import {
   ImageBackground,
 } from 'react-native';
 import IngameButtonCamera from '../../../ingame/button/camera';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 function ModalBackground(props) {
+  console.log("cluehint",props.cluehint);
   return (
     props.visible[props.data].value && (
       <View style={styles.view}>
@@ -39,7 +41,31 @@ function ModalBackground(props) {
                 <Text style={styles.text}>뒤로가기</Text>
               </ImageBackground>
             </TouchableOpacity>
-
+            
+            {
+              props.cluehint && (
+                props.cluehint.map((hint, index)=> (
+                  console.log("hint",hint),
+                  index == props.dataa.index && (
+                    hint.map((loc,index) => (
+                      console.log("loc" ,loc),
+                      console.log("loc loc",loc.location[0],loc.location[1]),
+                      <TouchableOpacity style={{
+                        position: 'absolute',
+                        top: loc.location[0],
+                        left: loc.location[1],
+                        height: 30,
+                        width: 30,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        }}>
+                        <Icon name="aperture-outline" size={30} />
+                      </TouchableOpacity>
+                    ))
+                  )
+                ))
+              )
+            }
             {/* <Text>{props.data}</Text> */}
           </ImageBackground>
         </View>
