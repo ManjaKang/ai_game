@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.UUID;
 
 @RestController
@@ -26,11 +28,8 @@ public class ImageController {
 
             if(file!=""){
                 UUID uuid=UUID.randomUUID();
-                filePath = "C:"+File.separator+"Users"+File.separator+"SSAFY"+File.separator+"Documents"+File.separator+"Common"+File.separator+"Image"+File.separator+uuid+"_"+filename;
-                System.out.println(filePath);
-                // C:\Users\SSAFY\Documents\Common\Image
                 makeFileWithString(file,filename,uuid);
-            } // filePath <- 변수를 DB에 저장 (이미지 업로드 경로)
+            }
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -41,7 +40,11 @@ public class ImageController {
         byte decode[] = Base64.decodeBase64(base64);
         FileOutputStream fos;
         try{
-            File target = new File("C:"+File.separator+"Users"+File.separator+"SSAFY"+File.separator+"Documents"+File.separator+"Common"+File.separator+"Image"+File.separator+uuid+"_"+filename);
+            Path path = Paths.get("");
+            String directoryName = path.toAbsolutePath().toString();
+            System.out.println("Current Working Directory is = " +directoryName);
+
+            File target = new File(directoryName+File.separator+"img"+File.separator+uuid+"_"+filename);
             target.createNewFile();
             fos = new FileOutputStream(target);
             fos.write(decode);

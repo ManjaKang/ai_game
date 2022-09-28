@@ -21,4 +21,10 @@ public class Item extends BaseEntity{
     String name;
     @Column(name = "description", columnDefinition = "varchar(100) NOTNULL")
     String description;
+    @Column(name = "eng_name", columnDefinition = "varchar(45) NOTNULL")
+    String engName;
+    @Column(name = "episode", columnDefinition = "int")
+    int episode;
+    @Column(name = "chapter", columnDefinition = "int")
+    int chapter;
 }
