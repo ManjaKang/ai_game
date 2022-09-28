@@ -53,6 +53,7 @@ function IngamePage(props) {
   const [visible, setVisible] = useState(setting.initial);
   const clue = dataa.clue;
   const backgroundsetting = dataa.backgroundsetting;
+  const cluehint = dataa.allclue;
   const scripts = dataa.scripts;
   const [characterList, setCharacterList] = useState('');
 
@@ -143,6 +144,7 @@ function IngamePage(props) {
               visible={visible}
               setVisible={setVisible}
               func={orderIncrease}
+              cluehint={cluehint}
             />
           ))}
 
