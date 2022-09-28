@@ -26,7 +26,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto signup(LoginDto loginDto) {
-        User user = dao.save(loginDto.toEntity());
+        User user = new User();
+        if(existByUserId(loginDto.getUserId())){
+            user.setUserId("중복");
+        }
+        else{
+            user = dao.save(loginDto.toEntity());
+        }
         return new UserDto(user);
     }
 
