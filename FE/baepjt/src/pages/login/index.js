@@ -11,8 +11,12 @@ import {
   Alert,
 } from 'react-native';
 import axios from 'axios';
+import { setId } from '../../redux/login';
+import { useSelector, useDispatch } from 'react-redux';
 
 const LoginPage = () => {
+  const ID = useSelector((state) => state.id.value)
+  const dispatch = useDispatch();
   const navigation = useNavigation();
   const [id, onChangeId] = React.useState(null);
   const [pw, onChangePw] = React.useState(null);
@@ -32,6 +36,7 @@ const LoginPage = () => {
           onChangePw('');
         }
         else {
+          dispatch(setId(response.data.userId));
           navigation.navigate('Main');  
         }
       }

@@ -5,8 +5,10 @@ import ModalInventoryButtonBack from '../button/back';
 import ModalInventoryCard from '../card';
 
 function ModalInventory(props) {
-  console.log(props);
+  console.log(props.items);
   const [selectedItem, setSelectedItem] = useState(0);
+  const [itemList, setItemList] = useState(props.items);
+  const [displayText,setDisplayText] = useState('');
   return (
     // <Modal style={styles.modal}
     // visible={props.visible}
@@ -41,8 +43,9 @@ function ModalInventory(props) {
                 {/* <TouchableOpacity style={styles.tab}><Text>사진</Text></TouchableOpacity> */}
               </View>
               <View style={styles.document}>
-                <Text style={styles.infotext}>내용!</Text>
-                {props.item && <Text>{props.item[selectedItem]}</Text>}
+                {/* <Text style={styles.infotext}>내용!</Text> */}
+                {/* {props.item && } */}
+                {props.item ? (<Text>{props.item[selectedItem]}</Text>) : (null)}
               </View>
             </View>
             <View style={styles.right}>
@@ -76,7 +79,7 @@ function ModalInventory(props) {
                   <View style={styles.grid} />
                 </View>
                 {props.items &&
-                  props.items.map(I => <ModalInventoryCard item={I} />)}
+                  props.items.map(I => <ModalInventoryCard item={I} itemImg={props.itemImg} setItem={setSelectedItem}/>)}
               </View>
             </View>
           </View>
