@@ -750,6 +750,7 @@ const e101 = {
       position: [],
       character: [],
       bg: 3,
+      getItem: 1,
     },
     {
       name: '',

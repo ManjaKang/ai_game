@@ -23,7 +23,7 @@ const LoginPage = () => {
 
   const axiosLogin = async() => {
     try {
-      const response = await axios.post('http://10.0.2.2:8080/users/login',{
+      const response = await axios.post('http://j7e102.p.ssafy.io:8080/users/login',{
         "userId" : id,
         "password" : pw,  
       });

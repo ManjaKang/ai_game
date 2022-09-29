@@ -30,7 +30,7 @@ const SignUpPage = () => {
     } else {
       if (pw == pwCheck) {
         try {
-          const response = await axios.post('http://10.0.2.2:8080/users/signup',
+          const response = await axios.post('http://j7e102.p.ssafy.io:8080/users/signup',
           {
             "userId" : id,
             "password" : pw,  

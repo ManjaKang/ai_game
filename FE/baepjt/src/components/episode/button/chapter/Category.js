@@ -46,7 +46,7 @@ function Category(props) {
         <TouchableOpacity
           style={styles.button}
           onPress={() =>
-            navigation.navigate('ChapterPage', {name: props.name})
+            navigation.navigate('ChapterPage', {name: props.name, number: props.number})
           }>
           <ImageBackground
             // source={imageURI}
