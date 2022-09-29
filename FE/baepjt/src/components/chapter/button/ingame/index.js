@@ -40,7 +40,7 @@ function ChapterButton(props) {
               order={6}></Category>
             <Category
               name="임시윤의 집"
-              imageUri={require('../../../../images/white.png')}
+              imageUri={require('../../../../images/background/chapter7/background.jpg')}
               episode={props.name}
               order={7}></Category>
             <Category

@@ -238,7 +238,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -257,7 +257,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -272,7 +272,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -287,7 +287,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -302,7 +302,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -317,7 +317,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -332,7 +332,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -347,7 +347,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -362,7 +362,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -377,7 +377,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -392,7 +392,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -407,7 +407,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -419,11 +419,8 @@ const e101 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1, 3],
-      character: [
-        require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
-      ],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
     {
@@ -437,7 +434,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -452,7 +449,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -467,7 +464,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -482,7 +479,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -497,7 +494,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -512,7 +509,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -557,7 +554,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
