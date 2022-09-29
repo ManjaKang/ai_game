@@ -42,7 +42,7 @@ public class ImageController {
             //System.out.println(file);
 
             Path path = Paths.get("");
-            String directoryName = path.toAbsolutePath().getParent().toString();
+            String directoryName = "/home/ubuntu/be";
 
             if(file!=""){
                 UUID uuid=UUID.randomUUID();
@@ -87,7 +87,7 @@ public class ImageController {
         System.out.println("filePath" + filePath);
         interpreter = new PythonInterpreter();
         StringWriter out = new StringWriter();
-        interpreter.execfile("/home/ubuntu/ai/yoloV5/aiDetect.py");
+        interpreter.execfile("/home/ubuntu/ai/yolov5/aiDetect.py");
         interpreter.setOut(out);
         interpreter.exec("yolo_v5('"+filePath+"')");
         String result = out.toString();
@@ -99,7 +99,7 @@ public class ImageController {
     public static String execPython(String filePath, String filename) throws IOException, InterruptedException {
         String[] command = new String[4];
         command[0] = "python3";
-        command[1] = "/home/ubuntu/ai/yoloV5/aiDetect.py";
+        command[1] = "/home/ubuntu/ai/yolov5/aiDetect.py";
         command[2] = filePath;
         command[3] = filename;
         CommandLine commandLine = CommandLine.parse(command[0]);
