@@ -89,9 +89,9 @@ function IngamePage(props) {
   useEffect(() => {
     setTimeout(() => {
       onFinish();
-    }, 3000);
+    }, 1000);
   });
-
+  console.log('배경화면', scripts[imageOrder].bg);
   return isReady ? (
     <View>
       <ImageBackground

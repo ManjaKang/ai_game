@@ -15,6 +15,21 @@ const e104 = {
       {index: 2, value: false},
     ],
   },
+  allclue: [
+    [
+      {location: ['57%', '3%']},
+      {location: ['78%', '5%']},
+      {location: ['58%', '55%']},
+      {location: ['57%', '35%']},
+      {location: ['25%', '75%']},
+    ],
+    [
+      {location: ['65%', '8%']},
+      {location: ['35%', '85%']},
+      {location: ['52%', '20%']},
+      {location: ['40%', '55%']},
+    ],
+  ],
   clue: [
     {
       name: 'bottle',
@@ -117,6 +132,7 @@ const e104 = {
       text: 'end',
       bg: 0,
     },
+
     {
       name: '배교수',
       text: '백지현의 방은 여기까지 보도록 하지',
