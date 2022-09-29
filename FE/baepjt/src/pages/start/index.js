@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     textAlign: 'center',
     fontFamily: 'HeirofLightRegular',
+    color: 'white',
   },
 });
 export default StartPage;

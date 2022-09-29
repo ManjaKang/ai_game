@@ -30,7 +30,7 @@ function ChapterPage(props) {
               <ChapterText name={props.route.params.name}></ChapterText>
             </Text>
             {/* <EpisodeButton /> */}
-            <ChapterButton name={props.route.params.name} />
+            <ChapterButton name={props.route.params.name} number={props.route.params.number}/>
             <View style={styles.setboxback}>
               {/* <EpisodeButtonBack></EpisodeButtonBack> */}
               <ChapterButtonBack></ChapterButtonBack>
