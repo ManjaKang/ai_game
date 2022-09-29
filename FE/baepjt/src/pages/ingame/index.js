@@ -112,7 +112,7 @@ function IngamePage(props) {
     getItemList();
     setTimeout(() => {
       onFinish();
-    }, 3000);
+    }, 1000);
   }, []);
 
   return isReady ? (
