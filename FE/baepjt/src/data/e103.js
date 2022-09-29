@@ -17,6 +17,15 @@ const e103 = {
       {index: 2, value: false},
     ],
   },
+  allclue: [
+    [{location: ['50%', '55%']}, {location: ['40%', '20%']}],
+    [
+      {location: ['15%', '30%']},
+      {location: ['28%', '73%']},
+      {location: ['70%', '60%']},
+      {location: ['35%', '18%']},
+    ],
+  ],
   clue: [
     {
       name: 'bottle',
@@ -29,21 +38,21 @@ const e103 = {
   backgroundsetting: [
     {
       index: 0,
-      location: ['32%', '68%'], // 버튼 위치
-      size: ['15%', '40%'], // 버튼 사이즈
-      bgimage: require('../images/background/chapter3/closet.png'),
-    },
-    {
-      index: 1,
       location: ['45%', '37%'],
       size: ['20%', '20%'],
       bgimage: require('../images/background/chapter3/bedroom.png'),
     },
     {
-      index: 2,
+      index: 1,
       location: ['48%', '0%'],
       size: ['35%', '30%'],
       bgimage: require('../images/background/chapter3/desk.png'),
+    },
+    {
+      index: 2,
+      location: ['32%', '68%'], // 버튼 위치
+      size: ['15%', '40%'], // 버튼 사이즈
+      bgimage: require('../images/background/chapter3/closet.png'),
     },
   ],
   scripts: [
