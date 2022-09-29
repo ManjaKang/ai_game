@@ -29,7 +29,7 @@ function CameraPage() {
           base64: data.base64,
           fileName: arr[arr.length - 1], // 파일 이
         });
-        console.log('사진 분석 결과', res);
+        console.log('사진 분석 결과', res.data);
         CameraRoll.save(data.uri, 'photo')
           .then(onfulfilled => {
             ToastAndroid.show(onfulfilled, ToastAndroid.SHORT);

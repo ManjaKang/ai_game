@@ -19,9 +19,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -57,6 +55,9 @@ public class ImageController {
                     String[] tmp = item.split(",");
                     list.add(new ImageResDto(tmp[0], Float.parseFloat(tmp[1])));
                 }
+
+                Collections.sort(list, (e1, e2) -> e1.getPercent()-e2.getPercent()>0 ? -1 : 1);
+                if(list.size()>5) list = list.subList(0, 5);
             }
             return new ResponseEntity<>(list, HttpStatus.OK);
         }catch(Exception e){
