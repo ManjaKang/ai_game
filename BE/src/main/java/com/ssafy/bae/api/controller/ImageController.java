@@ -74,7 +74,7 @@ public class ImageController {
             String directoryName = path.toAbsolutePath().getParent().toString();
             System.out.println("Current Working Directory is = " +directoryName);
 
-            File target = new File(directoryName+File.separator+"img"+File.separator+uuid+"_"+filename);
+            File target = new File("/home/ubuntu/be/img/"+uuid+"_"+filename);
             target.createNewFile();
             fos = new FileOutputStream(target);
             fos.write(decode);
@@ -87,7 +87,7 @@ public class ImageController {
         System.out.println("filePath" + filePath);
         interpreter = new PythonInterpreter();
         StringWriter out = new StringWriter();
-        interpreter.execfile("D:/WorkSpace/PyCharm/forStudyAI/test.py");
+        interpreter.execfile("/home/ubuntu/ai/yoloV5/aiDetect.py");
         interpreter.setOut(out);
         interpreter.exec("yolo_v5('"+filePath+"')");
         String result = out.toString();
@@ -98,8 +98,8 @@ public class ImageController {
     }
     public static String execPython(String filePath, String filename) throws IOException, InterruptedException {
         String[] command = new String[4];
-        command[0] = "python";
-        command[1] = "D:/WorkSpace/PyCharm/forStudyAI/test.py";
+        command[0] = "python3";
+        command[1] = "/home/ubuntu/ai/yoloV5/aiDetect.py";
         command[2] = filePath;
         command[3] = filename;
         CommandLine commandLine = CommandLine.parse(command[0]);
