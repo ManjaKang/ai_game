@@ -23,11 +23,11 @@ function IngameButtonCamera() {
       return;
     }
     console.log('PickImage', res);
-    const res = await axios.post('http://10.0.2.2:8080/image', { // localhost 환경
+    const result = await axios.post('http://10.0.2.2:8080/image', { // localhost 환경
       base64: res.assets[0].base64,
       fileName: res.assets[0].fileName,  // 파일 이름
     });
-    console.log("사진 분석 결과 : ", res);
+    console.log("사진 분석 결과 : ", result);
   };
 
   // 카메라 촬영
