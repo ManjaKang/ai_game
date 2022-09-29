@@ -19,34 +19,39 @@ const e101 = {
     ],
   },
   allclue: [
-    [{
-      location: ['55%', '20%'], // 버튼 위치
-    },
-    {
-      location: ['55%', '20%'], // 버튼 위치
-    },
-    {
-      location: ['55%', '20%'], // 버튼 위치
-    },
-    {
-      location: ['55%', '20%'], // 버튼 위치
-    },
-    {
-      location: ['55%', '20%'], // 버튼 위치
-    }
-  ],[
-    {
-      location: ['55%', '20%'], // 버튼 위치
-    },
-    {
-      location: ['55%', '20%'], // 버튼 위치
-    }],[
-    {
-      location: ['55%', '20%'], // 버튼 위치
-    },
-    {
-      location: ['55%', '20%'], // 버튼 위치
-    }]
+    [
+      {
+        location: ['62%', '94%'], // 버튼 위치
+      },
+      {
+        location: ['70%', '93%'], // 버튼 위치
+      },
+      {
+        location: ['45%', '70%'], // 버튼 위치
+      },
+      {
+        location: ['33%', '40%'], // 버튼 위치
+      },
+      {
+        location: ['55%', '20%'], // 버튼 위치
+      },
+    ],
+    [
+      {
+        location: ['52%', '15%'], // 버튼 위치
+      },
+      {
+        location: ['33%', '50%'], // 버튼 위치
+      },
+    ],
+    [
+      {
+        location: ['55%', '50%'], // 버튼 위치
+      },
+      {
+        location: ['40%', '77%'], // 버튼 위치
+      },
+    ],
   ],
   clue: [
     {
@@ -66,7 +71,7 @@ const e101 = {
     },
     {
       index: 1,
-      location: ['55%', '40%'],
+      location: ['47%', '45%'],
       size: ['40%', '20%'],
       bgimage: require('../images/background/chapter1/table.jpg'),
     },
@@ -233,7 +238,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -252,7 +257,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -267,7 +272,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -282,7 +287,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -297,7 +302,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -312,7 +317,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -327,7 +332,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -342,7 +347,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -357,7 +362,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -372,7 +377,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -387,7 +392,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -402,7 +407,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -414,11 +419,8 @@ const e101 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1, 3],
-      character: [
-        require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
-      ],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
     {
@@ -432,7 +434,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -447,7 +449,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -462,7 +464,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -477,7 +479,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -492,7 +494,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -507,7 +509,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -552,7 +554,7 @@ const e101 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/examiner/body/whole.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 1,
     },
