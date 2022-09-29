@@ -17,14 +17,14 @@ const e106 = {
   },
   allclue: [
     [
-      {location: ['55%', '15%']},
-      {location: ['55%', '15%']},
-      {location: ['55%', '15%']},
+      {location: ['54%', '71%']},
+      {location: ['63%', '25%']},
+      {location: ['65%', '46%']},
     ],
     [
-      {location: ['55%', '15%']},
-      {location: ['55%', '15%']},
-      {location: ['55%', '15%']},
+      {location: ['60%', '2%']},
+      {location: ['75%', '50%']},
+      {location: ['35%', '73%']},
     ],
   ],
   clue: [
@@ -140,6 +140,11 @@ const e106 = {
       index: 100,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'gotoMain',
       bg: 0,
     },
 
