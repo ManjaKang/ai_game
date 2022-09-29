@@ -17,6 +17,15 @@ const e103 = {
       {index: 2, value: false},
     ],
   },
+  allclue: [
+    [{location: ['50%', '55%']}, {location: ['40%', '20%']}],
+    [
+      {location: ['15%', '30%']},
+      {location: ['28%', '73%']},
+      {location: ['70%', '60%']},
+      {location: ['35%', '18%']},
+    ],
+  ],
   clue: [
     {
       name: 'bottle',
@@ -29,21 +38,21 @@ const e103 = {
   backgroundsetting: [
     {
       index: 0,
-      location: ['32%', '68%'], // 버튼 위치
-      size: ['15%', '40%'], // 버튼 사이즈
-      bgimage: require('../images/background/chapter3/closet.png'),
-    },
-    {
-      index: 1,
       location: ['45%', '37%'],
       size: ['20%', '20%'],
       bgimage: require('../images/background/chapter3/bedroom.png'),
     },
     {
-      index: 2,
+      index: 1,
       location: ['48%', '0%'],
       size: ['35%', '30%'],
       bgimage: require('../images/background/chapter3/desk.png'),
+    },
+    {
+      index: 2,
+      location: ['32%', '68%'], // 버튼 위치
+      size: ['15%', '40%'], // 버튼 사이즈
+      bgimage: require('../images/background/chapter3/closet.png'),
     },
   ],
   scripts: [
@@ -55,14 +64,14 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
     {
       name: '',
       text: '나는 교수님과 함께 피해자의 방을 확인하러 들어갔다.',
-      img: require('../images/character/user/face/emotionless.png'),
+      img: require('../images/character/prof/face/emotionless.png'),
       type: 2,
       audio: '',
       sfx: '',
@@ -74,7 +83,7 @@ const e103 = {
     {
       name: '',
       text: '들어간 순간 교수님과 나는 눈을 의심할 수 밖에 없었다.',
-      img: require('../images/character/user/face/emotionless.png'),
+      img: require('../images/character/prof/face/emotionless.png'),
       type: 2,
       audio: '',
       sfx: '',
@@ -86,7 +95,7 @@ const e103 = {
     {
       name: '',
       text: '피해자의 방이 마치 데칼코마니를 이용한 예술 작품처럼 완벽하게 대칭으로 이루어져 있었기 때문이었다.',
-      img: require('../images/character/user/face/emotionless.png'),
+      img: require('../images/character/prof/face/emotionless.png'),
       type: 2,
       audio: '',
       sfx: '',
@@ -103,7 +112,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -115,14 +124,14 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
     {
       name: '',
       text: '교수님이 말씀하신대로 이 방은 마치 틀린 그림 찾기 같다.',
-      img: require('../images/character/user/face/emotionless.png'),
+      img: require('../images/character/prof/face/emotionless.png'),
       type: 2,
       audio: '',
       sfx: '',
@@ -134,7 +143,7 @@ const e103 = {
     {
       name: '',
       text: '이 방에서 어떤 단서들을 더 찾을 수 있을까?',
-      img: require('../images/character/user/face/emotionless.png'),
+      img: require('../images/character/prof/face/emotionless.png'),
       type: 2,
       audio: '',
       sfx: '',
@@ -161,7 +170,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 100,
-      position: [0],
+      position: [3],
+      //examiner/body/happy/right.png
       character: [require('../images/character/examiner/body/whole.png')],
       bg: 0,
     },
@@ -173,8 +183,13 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        //prof/body/happy/left.png
+        //examiner/body/happy/right.png
+        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -185,8 +200,13 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/examiner/body/whole.png')],
+      position: [1, 3],
+      character: [
+        //prof/body/happy/left.png
+        //examiner/body/happy/right.png
+        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -197,8 +217,13 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        //prof/body/happy/left.png
+        //examiner/body/happy/right.png
+        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -209,8 +234,13 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        //prof/body/happy/left.png
+        //examiner/body/happy/right.png
+        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -221,8 +251,13 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/examiner/body/whole.png')],
+      position: [1, 3],
+      character: [
+        //prof/body/happy/left.png
+        //examiner/body/happy/right.png
+        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -233,8 +268,13 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        //prof/body/happy/left.png
+        //examiner/body/happy/right.png
+        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -245,8 +285,13 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        //prof/body/happy/left.png
+        //examiner/body/happy/right.png
+        require('../images/character/prof/body/less/left_camera.png'),
+        require('../images/character/prof/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -257,7 +302,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/limij/body/whole.png')],
       bg: 0,
     },
@@ -269,8 +314,11 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -281,8 +329,11 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/limij/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -293,8 +344,11 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/limij/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -305,8 +359,11 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -317,8 +374,11 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/limij/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -329,8 +389,11 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -341,8 +404,11 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/limij/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -353,7 +419,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -365,7 +431,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/limsy/body/whole.png')],
       bg: 0,
     },
@@ -377,7 +443,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -389,8 +455,10 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1],
+      character: [
+        require('../images/character/prof/body/less/left_camera.png'),
+      ],
       bg: 0,
     },
     {
@@ -401,7 +469,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -413,7 +481,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/kimsy/body/whole.png')],
       bg: 0,
     },
@@ -425,7 +493,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -437,7 +505,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -473,7 +541,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -485,7 +553,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -497,7 +565,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -509,7 +577,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -521,7 +589,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -533,7 +601,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -541,6 +609,139 @@ const e103 = {
       name: 'end',
       text: 'gotoMain',
       bg: 0,
+    },
+    // 단서들이 겹치거나 없을 때 나오는 대사
+    {
+      name: '배교수',
+      text: '음,, 그건 단서가 될 수 없을 것 같군',
+      img: require('../images/character/prof/face/emotionless.png'),
+      type: 0,
+      audio: '',
+      sfx: '',
+      index: 301,
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
+      bg: 3,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 3,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 3,
+    },
+    {
+      name: '배교수',
+      text: '그 단서는 이미 찾은 단서야. 다른 단서를 찾아보도록 하지!',
+      img: require('../images/character/prof/face/emotionless.png'),
+      type: 0,
+      audio: '',
+      sfx: '',
+      index: 302,
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
+      bg: 3,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 3,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 3,
+    },
+    {
+      name: '배교수',
+      text: '음,, 그건 단서가 될 수 없을 것 같군',
+      img: require('../images/character/prof/face/emotionless.png'),
+      type: 0,
+      audio: '',
+      sfx: '',
+      index: 401,
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
+      bg: 4,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 4,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 4,
+    },
+    {
+      name: '배교수',
+      text: '그 단서는 이미 찾은 단서야. 다른 단서를 찾아보도록 하지!',
+      img: require('../images/character/prof/face/emotionless.png'),
+      type: 0,
+      audio: '',
+      sfx: '',
+      index: 402,
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
+      bg: 4,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 4,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 4,
+    },
+    {
+      name: '배교수',
+      text: '음,, 그건 단서가 될 수 없을 것 같군',
+      img: require('../images/character/prof/face/emotionless.png'),
+      type: 0,
+      audio: '',
+      sfx: '',
+      index: 501,
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
+      bg: 5,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 5,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 5,
+    },
+    {
+      name: '배교수',
+      text: '그 단서는 이미 찾은 단서야. 다른 단서를 찾아보도록 하지!',
+      img: require('../images/character/prof/face/emotionless.png'),
+      type: 0,
+      audio: '',
+      sfx: '',
+      index: 502,
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
+      bg: 5,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 5,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 5,
     },
 
     // 모달 창에 띄울 대사들
@@ -580,8 +781,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 2,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1],
+      character: [require('../images/character/prof/body/less/left.png')],
       bg: 5,
     },
     {
@@ -592,8 +793,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1],
+      character: [require('../images/character/prof/body/less/left.png')],
       bg: 5,
     },
 
@@ -676,8 +877,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 7,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1],
+      character: [require('../images/character/prof/body/less/left.png')],
       bg: 3,
     },
     {
@@ -688,8 +889,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1],
+      character: [require('../images/character/prof/body/less/left.png')],
       bg: 3,
     },
     {
@@ -700,8 +901,10 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1],
+      character: [
+        require('../images/character/prof/body/less/left_camera.png'),
+      ],
       bg: 3,
     },
     {
@@ -712,8 +915,10 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1],
+      character: [
+        require('../images/character/prof/body/less/left_camera.png'),
+      ],
       bg: 3,
     },
     {
@@ -724,8 +929,10 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1],
+      character: [
+        require('../images/character/prof/body/less/left_camera.png'),
+      ],
       bg: 3,
     },
     {
@@ -736,8 +943,10 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1],
+      character: [
+        require('../images/character/prof/body/less/left_camera.png'),
+      ],
       bg: 3,
     },
     {
@@ -748,7 +957,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
     },
@@ -760,7 +969,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
+      position: [2],
       character: [require('../images/character/limij/body/whole.png')],
       bg: 3,
     },
@@ -772,8 +981,12 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [2],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [2, 3],
+      character: [
+        //baekjh/body/less/right_camera.png
+        require('../images/character/limij/body/whole.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 3,
     },
     {
@@ -784,8 +997,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1],
+      character: [require('../images/character/prof/body/less/left.png')],
       bg: 3,
     },
     {
@@ -796,8 +1009,12 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [2],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // baekjh/body/less/right.png
+        require('../images/character/prof/body/whole.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 3,
     },
     {
@@ -808,8 +1025,12 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [2],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // baekjh/body/sad/right.png
+        require('../images/character/prof/body/whole.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 3,
     },
     {
@@ -820,8 +1041,12 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [2],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // baekjh/body/sad/right.png
+        require('../images/character/prof/body/whole.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 3,
     },
     {
@@ -832,8 +1057,12 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // baekjh/body/sad/right.png
+        require('../images/character/prof/body/whole.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 3,
     },
     {
@@ -856,7 +1085,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
     },
@@ -868,7 +1097,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
     },
@@ -880,7 +1109,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
     },
@@ -892,7 +1121,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
     },
@@ -904,7 +1133,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
     },
@@ -916,7 +1145,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
     },

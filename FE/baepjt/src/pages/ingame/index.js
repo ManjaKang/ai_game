@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   Image,
   Button,
+  Alert,
 } from 'react-native';
 import * as Progress from 'react-native-progress';
 import IngameBarLoading from '../../components/ingame/bar/loading';
@@ -22,6 +23,7 @@ import ModalOption from '../../components/modal/option/page';
 import ModalTool from '../../components/modal/tool/page';
 import ModalCharacter from '../../components/modal/character/page';
 import * as RNFS from 'react-native-fs';
+import axios from 'axios';
 
 // import e101 from '../../data/e101.js';
 
@@ -32,7 +34,9 @@ import ModalDetectFinish from '../../components/modal/detectFinish/page';
 import ModalDetectFinishButton from '../../components/modal/detectFinish/button';
 import {useNavigation} from '@react-navigation/native';
 import IngameTextIdle from '../../components/ingame/text/idle';
+import { useSelector, useDispatch } from 'react-redux';
 function IngamePage(props) {
+  const userID = useSelector((state) => state.id.value);
   const [nameOrder, setNameOrder] = useState(0);
   const [imageOrder, setImageOrder] = useState(0);
   const [isReady, setReady] = useState(false);
@@ -52,8 +56,10 @@ function IngamePage(props) {
   const [visible, setVisible] = useState(setting.initial);
   const clue = dataa.clue;
   const backgroundsetting = dataa.backgroundsetting;
+  const cluehint = dataa.allclue;
   const scripts = dataa.scripts;
   const [characterList, setCharacterList] = useState('');
+  const [itemList,setItemList] = useState([]);
 
   const navigation = useNavigation();
   // 클릭할 때마다 다음 대사로 넘어가기
@@ -69,9 +75,28 @@ function IngamePage(props) {
       }
     }
     if (scripts[nameOrder + 1].text == 'gotoMain') {
+      Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
       navigation.navigate('ChapterPage', {name: props.route.params.episode});
     }
   };
+
+  //아이템 불러오기
+  const getItemList = async() => {
+    console.log("ID 값!",userID);
+    try {
+      const response = await axios.get('http://10.0.2.2:8080/users/items/'+userID);
+      if (response.status == 200) {
+        setItemList(response.data);
+        console.log("가져온 아이템!",response.data);
+      }
+      else {
+        console.log("에에엥");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   // dialog의 특정 인덱스로 보내기
   function goIndexDialog(index) {
     var iindex = scripts.findIndex(i => i.index == index);
@@ -84,10 +109,11 @@ function IngamePage(props) {
   const epiImgBg = dataa.setting.chapterbg;
 
   useEffect(() => {
+    getItemList();
     setTimeout(() => {
       onFinish();
-    }, 3000);
-  });
+    }, 1000);
+  }, []);
 
   return isReady ? (
     <View>
@@ -113,9 +139,7 @@ function IngamePage(props) {
           activeOpacity={1}
           onPress={orderIncrease}></TouchableOpacity>
 
-        {scripts[nameOrder].text === 'end' ? (
-          <IngameTextIdle />
-        ) : null}
+        {scripts[nameOrder].text === 'end' ? <IngameTextIdle /> : null}
 
         {scripts[nameOrder].text === 'end' ? (
           <ModalDetectFinishButton
@@ -143,6 +167,7 @@ function IngamePage(props) {
               visible={visible}
               setVisible={setVisible}
               func={orderIncrease}
+              cluehint={cluehint}
             />
           ))}
 
@@ -160,6 +185,7 @@ function IngamePage(props) {
             setstate={setNameOrder}
           />
         )}
+
         <ModalOption
           visible={optionState}
           hideModalContentWhileAnimating={true}
@@ -186,7 +212,8 @@ function IngamePage(props) {
           visible={inventoryState}
           hideModalContentWhileAnimating={true}
           setter={setInventoryState}
-          items={items}
+          items={itemList}
+          itemImg={items}
         />
         <ModalGotomain
           visible={titleState}

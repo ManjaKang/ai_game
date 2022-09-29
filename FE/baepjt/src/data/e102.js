@@ -54,7 +54,7 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [0],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -66,7 +66,7 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -78,7 +78,7 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [],
+      position: [2],
       character: [require('../images/character/limsy/body/whole.png')],
       bg: 0,
     },
@@ -90,7 +90,7 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -102,7 +102,7 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -119,7 +119,9 @@ const e102 = {
       sfx: '',
       index: 0,
       position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      character: [
+        require('../images/character/prof/body/less/left_camera.png'),
+      ],
       bg: 0,
     },
     {
@@ -130,8 +132,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -142,8 +147,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -154,8 +162,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -166,8 +177,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -178,20 +192,27 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
       name: '',
       text: '말을 하기 곤란한 관계인 것 같다.',
-      img: require('../images/character/user/face/emotionless.png'),
+      img: require('../images/character/prof/face/emotionless.png'),
       type: 2,
       audio: '',
       sfx: '',
       index: 0,
-      position: [],
-      character: [],
+      position: [1, 3],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -202,8 +223,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -218,8 +242,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limij/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -230,8 +257,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -242,14 +272,17 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limij/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/whole.png'),
+      ],
       bg: 0,
     },
     {
       name: '',
       text: '임이지씨랑은 어떤 문제가 있었길래 이렇게 말하는 것일까?',
-      img: require('../images/character/user/face/emotionless.png'),
+      img: require('../images/character/prof/face/emotionless.png'),
       type: 2,
       audio: '',
       sfx: '',
@@ -270,8 +303,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -282,8 +318,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -294,14 +333,17 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
       name: '',
       text: '이 사람과 오종오씨가 이 모임을 처음 만들고, 얼마 지나지 않아 백지현씨가 들어오게 된 것 같다.',
-      img: require('../images/character/user/face/emotionless.png'),
+      img: require('../images/character/prof/face/emotionless.png'),
       type: 2,
       audio: '',
       sfx: '',
@@ -322,8 +364,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -334,8 +379,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -346,8 +394,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -358,7 +409,7 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -370,7 +421,7 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -382,8 +433,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -394,8 +448,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -406,8 +463,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -418,8 +478,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -430,8 +493,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limsy/body/whole.png')],
+      position: [1, 2, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -442,8 +509,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -454,8 +524,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -466,8 +539,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -478,8 +554,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -490,8 +569,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -502,8 +584,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -514,8 +599,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -526,8 +614,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -538,8 +629,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -550,8 +644,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -562,8 +659,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limsy/body/whole.png')],
+      position: [1, 2, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -574,7 +675,7 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
+      position: [2],
       character: [require('../images/character/limij/body/whole.png')],
       bg: 0,
     },
@@ -586,8 +687,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -598,8 +702,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limij/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -610,8 +717,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 2, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -622,8 +733,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -634,8 +748,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limij/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -646,8 +763,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limij/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -658,8 +778,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left_camera.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -670,8 +793,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -682,8 +808,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -694,8 +823,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limij/body/whole.png')],
+      position: [1, 2, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/kimsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -706,8 +839,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -718,8 +854,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limij/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -730,8 +869,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left_camera.png'),
+        require('../images/character/limij/body/less/right.png'),
+      ],
       bg: 0,
     },
     {
@@ -743,6 +885,7 @@ const e102 = {
       sfx: '',
       index: 0,
       position: [1],
+      // 김세영 body/less/left_camera.png
       character: [require('../images/character/kimsy/body/whole.png')],
       bg: 0,
     },
@@ -754,8 +897,13 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // 김세영 body/less/left.png
+        // baekjh/body/less/right_camera.png
+        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -766,7 +914,8 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
+      position: [3],
+      // limij/body/less/left_camera.png
       character: [require('../images/character/limij/body/whole.png')],
       bg: 0,
     },
@@ -778,8 +927,13 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limsy/body/whole.png')],
+      position: [1, 2],
+      character: [
+        // limij/body/less/left_camera.png
+        // limsy/body/less/right_camera.png
+        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -790,8 +944,15 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 2, 3],
+      character: [
+        // limij/body/less/left_camera.png
+        // limsy/body/less/right_camera.png
+        // baekjh/body/less/right_camera.png
+        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -802,8 +963,15 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limsy/body/whole.png')],
+      position: [1, 2, 3],
+      character: [
+        // limij/body/less/left_camera.png
+        // limsy/body/less/right_camera.png
+        // baekjh/body/less/right_camera.png
+        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -814,8 +982,15 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limsy/body/whole.png')],
+      position: [1, 2, 3],
+      character: [
+        // limij/body/less/left_camera.png
+        // limsy/body/less/right_camera.png
+        // baekjh/body/less/right_camera.png
+        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -827,7 +1002,7 @@ const e102 = {
       sfx: '',
       index: 0,
       position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      character: [require('../images/character/prof/body/less/left.png')],
       bg: 0,
     },
     {
@@ -838,8 +1013,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // limsy/body/less/right.png
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -850,8 +1029,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // limsy/body/less/right.png
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -862,8 +1045,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/limsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // limsy/body/less/right.png
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/limsy/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -874,7 +1061,7 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
@@ -886,8 +1073,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // baekjh/body/less/right.png
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -898,8 +1089,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // baekjh/body/less/right.png
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -910,8 +1105,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // baekjh/body/less/right.png
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -922,8 +1121,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // baekjh/body/less/right.png
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -934,8 +1137,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // baekjh/body/less/right.png
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -946,8 +1153,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/baekjh/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // baekjh/body/less/right.png
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -958,8 +1169,12 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [1, 3],
+      character: [
+        // baekjh/body/less/right.png
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/whole.png'),
+      ],
       bg: 0,
     },
     {
@@ -970,8 +1185,11 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/whole.png')],
+      position: [2],
+      character: [
+        // baekjh/body/less/right.png
+        require('../images/character/prof/body/whole.png'),
+      ],
       bg: 0,
     },
     {
