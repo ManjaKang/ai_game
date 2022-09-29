@@ -3,6 +3,9 @@ package com.ssafy.bae.api.controller;
 import com.ssafy.bae.api.dto.ImageReqDto;
 import com.ssafy.bae.api.dto.ImageResDto;
 import com.ssafy.bae.api.dto.ItemDto;
+import org.apache.commons.exec.CommandLine;
+import org.apache.commons.exec.DefaultExecutor;
+import org.apache.commons.exec.PumpStreamHandler;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.python.util.PythonInterpreter;
 import org.springframework.http.HttpStatus;
@@ -12,10 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.StringWriter;
+import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -47,7 +48,8 @@ public class ImageController {
                 UUID uuid=UUID.randomUUID();
                 filePath = directoryName+File.separator+"img"+File.separator+uuid+"_"+filename;
                 makeFileWithString(file,filename,uuid);
-                String result = pythonProcessbuilder(filePath);
+//                String result = pythonProcessbuilder(filePath);
+                String result = execPython(filePath, filename);
 
                 // ex) camera,0.7951256/pen,0.157654/table,0.985215
                 String[] items = result.split("/");
@@ -81,18 +83,39 @@ public class ImageController {
             e.printStackTrace();
         }
     }
-
     public String pythonProcessbuilder(String filePath) throws IOException, InterruptedException {
-
+        System.out.println("filePath" + filePath);
         interpreter = new PythonInterpreter();
         StringWriter out = new StringWriter();
-        interpreter.execfile("D:\\WorkSpace\\PyCharm\\forStudyAI\\aiDetect.py");
+        interpreter.execfile("D:/WorkSpace/PyCharm/forStudyAI/test.py");
         interpreter.setOut(out);
-        interpreter.exec("yolo_v5("+filePath+")");
+        interpreter.exec("yolo_v5('"+filePath+"')");
         String result = out.toString();
         System.out.println("result : " +result);
 
 
         return result;
+    }
+    public static String execPython(String filePath, String filename) throws IOException, InterruptedException {
+        String[] command = new String[4];
+        command[0] = "python";
+        command[1] = "D:/WorkSpace/PyCharm/forStudyAI/test.py";
+        command[2] = filePath;
+        command[3] = filename;
+        CommandLine commandLine = CommandLine.parse(command[0]);
+        for (int i = 1, n = command.length; i < n; i++) {
+            commandLine.addArgument(command[i]);
+        }
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        PumpStreamHandler pumpStreamHandler = new PumpStreamHandler(outputStream);
+        DefaultExecutor executor = new DefaultExecutor();
+        executor.setStreamHandler(pumpStreamHandler);
+        int result = executor.execute(commandLine);
+        System.out.println("result: " + result);
+        System.out.println("output: " + outputStream.toString());
+        String[] strings = outputStream.toString().split("\n");
+        System.out.println("strings : " + strings[strings.length-3]);
+        return strings[strings.length-3].split(" : ")[1];
     }
 }
