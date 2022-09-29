@@ -25,7 +25,7 @@ function ChapterButton(props) {
               order={3}></Category>
             <Category
               name="백지현의 집"
-              imageUri={require('../../../../images/white.png')}
+              imageUri={require('../../../../images/background/chapter4/chapter4_wardrobe.png')}
               episode={props.name}
               order={4}></Category>
             <Category
@@ -35,12 +35,12 @@ function ChapterButton(props) {
               order={5}></Category>
             <Category
               name="김세영의 집"
-              imageUri={require('../../../../images/background/chapter6/background.jpg')}
+              imageUri={require('../../../../images/background/chapter6/paintingroom.png')}
               episode={props.name}
               order={6}></Category>
             <Category
               name="임시윤의 집"
-              imageUri={require('../../../../images/white.png')}
+              imageUri={require('../../../../images/background/chapter7/background.jpg')}
               episode={props.name}
               order={7}></Category>
             <Category

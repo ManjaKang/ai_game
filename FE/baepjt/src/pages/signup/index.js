@@ -10,16 +10,57 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
+import axios from 'axios';
+import { setId } from '../../redux/login';
+import { useSelector, useDispatch } from 'react-redux';
 
 const SignUpPage = () => {
+  const ID = useSelector((state) => state.id.value)
+  const dispatch = useDispatch();
   const navigation = useNavigation();
   const [id, onChangeId] = React.useState(null);
   const [pw, onChangePw] = React.useState(null);
   const [pwCheck, onChangePwCheck] = React.useState(null);
-  const onClick = () => {
-    Alert.alert('가입하신 아이디로 로그인해주세요');
-    navigation.navigate('Login');
-  };
+  const axiosSignup = async() => {
+    if (id == '' || pw == '' || pwCheck == '') {
+      onChangeId('');
+      onChangePw('');
+      onChangePwCheck('');
+      Alert.alert('빈값이 있습니다!');     
+    } else {
+      if (pw == pwCheck) {
+        try {
+          const response = await axios.post('http://10.0.2.2:8080/users/signup',
+          {
+            "userId" : id,
+            "password" : pw,  
+          });
+          if (response.status === 200) {
+            if (response.data.userId == "중복") {
+              onChangeId('');
+              onChangePw('');
+              onChangePwCheck('');
+              Alert.alert('이미 존재하는 아이디입니다!');
+            }
+            else {
+              console.log(response);
+              dispatch(setId(response.data.userId));
+              navigation.navigate('Main');
+            }
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        console.log("pw != pwcheck");
+        Alert.alert('입력값을 확인해 주세요!');
+        onChangeId('');
+        onChangePw('');
+        onChangePwCheck('');
+      }
+    }
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
@@ -48,7 +89,7 @@ const SignUpPage = () => {
             placeholder="비밀번호를 다시 입력하세요."
           />
 
-          <TouchableOpacity style={styles.button} onPress={onClick}>
+          <TouchableOpacity style={styles.button} onPress={axiosSignup}>
             <ImageBackground
               source={require('../../images/modal/button.png')}
               style={{height: '100%', width: '100%'}}>
@@ -81,6 +122,7 @@ const styles = StyleSheet.create({
     padding: 10,
     color: 'black',
     borderColor: 'white',
+    backgroundColor: 'white',
   },
   button: {
     marginLeft: '30%',
@@ -91,6 +133,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'HeirofLightRegular',
     fontSize: 40,
+    color: 'white',
   },
   logintext: {
     marginLeft: '20%',
