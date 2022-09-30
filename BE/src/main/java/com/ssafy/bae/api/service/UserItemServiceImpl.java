@@ -8,6 +8,7 @@ import com.ssafy.bae.db.entity.UserAch;
 import com.ssafy.bae.db.entity.UserItem;
 import com.ssafy.bae.db.repository.ItemRepository;
 import com.ssafy.bae.db.repository.UserItemRepository;
+import com.ssafy.bae.db.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,9 @@ public class UserItemServiceImpl implements UserItemService {
 
     @Autowired
     ItemRepository itemRepository;
+
+    @Autowired
+    UserRepository userRepository;
 
     @Override
     public List<UserItemDto> findAllByUserId(String userId) {
@@ -41,6 +45,8 @@ public class UserItemServiceImpl implements UserItemService {
 
         int result = 0;
 
+        userRepository.updateProgress(userItemReqDto.getEpisode(), userItemReqDto.getChapter(), userItemReqDto.getUserId());
+
         for(UserItemDto userItemDto : userItemReqDto.getItems()){
             boolean isExist = dao.existsByUserIdAndName(userItemReqDto.getUserId(), userItemDto.getName());
             if(!isExist){
@@ -48,9 +54,9 @@ public class UserItemServiceImpl implements UserItemService {
 
                 UserItem userItem = new UserItem();
                 userItem.setUserId(userItemReqDto.getUserId());
-                userItem.setEpisode(userItemReqDto.getEpisode());
-                userItem.setChapter(userItemReqDto.getChapter());
 
+                userItem.setEpisode(userItemDto.getEpisode());
+                userItem.setChapter(userItemDto.getChapter());
                 userItem.setName(userItemDto.getName());
                 userItem.setDescription(userItemDto.getDescription());
                 userItem.setIndex(userItemDto.getIndex());
