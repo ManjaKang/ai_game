@@ -60,23 +60,20 @@ public class UserServiceImpl implements UserService {
         String password = loginDto.getPassword();
         
         Pattern pattern = Pattern.compile("^[a-z0-9]{4,20}$"); // 아이디 정규식
-        if(userId == null || userId.length() < 4 || userId.length() > 20 || !pattern.matcher(userId).matches() || !existByUserId(userId)){
+        if(userId == null || userId.length() < 4 || userId.length() > 20
+                || !pattern.matcher(userId).matches() || !existByUserId(userId)){
             result.setUserId("wrong userId"); // 아이디가 비정상
             return result;
         }
         User user = dao.findByUserId(userId);
         pattern = Pattern.compile("^[A-Za-z0-9@$!%*#?&]{4,20}$"); // 비밀번호 정규식
-        if(password == null || password.length() < 4 || password.length() > 20 || !pattern.matcher(password).matches() || !user.getPassword().equals(loginDto.getPassword())){
+        if(password == null || password.length() < 4 || password.length() > 20
+                || !pattern.matcher(password).matches() || !user.getPassword().equals(loginDto.getPassword())){
             result.setUserId("wrong password"); // 비밀번호가 비정상
             return result;
         }
         result = new UserDto(user);
         return result;
-    }
-
-    @Override
-    public int updateProgress(UserDto userDto) {
-        return dao.updateProgress(userDto.getEpisode(), userDto.getChapter(), userDto.getUserId());
     }
 
 }
