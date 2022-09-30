@@ -1,4 +1,5 @@
 import React from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -16,7 +17,13 @@ function StartPage({navigation}) {
     // 다음페이지로 넘어가기
     <TouchableOpacity
       activeOpacity={1}
-      onPress={() => navigation.navigate('Login')}>
+      onPress={async () => {
+        if (await AsyncStorage.getItem('userId')) {
+          navigation.navigate('EpisodePage');
+        } else {
+          navigation.navigate('Login');
+        }
+      }}>
       <ImageBackground
         source={require('../../images/start_page/background.jpg')}
         style={{width: '100%', height: '100%'}}>

@@ -11,55 +11,104 @@ import {
   Alert,
 } from 'react-native';
 import axios from 'axios';
-import { setId } from '../../redux/login';
-import { useSelector, useDispatch } from 'react-redux';
+import {setId} from '../../redux/login';
+import {useSelector, useDispatch} from 'react-redux';
 
 const SignUpPage = () => {
-  const ID = useSelector((state) => state.id.value)
+  const ID = useSelector(state => state.id.value);
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const [id, onChangeId] = React.useState(null);
   const [pw, onChangePw] = React.useState(null);
   const [pwCheck, onChangePwCheck] = React.useState(null);
-  const axiosSignup = async() => {
+  const [errorMessageId, setErrorMessageId] = React.useState('');
+  const [errorMessagePw, setErrorMessagePw] = React.useState('');
+  const [errorMessagePwCheck, setErrorMessagePwCheck] = React.useState('');
+
+  // ID 형식 확인
+  const validateId = id => {
+    const regex = /^[a-z0-9]{4,20}$/;
+    return regex.test(id);
+  };
+
+  // Password 형식 확인
+  const validatePw = pw => {
+    const regex = /^[A-Za-z0-9@$!%*#?&]{4,20}$/;
+    return regex.test(pw);
+  };
+
+  // 공백 제거
+  const removeWhitespace = text => {
+    const regex = /\s/g;
+    return text.replace(regex, '');
+  };
+
+  // Signin Component
+  const _handleIdChange = id => {
+    const changedId = removeWhitespace(id);
+    onChangeId(changedId);
+    setErrorMessageId(
+      validateId(changedId)
+        ? ''
+        : '아이디는 소문자 또는 숫자를 4자 이상 20자 이하 입력하세요.',
+    );
+  };
+
+  const _handlePwChange = pw => {
+    const changedPw = removeWhitespace(pw);
+    onChangePw(changedPw);
+    setErrorMessagePw(
+      validatePw(changedPw)
+        ? ''
+        : '비밀번호는 대소문자 또는 숫자 또는 특수문자를 4자 이상 20자 이하 입력하세요.',
+    );
+  };
+
+  const _handlePwCheckChange = pwCheck => {
+    const changedPwCheck = removeWhitespace(pwCheck);
+    onChangePwCheck(changedPwCheck);
+    setErrorMessagePwCheck(
+      pw == pwCheck ? '' : '비밀번호가 일치하지 않습니다.',
+    );
+  };
+
+  const axiosSignup = async () => {
     if (id == '' || pw == '' || pwCheck == '') {
-      onChangeId('');
-      onChangePw('');
-      onChangePwCheck('');
-      Alert.alert('빈값이 있습니다!');     
+      Alert.alert('빈칸을 채워주시길 바랍니다!');
+    } else if (errorMessageId) {
+      Alert.alert('아이디 형식을 확인해주시길 바랍니다!');
+    } else if (errorMessagePw) {
+      Alert.alert('비밀번호 형식을 확인해주시길 바랍니다!');
+    } else if (pw != pwCheck) {
+      Alert.alert('입력된 비밀번호가 다릅니다!');
     } else {
-      if (pw == pwCheck) {
-        try {
-          const response = await axios.post('http://j7e102.p.ssafy.io:8080/users/signup',
+      try {
+        const response = await axios.post(
+          'http://j7e102.p.ssafy.io:8080/users/signup',
           {
-            "userId" : id,
-            "password" : pw,  
-          });
-          if (response.status === 200) {
-            if (response.data.userId == "중복") {
-              onChangeId('');
-              onChangePw('');
-              onChangePwCheck('');
-              Alert.alert('이미 존재하는 아이디입니다!');
-            }
-            else {
-              console.log(response);
-              dispatch(setId(response.data.userId));
-              navigation.navigate('Main');
-            }
+            userId: id,
+            password: pw,
+          },
+        );
+        if (response.status === 200) {
+          if (response.data.userId == '중복') {
+            Alert.alert('이미 존재하는 아이디입니다!');
+          } else if (response.data.userId == 'wrong userId') {
+            Alert.alert('아이디 형식을 확인해주시길 바랍니다!');
+          } else if (response.data.userId == 'wrong password') {
+            Alert.alert('비밀번호 형식을 확인해주시길 바랍니다!');
+          } else {
+            // dispatch(setId(response.data.userId));
+            navigation.navigate('Login');
           }
-        } catch (error) {
-          console.log(error);
+        } else {
+          Alert.alert('서버 오류!');
         }
-      } else {
-        console.log("pw != pwcheck");
-        Alert.alert('입력값을 확인해 주세요!');
-        onChangeId('');
-        onChangePw('');
-        onChangePwCheck('');
+      } catch (error) {
+        console.log(error);
       }
     }
-  }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -72,23 +121,34 @@ const SignUpPage = () => {
         <View style={styles.inputcontainer}>
           <TextInput
             style={styles.input}
-            onChangeText={onChangeId}
+            onChangeText={_handleIdChange}
             value={id}
+            autoCapitalize={'none'}
             placeholder="아이디를 입력하세요."
           />
+          <View style={styles.errormessagecontainer}>
+            <Text style={styles.errormessagetext}>{errorMessageId}</Text>
+          </View>
           <TextInput
             style={styles.input}
-            onChangeText={onChangePw}
+            onChangeText={_handlePwChange}
             value={pw}
+            autoCapitalize={'none'}
             placeholder="비밀번호를 입력하세요."
           />
+          <View style={styles.errormessagecontainer}>
+            <Text style={styles.errormessagetext}>{errorMessagePw}</Text>
+          </View>
           <TextInput
             style={styles.input}
-            onChangeText={onChangePwCheck}
+            onChangeText={_handlePwCheckChange}
             value={pwCheck}
+            autoCapitalize={'none'}
             placeholder="비밀번호를 다시 입력하세요."
           />
-
+          <View style={styles.errormessagecontainer}>
+            <Text style={styles.errormessagetext}>{errorMessagePwCheck}</Text>
+          </View>
           <TouchableOpacity style={styles.button} onPress={axiosSignup}>
             <ImageBackground
               source={require('../../images/modal/button.png')}
@@ -112,40 +172,47 @@ const styles = StyleSheet.create({
   },
   inputcontainer: {
     marginLeft: '15%',
-    marginTop: '3%',
+    marginTop: '2%',
   },
   input: {
     height: 40,
     width: '80%',
     margin: 12,
+    marginTop: 5,
+    marginBottom: 5,
     borderWidth: 1,
     padding: 10,
     color: 'black',
     borderColor: 'white',
     backgroundColor: 'white',
   },
+  errormessagecontainer: {
+    marginLeft: '3%',
+    marginTop: '0%',
+    marginBottom: '1%',
+  },
+  errormessagetext: {
+    fontFamily: 'HeirofLightRegular',
+    fontSize: 12,
+    color: 'white',
+  },
   button: {
     marginLeft: '30%',
     width: '20%',
     height: '20%',
-    marginTop: '3%',
+    marginTop: '0%',
   },
   text: {
     fontFamily: 'HeirofLightRegular',
     fontSize: 40,
     color: 'white',
   },
-  logintext: {
-    marginLeft: '20%',
-    marginTop: '14%',
-    fontFamily: 'HeirofLightRegular',
-    fontSize: 19,
-  },
   signuptext: {
     marginLeft: '15%',
     marginTop: '14%',
     fontFamily: 'HeirofLightRegular',
     fontSize: 19,
+    color: 'white',
   },
   spaceEvenlyContainer: {
     marginTop: '2%',
