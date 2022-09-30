@@ -49,6 +49,11 @@ public class ImageController {
 //                String result = pythonProcessbuilder(filePath);
                 String result = execPython(filePath, filename);
 
+                File finishedFile = new File(filePath);
+                if (finishedFile.exists()) {
+                    finishedFile.delete(); // removing finished file
+                }
+
                 // ex) camera,0.7951256/pen,0.157654/table,0.985215
                 String[] items = result.split("/");
                 for(String item : items){
