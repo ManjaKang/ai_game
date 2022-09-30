@@ -110,6 +110,7 @@ const LoginPage = () => {
             onChangeText={_handlePwChange}
             value={pw}
             autoCapitalize={'none'}
+            secureTextEntry={true}
             placeholder="비밀번호를 입력하세요."
           />
           <View style={styles.spaceEvenlyContainer}>

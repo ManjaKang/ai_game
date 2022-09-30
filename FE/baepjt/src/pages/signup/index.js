@@ -99,6 +99,9 @@ const SignUpPage = () => {
             Alert.alert('비밀번호 형식을 확인해주시길 바랍니다!');
           } else {
             // dispatch(setId(response.data.userId));
+            onChangeId('');
+            onChangePw('');
+            onChangePwCheck('');
             navigation.navigate('Login');
           }
         } else {
@@ -134,6 +137,7 @@ const SignUpPage = () => {
             onChangeText={_handlePwChange}
             value={pw}
             autoCapitalize={'none'}
+            secureTextEntry={true}
             placeholder="비밀번호를 입력하세요."
           />
           <View style={styles.errormessagecontainer}>
@@ -144,6 +148,7 @@ const SignUpPage = () => {
             onChangeText={_handlePwCheckChange}
             value={pwCheck}
             autoCapitalize={'none'}
+            secureTextEntry={true}
             placeholder="비밀번호를 다시 입력하세요."
           />
           <View style={styles.errormessagecontainer}>
