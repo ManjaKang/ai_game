@@ -27,13 +27,48 @@ const e103 = {
     ],
   ],
   clue: [
-    {
-      name: 'bottle',
-      start_index: [8, 11],
-      isimportant: 0, // 중요한거
-      image: '../images/clue/ep1_bottle.jpg',
-      isdetected: 0, // 조사한지
-    },
+    [
+      {
+        name: 'pillow',
+        start_index: [6, 402],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'guitar',
+        start_index: [5, 402],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        name: 'desk',
+        start_index: [4, 502],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'book',
+        start_index: [1, 502],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'pen',
+        start_index: [2, 502],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'chair',
+        start_index: [3, 502],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        // 얘 나중에 금고로 바꿔야함
+        name: 'table',
+        start_index: [7, 302],
+        isdetected: 0, // 조사한지
+      },
+    ],
   ],
   backgroundsetting: [
     {
@@ -771,6 +806,16 @@ const e103 = {
       character: [],
       bg: 5,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 5,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 5,
+    },
 
     // 볼펜, 샤프, 연필, 만년필을 촬영하면 나오는 대사
     {
@@ -797,6 +842,16 @@ const e103 = {
       character: [require('../images/character/prof/body/less/left.png')],
       bg: 5,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 5,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 5,
+    },
 
     // 의자를 촬영하면 나오는 대사
     {
@@ -811,6 +866,16 @@ const e103 = {
       character: [],
       bg: 5,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 5,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 5,
+    },
 
     // 책상을 촬영하면 나오는 대사
     {
@@ -823,6 +888,16 @@ const e103 = {
       index: 4,
       position: [],
       character: [],
+      bg: 5,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 5,
+    },
+    {
+      name: 'end',
+      text: 'end',
       bg: 5,
     },
 
@@ -852,6 +927,16 @@ const e103 = {
       character: [],
       bg: 4,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 4,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 4,
+    },
 
     // 침대, 베게, 이불 촬영
     {
@@ -864,6 +949,16 @@ const e103 = {
       index: 6,
       position: [],
       character: [],
+      bg: 4,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 4,
+    },
+    {
+      name: 'end',
+      text: 'end',
       bg: 4,
     },
 
@@ -1147,6 +1242,16 @@ const e103 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
+      bg: 3,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 3,
+    },
+    {
+      name: 'end',
+      text: 'end',
       bg: 3,
     },
   ],

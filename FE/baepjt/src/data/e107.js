@@ -30,10 +30,38 @@ const e107 = {
   ],
   clue: [
     {
-      name: 'bottle',
-      start_index: [8, 11],
-      isimportant: 0, // 중요한거
-      image: '../images/clue/ep1_bottle.jpg',
+      name: 'shirs',
+      start_index: [6, 102],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'pot',
+      start_index: [5, 102],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'hair dryer',
+      start_index: [7, 102],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'umbrella',
+      start_index: [4, 102],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'backpack',
+      start_index: [1, 202],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'laptop',
+      start_index: [2, 202],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'book',
+      start_index: [3, 202],
       isdetected: 0, // 조사한지
     },
   ],
@@ -366,6 +394,16 @@ const e107 = {
       character: [require('../images/character/limsy/body/whole.png')],
       bg: 2,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
     // 모니터
     {
       name: '배교수',
@@ -381,7 +419,7 @@ const e107 = {
     },
     {
       name: '임시윤',
-      text: '네 여기요. ',
+      text: '네 여기요..',
       img: require('../images/character/limsy/face/emotionless.png'),
       type: 0,
       audio: '',
@@ -795,6 +833,16 @@ const e107 = {
       ],
       bg: 2,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
     // 책
     {
       name: '임시윤',
@@ -844,6 +892,16 @@ const e107 = {
       character: [require('../images/character/limsy/body/whole.png')],
       bg: 2,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
 
     // 베란다
     // 우산
@@ -857,6 +915,16 @@ const e107 = {
       index: 4,
       position: [],
       character: [],
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
       bg: 1,
     },
 
@@ -905,6 +973,16 @@ const e107 = {
       ],
       bg: 1,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
     // 옷
     {
       name: '',
@@ -928,6 +1006,16 @@ const e107 = {
       index: 0,
       position: [],
       character: [],
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
       bg: 1,
     },
 
@@ -1026,6 +1114,16 @@ const e107 = {
         // limsy/body/less/left.png
         require('../images/character/limsy/body/whole.png'),
       ],
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
       bg: 1,
     },
   ],
