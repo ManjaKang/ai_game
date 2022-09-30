@@ -9,6 +9,8 @@ import {
 } from 'react-native';
 import IngameTextDialog from '../../../ingame/text/dialog';
 import IngameTextName from '../../../ingame/text/name';
+import IngameButtonSkip from '../../../ingame/button/skip';
+
 function ModalDialog(props) {
   return (
     props.visible && (
@@ -18,6 +20,7 @@ function ModalDialog(props) {
           <IngameTextName dialog={props.data[props.state].name} />
           <IngameTextDialog dialog={props.data[props.state].text} />
         </View>
+        <IngameButtonSkip orderSkip={props.orderSkip}></IngameButtonSkip>
       </View>
     )
   );
