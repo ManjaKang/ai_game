@@ -11,10 +11,16 @@ import {RNCamera} from 'react-native-camera';
 import CameraRoll from '@react-native-community/cameraroll';
 import {useNavigation} from '@react-navigation/native';
 import axios from 'axios';
+import {useSelector, useDispatch} from 'react-redux';
+import {setresValue} from '../../redux/camres';
+import {setcameraValue} from '../../redux/iscamera';
 
 function CameraPage() {
+  const cameraResult = useSelector(state => state.cameraResult.value);
+  const isCamera = useSelector(state => state.isCamera.value);
   const [camera, setCamera] = useState(null);
   const navigation = useNavigation();
+  const dispatch = useDispatch();
 
   const takePicture = async () => {
     console.log('camera taken : ' + camera);
@@ -30,6 +36,13 @@ function CameraPage() {
           fileName: arr[arr.length - 1], // 파일 이
         });
         console.log('사진 분석 결과', res.data);
+        // 여기서 비교하기
+        //  [{"name": "camera", "percent": 0.7951256}, {"name": "bed", "percent": 0.157654}, {"name": "table", "percent": 0.985215}]
+        dispatch(setresValue(res.data));
+        dispatch(setcameraValue(true));
+        // res.data.map(d =>
+        //   dispatch(setresValue({name: d.name, percentage: d.percent})),
+        // );
         CameraRoll.save(data.uri, 'photo')
           .then(onfulfilled => {
             ToastAndroid.show(onfulfilled, ToastAndroid.SHORT);

@@ -34,10 +34,10 @@ import ModalDetectFinish from '../../components/modal/detectFinish/page';
 import ModalDetectFinishButton from '../../components/modal/detectFinish/button';
 import {useNavigation} from '@react-navigation/native';
 import IngameTextIdle from '../../components/ingame/text/idle';
-import { useSelector, useDispatch } from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {setcameraValue} from '../../redux/iscamera';
 function IngamePage(props) {
-  console.log(props.route.params);
-  const userID = useSelector((state) => state.id.value);
+  const userID = useSelector(state => state.id.value);
   const [nameOrder, setNameOrder] = useState(0);
   const [imageOrder, setImageOrder] = useState(0);
   const [isReady, setReady] = useState(false);
@@ -60,27 +60,37 @@ function IngamePage(props) {
   const cluehint = dataa.allclue;
   const scripts = dataa.scripts;
   const [characterList, setCharacterList] = useState('');
+  const cameraResult = useSelector(state => state.cameraResult.value);
+
+  const incameralist = [];
+  const modalcluelist = [];
+  const backGround = useSelector(state => state.backGround.value);
+  console.log('백그라운드 입니당', backGround.bg);
+  const dispatch = useDispatch();
+  const isCamera = useSelector(state => state.isCamera.value);
   // const [itemList,setItemList] = useState([]);
-  const [itemList,setItemList] = useState([
+  const [itemList, setItemList] = useState([
     {
-        "idx": 0,
-        "name": "사건 현장에 있던 컵",
-        "userId": "aaa",
-        "description": "현장의 거실 테이블 위에 놓여 있던컵. 많은 술병에 비해 컵은 단 하나만 놓여 있었다.",
-        "index": 1,  // 아이템번호
-        "episode": 1,
-        "chapter": 1
+      idx: 0,
+      name: '사건 현장에 있던 컵',
+      userId: 'aaa',
+      description:
+        '현장의 거실 테이블 위에 놓여 있던컵. 많은 술병에 비해 컵은 단 하나만 놓여 있었다.',
+      index: 1, // 아이템번호
+      episode: 1,
+      chapter: 1,
     },
     {
-        "idx": 0,
-        "name": "오종오의 전자담배",
-        "userId": "aaa",
-        "description": "피해자가 외투 주머니에 소지하고 있던 전자담배. 평소에도 전자담배를 즐겨 폈던 것으로 보인다.",
-        "index": 2,
-        "episode": 1,
-        "chapter": 1
-    }
-])
+      idx: 0,
+      name: '오종오의 전자담배',
+      userId: 'aaa',
+      description:
+        '피해자가 외투 주머니에 소지하고 있던 전자담배. 평소에도 전자담배를 즐겨 폈던 것으로 보인다.',
+      index: 2,
+      episode: 1,
+      chapter: 1,
+    },
+  ]);
 
   const navigation = useNavigation();
   // 클릭할 때마다 다음 대사로 넘어가기
@@ -101,60 +111,66 @@ function IngamePage(props) {
       navigation.navigate('ChapterPage', {name: props.route.params.episode});
     }
     if (scripts[nameOrder].getItem > 0) {
-      console.log("아이템 획득해야함! 번호 : ",scripts[nameOrder].getItem);
     }
   };
 
   //챕터 완료하면서 아이템 저장, 메인화면으로 가기
-  const chapterClear = async() => {
+  const chapterClear = async () => {
     try {
-      const response = await axios.post('http://j7e102.p.ssafy.io:8080/users/items',{
-        "userId" : userID,
-        "episode" : props.route.params.episodeNumber,
-        "chapter" : props.route.params.order,
-        "items" : itemList,
-      });
+      const response = await axios.post(
+        'http://j7e102.p.ssafy.io:8080/users/items',
+        {
+          userId: userID,
+          episode: props.route.params.episodeNumber,
+          chapter: props.route.params.order,
+          items: itemList,
+        },
+      );
       if (response.status == 200) {
-        const saveProgress = async()=>{
+        const saveProgress = async () => {
           try {
-            const response2 = await axios.put('http://j7e102.p.ssafy.io:8080/users/progress',{
-              "userId" : userID,
-              "episode" : props.route.params.episodeNumber,
-              "chapter" : props.route.params.order,
-            });
+            const response2 = await axios.put(
+              'http://j7e102.p.ssafy.io:8080/users/progress',
+              {
+                userId: userID,
+                episode: props.route.params.episodeNumber,
+                chapter: props.route.params.order,
+              },
+            );
             if (response2.status == 200) {
               Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
-              navigation.navigate('ChapterPage', {name: props.route.params.episode});
+              navigation.navigate('ChapterPage', {
+                name: props.route.params.episode,
+              });
             }
-          } catch(error2) {
+          } catch (error2) {
             console.log(error2);
           }
         };
-      }
-      else {
-        setNameOrder(nameOrder-1);
-        setImageOrder(imageOrder-1);
-      }
-    } catch(error) {
-      console.log(error)
-    }
-  }
-  //아이템 불러오기
-  const getItemList = async() => {
-    console.log("ID 값!",userID);
-    try {
-      const response = await axios.get('http://j7e102.p.ssafy.io:8080/users/items/'+userID);
-      if (response.status == 200) {
-        setItemList(response.data);
-        console.log("가져온 아이템!",response.data);
-      }
-      else {
-        console.log("에에엥");
+      } else {
+        setNameOrder(nameOrder - 1);
+        setImageOrder(imageOrder - 1);
       }
     } catch (error) {
       console.log(error);
     }
-  }
+  };
+  //아이템 불러오기
+  const getItemList = async () => {
+    try {
+      const response = await axios.get(
+        'http://j7e102.p.ssafy.io:8080/users/items/' + userID,
+      );
+      if (response.status == 200) {
+        setItemList(response.data);
+        // console.log('가져온 아이템!', response.data);
+      } else {
+        // console.log('에에엥');
+      }
+    } catch (error) {
+      // console.log(error);
+    }
+  };
 
   // dialog의 특정 인덱스로 보내기
   function goIndexDialog(index) {
@@ -169,10 +185,33 @@ function IngamePage(props) {
 
   useEffect(() => {
     // getItemList();
+    // isCamera가 True 라면 cameralist와 cluelist 비교해서 그 때에 맞는 스크립트 불러오기
+    if (isCamera == true) {
+      // 각 chapter의 cluelist
+      modalcluelist.push(clue[backGround.bg].map(c => c.name));
+      console.log('단서 리스트', modalcluelist);
+      // 카메라에 찍힌 물체의 list
+      incameralist.push(cameraResult.map(r => r.name));
+      const cluefinded = modalcluelist[0].filter(x =>
+        incameralist[0].includes(x),
+      );
+
+      clue.map(c => {
+        if (c.name == cluefinded) {
+          const s_index = c.start_index[0];
+          goIndexDialog(s_index);
+        }
+      });
+
+      // isCamera로 함수 하고 그 후에 다시 isCamera를 false로 바꿔주기
+      dispatch(setcameraValue(false));
+    }
     setTimeout(() => {
       onFinish();
     }, 1000);
-  }, []);
+    // if 문 넣어서 isCamera == true; goIndex() 동작
+    // isCamera
+  });
 
   return isReady ? (
     <View>
@@ -227,6 +266,7 @@ function IngamePage(props) {
               setVisible={setVisible}
               func={orderIncrease}
               cluehint={cluehint}
+              isdialog={dialogState}
             />
           ))}
 

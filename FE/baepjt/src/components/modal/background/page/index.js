@@ -10,9 +10,10 @@ import {
 } from 'react-native';
 import IngameButtonCamera from '../../../ingame/button/camera';
 import Icon from 'react-native-vector-icons/Ionicons';
-
+import {useSelector, useDispatch} from 'react-redux';
 function ModalBackground(props) {
-  console.log('cluehint', props.cluehint);
+  console.log('인게임으로부터 옴', props);
+  const cameraResult = useSelector(state => state.cameraResult.value);
   return (
     props.visible[props.data].value && (
       <View style={styles.view}>
@@ -23,6 +24,7 @@ function ModalBackground(props) {
               onPress={props.func}
               activeOpacity={1}
             />
+
             <View style={styles.buttonLayer}>
               <IngameButtonCamera />
             </View>
@@ -41,7 +43,6 @@ function ModalBackground(props) {
                 <Text style={styles.text}>뒤로가기</Text>
               </ImageBackground>
             </TouchableOpacity>
-
             {props.cluehint &&
               props.cluehint.map(
                 (hint, index) =>

@@ -32,10 +32,48 @@ const e104 = {
   ],
   clue: [
     {
-      name: 'bottle',
-      start_index: [8, 11],
-      isimportant: 0, // 중요한거
-      image: '../images/clue/ep1_bottle.jpg',
+      name: 'clock',
+      start_index: [1, 102],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'desk',
+      start_index: [2, 102],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'chair',
+      start_index: [5, 102],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'bookshelf',
+      start_index: [3, 102],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'book',
+      start_index: [4, 102],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'glove',
+      start_index: [7, 202],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'shirts',
+      start_index: [9, 202],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'drawers',
+      start_index: [10, 202],
+      isdetected: 0, // 조사한지
+    },
+    {
+      name: 'hanger',
+      start_index: [8, 202],
       isdetected: 0, // 조사한지
     },
   ],
@@ -277,6 +315,16 @@ const e104 = {
       character: [],
       bg: 1,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
     // 물티슈, 책상
     {
       name: '배교수',
@@ -290,7 +338,6 @@ const e104 = {
       character: [require('../images/character/prof/body/less/right.png')],
       bg: 1,
     },
-    // 책장
     {
       name: '백지현',
       text: '아무래도 결벽증이 있다보니 책상을 수시로 닦아서요.',
@@ -298,7 +345,7 @@ const e104 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 3,
+      index: 0,
       position: [1, 3],
       character: [
         // baekjh/body/less/left.png
@@ -467,6 +514,16 @@ const e104 = {
       ],
       bg: 1,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
 
     //책장
     {
@@ -476,7 +533,7 @@ const e104 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 4,
+      index: 3,
       position: [2],
       character: [require('../images/background/chapter4/couple.png')],
       bg: 1,
@@ -837,6 +894,16 @@ const e104 = {
       ],
       bg: 1,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
 
     // 책
     {
@@ -846,7 +913,7 @@ const e104 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 5,
+      index: 4,
       position: [],
       character: [],
       bg: 1,
@@ -863,7 +930,6 @@ const e104 = {
       character: [],
       bg: 1,
     },
-
     {
       name: '',
       text: '책장 자체를 촬영해 볼까?',
@@ -876,6 +942,16 @@ const e104 = {
       character: [],
       bg: 1,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
     // 의자
     {
       name: '배교수',
@@ -884,7 +960,7 @@ const e104 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 6,
+      index: 5,
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
@@ -907,6 +983,16 @@ const e104 = {
         // baekjh/body/less/right.png
         require('../images/character/baekjh/body/whole.png'),
       ],
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
       bg: 1,
     },
 
@@ -1024,6 +1110,16 @@ const e104 = {
       ],
       bg: 2,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
 
     //옷걸이
     {
@@ -1090,6 +1186,16 @@ const e104 = {
       ],
       bg: 2,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
 
     // 상의, 하의
     {
@@ -1104,6 +1210,16 @@ const e104 = {
       character: [],
       bg: 2,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
 
     // 서랍장
     {
@@ -1116,6 +1232,16 @@ const e104 = {
       index: 10,
       position: [],
       character: [],
+      bg: 2,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 2,
+    },
+    {
+      name: 'end',
+      text: 'end',
       bg: 2,
     },
   ],
