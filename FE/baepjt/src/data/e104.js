@@ -138,9 +138,8 @@ const e104 = {
       index: 0,
       position: [1, 3],
       character: [
-        //baekjh/body/less/right.png
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -154,9 +153,8 @@ const e104 = {
       index: 0,
       position: [1, 3],
       character: [
-        //baekjh/body/less/right.png
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 0,
     },

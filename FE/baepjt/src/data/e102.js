@@ -884,7 +884,7 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
+      position: [2],
       // 김세영 body/less/left_camera.png
       character: [require('../images/character/kimsy/body/whole.png')],
       bg: 0,
@@ -901,7 +901,7 @@ const e102 = {
       character: [
         // 김세영 body/less/left.png
         // baekjh/body/less/right_camera.png
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/kimsy/body/whole.png'),
         require('../images/character/baekjh/body/whole.png'),
       ],
       bg: 0,
@@ -914,8 +914,8 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [3],
-      // limij/body/less/left_camera.png
+      position: [2],
+      // limij/body/less/whole.png
       character: [require('../images/character/limij/body/whole.png')],
       bg: 0,
     },
@@ -929,9 +929,7 @@ const e102 = {
       index: 0,
       position: [1, 2],
       character: [
-        // limij/body/less/left_camera.png
-        // limsy/body/less/right_camera.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limij/body/whole.png'),
         require('../images/character/limsy/body/whole.png'),
       ],
       bg: 0,
@@ -946,11 +944,8 @@ const e102 = {
       index: 0,
       position: [1, 2, 3],
       character: [
-        // limij/body/less/left_camera.png
-        // limsy/body/less/right_camera.png
-        // baekjh/body/less/right_camera.png
-        require('../images/character/baekjh/body/whole.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/limij/body/whole.png'),
+        require('../images/character/limsy/body/whole.png'),
         require('../images/character/baekjh/body/whole.png'),
       ],
       bg: 0,
@@ -965,12 +960,9 @@ const e102 = {
       index: 0,
       position: [1, 2, 3],
       character: [
-        // limij/body/less/left_camera.png
-        // limsy/body/less/right_camera.png
-        // baekjh/body/less/right_camera.png
+        require('../images/character/limij/body/whole.png'),
         require('../images/character/limsy/body/whole.png'),
-        require('../images/character/limsy/body/whole.png'),
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/baekjh/body/whole.png'),
       ],
       bg: 0,
     },
@@ -984,12 +976,9 @@ const e102 = {
       index: 0,
       position: [1, 2, 3],
       character: [
-        // limij/body/less/left_camera.png
-        // limsy/body/less/right_camera.png
-        // baekjh/body/less/right_camera.png
+        require('../images/character/limij/body/whole.png'),
         require('../images/character/limsy/body/whole.png'),
-        require('../images/character/limsy/body/whole.png'),
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/baekjh/body/whole.png'),
       ],
       bg: 0,
     },
@@ -1001,8 +990,8 @@ const e102 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/less/left.png')],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
     {
@@ -1075,9 +1064,8 @@ const e102 = {
       index: 0,
       position: [1, 3],
       character: [
-        // baekjh/body/less/right.png
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -1091,9 +1079,8 @@ const e102 = {
       index: 0,
       position: [1, 3],
       character: [
-        // baekjh/body/less/right.png
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -1107,9 +1094,8 @@ const e102 = {
       index: 0,
       position: [1, 3],
       character: [
-        // baekjh/body/less/right.png
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -1123,9 +1109,8 @@ const e102 = {
       index: 0,
       position: [1, 3],
       character: [
-        // baekjh/body/less/right.png
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -1139,9 +1124,8 @@ const e102 = {
       index: 0,
       position: [1, 3],
       character: [
-        // baekjh/body/less/right.png
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -1155,9 +1139,8 @@ const e102 = {
       index: 0,
       position: [1, 3],
       character: [
-        // baekjh/body/less/right.png
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -1171,9 +1154,8 @@ const e102 = {
       index: 0,
       position: [1, 3],
       character: [
-        // baekjh/body/less/right.png
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -1186,10 +1168,7 @@ const e102 = {
       sfx: '',
       index: 0,
       position: [2],
-      character: [
-        // baekjh/body/less/right.png
-        require('../images/character/prof/body/whole.png'),
-      ],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
     {

@@ -3,7 +3,6 @@ import {Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 function IngameButtonBacklog(props) {
-  console.log('백로그 버튼 누름', props);
   return (
     <TouchableOpacity style={styles.button} onPress={() => props.setter(true)}>
       <Icon style={styles.icon} name="chatbox-ellipses" />

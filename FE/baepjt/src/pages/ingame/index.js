@@ -65,9 +65,9 @@ function IngamePage(props) {
   const incameralist = [];
   const modalcluelist = [];
   const backGround = useSelector(state => state.backGround.value);
-  console.log('백그라운드 입니당', backGround.bg);
   const dispatch = useDispatch();
   const isCamera = useSelector(state => state.isCamera.value);
+
   // const [itemList,setItemList] = useState([]);
   const [itemList, setItemList] = useState([
     {
@@ -186,26 +186,46 @@ function IngamePage(props) {
   useEffect(() => {
     // getItemList();
     // isCamera가 True 라면 cameralist와 cluelist 비교해서 그 때에 맞는 스크립트 불러오기
+    console.log('bg야?', backGround);
     if (isCamera == true) {
       // 각 chapter의 cluelist
-      modalcluelist.push(clue[backGround.bg].map(c => c.name));
-      console.log('단서 리스트', modalcluelist);
+      modalcluelist.push(clue[backGround].map(c => c.name));
+      console.log(modalcluelist);
       // 카메라에 찍힌 물체의 list
       incameralist.push(cameraResult.map(r => r.name));
+      console.log(incameralist);
+      // 교집합 찾기
       const cluefinded = modalcluelist[0].filter(x =>
         incameralist[0].includes(x),
       );
+      console.log('교지밥', cluefinded);
+      if (cluefinded[0] == undefined) {
+        // 교집합이 없다면
 
-      clue.map(c => {
-        if (c.name == cluefinded) {
-          const s_index = c.start_index[0];
-          goIndexDialog(s_index);
-        }
-      });
+        goIndexDialog(backGround * 100 + 11);
+      } else {
+        // 교집합이 있다면
+        // 교집합의 최상단 받기 - 지금은 일단 가짜
+        const realclue = cluefinded[0];
+        console.log('진짜 clue', realclue);
 
+        clue[2].map(c => {
+          // isdetected가 0이면(아직 안찾아진거임)
+          if (c.name == realclue) {
+            console.log('교집합 있어');
+            const s_index = c.start_index[0];
+            goIndexDialog(s_index);
+          } else if (c.name == realclue && c.isdetected == 1) {
+            // isdetected가 1이면(벌써 찾아진거임)
+            const e_index = c.start_index[1];
+            goIndexDialog(e_index);
+          }
+        });
+      }
       // isCamera로 함수 하고 그 후에 다시 isCamera를 false로 바꿔주기
       dispatch(setcameraValue(false));
     }
+
     setTimeout(() => {
       onFinish();
     }, 1000);
@@ -225,6 +245,7 @@ function IngamePage(props) {
           // D={scripts}
           func={goIndexDialog}
         />
+
         {scripts[nameOrder].name === 'end' ? null : (
           <ModalCharacter
             state={imageOrder}
