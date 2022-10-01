@@ -54,51 +54,57 @@ const e101 = {
     ],
   ],
   clue: [
-    {
-      name: 'shirts',
-      start_index: [4, 302],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'pants',
-      start_index: [5, 302],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'face mask',
-      start_index: [6, 302],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'cell phone',
-      start_index: [7, 302],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'hand',
-      start_index: [3, 302],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'pet bottle',
-      start_index: [1, 402],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'cup',
-      start_index: [2, 402],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'door',
-      start_index: [8, 502],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'table lamp',
-      start_index: [9, 502],
-      isdetected: 0, // 조사한지
-    },
+    [
+      {
+        name: 'pet bottle',
+        start_index: [1, 402],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'cup',
+        start_index: [2, 402],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        name: 'door',
+        start_index: [8, 502],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'table lamp',
+        start_index: [9, 502],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        name: 'shirts',
+        start_index: [4, 302],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'pants',
+        start_index: [5, 302],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'face mask',
+        start_index: [6, 302],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'cell phone',
+        start_index: [7, 302],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'hand',
+        start_index: [3, 302],
+        isdetected: 0, // 조사한지
+      },
+    ],
   ],
   backgroundsetting: [
     {

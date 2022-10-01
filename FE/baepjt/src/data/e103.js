@@ -205,8 +205,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 100,
-      position: [3],
-      //examiner/body/happy/right.png
+      position: [2],
       character: [require('../images/character/examiner/body/whole.png')],
       bg: 0,
     },
@@ -220,10 +219,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -237,10 +234,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -254,10 +249,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -271,10 +264,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -288,10 +279,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -303,13 +292,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1, 3],
-      character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/prof/body/whole.png'),
-      ],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
     {
@@ -320,13 +304,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1, 3],
-      character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/less/left_camera.png'),
-        require('../images/character/prof/body/whole.png'),
-      ],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
     {
@@ -367,7 +346,7 @@ const e103 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/sad/right.png'),
       ],
       bg: 0,
     },
@@ -412,7 +391,7 @@ const e103 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/sad/right.png'),
       ],
       bg: 0,
     },
@@ -653,7 +632,7 @@ const e103 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 301,
+      index: 11,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
@@ -675,7 +654,7 @@ const e103 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 302,
+      index: 12,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
@@ -1242,6 +1221,11 @@ const e103 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
+      bg: 3,
+    },
+    {
+      name: 'end',
+      text: 'end',
       bg: 3,
     },
     {

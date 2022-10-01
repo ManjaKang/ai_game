@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {TouchableOpacity, StyleSheet, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useSelector, useDispatch} from 'react-redux';
@@ -21,12 +21,17 @@ function IngameButtonBackground(props) {
         // borderColor: 'red',
       }}
       onPress={() => {
+        // console.log(index);
+        // useEffect(() => {
+        //   dispatch(setbgValue(index));
+        // }, [backGround]);
+        // console.log('대체 몇번이라는거야', backGround);
         props.setVisible(
           props.visible.map(it =>
             it.index == index ? {...it, value: true} : it,
           ),
         );
-        dispatch(setbgValue({bg: index}));
+        dispatch(setbgValue(index));
       }}>
       <Icon name="search" size={30}></Icon>
     </TouchableOpacity>
