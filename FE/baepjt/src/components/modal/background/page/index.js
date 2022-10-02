@@ -12,6 +12,7 @@ import IngameButtonCamera from '../../../ingame/button/camera';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useSelector, useDispatch} from 'react-redux';
 function ModalBackground(props) {
+  console.log(props.visible);
   const cameraResult = useSelector(state => state.cameraResult.value);
   return (
     props.visible[props.data].value && (

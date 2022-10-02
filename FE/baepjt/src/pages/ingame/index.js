@@ -186,11 +186,11 @@ function IngamePage(props) {
   useEffect(() => {
     // getItemList();
     // isCamera가 True 라면 cameralist와 cluelist 비교해서 그 때에 맞는 스크립트 불러오기
-    console.log('bg야?', backGround);
+    console.log('백그라운드 인덱스와 같아야함', backGround);
     if (isCamera == true) {
       // 각 chapter의 cluelist
       modalcluelist.push(clue[backGround].map(c => c.name));
-      console.log(modalcluelist);
+      console.log('모달 클루리스트', modalcluelist);
       // 카메라에 찍힌 물체의 list
       incameralist.push(cameraResult.map(r => r.name));
       console.log(incameralist);
@@ -198,21 +198,16 @@ function IngamePage(props) {
       const cluefinded = modalcluelist[0].filter(x =>
         incameralist[0].includes(x),
       );
-      console.log('교지밥', cluefinded);
       if (cluefinded[0] == undefined) {
         // 교집합이 없다면
-
         goIndexDialog(backGround * 100 + 11);
       } else {
         // 교집합이 있다면
         // 교집합의 최상단 받기 - 지금은 일단 가짜
         const realclue = cluefinded[0];
-        console.log('진짜 clue', realclue);
-
-        clue[2].map(c => {
+        clue[backGround].map(c => {
           // isdetected가 0이면(아직 안찾아진거임)
           if (c.name == realclue) {
-            console.log('교집합 있어');
             const s_index = c.start_index[0];
             goIndexDialog(s_index);
           } else if (c.name == realclue && c.isdetected == 1) {

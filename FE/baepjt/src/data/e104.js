@@ -31,51 +31,55 @@ const e104 = {
     ],
   ],
   clue: [
-    {
-      name: 'clock',
-      start_index: [1, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'desk',
-      start_index: [2, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'chair',
-      start_index: [5, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'bookshelf',
-      start_index: [3, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'book',
-      start_index: [4, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'glove',
-      start_index: [7, 202],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'shirts',
-      start_index: [9, 202],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'drawers',
-      start_index: [10, 202],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'hanger',
-      start_index: [8, 202],
-      isdetected: 0, // 조사한지
-    },
+    [
+      {
+        name: 'clock',
+        start_index: [1, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'desk',
+        start_index: [2, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'chair',
+        start_index: [5, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'bookshelf',
+        start_index: [3, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'book',
+        start_index: [4, 102],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        name: 'glove',
+        start_index: [7, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'shirts',
+        start_index: [9, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'drawers',
+        start_index: [10, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'hanger',
+        start_index: [8, 202],
+        isdetected: 0, // 조사한지
+      },
+    ],
   ],
   backgroundsetting: [
     {
@@ -191,7 +195,7 @@ const e104 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 101,
+      index: 11,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
@@ -236,7 +240,7 @@ const e104 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 201,
+      index: 111,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 2,

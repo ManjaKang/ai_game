@@ -29,41 +29,45 @@ const e107 = {
     ],
   ],
   clue: [
-    {
-      name: 'shirs',
-      start_index: [6, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'pot',
-      start_index: [5, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'hair dryer',
-      start_index: [7, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'umbrella',
-      start_index: [4, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'backpack',
-      start_index: [1, 202],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'laptop',
-      start_index: [2, 202],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'book',
-      start_index: [3, 202],
-      isdetected: 0, // 조사한지
-    },
+    [
+      {
+        name: 'shirts',
+        start_index: [6, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'pot',
+        start_index: [5, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'hair dryer',
+        start_index: [7, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'umbrella',
+        start_index: [4, 102],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        name: 'backpack',
+        start_index: [1, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'laptop',
+        start_index: [2, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'book',
+        start_index: [3, 202],
+        isdetected: 0, // 조사한지
+      },
+    ],
   ],
   backgroundsetting: [
     {
@@ -224,7 +228,7 @@ const e107 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 101,
+      index: 11,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
@@ -269,7 +273,7 @@ const e107 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 201,
+      index: 111,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 2,
