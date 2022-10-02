@@ -132,6 +132,6 @@ public class ImageController {
         System.out.println("output: " + outputStream.toString());
         String[] strings = outputStream.toString().split("\n");
         System.out.println("strings : " + strings[strings.length-3]);
-        return strings[strings.length-3].split(" : ")[1];
+        return strings[strings.length-1].split(" : ")[1];
     }
 }
