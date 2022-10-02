@@ -1,13 +1,24 @@
 package com.ssafy.bae.api.controller;
 
-import com.ssafy.bae.api.dto.ImageReqDto;
-import com.ssafy.bae.api.dto.ImageResDto;
-import com.ssafy.bae.api.dto.ItemDto;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.StringWriter;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.UUID;
+
 import org.apache.commons.exec.CommandLine;
 import org.apache.commons.exec.DefaultExecutor;
 import org.apache.commons.exec.PumpStreamHandler;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.python.util.PythonInterpreter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,15 +26,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.*;
+import com.ssafy.bae.api.dto.ImageReqDto;
+import com.ssafy.bae.api.dto.ImageResDto;
 
 @RestController
 @CrossOrigin(origins = "*")
 public class ImageController {
+	private static final Logger logger = LoggerFactory.getLogger(ImageController.class);
 
     private static PythonInterpreter interpreter;
 
@@ -67,6 +76,7 @@ public class ImageController {
             return new ResponseEntity<>(list, HttpStatus.OK);
         }catch(Exception e){
             e.printStackTrace();
+            logger.error("error: " + e);
             return new ResponseEntity<>(list, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
@@ -122,6 +132,6 @@ public class ImageController {
         System.out.println("output: " + outputStream.toString());
         String[] strings = outputStream.toString().split("\n");
         System.out.println("strings : " + strings[strings.length-3]);
-        return strings[strings.length-3].split(" : ")[1];
+        return strings[strings.length-1].split(" : ")[1];
     }
 }
