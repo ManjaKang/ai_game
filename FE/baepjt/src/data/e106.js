@@ -28,36 +28,40 @@ const e106 = {
     ],
   ],
   clue: [
-    {
-      name: 'fan',
-      start_index: [5, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'chair',
-      start_index: [6, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'paint brush',
-      start_index: [4, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'drawers',
-      start_index: [1, 202],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'bed',
-      start_index: [2, 202],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'monitor',
-      start_index: [3, 202],
-      isdetected: 0, // 조사한지
-    },
+    [
+      {
+        name: 'fan',
+        start_index: [5, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'chair',
+        start_index: [6, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'paint brush',
+        start_index: [4, 102],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        name: 'drawers',
+        start_index: [1, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'bed',
+        start_index: [2, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'monitor',
+        start_index: [3, 202],
+        isdetected: 0, // 조사한지
+      },
+    ],
   ],
   backgroundsetting: [
     {
@@ -179,7 +183,7 @@ const e106 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 101,
+      index: 11,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
@@ -224,7 +228,7 @@ const e106 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 201,
+      index: 111,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 2,

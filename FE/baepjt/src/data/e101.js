@@ -56,30 +56,6 @@ const e101 = {
   clue: [
     [
       {
-        name: 'pet bottle',
-        start_index: [1, 402],
-        isdetected: 0, // 조사한지
-      },
-      {
-        name: 'cup',
-        start_index: [2, 402],
-        isdetected: 0, // 조사한지
-      },
-    ],
-    [
-      {
-        name: 'door',
-        start_index: [8, 502],
-        isdetected: 0, // 조사한지
-      },
-      {
-        name: 'table lamp',
-        start_index: [9, 502],
-        isdetected: 0, // 조사한지
-      },
-    ],
-    [
-      {
         name: 'shirts',
         start_index: [4, 302],
         isdetected: 0, // 조사한지
@@ -102,6 +78,30 @@ const e101 = {
       {
         name: 'hand',
         start_index: [3, 302],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        name: 'pet bottle',
+        start_index: [1, 402],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'cup',
+        start_index: [2, 402],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        name: 'door',
+        start_index: [8, 502],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'table lamp',
+        start_index: [9, 502],
         isdetected: 0, // 조사한지
       },
     ],
@@ -616,7 +616,7 @@ const e101 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 301,
+      index: 11,
       position: [1],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
@@ -660,20 +660,20 @@ const e101 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 401,
+      index: 111,
       position: [1],
       character: [require('../images/character/prof/body/whole.png')],
-      bg: 4,
+      bg: 5,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 5,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 5,
     },
     {
       name: '배교수',
@@ -704,20 +704,20 @@ const e101 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 501,
+      index: 211,
       position: [1],
       character: [require('../images/character/prof/body/whole.png')],
-      bg: 5,
+      bg: 4,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 4,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 4,
     },
     {
       name: '배교수',

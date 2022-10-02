@@ -1,7 +1,7 @@
 import React from 'react';
 import {Text, StyleSheet, View, Image} from 'react-native';
 
-function ModaClueModalCharacterlCharacter(props) {
+function ModalClueCharacter(props) {
   const imagePos1 = props.data[props.state].position[0];
   const imagePos2 = props.data[props.state].position[1];
   const imagePos3 = props.data[props.state].position[2];
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
 });
-export default ClueModalCharacter;
+export default ModalClueCharacter;

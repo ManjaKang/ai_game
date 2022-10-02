@@ -7,6 +7,7 @@ function IngameButtonBackground(props) {
   const index = props.data.index;
   const backGround = useSelector(state => state.backGround.value);
   const dispatch = useDispatch();
+  console.log('인덱스 번호', index);
   return (
     <TouchableOpacity
       style={{
@@ -21,11 +22,7 @@ function IngameButtonBackground(props) {
         // borderColor: 'red',
       }}
       onPress={() => {
-        // console.log(index);
-        // useEffect(() => {
-        //   dispatch(setbgValue(index));
-        // }, [backGround]);
-        // console.log('대체 몇번이라는거야', backGround);
+        dispatch(setbgValue(index));
         props.setVisible(
           props.visible.map(it =>
             it.index == index ? {...it, value: true} : it,

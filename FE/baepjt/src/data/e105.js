@@ -30,46 +30,50 @@ const e105 = {
     ],
   ],
   clue: [
-    {
-      name: 'hair dryer',
-      start_index: [5, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'toothpaste',
-      start_index: [7, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'cup',
-      start_index: [6, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'shower head',
-      start_index: [8, 102],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'refrigerator',
-      start_index: [2, 202],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'microwave',
-      start_index: [1, 202],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'pot',
-      start_index: [4, 202],
-      isdetected: 0, // 조사한지
-    },
-    {
-      name: 'pet bottle',
-      start_index: [3, 202],
-      isdetected: 0, // 조사한지
-    },
+    [
+      {
+        name: 'hair dryer',
+        start_index: [5, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'toothpaste',
+        start_index: [7, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'cup',
+        start_index: [6, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'shower head',
+        start_index: [8, 102],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        name: 'refrigerator',
+        start_index: [2, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'microwave',
+        start_index: [1, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'pot',
+        start_index: [4, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'pet bottle',
+        start_index: [3, 202],
+        isdetected: 0, // 조사한지
+      },
+    ],
   ],
   backgroundsetting: [
     {
@@ -164,7 +168,7 @@ const e105 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 101,
+      index: 11,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
@@ -209,7 +213,7 @@ const e105 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 201,
+      index: 111,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 2,
