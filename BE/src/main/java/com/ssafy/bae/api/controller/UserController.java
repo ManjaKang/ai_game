@@ -94,23 +94,4 @@ public class UserController {
         }
     }
 
-    @Operation(summary = "진행상황 업데이트", description = "에피소드, 챕터들을 완료했을 때 업데이트")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "OK !!"),
-            @ApiResponse(responseCode = "400", description = "BAD REQUEST !!"),
-            @ApiResponse(responseCode = "404", description = "NOT FOUND !!"),
-            @ApiResponse(responseCode = "500", description = "INTERNAL SERVER ERROR !!")
-    })
-    @PutMapping("/users/progress")
-    public ResponseEntity<Integer> updateProgress(@RequestBody UserDto userDto){
-        int result = 0;
-        try {
-            result = service.updateProgress(userDto);
-            return new ResponseEntity<>(result, HttpStatus.OK);
-        } catch (Exception e){
-            e.printStackTrace();
-            return new ResponseEntity<>(result, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
 }

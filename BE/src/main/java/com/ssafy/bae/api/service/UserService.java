@@ -12,6 +12,4 @@ public interface UserService {
     public UserDto signup(LoginDto loginDto);
 
     public UserDto login(LoginDto loginDto);
-
-    public int updateProgress(UserDto userDto);
 }
