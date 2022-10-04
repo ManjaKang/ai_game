@@ -157,6 +157,35 @@ function FinalePage(props) {
       console.log(error)
     }
   }
+
+  const orderSkip = () => {
+    console.log('orderSkip 실행', nameOrder, imageOrder);
+
+    let nameOrderTmp = nameOrder;
+    let imageOrderTmp = imageOrder;
+    if (dialogState) {
+      while (true) {
+        if (scripts[nameOrderTmp + 1].text == 'gotoMain') {
+          setNameOrder(nameOrderTmp);
+          setImageOrder(imageOrderTmp);
+          break;
+        }
+        nameOrderTmp = nameOrderTmp + 1;
+        imageOrderTmp = imageOrderTmp + 1;
+        if (scripts[nameOrderTmp].text == 'end') {
+          setNameOrder(nameOrderTmp);
+          setImageOrder(imageOrderTmp);
+          setDialogState(false);
+          break;
+        }
+      }
+    }
+    if (scripts[nameOrder + 1].text == 'gotoMain') {
+      Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
+      navigation.navigate('ChapterPage', {name: props.route.params.episode});
+    }
+  };
+
   //아이템 불러오기
   const getItemList = async() => {
     console.log("ID 값!",userID);
@@ -270,6 +299,7 @@ function FinalePage(props) {
             data={dialog}
             state={nameOrder}
             setstate={setNameOrder}
+            orderSkip={orderSkip}
           />
         )}
 
