@@ -1,0 +1,7 @@
+path: ../datasets/sampleData # dataset root dir
+train: train/images # train images (relative to 'path') 128 images
+val: train/images # val images (relative to 'path') 128 images
+test:  # test images (optional)
+
+nc: 7
+names: ['fish', 'jellyfish', 'penguin', 'puffin', 'shark', 'starfish', 'stingray']
