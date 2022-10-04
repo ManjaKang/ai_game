@@ -32,9 +32,6 @@ const e101 = {
       {
         location: ['33%', '40%'], // 버튼 위치
       },
-      {
-        location: ['55%', '20%'], // 버튼 위치
-      },
     ],
     [
       {
@@ -63,11 +60,6 @@ const e101 = {
       {
         name: 'pants',
         start_index: [5, 302],
-        isdetected: 0, // 조사한지
-      },
-      {
-        name: 'face mask',
-        start_index: [6, 302],
         isdetected: 0, // 조사한지
       },
       {
@@ -939,7 +931,7 @@ const e101 = {
     // 하의
     {
       name: '',
-      text: '청바지를 입고 외출 하려다 죽은 것 같다. 윗 옷도 조사했나?',
+      text: '청바지를 입고 외출 하려다 죽은 것 같다. 상의도 조사했나?',
       img: require('../images/character/prof/face/emotionless.png'),
       type: 0,
       audio: '',
@@ -960,41 +952,6 @@ const e101 = {
       bg: 1,
     },
 
-    // 마스크
-    {
-      name: '배교수',
-      text: '마스크가 귀에 걸려져 있는 것을 보니 외출을 하려다가 죽은 것 같군.',
-      img: require('../images/character/prof/face/emotionless.png'),
-      type: 0,
-      audio: '',
-      sfx: '',
-      index: 6,
-      position: [2],
-      character: [require('../images/character/prof/body/less/left.png')],
-      bg: 1,
-    },
-    {
-      name: '배교수',
-      text: '그리고 입 주변을 봐. 구토의 흔적이 있어. 급성 중독에서 가장 흔하게 나타나는 특징이지.',
-      img: require('../images/character/prof/face/emotionless.png'),
-      type: 0,
-      audio: '',
-      sfx: '',
-      index: 0,
-      position: [2],
-      character: [require('../images/character/prof/body/less/left.png')],
-      bg: 1,
-    },
-    {
-      name: 'end',
-      text: 'end',
-      bg: 1,
-    },
-    {
-      name: 'end',
-      text: 'end',
-      bg: 1,
-    },
     // 핸드폰
     {
       name: '',
