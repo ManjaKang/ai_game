@@ -8,7 +8,6 @@ import {
 import Icon from 'react-native-vector-icons/Ionicons';
 
 function ModalDetectFinishButton(props) {
-  console.log(props);
   return (
     <TouchableOpacity
       style={styles.button}

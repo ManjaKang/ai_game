@@ -30,6 +30,7 @@ import EpisodePage from './src/pages/episode';
 import ChapterPage from './src/pages/chapter';
 import IngamePage from './src/pages/ingame';
 import CameraPage from './src/pages/camera';
+import FinalePage from './src/pages/finale';
 
 // import MainButtonNew from './android/app/src/test/index.js';
 
@@ -116,6 +117,11 @@ const App: () => Node = () => {
           <Stack.Screen
             name="IngamePage"
             component={IngamePage}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="FinalePage"
+            component={FinalePage}
             options={{headerShown: false}}
           />
           <Stack.Screen

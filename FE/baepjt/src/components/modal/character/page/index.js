@@ -9,48 +9,33 @@ function ModalCharacter(props) {
   const imageUri2 = props.data[props.state].character[1];
   const imageUri3 = props.data[props.state].character[2];
   return (
-  <View style={styles.view}>
-    {
-      imagePos1 == 1
-      ? (<Image source={imageUri1} style={styles.image1} />)
-      : (
-        imagePos1 == 2
-        ? (<Image source={imageUri1} style={styles.image2} />)
-        : (
-          imagePos1 == 3
-          && ((<Image source={imageUri1} style={styles.image3} />))
-        )
-      )
-    }
-    {
-      imagePos2 == 1
-      ? (<Image source={imageUri2} style={styles.image1} />)
-      : (
-        imagePos2 == 2
-        ? (<Image source={imageUri2} style={styles.image2} />)
-        : (
-          imagePos2 == 3
-          && ((<Image source={imageUri2} style={styles.image3} />))
-        )
-      )
-    }
-    {
-      imagePos3 == 1
-      ? (<Image source={imageUri3} style={styles.image1} />)
-      : (
-        imagePos3 == 2
-        ? (<Image source={imageUri3} style={styles.image2} />)
-        : (
-          imagePos3 == 3
-          && ((<Image source={imageUri3} style={styles.image3} />))
-        )
-      )
-    }
-    {/* <Image source={imageUri1} style={`styles.image${imagePos1}`} />
+    <View style={styles.view}>
+      {imagePos1 == 1 ? (
+        <Image source={imageUri1} style={styles.image1} />
+      ) : imagePos1 == 2 ? (
+        <Image source={imageUri1} style={styles.image2} />
+      ) : (
+        imagePos1 == 3 && <Image source={imageUri1} style={styles.image3} />
+      )}
+      {imagePos2 == 1 ? (
+        <Image source={imageUri2} style={styles.image1} />
+      ) : imagePos2 == 2 ? (
+        <Image source={imageUri2} style={styles.image2} />
+      ) : (
+        imagePos2 == 3 && <Image source={imageUri2} style={styles.image3} />
+      )}
+      {imagePos3 == 1 ? (
+        <Image source={imageUri3} style={styles.image1} />
+      ) : imagePos3 == 2 ? (
+        <Image source={imageUri3} style={styles.image2} />
+      ) : (
+        imagePos3 == 3 && <Image source={imageUri3} style={styles.image3} />
+      )}
+      {/* <Image source={imageUri1} style={`styles.image${imagePos1}`} />
     <Image source={imageUri2} style={`styles.image${imagePos2}`} />
     <Image source={imageUri3} style={`styles.image${imagePos3}`} /> */}
-  </View>
-  )
+    </View>
+  );
 
   // propsstate != '' ? (
   //   <Image source={imageUri} style={styles.image}></Image>
@@ -66,20 +51,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   image1: {
-    width: '60%',
+    width: '50%',
     height: '100%',
     left: '2%',
     position: 'absolute',
   },
   image2: {
-    width: '60%',
+    width: '50%',
     height: '100%',
   },
   image3: {
-    width: '60%',
+    width: '50%',
     height: '100%',
     right: '2%',
     position: 'absolute',
-  }
+  },
 });
 export default ModalCharacter;

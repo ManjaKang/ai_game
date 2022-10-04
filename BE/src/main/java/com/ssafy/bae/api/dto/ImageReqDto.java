@@ -10,5 +10,4 @@ import lombok.*;
 public class ImageReqDto {
     String base64;
     String fileName;
-    String Name;
 }

@@ -2,11 +2,13 @@ package com.ssafy.bae.api.service;
 
 import com.ssafy.bae.api.dto.UserAchDto;
 import com.ssafy.bae.api.dto.UserItemDto;
+import com.ssafy.bae.api.dto.UserItemReqDto;
 import com.ssafy.bae.db.entity.Item;
 import com.ssafy.bae.db.entity.UserAch;
 import com.ssafy.bae.db.entity.UserItem;
 import com.ssafy.bae.db.repository.ItemRepository;
 import com.ssafy.bae.db.repository.UserItemRepository;
+import com.ssafy.bae.db.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +24,9 @@ public class UserItemServiceImpl implements UserItemService {
     @Autowired
     ItemRepository itemRepository;
 
+    @Autowired
+    UserRepository userRepository;
+
     @Override
     public List<UserItemDto> findAllByUserId(String userId) {
 
@@ -36,22 +41,31 @@ public class UserItemServiceImpl implements UserItemService {
     }
 
     @Override
-    public UserItemDto insert(UserItemDto userItemDto) {
+    public int insert(UserItemReqDto userItemReqDto) {
 
-        boolean isExist = dao.existsByUserIdAndName(userItemDto.getUserId(), userItemDto.getName());
-        if(!isExist){
-            Item item = itemRepository.findByName(userItemDto.getName());
+        int result = 0;
 
-            UserItem userItem = new UserItem();
-            userItem.setUserId(userItemDto.getUserId());
-            userItem.setName(userItemDto.getName());
-            userItem.setDescription(item.getDescription());
-            userItem.setIndex(item.getIdx());
+        userRepository.updateProgress(userItemReqDto.getEpisode(), userItemReqDto.getChapter(), userItemReqDto.getUserId());
 
-           UserItem result = dao.save(userItem);
-            return new UserItemDto(result);
-        } else {
-            return userItemDto;
+        for(UserItemDto userItemDto : userItemReqDto.getItems()){
+            boolean isExist = dao.existsByUserIdAndName(userItemReqDto.getUserId(), userItemDto.getName());
+            if(!isExist){
+                System.out.println(userItemDto);
+
+                UserItem userItem = new UserItem();
+                userItem.setUserId(userItemReqDto.getUserId());
+
+                userItem.setEpisode(userItemDto.getEpisode());
+                userItem.setChapter(userItemDto.getChapter());
+                userItem.setName(userItemDto.getName());
+                userItem.setDescription(userItemDto.getDescription());
+                userItem.setIndex(userItemDto.getIndex());
+
+                dao.save(userItem);
+
+                result++;
+            }
         }
+        return result;
     }
 }

@@ -13,7 +13,6 @@ import MainButtonAccount from '../../components/main/button/account';
 import MainButtonOption from '../../components/main/button/option';
 
 function ChapterPage(props) {
-  console.log('chapterpage', props);
   return (
     <SafeAreaView>
       <ImageBackground
@@ -30,7 +29,10 @@ function ChapterPage(props) {
               <ChapterText name={props.route.params.name}></ChapterText>
             </Text>
             {/* <EpisodeButton /> */}
-            <ChapterButton name={props.route.params.name} />
+            <ChapterButton
+              name={props.route.params.name}
+              number={props.route.params.number}
+            />
             <View style={styles.setboxback}>
               {/* <EpisodeButtonBack></EpisodeButtonBack> */}
               <ChapterButtonBack></ChapterButtonBack>
