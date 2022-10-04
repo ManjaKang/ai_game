@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {TouchableOpacity, StyleSheet, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {useSelector, useDispatch} from 'react-redux';
+import {setbgValue} from '../../../../redux/background';
 function IngameButtonBackground(props) {
   const index = props.data.index;
-  console.log('인게임 버튼', props);
+  const backGround = useSelector(state => state.backGround.value);
+  const dispatch = useDispatch();
+  console.log('인덱스 번호', index);
   return (
     <TouchableOpacity
       style={{
@@ -18,11 +22,15 @@ function IngameButtonBackground(props) {
         // borderColor: 'red',
       }}
       onPress={() => {
+        props.setSearchStart(true);
+        dispatch(setbgValue(index));
         props.setVisible(
           props.visible.map(it =>
             it.index == index ? {...it, value: true} : it,
           ),
         );
+
+        dispatch(setbgValue(index));
       }}>
       <Icon name="search" size={30}></Icon>
     </TouchableOpacity>

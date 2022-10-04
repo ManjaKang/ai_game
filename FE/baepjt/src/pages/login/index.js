@@ -1,4 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React from 'react';
 import {
   ImageBackground,
@@ -11,40 +12,83 @@ import {
   Alert,
 } from 'react-native';
 import axios from 'axios';
-import { setId } from '../../redux/login';
-import { useSelector, useDispatch } from 'react-redux';
+import {setId} from '../../redux/login';
+import {useSelector, useDispatch} from 'react-redux';
 
 const LoginPage = () => {
-  const ID = useSelector((state) => state.id.value)
+  const ID = useSelector(state => state.id.value);
   const dispatch = useDispatch();
   const navigation = useNavigation();
   const [id, onChangeId] = React.useState(null);
   const [pw, onChangePw] = React.useState(null);
+  const [validated, setValidated] = React.useState(false);
 
-  const axiosLogin = async() => {
-    try {
-      const response = await axios.post('http://10.0.2.2:8080/users/login',{
-        "userId" : id,
-        "password" : pw,  
-      });
-      if (response.status === 200) {
-        console.log(response);
-        console.log(response.data.userId);
-        if (response.data.userId == 'wrong userId' || response.data.userId == 'wrong password') {
-          Alert.alert('아이디나 비밀번호가 틀렸습니다!');
-          onChangeId('');
-          onChangePw('');
+  // ID 형식 확인
+  const validateId = id => {
+    const regex = /^[a-z0-9]{4,20}$/;
+    return regex.test(id);
+  };
+
+  // Password 형식 확인
+  const validatePw = pw => {
+    const regex = /^[A-Za-z0-9@$!%*#?&]{4,20}$/;
+    return regex.test(pw);
+  };
+
+  // 공백 제거
+  const removeWhitespace = text => {
+    const regex = /\s/g;
+    return text.replace(regex, '');
+  };
+
+  // Signin Component
+  const _handleIdChange = id => {
+    const changedId = removeWhitespace(id);
+    onChangeId(changedId);
+    setValidated(validateId(id) && validatePw(pw));
+  };
+
+  const _handlePwChange = pw => {
+    const changedPw = removeWhitespace(pw);
+    onChangePw(changedPw);
+    setValidated(validateId(id) && validatePw(pw));
+  };
+
+  const axiosLogin = async () => {
+    if (!validated) {
+      Alert.alert('아이디나 비밀번호가 틀렸습니다!');
+    } else {
+      try {
+        const response = await axios.post(
+          'http://j7e102.p.ssafy.io:8080/users/login',
+          {
+            userId: id,
+            password: pw,
+          },
+        );
+        if (response.status === 200) {
+          console.log(response.data.userId);
+          if (
+            response.data.userId == 'wrong userId' ||
+            response.data.userId == 'wrong password'
+          ) {
+            Alert.alert('아이디나 비밀번호가 틀렸습니다!');
+          } else {
+            await AsyncStorage.setItem('userId', response.data.userId);
+            dispatch(setId(response.data.userId));
+            onChangeId('');
+            onChangePw('');
+            navigation.navigate('EpisodePage');
+          }
+        } else {
+          Alert.alert('서버 오류!');
         }
-        else {
-          dispatch(setId(response.data.userId));
-          navigation.navigate('Main');  
-        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
     }
-  }
-  
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
@@ -56,14 +100,17 @@ const LoginPage = () => {
         <View style={styles.inputcontainer}>
           <TextInput
             style={styles.input}
-            onChangeText={onChangeId}
+            onChangeText={_handleIdChange}
             value={id}
+            autoCapitalize={'none'}
             placeholder="아이디를 입력하세요."
           />
           <TextInput
             style={styles.input}
-            onChangeText={onChangePw}
+            onChangeText={_handlePwChange}
             value={pw}
+            autoCapitalize={'none'}
+            secureTextEntry={true}
             placeholder="비밀번호를 입력하세요."
           />
           <View style={styles.spaceEvenlyContainer}>
@@ -78,9 +125,7 @@ const LoginPage = () => {
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.button}
-              // onPress={() => navigation.navigate('Main')}
-              onPress={() => axiosLogin()}
-              >
+              onPress={() => axiosLogin()}>
               <ImageBackground
                 source={require('../../images/modal/button.png')}
                 style={{height: '100%', width: '100%'}}>
@@ -130,12 +175,14 @@ const styles = StyleSheet.create({
     marginTop: '14%',
     fontFamily: 'HeirofLightRegular',
     fontSize: 19,
+    color: 'white',
   },
   signuptext: {
     marginLeft: '15%',
     marginTop: '14%',
     fontFamily: 'HeirofLightRegular',
     fontSize: 19,
+    color: 'white',
   },
   spaceEvenlyContainer: {
     marginTop: '3%',

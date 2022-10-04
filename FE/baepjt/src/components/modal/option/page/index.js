@@ -13,7 +13,6 @@ import ModalOptionTextAudio from '../text/audio';
 import {useSelector} from 'react-redux';
 function ModalOption(props) {
   const Sound = useSelector(state => state.sound.value);
-  console.log('소리값', Sound);
   return (
     <Modal
       style={styles.modal}
