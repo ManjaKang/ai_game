@@ -21,16 +21,16 @@ const e101 = {
   allclue: [
     [
       {
-        location: ['62%', '94%'], // 버튼 위치
+        location: ['60%', '86%'], // 버튼 위치
       },
       {
-        location: ['70%', '93%'], // 버튼 위치
+        location: ['68%', '80%'], // 버튼 위치
       },
       {
-        location: ['45%', '70%'], // 버튼 위치
+        location: ['45%', '55%'], // 버튼 위치
       },
       {
-        location: ['33%', '40%'], // 버튼 위치
+        location: ['33%', '33%'], // 버튼 위치
       },
     ],
     [
@@ -609,7 +609,7 @@ const e101 = {
       audio: '',
       sfx: '',
       index: 11,
-      position: [1],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
     },
@@ -631,7 +631,7 @@ const e101 = {
       audio: '',
       sfx: '',
       index: 302,
-      position: [1],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
@@ -653,7 +653,7 @@ const e101 = {
       audio: '',
       sfx: '',
       index: 111,
-      position: [1],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
@@ -675,7 +675,7 @@ const e101 = {
       audio: '',
       sfx: '',
       index: 402,
-      position: [1],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
@@ -697,7 +697,7 @@ const e101 = {
       audio: '',
       sfx: '',
       index: 211,
-      position: [1],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
@@ -719,7 +719,7 @@ const e101 = {
       audio: '',
       sfx: '',
       index: 502,
-      position: [1],
+      position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
@@ -746,7 +746,7 @@ const e101 = {
       sfx: '',
       index: 1,
       position: [2],
-      character: [require('../images/character/prof/body/less/left.png')],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
     {
@@ -832,7 +832,7 @@ const e101 = {
       sfx: '',
       index: 3,
       position: [2],
-      character: [require('../images/character/prof/body/less/left.png')],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
     {
@@ -844,7 +844,7 @@ const e101 = {
       sfx: '',
       index: 0,
       position: [2],
-      character: [require('../images/character/prof/body/less/left.png')],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
     {
@@ -856,7 +856,7 @@ const e101 = {
       sfx: '',
       index: 0,
       position: [2],
-      character: [require('../images/character/prof/body/less/left.png')],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
     {
@@ -903,7 +903,7 @@ const e101 = {
       sfx: '',
       index: 4,
       position: [2],
-      character: [require('../images/character/prof/body/less/left.png')],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
     {
@@ -915,7 +915,7 @@ const e101 = {
       sfx: '',
       index: 0,
       position: [2],
-      character: [require('../images/character/prof/body/less/left.png')],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
     {
@@ -930,15 +930,15 @@ const e101 = {
     },
     // 하의
     {
-      name: '',
+      name: '배교수',
       text: '청바지를 입고 외출 하려다 죽은 것 같다. 상의도 조사했나?',
       img: require('../images/character/prof/face/emotionless.png'),
       type: 0,
       audio: '',
       sfx: '',
       index: 5,
-      position: [],
-      character: [],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
     },
     {
@@ -1022,7 +1022,7 @@ const e101 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [2],
+      position: [3],
       character: [require('../images/character/prof/body/less/right.png')],
       bg: 1,
     },
@@ -1046,8 +1046,8 @@ const e101 = {
       audio: '',
       sfx: '',
       index: 9,
-      position: [2],
-      character: [require('../images/character/prof/body/less/right.png')],
+      position: [1],
+      character: [require('../images/character/prof/body/less/left.png')],
       bg: 1,
     },
     {
@@ -1058,8 +1058,8 @@ const e101 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [2],
-      character: [require('../images/character/prof/body/less/right.png')],
+      position: [1],
+      character: [require('../images/character/prof/body/less/left.png')],
       bg: 1,
     },
     {

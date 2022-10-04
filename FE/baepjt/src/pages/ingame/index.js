@@ -50,10 +50,12 @@ function IngamePage(props) {
   const [detectState, setDetectState] = useState(false);
   const [searchStart, setSearchStart] = useState(false);
   const items = importJs[0];
+  const [chapter3, setChapter3] = useState(false);
   const onFinish = () => setReady(true);
 
   //js 불러오기
   const dataa = importJs[props.route.params.order];
+  const chapterOrder = props.route.params.order;
   const setting = dataa.setting;
   const [visible, setVisible] = useState(setting.initial);
   const clue = dataa.clue;
@@ -290,17 +292,34 @@ function IngamePage(props) {
           ) : null}
 
           {scripts[nameOrder].text === 'end'
-            ? backgroundsetting &&
-              backgroundsetting.map((B, index) => (
-                <IngameButtonBackground
-                  key={index}
-                  data={B}
-                  visible={visible}
-                  setVisible={setVisible}
-                  searchStart={searchStart}
-                  setSearchStart={setSearchStart}
-                />
-              ))
+            ? chapterOrder == 3
+              ? backgroundsetting &&
+                backgroundsetting.map((B, index) => (
+                  <IngameButtonBackground
+                    key={index}
+                    data={B}
+                    visible={visible}
+                    setVisible={setVisible}
+                    searchStart={searchStart}
+                    setSearchStart={setSearchStart}
+                    chapter3={chapter3}
+                    setChapter3={setChapter3}
+                    chapterOrder={chapterOrder}
+                    goIndexDialog={goIndexDialog}
+                  />
+                ))
+              : backgroundsetting &&
+                backgroundsetting.map((B, index) => (
+                  <IngameButtonBackground
+                    key={index}
+                    data={B}
+                    visible={visible}
+                    setVisible={setVisible}
+                    searchStart={searchStart}
+                    setSearchStart={setSearchStart}
+                    chapterOrder={chapterOrder}
+                  />
+                ))
             : null}
 
           {backgroundsetting &&
@@ -391,17 +410,33 @@ function IngamePage(props) {
           ) : null}
 
           {scripts[nameOrder].text === 'end'
-            ? backgroundsetting &&
-              backgroundsetting.map((B, index) => (
-                <IngameButtonBackground
-                  key={index}
-                  data={B}
-                  visible={visible}
-                  setVisible={setVisible}
-                  searchStart={searchStart}
-                  setSearchStart={setSearchStart}
-                />
-              ))
+            ? chapterOrder == 3
+              ? backgroundsetting &&
+                backgroundsetting.map((B, index) => (
+                  <IngameButtonBackground
+                    key={index}
+                    data={B}
+                    visible={visible}
+                    setVisible={setVisible}
+                    searchStart={searchStart}
+                    setSearchStart={setSearchStart}
+                    chapter3={chapter3}
+                    setChapter3={setChapter3}
+                    chapterOrder={chapterOrder}
+                  />
+                ))
+              : backgroundsetting &&
+                backgroundsetting.map((B, index) => (
+                  <IngameButtonBackground
+                    key={index}
+                    data={B}
+                    visible={visible}
+                    setVisible={setVisible}
+                    searchStart={searchStart}
+                    setSearchStart={setSearchStart}
+                    chapterOrder={chapterOrder}
+                  />
+                ))
             : null}
 
           {backgroundsetting &&

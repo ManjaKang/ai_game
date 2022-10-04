@@ -388,8 +388,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // kimsy/body/sad/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/happy/right.png'),
       ],
       bg: 2,
     },
@@ -404,8 +403,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // kimsy/body/sad/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/sad/right.png'),
       ],
       bg: 2,
     },
@@ -417,8 +415,11 @@ const e106 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [2],
-      character: [require('../images/character/kimsy/body/whole.png')],
+      position: [1, 3],
+      character: [
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/kimsy/body/sad/right.png'),
+      ],
       bg: 2,
     },
     {
@@ -441,13 +442,10 @@ const e106 = {
       audio: '',
       sfx: '',
       index: 0,
-      // position : [1, 2, 3]
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/happy/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/sad/right.png'),
       ],
       bg: 2,
     },
@@ -459,13 +457,10 @@ const e106 = {
       audio: '',
       sfx: '',
       index: 0,
-      // position : [1, 2, 3]
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/sad/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/sad/right.png'),
       ],
       bg: 2,
     },
@@ -480,9 +475,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/sad/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/angry/right.png'),
       ],
       bg: 2,
     },
@@ -497,9 +490,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/sad/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/angry/right.png'),
       ],
       bg: 2,
     },
@@ -514,9 +505,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/sad/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/angry/right.png'),
       ],
       bg: 2,
     },
@@ -531,9 +520,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/sad/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/sad/right.png'),
       ],
       bg: 2,
     },
@@ -548,9 +535,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/sad/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/sad/right.png'),
       ],
       bg: 2,
     },
@@ -565,9 +550,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/angry/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/angry/right.png'),
       ],
       bg: 2,
     },
@@ -582,9 +565,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/sad/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/angry/right.png'),
       ],
       bg: 2,
     },
@@ -599,9 +580,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/sad/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/angry/right.png'),
       ],
       bg: 2,
     },
@@ -616,9 +595,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/less/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/sad/right.png'),
       ],
       bg: 2,
     },
@@ -633,9 +610,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/less/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/sad/right.png'),
       ],
       bg: 2,
     },
@@ -650,9 +625,7 @@ const e106 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        // 여동생과 함께 찍은 사진
-        // kimsy/body/less/right.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/less/right.png'),
       ],
       bg: 2,
     },
@@ -768,7 +741,7 @@ const e106 = {
       bg: 2,
     },
     {
-      name: '유저',
+      name: '',
       text: '노트북에서 별다른 증거는 발견되지 않았다',
       img: require('../images/character/prof/face/emotionless.png'),
       type: 0,
@@ -814,8 +787,7 @@ const e106 = {
       index: 0,
       position: [1, 3],
       character: [
-        // kimsy/body/less/left.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -830,8 +802,7 @@ const e106 = {
       index: 0,
       position: [1, 3],
       character: [
-        // kimsy/body/less/left.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -846,8 +817,7 @@ const e106 = {
       index: 0,
       position: [1, 3],
       character: [
-        // kimsy/body/less/left.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -862,8 +832,7 @@ const e106 = {
       index: 0,
       position: [1, 3],
       character: [
-        // kimsy/body/less/left.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -878,8 +847,7 @@ const e106 = {
       index: 0,
       position: [1, 3],
       character: [
-        // kimsy/body/less/left.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -894,8 +862,7 @@ const e106 = {
       index: 0,
       position: [1, 3],
       character: [
-        // kimsy/body/less/left.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/sad/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -933,8 +900,7 @@ const e106 = {
       index: 0,
       position: [1, 3],
       character: [
-        // kimsy/body/less/left.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -949,8 +915,7 @@ const e106 = {
       index: 0,
       position: [1, 3],
       character: [
-        // kimsy/body/less/left.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -989,8 +954,7 @@ const e106 = {
       index: 0,
       position: [1, 3],
       character: [
-        // kimsy/body/less/left.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/happy/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -1005,8 +969,7 @@ const e106 = {
       index: 0,
       position: [1, 3],
       character: [
-        // kimsy/body/less/left.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/happy/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -1021,8 +984,7 @@ const e106 = {
       index: 0,
       position: [1, 3],
       character: [
-        // kimsy/body/less/left.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/happy/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -1037,8 +999,7 @@ const e106 = {
       index: 0,
       position: [1, 3],
       character: [
-        // kimsy/body/less/left.png
-        require('../images/character/kimsy/body/whole.png'),
+        require('../images/character/kimsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
