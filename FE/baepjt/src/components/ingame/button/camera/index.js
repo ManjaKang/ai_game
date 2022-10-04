@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import {Text, StyleSheet, TouchableOpacity, Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {launchImageLibrary, launchCamera} from 'react-native-image-picker';
-import UploadModeModal from "../../../camera/cameraModal";
+import UploadModeModal from '../../../camera/cameraModal';
 import Icon from 'react-native-vector-icons/Ionicons';
+import axios from 'axios';
 
 const imagePickerOption = {
   mediaType: 'photo',
@@ -17,11 +18,17 @@ function IngameButtonCamera() {
   const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation();
 
-  const onPickImage = res => {
+  const onPickImage = async res => {
     if (res.didCancel || !res) {
       return;
     }
     console.log('PickImage', res);
+    const result = await axios.post('http://j7e102.p.ssafy.io:8080/image', {
+      // localhost 환경
+      base64: res.assets[0].base64,
+      fileName: res.assets[0].fileName, // 파일 이름
+    });
+    console.log('사진 분석 결과 : ', result.data);
   };
 
   // 카메라 촬영
@@ -51,17 +58,15 @@ function IngameButtonCamera() {
 
   return (
     <TouchableOpacity style={styles.button} onPress={modalOpen}>
-        <Icon style={styles.icon}
-                name="camera"
-            />
-        <UploadModeModal
+      <Icon style={styles.icon} name="camera" />
+      <UploadModeModal
         visible={modalVisible}
         statusBarTranslucent={true}
         onClose={() => setModalVisible(false)}
         onLaunchCamera={onLaunchCamera}
         onLaunchImageLibrary={onLaunchImageLibrary}
       />
-      </TouchableOpacity>
+    </TouchableOpacity>
   );
 }
 
@@ -86,7 +91,7 @@ const styles = StyleSheet.create({
   icon: {
     color: 'rgba(255,255,255,1)',
     fontSize: 64,
-  }
+  },
 });
 
 export default IngameButtonCamera;

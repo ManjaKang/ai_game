@@ -10,11 +10,17 @@ import {
 import {RNCamera} from 'react-native-camera';
 import CameraRoll from '@react-native-community/cameraroll';
 import {useNavigation} from '@react-navigation/native';
+import axios from 'axios';
+import {useSelector, useDispatch} from 'react-redux';
+import {setresValue} from '../../redux/camres';
+import {setcameraValue} from '../../redux/iscamera';
 
 function CameraPage() {
+  const cameraResult = useSelector(state => state.cameraResult.value);
+  const isCamera = useSelector(state => state.isCamera.value);
   const [camera, setCamera] = useState(null);
   const navigation = useNavigation();
-
+  const dispatch = useDispatch();
 
   const takePicture = async () => {
     console.log('camera taken : ' + camera);
@@ -22,7 +28,21 @@ function CameraPage() {
       const options = {quality: 0.5, base64: true};
       const data = await camera.takePictureAsync(options);
       console.log('data : ' + data.uri);
+      const arr = data.uri.split('/');
       if (data) {
+        const res = await axios.post('http://j7e102.p.ssafy.io:8080/image', {
+          // localhost 환경
+          base64: data.base64,
+          fileName: arr[arr.length - 1], // 파일 이
+        });
+        console.log('사진 분석 결과', res.data);
+        // 여기서 비교하기
+        //  [{"name": "camera", "percent": 0.7951256}, {"name": "bed", "percent": 0.157654}, {"name": "table", "percent": 0.985215}]
+        dispatch(setresValue(res.data));
+        dispatch(setcameraValue(true));
+        // res.data.map(d =>
+        //   dispatch(setresValue({name: d.name, percentage: d.percent})),
+        // );
         CameraRoll.save(data.uri, 'photo')
           .then(onfulfilled => {
             ToastAndroid.show(onfulfilled, ToastAndroid.SHORT);
@@ -33,7 +53,7 @@ function CameraPage() {
       }
     }
   };
- 
+
   const exitButton = () => {
     console.log('exitButton');
     navigation.pop();
@@ -68,7 +88,7 @@ function CameraPage() {
               <TouchableOpacity
                 style={styles.exitButtonStyle}
                 onPress={exitButton}>
-                  <Text>뒤로가기</Text>
+                <Text>뒤로가기</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -79,7 +99,12 @@ function CameraPage() {
 }
 const styles = StyleSheet.create({
   container: {flex: 1, alignItems: 'center', justifyContent: 'center'},
-  ButtonContainer: {  width: 120, height: '100%', alignItems: 'center', justifyContent: 'center'},
+  ButtonContainer: {
+    width: 120,
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   viewStyle: {
     flexDirection: 'row',
     display: 'flex',
@@ -106,14 +131,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'pink',
   },
   exitButtonStyle: {
-    width: "80%",
+    width: '80%',
     height: 0,
-    backgroundColor: "rgba(109,121,246,1)",
+    backgroundColor: 'rgba(109,121,246,1)',
     position: 'absolute',
-    height:40,
+    height: 40,
     top: 0,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 export default CameraPage;

@@ -5,27 +5,20 @@ import ModalInventoryButtonBack from '../button/back';
 import ModalInventoryCard from '../card';
 
 function ModalInventory(props) {
-  console.log(props);
+  console.log(props.items);
   const [selectedItem, setSelectedItem] = useState(0);
+  const [displayName,setDisplayName] = useState('');
+  const [displayText,setDisplayText] = useState('');
+
+  function setIndex(index) {
+    console.log(index,"값으로 실행되었음");
+    var iindex = props.items.findIndex(i => i.index == index);
+    console.log(iindex,"값이 입력되어",props.items[iindex].name,"이 이름이고",props.items[iindex].description,"이 내용임");
+    setDisplayName(props.items[iindex].name);
+    setDisplayText(props.items[iindex].description);
+  }
+
   return (
-    // <Modal style={styles.modal}
-    // visible={props.visible}
-    // animationType={"fade"}
-    // hideModalContentWhileAnimating={props.hideModalContentWhileAnimating}
-    // transparent={true}
-    // >
-    //     <View style={styles.full}>
-    //         <View style={styles.view}>
-    //             <View style={styles.left}>
-    //                 <Text>레프트!</Text>
-    //             </View>
-    //             <View style={styles.right}>
-    //                 <Text>라이트!</Text>
-    //             </View>
-    //             {/* <ModalInventoryButtonBack setter={props.setter}/> */}
-    //         </View>
-    //     </View>
-    // </Modal>
     props.visible && (
       <View style={styles.full}>
         <ImageBackground
@@ -41,8 +34,11 @@ function ModalInventory(props) {
                 {/* <TouchableOpacity style={styles.tab}><Text>사진</Text></TouchableOpacity> */}
               </View>
               <View style={styles.document}>
-                <Text style={styles.infotext}>내용!</Text>
-                {props.item && <Text>{props.item[selectedItem]}</Text>}
+                {/* <Text style={styles.infotext}>내용!</Text> */}
+                {/* {props.item && (<Text>{displayName}</Text>)} */}
+                <Text style={styles.name}>{displayName}</Text>
+                <Text style={styles.description}>{displayText}</Text>
+                {/* {props.item && (<Text>{displayText}</Text>)} */}
               </View>
             </View>
             <View style={styles.right}>
@@ -76,7 +72,7 @@ function ModalInventory(props) {
                   <View style={styles.grid} />
                 </View>
                 {props.items &&
-                  props.items.map(I => <ModalInventoryCard item={I} />)}
+                  props.items.map(I => <ModalInventoryCard item={I} itemImg={props.itemImg} setItem={setIndex}/>)}
               </View>
             </View>
           </View>
@@ -157,6 +153,14 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     borderWidth: 1,
     borderColor: 'black',
+  },
+  name: {
+    fontSize: 20,
+    fontFamily: 'AssetBold',
+  },
+  description: {
+    fontSize: 16,
+    fontFamily: 'ChosunKm',
   },
 });
 
