@@ -22,12 +22,14 @@ function IngameButtonBackground(props) {
         // borderColor: 'red',
       }}
       onPress={() => {
+        props.setSearchStart(true);
         dispatch(setbgValue(index));
         props.setVisible(
           props.visible.map(it =>
             it.index == index ? {...it, value: true} : it,
           ),
         );
+
         dispatch(setbgValue(index));
       }}>
       <Icon name="search" size={30}></Icon>

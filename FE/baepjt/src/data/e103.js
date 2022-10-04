@@ -63,7 +63,6 @@ const e103 = {
     ],
     [
       {
-        // 얘 나중에 금고로 바꿔야함
         name: 'table',
         start_index: [7, 302],
         isdetected: 0, // 조사한지
@@ -640,12 +639,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -662,12 +661,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -684,12 +683,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -706,12 +705,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -728,12 +727,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -750,12 +749,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
 
     // 모달 창에 띄울 대사들
@@ -788,12 +787,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
 
     // 볼펜, 샤프, 연필, 만년필을 촬영하면 나오는 대사
@@ -824,12 +823,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
 
     // 의자를 촬영하면 나오는 대사
@@ -848,12 +847,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
 
     // 책상을 촬영하면 나오는 대사
@@ -872,12 +871,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
 
     // 침대
@@ -909,12 +908,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 0,
     },
 
     // 침대, 베게, 이불 촬영
@@ -933,12 +932,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 0,
     },
 
     // 옷장
@@ -1197,7 +1196,7 @@ const e103 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
-      bg: 3,
+      bg: 5,
     },
     {
       name: '배교수',
@@ -1221,22 +1220,17 @@ const e103 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
-      bg: 3,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
-    },
-    {
-      name: 'end',
-      text: 'end',
-      bg: 3,
+      bg: 0,
     },
   ],
 };

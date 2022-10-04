@@ -203,12 +203,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -225,12 +225,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     {
@@ -248,12 +248,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -270,12 +270,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 모달 띄울 때 나오는 대사
@@ -320,12 +320,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     // 물티슈, 책상
     {
@@ -519,12 +519,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     //책장
@@ -899,12 +899,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     // 책
@@ -947,12 +947,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     // 의자
     {
@@ -990,12 +990,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     // 옷방
@@ -1115,12 +1115,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     //옷걸이
@@ -1191,12 +1191,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 상의, 하의
@@ -1215,12 +1215,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 서랍장
@@ -1239,12 +1239,12 @@ const e104 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
   ],
 };

@@ -176,12 +176,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -198,12 +198,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     {
@@ -221,12 +221,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -243,12 +243,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 각 배경화면에서 단서들을 찾은 경우
@@ -302,12 +302,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 냉장고
@@ -464,12 +464,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 양주병
@@ -521,12 +521,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 냄비, 페트병
@@ -623,12 +623,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 화장실
@@ -660,12 +660,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     // 컵
@@ -684,12 +684,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     // 치약
@@ -753,12 +753,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     // 샤워기
@@ -1155,12 +1155,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
   ],
 };
