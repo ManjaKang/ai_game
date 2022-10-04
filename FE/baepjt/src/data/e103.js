@@ -63,7 +63,7 @@ const e103 = {
     ],
     [
       {
-        name: 'table',
+        name: '금고',
         start_index: [7, 302],
         isdetected: 0, // 조사한지
       },
@@ -804,8 +804,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 2,
-      position: [1],
-      character: [require('../images/character/prof/body/less/left.png')],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 5,
     },
     {
@@ -816,8 +816,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/less/left.png')],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 5,
     },
     {
@@ -1002,10 +1002,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [
-        require('../images/character/prof/body/less/left_camera.png'),
-      ],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
     },
     {
@@ -1016,10 +1014,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [
-        require('../images/character/prof/body/less/left_camera.png'),
-      ],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
     },
     {
@@ -1056,7 +1052,6 @@ const e103 = {
       index: 0,
       position: [2, 3],
       character: [
-        //baekjh/body/less/right_camera.png
         require('../images/character/limij/body/whole.png'),
         require('../images/character/baekjh/body/whole.png'),
       ],
@@ -1070,8 +1065,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1],
-      character: [require('../images/character/prof/body/less/left.png')],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
     },
     {
@@ -1084,9 +1079,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        // baekjh/body/less/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 3,
     },
@@ -1100,9 +1094,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        // baekjh/body/sad/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 3,
     },
@@ -1116,9 +1109,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        // baekjh/body/sad/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 3,
     },
@@ -1132,9 +1124,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        // baekjh/body/sad/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/baekjh/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 3,
     },
@@ -1220,6 +1211,11 @@ const e103 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
       bg: 0,
     },
     {

@@ -8,7 +8,33 @@ function IngameButtonBackground(props) {
   const backGround = useSelector(state => state.backGround.value);
   const dispatch = useDispatch();
   console.log('인덱스 번호', index);
-  return (
+  return props.chapterOrder == 3 && index == 2 ? (
+    <TouchableOpacity
+      style={{
+        position: 'absolute',
+        width: props.data.size[0],
+        height: props.data.size[1],
+        top: props.data.location[0],
+        left: props.data.location[1],
+        justifyContent: 'center',
+        alignItems: 'center',
+        // borderWidth: 10,
+        // borderColor: 'red',
+      }}
+      onPress={() => {
+        props.setSearchStart(true);
+        dispatch(setbgValue(index));
+        props.setVisible(
+          props.visible.map(it =>
+            it.index == index ? {...it, value: true} : it,
+          ),
+        );
+        dispatch(setbgValue(index));
+        props.goIndexDialog(7);
+      }}>
+      <Icon name="search" size={30}></Icon>
+    </TouchableOpacity>
+  ) : (
     <TouchableOpacity
       style={{
         position: 'absolute',
