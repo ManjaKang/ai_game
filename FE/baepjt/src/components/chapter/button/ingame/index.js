@@ -52,7 +52,7 @@ function ChapterButton(props) {
               order={7}></Category>
             <Category
               name="범인은 바로 너"
-              imageUri={require('../../../../images/white.png')}
+              imageUri={require('../../../../images/character/prof/face/emotionless.png')}
               episode={props.name}
               number={props.number}
               order={8}></Category>

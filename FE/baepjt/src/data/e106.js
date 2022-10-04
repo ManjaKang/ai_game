@@ -191,12 +191,12 @@ const e106 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -213,12 +213,12 @@ const e106 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     {
@@ -236,12 +236,12 @@ const e106 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -258,12 +258,12 @@ const e106 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 단서를 찾았을 경우
@@ -659,12 +659,12 @@ const e106 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 침대
@@ -715,12 +715,12 @@ const e106 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     // 노트북
     {
@@ -782,12 +782,12 @@ const e106 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 작업실 문
@@ -903,12 +903,12 @@ const e106 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     // 선풍기
     {
@@ -958,12 +958,12 @@ const e106 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     // 의자
@@ -1046,12 +1046,12 @@ const e106 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
   ],
 };

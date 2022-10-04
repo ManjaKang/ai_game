@@ -624,12 +624,12 @@ const e101 = {
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
     {
       name: '배교수',
@@ -641,17 +641,17 @@ const e101 = {
       index: 302,
       position: [1],
       character: [require('../images/character/prof/body/whole.png')],
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
     {
       name: '배교수',
@@ -663,17 +663,17 @@ const e101 = {
       index: 111,
       position: [1],
       character: [require('../images/character/prof/body/whole.png')],
-      bg: 5,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 1,
     },
     {
       name: '배교수',
@@ -685,17 +685,17 @@ const e101 = {
       index: 402,
       position: [1],
       character: [require('../images/character/prof/body/whole.png')],
-      bg: 4,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 1,
     },
     {
       name: '배교수',
@@ -707,17 +707,17 @@ const e101 = {
       index: 211,
       position: [1],
       character: [require('../images/character/prof/body/whole.png')],
-      bg: 4,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 1,
     },
     {
       name: '배교수',
@@ -729,17 +729,17 @@ const e101 = {
       index: 502,
       position: [1],
       character: [require('../images/character/prof/body/whole.png')],
-      bg: 5,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 1,
     },
 
     // 촬영하면 나오는 대사
@@ -755,7 +755,7 @@ const e101 = {
       index: 1,
       position: [2],
       character: [require('../images/character/prof/body/less/left.png')],
-      bg: 4,
+      bg: 1,
     },
     {
       name: '',
@@ -767,7 +767,7 @@ const e101 = {
       index: 0,
       position: [],
       character: [],
-      bg: 4,
+      bg: 1,
     },
     {
       name: '',
@@ -779,17 +779,17 @@ const e101 = {
       index: 0,
       position: [],
       character: [],
-      bg: 4,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 1,
     },
 
     // 컵
@@ -803,7 +803,7 @@ const e101 = {
       index: 2,
       position: [],
       character: [],
-      bg: 4,
+      bg: 1,
       getItem: 1,
     },
     {
@@ -816,17 +816,17 @@ const e101 = {
       index: 0,
       position: [],
       character: [],
-      bg: 4,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 1,
     },
 
     // 사체
@@ -841,7 +841,7 @@ const e101 = {
       index: 3,
       position: [2],
       character: [require('../images/character/prof/body/less/left.png')],
-      bg: 3,
+      bg: 1,
     },
     {
       name: '배교수',
@@ -853,7 +853,7 @@ const e101 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/less/left.png')],
-      bg: 3,
+      bg: 1,
     },
     {
       name: '배교수',
@@ -865,7 +865,7 @@ const e101 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/less/left.png')],
-      bg: 3,
+      bg: 1,
     },
     {
       name: '',
@@ -877,7 +877,7 @@ const e101 = {
       index: 0,
       position: [],
       character: [],
-      bg: 3,
+      bg: 1,
     },
     {
       name: '',
@@ -889,17 +889,17 @@ const e101 = {
       index: 0,
       position: [],
       character: [],
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
     //상의
     {
@@ -912,7 +912,7 @@ const e101 = {
       index: 4,
       position: [2],
       character: [require('../images/character/prof/body/less/left.png')],
-      bg: 3,
+      bg: 1,
     },
     {
       name: '배교수',
@@ -924,17 +924,17 @@ const e101 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/less/left.png')],
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
     // 하의
     {
@@ -947,17 +947,17 @@ const e101 = {
       index: 5,
       position: [],
       character: [],
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
 
     // 마스크
@@ -971,7 +971,7 @@ const e101 = {
       index: 6,
       position: [2],
       character: [require('../images/character/prof/body/less/left.png')],
-      bg: 3,
+      bg: 1,
     },
     {
       name: '배교수',
@@ -983,17 +983,17 @@ const e101 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/less/left.png')],
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
     // 핸드폰
     {
@@ -1006,7 +1006,7 @@ const e101 = {
       index: 7,
       position: [],
       character: [],
-      bg: 3,
+      bg: 1,
     },
     {
       name: '',
@@ -1018,7 +1018,7 @@ const e101 = {
       index: 0,
       position: [],
       character: [],
-      bg: 3,
+      bg: 1,
     },
     {
       name: '',
@@ -1030,17 +1030,17 @@ const e101 = {
       index: 0,
       position: [],
       character: [],
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 1,
     },
 
     // 방입구
@@ -1055,7 +1055,7 @@ const e101 = {
       index: 8,
       position: [3],
       character: [require('../images/character/prof/body/less/right.png')],
-      bg: 5,
+      bg: 1,
     },
     {
       name: '배교수',
@@ -1067,17 +1067,17 @@ const e101 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/less/right.png')],
-      bg: 5,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 1,
     },
 
     // 스탠드
@@ -1091,7 +1091,7 @@ const e101 = {
       index: 9,
       position: [2],
       character: [require('../images/character/prof/body/less/right.png')],
-      bg: 5,
+      bg: 1,
     },
     {
       name: '배교수',
@@ -1103,17 +1103,17 @@ const e101 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/less/right.png')],
-      bg: 5,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 1,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 1,
     },
   ],
 };

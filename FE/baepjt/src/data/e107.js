@@ -236,12 +236,12 @@ const e107 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -258,12 +258,12 @@ const e107 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     {
@@ -281,12 +281,12 @@ const e107 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -303,12 +303,12 @@ const e107 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 단서를 찾은 경우
@@ -401,12 +401,12 @@ const e107 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     // 모니터
     {
@@ -840,12 +840,12 @@ const e107 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     // 책
     {
@@ -899,12 +899,12 @@ const e107 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 베란다
@@ -924,12 +924,12 @@ const e107 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     // 냄비
@@ -980,12 +980,12 @@ const e107 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     // 옷
     {
@@ -1015,12 +1015,12 @@ const e107 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     // 헤어드라이기
@@ -1123,12 +1123,12 @@ const e107 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
   ],
 };
