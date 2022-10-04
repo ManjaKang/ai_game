@@ -10,6 +10,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.10",
     "@react-native-community/cameraroll": "^4.1.2",
     "@react-native-community/slider": "^4.3.1",
     "@react-navigation/native": "^6.0.12",
@@ -18,7 +19,7 @@
     "@reduxjs/toolkit": "^1.8.5",
     "@rneui/themed": "4.0.0-rc.6",
     "axios": "^0.27.2",
-    "expo-av": "^12.0.4",
+    "deprecated-react-native-prop-types": "2.3.0",
     "fbjs": "^3.0.4",
     "react": "17.0.2",
     "react-native": "0.68.2",

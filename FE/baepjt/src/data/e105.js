@@ -30,13 +30,50 @@ const e105 = {
     ],
   ],
   clue: [
-    {
-      name: 'bottle',
-      start_index: [8, 11],
-      isimportant: 0, // 중요한거
-      image: '../images/clue/ep1_bottle.jpg',
-      isdetected: 0, // 조사한지
-    },
+    [
+      {
+        name: 'hair dryer',
+        start_index: [5, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'toothpaste',
+        start_index: [7, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'cup',
+        start_index: [6, 102],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'shower head',
+        start_index: [8, 102],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        name: 'refrigerator',
+        start_index: [2, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'microwave',
+        start_index: [1, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'pot',
+        start_index: [4, 202],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'pet bottle',
+        start_index: [3, 202],
+        isdetected: 0, // 조사한지
+      },
+    ],
   ],
   backgroundsetting: [
     {
@@ -131,7 +168,7 @@ const e105 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 101,
+      index: 11,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
@@ -139,12 +176,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -161,12 +198,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 0,
     },
 
     {
@@ -176,7 +213,7 @@ const e105 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 201,
+      index: 111,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 2,
@@ -184,12 +221,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -206,12 +243,12 @@ const e105 = {
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 2,
+      bg: 0,
     },
 
     // 각 배경화면에서 단서들을 찾은 경우
@@ -261,6 +298,16 @@ const e105 = {
         require('../images/character/limij/body/less/right.png'),
       ],
       bg: 2,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
     },
 
     // 냉장고
@@ -414,6 +461,16 @@ const e105 = {
       ],
       bg: 2,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
 
     // 양주병
     {
@@ -460,6 +517,16 @@ const e105 = {
         require('../images/character/limij/body/less/right.png'),
       ],
       bg: 2,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
     },
 
     // 냄비, 페트병
@@ -553,6 +620,16 @@ const e105 = {
       ],
       bg: 2,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
 
     // 화장실
     // 헤어드라이기
@@ -580,6 +657,16 @@ const e105 = {
       character: [],
       bg: 1,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
 
     // 컵
     {
@@ -593,6 +680,16 @@ const e105 = {
       position: [],
       character: [],
       bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
     },
 
     // 치약
@@ -652,6 +749,16 @@ const e105 = {
         require('../images/character/limij/body/less/right.png'),
       ],
       bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
     },
 
     // 샤워기
@@ -1044,6 +1151,16 @@ const e105 = {
         require('../images/character/limij/body/less/right.png'),
       ],
       bg: 1,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
     },
   ],
 };

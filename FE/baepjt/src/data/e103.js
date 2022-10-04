@@ -27,13 +27,47 @@ const e103 = {
     ],
   ],
   clue: [
-    {
-      name: 'bottle',
-      start_index: [8, 11],
-      isimportant: 0, // 중요한거
-      image: '../images/clue/ep1_bottle.jpg',
-      isdetected: 0, // 조사한지
-    },
+    [
+      {
+        name: 'pillow',
+        start_index: [6, 402],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'guitar',
+        start_index: [5, 402],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        name: 'desk',
+        start_index: [4, 502],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'book',
+        start_index: [1, 502],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'pen',
+        start_index: [2, 502],
+        isdetected: 0, // 조사한지
+      },
+      {
+        name: 'chair',
+        start_index: [3, 502],
+        isdetected: 0, // 조사한지
+      },
+    ],
+    [
+      {
+        name: 'table',
+        start_index: [7, 302],
+        isdetected: 0, // 조사한지
+      },
+    ],
   ],
   backgroundsetting: [
     {
@@ -170,8 +204,7 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 100,
-      position: [3],
-      //examiner/body/happy/right.png
+      position: [2],
       character: [require('../images/character/examiner/body/whole.png')],
       bg: 0,
     },
@@ -185,10 +218,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -202,10 +233,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -219,10 +248,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -236,10 +263,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -253,10 +278,8 @@ const e103 = {
       index: 0,
       position: [1, 3],
       character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/prof/body/whole.png'),
+        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/examiner/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -268,13 +291,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1, 3],
-      character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/whole.png'),
-        require('../images/character/prof/body/whole.png'),
-      ],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
     {
@@ -285,13 +303,8 @@ const e103 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [1, 3],
-      character: [
-        //prof/body/happy/left.png
-        //examiner/body/happy/right.png
-        require('../images/character/prof/body/less/left_camera.png'),
-        require('../images/character/prof/body/whole.png'),
-      ],
+      position: [2],
+      character: [require('../images/character/prof/body/whole.png')],
       bg: 0,
     },
     {
@@ -332,7 +345,7 @@ const e103 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/sad/right.png'),
       ],
       bg: 0,
     },
@@ -377,7 +390,7 @@ const e103 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/sad/right.png'),
       ],
       bg: 0,
     },
@@ -618,7 +631,7 @@ const e103 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 301,
+      index: 11,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
@@ -626,12 +639,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -640,7 +653,7 @@ const e103 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 302,
+      index: 12,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 3,
@@ -648,12 +661,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 3,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -662,7 +675,7 @@ const e103 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 401,
+      index: 111,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 4,
@@ -670,12 +683,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -692,12 +705,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 4,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -706,7 +719,7 @@ const e103 = {
       type: 0,
       audio: '',
       sfx: '',
-      index: 501,
+      index: 211,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 5,
@@ -714,12 +727,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
     {
       name: '배교수',
@@ -736,12 +749,12 @@ const e103 = {
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 5,
+      bg: 0,
     },
 
     // 모달 창에 띄울 대사들
@@ -771,6 +784,16 @@ const e103 = {
       character: [],
       bg: 5,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
 
     // 볼펜, 샤프, 연필, 만년필을 촬영하면 나오는 대사
     {
@@ -797,6 +820,16 @@ const e103 = {
       character: [require('../images/character/prof/body/less/left.png')],
       bg: 5,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
 
     // 의자를 촬영하면 나오는 대사
     {
@@ -811,6 +844,16 @@ const e103 = {
       character: [],
       bg: 5,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
 
     // 책상을 촬영하면 나오는 대사
     {
@@ -824,6 +867,16 @@ const e103 = {
       position: [],
       character: [],
       bg: 5,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
     },
 
     // 침대
@@ -852,6 +905,16 @@ const e103 = {
       character: [],
       bg: 4,
     },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
 
     // 침대, 베게, 이불 촬영
     {
@@ -865,6 +928,16 @@ const e103 = {
       position: [],
       character: [],
       bg: 4,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
     },
 
     // 옷장
@@ -1123,7 +1196,7 @@ const e103 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
-      bg: 3,
+      bg: 5,
     },
     {
       name: '배교수',
@@ -1147,7 +1220,17 @@ const e103 = {
       index: 0,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
-      bg: 3,
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
+    },
+    {
+      name: 'end',
+      text: 'end',
+      bg: 0,
     },
   ],
 };
