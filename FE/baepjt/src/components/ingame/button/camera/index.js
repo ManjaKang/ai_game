@@ -5,6 +5,8 @@ import {launchImageLibrary, launchCamera} from 'react-native-image-picker';
 import UploadModeModal from '../../../camera/cameraModal';
 import Icon from 'react-native-vector-icons/Ionicons';
 import axios from 'axios';
+import SoundPlayer from 'react-native-sound-player';
+import { useSelector } from 'react-redux';
 
 const imagePickerOption = {
   mediaType: 'photo',
@@ -17,12 +19,15 @@ function IngameButtonCamera() {
   // 안드로이드를 위한 모달 visible 상태값
   const [modalVisible, setModalVisible] = useState(false);
   const navigation = useNavigation();
+  const sound = useSelector(state => state.sound);
 
   const onPickImage = async res => {
     if (res.didCancel || !res) {
       return;
     }
     console.log('PickImage', res);
+    SoundPlayer.setVolume(sound.value.sfx/100);
+    SoundPlayer.playSoundFile('camera','mp3');
     const result = await axios.post('http://j7e102.p.ssafy.io:8080/image', {
       // localhost 환경
       base64: res.assets[0].base64,
