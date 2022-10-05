@@ -62,9 +62,7 @@ function CameraPage() {
   return (
     <View>
       <ImageBackground
-        source={{
-          uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKqSpCdnXNE1VVBcnKOW_yV9bzWQ5MeQCnqQ&usqp=CAU',
-        }}
+        source={require('../../images/background/chapter8/black.jpg')}
         style={{width: '100%', height: '100%'}}>
         <View style={styles.viewStyle}>
           <View style={styles.container}>
@@ -88,7 +86,11 @@ function CameraPage() {
               <TouchableOpacity
                 style={styles.exitButtonStyle}
                 onPress={exitButton}>
-                <Text>뒤로가기</Text>
+                <ImageBackground
+                  source={require('../../images/modal/button.png')}
+                  style={{width: '100%', height: '100%'}}>
+                  <Text style={styles.text}>뒤로가기</Text>
+                </ImageBackground>
               </TouchableOpacity>
             </View>
           </View>
@@ -114,7 +116,7 @@ const styles = StyleSheet.create({
   },
   innerButton: {
     margin: 0,
-    height: 220,
+    height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -127,18 +129,26 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 50,
     borderWidth: 10,
     borderStyle: 'solid',
-    borderColor: 'gray',
-    backgroundColor: 'pink',
+    borderColor: 'white',
+    backgroundColor: 'red',
   },
   exitButtonStyle: {
     width: '80%',
     height: 0,
     backgroundColor: 'rgba(109,121,246,1)',
     position: 'absolute',
-    height: 40,
-    top: 0,
+    height: '12%',
+    bottom: 10,
+    right: 5,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  text: {
+    marginTop: '10%',
+    marginLeft: '5%',
+    color: 'white',
+    fontSize: 20,
+    fontFamily: 'HeirofLightRegular',
   },
 });
 export default CameraPage;

@@ -339,6 +339,7 @@ const e104 = {
       position: [3],
       character: [require('../images/character/prof/body/less/right.png')],
       bg: 1,
+      getItem: 6,
     },
     {
       name: '백지현',
@@ -528,6 +529,7 @@ const e104 = {
       position: [2],
       character: [require('../images/background/chapter4/couple.png')],
       bg: 1,
+      getItem: 7,
     },
     {
       name: '',
@@ -972,6 +974,7 @@ const e104 = {
         require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 2,
+      getItem: 8,
     },
     {
       name: '백지현',
@@ -1089,6 +1092,7 @@ const e104 = {
         require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 2,
+      getItem: 9,
     },
     {
       name: '백지현',
