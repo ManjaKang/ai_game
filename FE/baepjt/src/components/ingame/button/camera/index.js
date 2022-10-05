@@ -30,6 +30,8 @@ function IngameButtonCamera() {
       return;
     }
     console.log('PickImage', res);
+    SoundPlayer.setVolume(sound.value.sfx/100);
+    SoundPlayer.playSoundFile('camera','mp3');
     const result = await axios.post('http://j7e102.p.ssafy.io:8080/image', {
       // localhost 환경
       base64: res.assets[0].base64,

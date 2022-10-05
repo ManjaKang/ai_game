@@ -9,20 +9,23 @@ import {
   ImageBackground,
 } from 'react-native';
 
+import SoundPlayer from 'react-native-sound-player';
+
 function Category(props) {
   const navigation = useNavigation();
   return (
     <View>
       <TouchableOpacity
         style={styles.button}
-        onPress={() =>
+        onPress={() =>{
+          SoundPlayer.stop();
           navigation.navigate('IngamePage', {
             name: props.name,
             episode: props.episode,
             episodeNumber: props.number,
             order: props.order,
           })
-        }>
+        }}>
         <Image
           source={props.imageUri}
           style={{

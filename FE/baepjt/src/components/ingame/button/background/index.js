@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
 import {TouchableOpacity, StyleSheet, View} from 'react-native';
+import { stat } from 'react-native-fs';
+import SoundPlayer from 'react-native-sound-player';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useSelector, useDispatch} from 'react-redux';
 import {setbgValue} from '../../../../redux/background';
@@ -7,6 +9,7 @@ function IngameButtonBackground(props) {
   const index = props.data.index;
   const backGround = useSelector(state => state.backGround.value);
   const dispatch = useDispatch();
+  const sound = useSelector(state => state.sound);
   console.log('인덱스 번호', index);
   return props.chapterOrder == 3 && index == 2 ? (
     <TouchableOpacity
@@ -48,6 +51,10 @@ function IngameButtonBackground(props) {
         // borderColor: 'red',
       }}
       onPress={() => {
+        if(props.chapterOrder == 4 && (index == 0 || index == 1)){
+          SoundPlayer.playSoundFile('door', 'mp3');
+          SoundPlayer.setVolume(sound.value.sfx/100);
+        }
         props.setSearchStart(true);
         dispatch(setbgValue(index));
         props.setVisible(
