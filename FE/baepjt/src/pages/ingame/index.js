@@ -151,7 +151,7 @@ function IngamePage(props) {
       );
       if (response.status == 200) {
         console.log("저장완료");
-        // navigation.navigate('ChapterPage', {name: props.route.params.episode});
+        navigation.navigate('ChapterPage', {name: props.route.params.episode});
       } else {
         console.log("저장실패!");
         setNameOrder(nameOrder - 1);
