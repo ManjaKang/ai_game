@@ -182,6 +182,10 @@ function FinalePage(props) {
     if (scripts[nameOrder].getItem > 0) {
       console.log("아이템 획득해야함! 번호 : ",scripts[nameOrder].getItem);
     }
+    if (scripts[nameOrder].moveIndex > 0) {
+        setNameOrder(scripts[nameOrder].moveIndex);
+        setImageOrder(scripts[nameOrder].moveIndex);
+    }
   };
 
   //챕터 완료하면서 아이템 저장, 메인화면으로 가기
@@ -272,6 +276,7 @@ function FinalePage(props) {
     setTimeout(() => {
       onFinish();
     }, 1000);
+    console.log("nameorder",nameOrder);
   }, []);
 
   return isReady ? (

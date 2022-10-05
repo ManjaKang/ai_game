@@ -7,21 +7,21 @@ function FinaleButtonSuspect(props) {
     const calcButtonWidth = (C) => {
         return `${100/(C+1)}%`
     }
-    const activeFunc = (bool) => {
+    function activeFunc(bool) {
         console.log("클릭확인",props.index);
         console.log(props.dialogIndex[bool]);
         props.goFunc(props.dialogIndex[bool]);
     }
     return (
         props.suspectList.value == false ?
-        (<TouchableOpacity style={Fstyles(calcButtonWidth(Count)).closeButton} onPress={activeFunc(0)}>
+        (<TouchableOpacity style={Fstyles(calcButtonWidth(Count)).closeButton} onPress={()=>activeFunc(0)}>
         <Image style={styles.imgClose} source={props.img} />
         </TouchableOpacity>)
         : (props.trsus==props.sc ?
-            (<TouchableOpacity style={Fstyles(calcButtonWidth(Count)).button} onPress={activeFunc(props.trueendcode)}>
+            (<TouchableOpacity style={Fstyles(calcButtonWidth(Count)).button} onPress={()=>activeFunc(props.trueendcode)}>
             <Image style={styles.img} source={props.img} />
             </TouchableOpacity>)
-            : (<TouchableOpacity style={Fstyles(calcButtonWidth(Count)).button} onPress={activeFunc(1)}>
+            : (<TouchableOpacity style={Fstyles(calcButtonWidth(Count)).button} onPress={()=>activeFunc(1)}>
             <Image style={styles.img} source={props.img} />
             </TouchableOpacity>))
     )
