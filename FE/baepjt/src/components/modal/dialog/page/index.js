@@ -12,6 +12,7 @@ import IngameTextName from '../../../ingame/text/name';
 import IngameButtonSkip from '../../../ingame/button/skip';
 
 function ModalDialog(props) {
+  console.log("props",props.data[props.state]);
   return (
     props.visible && (
       <View style={styles.modal}>
