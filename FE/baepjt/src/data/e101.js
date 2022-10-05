@@ -266,7 +266,7 @@ const e101 = {
     {
       name: '조사관',
       text: '여기 사망자에 대한 정보입니다.',
-      img: require('../images/character/examiner/body/whole.png'),
+      img: require('../images/character/examiner/face/emotionless.png'),
       type: 1,
       audio: '',
       sfx: '',
@@ -605,7 +605,7 @@ const e101 = {
       name: '배교수',
       text: '음,, 그건 단서가 될 수 없을 것 같군',
       img: require('../images/character/prof/face/emotionless.png'),
-      type: 0,
+      type: 3,
       audio: '',
       sfx: '',
       index: 11,
@@ -917,6 +917,7 @@ const e101 = {
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
+      getItem: 2,
     },
     {
       name: 'end',
@@ -1049,6 +1050,7 @@ const e101 = {
       position: [1],
       character: [require('../images/character/prof/body/less/left.png')],
       bg: 1,
+      getItem: 3,
     },
     {
       name: '배교수',

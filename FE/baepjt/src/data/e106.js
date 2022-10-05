@@ -312,6 +312,7 @@ const e106 = {
         require('../images/character/kimsy/body/whole.png'),
       ],
       bg: 2,
+      getItem: 14,
     },
     {
       name: '김세영',
@@ -776,6 +777,7 @@ const e106 = {
       position: [3],
       character: [require('../images/character/prof/body/less/right.png')],
       bg: 1,
+      getItem: 15,
     },
     {
       name: '김세영',
@@ -889,6 +891,7 @@ const e106 = {
       position: [3],
       character: [require('../images/character/prof/body/less/right.png')],
       bg: 1,
+      getItem: 16,
     },
     {
       name: '김세영',
@@ -1003,6 +1006,7 @@ const e106 = {
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
+      getItem: 17,
     },
     {
       name: 'end',

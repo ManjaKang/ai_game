@@ -7,15 +7,24 @@ function FinaleButtonSuspect(props) {
     const calcButtonWidth = (C) => {
         return `${100/(C+1)}%`
     }
-    const activeFunc = () => {
+    function activeFunc(bool) {
         console.log("클릭확인",props.index);
-        console.log(props.dialogIndex);
-        props.goFunc(props.dialogIndex);
+        console.log(props.dialogIndex[bool]);
+        props.goFunc(props.dialogIndex[bool]);
+        props.close(false);
     }
     return (
-        <TouchableOpacity style={Fstyles(calcButtonWidth(Count)).button} onPress={activeFunc}>
+        props.suspectList.value == false ?
+        (<TouchableOpacity style={Fstyles(calcButtonWidth(Count)).closeButton} onPress={()=>activeFunc(0)}>
+        <Image style={styles.imgClose} source={props.img} />
+        </TouchableOpacity>)
+        : (props.trsus==props.sc ?
+            (<TouchableOpacity style={Fstyles(calcButtonWidth(Count)).button} onPress={()=>activeFunc(props.trueendcode)}>
             <Image style={styles.img} source={props.img} />
-        </TouchableOpacity>
+            </TouchableOpacity>)
+            : (<TouchableOpacity style={Fstyles(calcButtonWidth(Count)).button} onPress={()=>activeFunc(1)}>
+            <Image style={styles.img} source={props.img} />
+            </TouchableOpacity>))
     )
 }
 
@@ -26,7 +35,17 @@ const Fstyles = (width) => StyleSheet.create({
         borderColor: 'rgba(0,0,0,1)',
         borderWidth: 1,
         borderRadius: 1000,
-        backgroundColor: 'rgba(255,255,255,1)',
+        backgroundColor: 'rgba(192,192,192,1)',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    closeButton: {
+        width: width,
+        aspectRatio: 1,
+        borderColor: 'rgba(0,0,0,1)',
+        borderWidth: 1,
+        borderRadius: 1000,
+        backgroundColor: 'rgba(64,64,64,1)',
         justifyContent: 'center',
         alignItems: 'center'
     }
@@ -37,6 +56,10 @@ const styles = StyleSheet.create({
         color: 'gray',
     },
     img: {
+        width: '75%',
+        height: '75%',
+    },
+    imgClose: {
         width: '75%',
         height: '75%',
     }

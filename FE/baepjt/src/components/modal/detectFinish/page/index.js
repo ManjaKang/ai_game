@@ -48,10 +48,12 @@ const styles = StyleSheet.create({
   check: {
     fontSize: 18,
     fontFamily: 'HeirofLightRegular',
+    color: 'white',
   },
   sub: {
     fontSize: 16,
     fontFamily: 'HeirofLightRegular',
+    color: 'white',
   },
   boxset: {
     marginTop: 15,
@@ -79,6 +81,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: 'HeirofLightRegular',
     color: 'black',
+    color: 'white',
   },
 });
 

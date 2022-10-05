@@ -21,8 +21,7 @@ function ModalAccountButtonLogout() {
     <View>
       <TouchableOpacity onPress={() => logout()}>
         <Text style={styles.text}>
-          {' '}
-          <Icon size={35} name="log-out" />
+          <Icon size={35} name="log-out" color="black" />
           로그아웃
         </Text>
       </TouchableOpacity>

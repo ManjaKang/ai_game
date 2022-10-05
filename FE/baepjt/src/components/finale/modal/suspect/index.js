@@ -12,12 +12,16 @@ function FinaleModalSuspect (props) {
                             props.suspectcount && (
                                 props.suspectcount.map((sc,index) => (
                                     <FinaleButtonSuspect
+                                        key={index}
                                         count={props.count}
                                         index={sc}
                                         img={props.suspectImg[index]}
                                         dialogIndex={props.dialog[index]}
                                         goFunc={props.goFunc}
                                         close={props.close}
+                                        suspectList={props.suspectList[index]}
+                                        trueendcode={props.trueendcode}
+                                        trsus={props.trsus}
                                     />
                                 ))
                             )

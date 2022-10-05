@@ -24,7 +24,8 @@ function ChapterPage(props) {
             <MainButtonAccount />
           </View>
           <View style={styles.viewcontainer}>
-            <Text style={{textAlign: 'center', fontWeight: 'bold'}}>
+            <Text
+              style={{textAlign: 'center', fontWeight: 'bold', color: 'white'}}>
               {/* <EpisodeText></EpisodeText> */}
               <ChapterText name={props.route.params.name}></ChapterText>
             </Text>
