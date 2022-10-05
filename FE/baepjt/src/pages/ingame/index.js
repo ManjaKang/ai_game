@@ -36,6 +36,7 @@ import {useNavigation} from '@react-navigation/native';
 import IngameTextIdle from '../../components/ingame/text/idle';
 import {useSelector, useDispatch} from 'react-redux';
 import iscamera, {setcameraValue} from '../../redux/iscamera';
+import itemdata from './itemdata';
 function IngamePage(props) {
   const userID = useSelector(state => state.id.value);
   const [nameOrder, setNameOrder] = useState(0);
@@ -53,6 +54,7 @@ function IngamePage(props) {
   const [chapter3, setChapter3] = useState(false);
   const onFinish = () => setReady(true);
 
+  console.log(userID);
   //js 불러오기
   const dataa = importJs[props.route.params.order];
   const chapterOrder = props.route.params.order;
@@ -64,6 +66,7 @@ function IngamePage(props) {
   const scripts = dataa.scripts;
   const [characterList, setCharacterList] = useState('');
   const cameraResult = useSelector(state => state.cameraResult.value);
+  const itemData = itemdata;
 
   const incameralist = [];
   const modalcluelist = [];
@@ -71,29 +74,29 @@ function IngamePage(props) {
   const dispatch = useDispatch();
   const isCamera = useSelector(state => state.isCamera.value);
 
-  // const [itemList,setItemList] = useState([]);
-  const [itemList, setItemList] = useState([
-    {
-      idx: 0,
-      name: '사건 현장에 있던 컵',
-      userId: 'aaa',
-      description:
-        '현장의 거실 테이블 위에 놓여 있던컵. 많은 술병에 비해 컵은 단 하나만 놓여 있었다.',
-      index: 1, // 아이템번호
-      episode: 1,
-      chapter: 1,
-    },
-    {
-      idx: 0,
-      name: '오종오의 전자담배',
-      userId: 'aaa',
-      description:
-        '피해자가 외투 주머니에 소지하고 있던 전자담배. 평소에도 전자담배를 즐겨 폈던 것으로 보인다.',
-      index: 2,
-      episode: 1,
-      chapter: 1,
-    },
-  ]);
+  const [itemList,setItemList] = useState([]);
+  // const [itemList, setItemList] = useState([
+  //   {
+  //     idx: 0,
+  //     name: '사건 현장에 있던 컵',
+  //     userId: 'aaa',
+  //     description:
+  //       '현장의 거실 테이블 위에 놓여 있던컵. 많은 술병에 비해 컵은 단 하나만 놓여 있었다.',
+  //     index: 1, // 아이템번호
+  //     episode: 1,
+  //     chapter: 1,
+  //   },
+  //   {
+  //     idx: 0,
+  //     name: '오종오의 전자담배',
+  //     userId: 'aaa',
+  //     description:
+  //       '피해자가 외투 주머니에 소지하고 있던 전자담배. 평소에도 전자담배를 즐겨 폈던 것으로 보인다.',
+  //     index: 2,
+  //     episode: 1,
+  //     chapter: 1,
+  //   },
+  // ]);
 
   const navigation = useNavigation();
   // 클릭할 때마다 다음 대사로 넘어가기
@@ -111,9 +114,26 @@ function IngamePage(props) {
     if (scripts[nameOrder + 1].text == 'gotoMain') {
       // chapterClear();
       Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
-      navigation.navigate('ChapterPage', {name: props.route.params.episode});
+      chapterClear();
+      // navigation.navigate('ChapterPage', {name: props.route.params.episode});
     }
     if (scripts[nameOrder].getItem > 0) {
+      const findNumber = scripts[nameOrder].getItem;
+      if (itemList.find(F => F.index == findNumber)) {
+        console.log("이미 있는 아이템입니다");
+      }
+      else {
+        setItemList(item=>[...item,{
+          idx: itemData[findNumber].idx,
+          name: itemData[findNumber].name,
+          userId: userID,
+          description: itemData[findNumber].description,
+          index: itemData[findNumber].index,
+          episode: itemData[findNumber].episode,
+          chapter: itemData[findNumber].chapter,
+        }]);
+        console.log("이제 아이템 리스트가!", itemList);
+      }
     }
   };
 
@@ -130,27 +150,10 @@ function IngamePage(props) {
         },
       );
       if (response.status == 200) {
-        const saveProgress = async () => {
-          try {
-            const response2 = await axios.put(
-              'http://j7e102.p.ssafy.io:8080/users/progress',
-              {
-                userId: userID,
-                episode: props.route.params.episodeNumber,
-                chapter: props.route.params.order,
-              },
-            );
-            if (response2.status == 200) {
-              Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
-              navigation.navigate('ChapterPage', {
-                name: props.route.params.episode,
-              });
-            }
-          } catch (error2) {
-            console.log(error2);
-          }
-        };
+        console.log("저장완료");
+        // navigation.navigate('ChapterPage', {name: props.route.params.episode});
       } else {
+        console.log("저장실패!");
         setNameOrder(nameOrder - 1);
         setImageOrder(imageOrder - 1);
       }
@@ -184,7 +187,8 @@ function IngamePage(props) {
     }
     if (scripts[nameOrder + 1].text == 'gotoMain') {
       Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
-      navigation.navigate('ChapterPage', {name: props.route.params.episode});
+      chapterClear();
+      // navigation.navigate('ChapterPage', {name: props.route.params.episode});
     }
   };
 
@@ -195,7 +199,7 @@ function IngamePage(props) {
       );
       if (response.status == 200) {
         setItemList(response.data);
-        // console.log('가져온 아이템!', response.data);
+        console.log('가져온 아이템!', response.data);
       } else {
         // console.log('에에엥');
       }
@@ -214,9 +218,14 @@ function IngamePage(props) {
   }
   const [dialog, setDialog] = useState(scripts);
   const epiImgBg = dataa.setting.chapterbg;
+  const [itemChecker,setItemChecker] = useState(false);
 
   useEffect(() => {
-    // getItemList();
+    if (itemChecker==false) {
+      getItemList();
+      setItemChecker(true);
+      console.log("아이템 불러오기 종료");
+    }
     // isCamera가 True 라면 cameralist와 cluelist 비교해서 그 때에 맞는 스크립트 불러오기
     if (isCamera == true) {
       // 각 chapter의 cluelist
