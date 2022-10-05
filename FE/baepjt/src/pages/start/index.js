@@ -2,7 +2,8 @@ import React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-
+import {setId} from '../../redux/login';
+import {useSelector, useDispatch} from 'react-redux';
 import {
   View,
   Text,
@@ -13,12 +14,15 @@ import {
 } from 'react-native';
 
 function StartPage({navigation}) {
+  const dispatch = useDispatch();
   return (
     // 다음페이지로 넘어가기
     <TouchableOpacity
       activeOpacity={1}
       onPress={async () => {
-        if (await AsyncStorage.getItem('userId')) {
+        const userID = await AsyncStorage.getItem('userId');
+        if (userID) {
+          dispatch(setId(userID));
           navigation.navigate('EpisodePage');
         } else {
           navigation.navigate('Login');
