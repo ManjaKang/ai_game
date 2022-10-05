@@ -7,7 +7,7 @@ const imageData = [
     require('../images/item/fountainpen.png'),
     require('../images/item/nicotine.png'),
     require('../images/item/wetwipe.png'),
-    require('../images/item/.png'), // 사진
+    require('../images/item/picture.png'), // 사진
     require('../images/item/gloves.png'),
     require('../images/item/hanger.png'),
     require('../images/item/iceball_tray.png'),
