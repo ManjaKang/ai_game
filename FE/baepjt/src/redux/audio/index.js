@@ -1,5 +1,6 @@
 import React from 'react';
 import {createSlice} from '@reduxjs/toolkit'
+import SoundPlayer from 'react-native-sound-player';
 
 export const soundSlice = createSlice({
     name: 'sound',
@@ -9,6 +10,13 @@ export const soundSlice = createSlice({
             state,
             action
         ) => {
+            if(state.value.bgm != action.payload.bgm){
+                SoundPlayer.setVolume(action.payload.bgm/100);
+                if(state.value.bgm == 0){
+                    SoundPlayer.playSoundFile('main','mp3');
+                }
+            }
+            
             state.value = action.payload
         }
     }

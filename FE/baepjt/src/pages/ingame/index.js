@@ -37,6 +37,7 @@ import IngameTextIdle from '../../components/ingame/text/idle';
 import {useSelector, useDispatch} from 'react-redux';
 import iscamera, {setcameraValue} from '../../redux/iscamera';
 import itemdata from './itemdata';
+import SoundPlayer from 'react-native-sound-player';
 function IngamePage(props) {
   const userID = useSelector(state => state.id.value);
   const [nameOrder, setNameOrder] = useState(0);
@@ -75,6 +76,7 @@ function IngamePage(props) {
   const isCamera = useSelector(state => state.isCamera.value);
 
   const [itemList,setItemList] = useState([]);
+  const sound = useSelector(state => state.sound);
   // const [itemList, setItemList] = useState([
   //   {
   //     idx: 0,
@@ -104,12 +106,17 @@ function IngamePage(props) {
     if (dialogState) {
       setNameOrder(nameOrder + 1);
       setImageOrder(imageOrder + 1);
+      SoundPlayer.stop();
       if (scripts[imageOrder].position != null) {
         setCharacterList(scripts[imageOrder].character[0]);
       }
       if (scripts[nameOrder].text == 'end') {
         setDialogState(false);
       }
+    }
+    if(scripts[imageOrder+1].audio != undefined && scripts[imageOrder+1].audio!=''){
+      SoundPlayer.setVolume(sound.value.voice/100);
+      SoundPlayer.playSoundFile(scripts[imageOrder+1].audio, 'mp3');
     }
     if (scripts[nameOrder + 1].text == 'gotoMain') {
       // chapterClear();
@@ -151,7 +158,9 @@ function IngamePage(props) {
       );
       if (response.status == 200) {
         console.log("저장완료");
-        // navigation.navigate('ChapterPage', {name: props.route.params.episode});
+        SoundPlayer.setVolume(sound.value.bgm)
+        SoundPlayer.playSoundFile('main', 'mp3');
+        navigation.navigate('ChapterPage', {name: props.route.params.episode});
       } else {
         console.log("저장실패!");
         setNameOrder(nameOrder - 1);
@@ -215,6 +224,10 @@ function IngamePage(props) {
     setImageOrder(iindex);
     setDialogState(true);
     setDetectState(false);
+    if(scripts[iindex].sfx != undefined && scripts[iindex].sfx!=''){
+      SoundPlayer.setVolume(sound.value.sfx/100);
+      SoundPlayer.playSoundFile(scripts[iindex].sfx, 'mp3');
+    }
   }
   const [dialog, setDialog] = useState(scripts);
   const epiImgBg = dataa.setting.chapterbg;
@@ -266,6 +279,15 @@ function IngamePage(props) {
     // if 문 넣어서 isCamera == true; goIndex() 동작
     // isCamera
   });
+
+  useEffect(() => {
+    setTimeout(() =>{
+      if(scripts[0].audio != undefined && scripts[0].audio!=''){
+        SoundPlayer.setVolume(sound.value.voice/100);
+        SoundPlayer.playSoundFile(scripts[0].audio, 'mp3');
+      }
+    }, 1000)
+  }, [])
 
   return isReady ? (
     // 조사 시작전
