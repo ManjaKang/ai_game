@@ -11,6 +11,7 @@ function FinaleButtonSuspect(props) {
         console.log("클릭확인",props.index);
         console.log(props.dialogIndex[bool]);
         props.goFunc(props.dialogIndex[bool]);
+        props.close(false);
     }
     return (
         props.suspectList.value == false ?
