@@ -23,13 +23,14 @@ function EpisodePage(props) {
             <MainButtonAccount />
           </View>
           <View style={styles.viewcontainer}>
-            <Text style={{textAlign: 'center', fontWeight: 'bold'}}>
+            <Text
+              style={{textAlign: 'center', fontWeight: 'bold', color: 'white'}}>
               <EpisodeText></EpisodeText>
             </Text>
             <EpisodeButton />
-            <View style={styles.setboxback}>
+            {/* <View style={styles.setboxback}>
               <EpisodeButtonBack></EpisodeButtonBack>
-            </View>
+            </View> */}
           </View>
         </View>
       </ImageBackground>

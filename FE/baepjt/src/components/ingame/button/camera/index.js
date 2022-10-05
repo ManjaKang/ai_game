@@ -5,8 +5,9 @@ import {launchImageLibrary, launchCamera} from 'react-native-image-picker';
 import UploadModeModal from '../../../camera/cameraModal';
 import Icon from 'react-native-vector-icons/Ionicons';
 import axios from 'axios';
-import SoundPlayer from 'react-native-sound-player';
-import { useSelector } from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import {setresValue} from '../../../../redux/camres'
+import {setcameraValue} from '../../../../redux/iscamera';
 
 const imagePickerOption = {
   mediaType: 'photo',
@@ -16,10 +17,13 @@ const imagePickerOption = {
 };
 
 function IngameButtonCamera() {
+  const cameraResult = useSelector(state => state.cameraResult.value);
+  const isCamera = useSelector(state => state.isCamera.value);
+  const [camera, setCamera] = useState(null);
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
   // 안드로이드를 위한 모달 visible 상태값
   const [modalVisible, setModalVisible] = useState(false);
-  const navigation = useNavigation();
-  const sound = useSelector(state => state.sound);
 
   const onPickImage = async res => {
     if (res.didCancel || !res) {
@@ -34,6 +38,8 @@ function IngameButtonCamera() {
       fileName: res.assets[0].fileName, // 파일 이름
     });
     console.log('사진 분석 결과 : ', result.data);
+    dispatch(setresValue(result.data));
+    dispatch(setcameraValue(true));
   };
 
   // 카메라 촬영

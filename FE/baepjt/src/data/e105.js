@@ -325,6 +325,7 @@ const e105 = {
         require('../images/character/limij/body/less/right.png'),
       ],
       bg: 2,
+      getItem: 10,
     },
     {
       name: '임이지',
@@ -544,6 +545,7 @@ const e105 = {
         require('../images/character/limij/body/less/right.png'),
       ],
       bg: 2,
+      getItem: 11,
     },
     {
       name: '임이지',
@@ -704,6 +706,7 @@ const e105 = {
       position: [1],
       character: [require('../images/character/prof/body/less/left.png')],
       bg: 1,
+      getItem: 12,
     },
     {
       name: '임이지',
@@ -791,6 +794,7 @@ const e105 = {
         require('../images/character/limij/body/less/right.png'),
       ],
       bg: 1,
+      getItem: 13,
     },
     {
       name: '배교수',

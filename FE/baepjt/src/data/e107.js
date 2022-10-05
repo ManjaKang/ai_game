@@ -355,6 +355,7 @@ const e107 = {
       position: [2],
       character: [require('../images/character/prof/body/less/right.png')],
       bg: 2,
+      getItem: 19,
     },
     {
       name: '배교수',
@@ -444,6 +445,7 @@ const e107 = {
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
+      getItem: 18,
     },
     {
       name: '임시윤',
@@ -827,6 +829,7 @@ const e107 = {
       position: [2],
       character: [require('../images/character/limsy/body/whole.png')],
       bg: 2,
+      getItem: 20,
     },
     {
       name: '임시윤',
@@ -1016,6 +1019,7 @@ const e107 = {
         require('../images/character/limsy/body/whole.png'),
       ],
       bg: 1,
+      getItem: 21,
     },
     {
       name: '임시윤',

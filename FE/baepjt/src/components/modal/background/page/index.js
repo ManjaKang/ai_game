@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
     marginLeft: '21%',
     fontSize: 20,
     fontFamily: 'HeirofLightRegular',
+    color: 'white',
   },
   buttonLayer: {
     position: 'absolute',

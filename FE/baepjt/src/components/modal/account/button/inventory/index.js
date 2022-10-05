@@ -2,17 +2,7 @@ import React from 'react';
 import {Button, StyleSheet, TouchableOpacity, View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 function ModalAccountButtonInventory() {
-  return (
-    <View>
-      <TouchableOpacity>
-        <Text style={styles.text}>
-          {' '}
-          <Icon size={35} name="construct-outline" />
-          인벤토리 확인
-        </Text>
-      </TouchableOpacity>
-    </View>
-  );
+  return <View></View>;
 }
 
 const styles = StyleSheet.create({

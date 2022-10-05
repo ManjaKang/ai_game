@@ -25,7 +25,8 @@ const MainPage = () => {
             <MainButtonAccount />
           </View>
           <View style={styles.viewcontainer}>
-            <Text style={{textAlign: 'center', fontWeight: 'bold'}}>
+            <Text
+              style={{textAlign: 'center', fontWeight: 'bold', color: 'white'}}>
               <MainTextTitle />
             </Text>
             <View style={styles.fixbutton}>

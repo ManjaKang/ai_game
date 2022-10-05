@@ -32,21 +32,6 @@ const EpisodeButton = () => {
               name="백설공주"
               number={5}
               blocked="true"></Category>
-            <Category
-              imageUri={require('../../../../images/episode/brain.jpg')}
-              name="세번째 피해자"
-              number={6}
-              blocked="true"></Category>
-            <Category
-              imageUri={require('../../../../images/episode/brain.jpg')}
-              name="은밀한 사진관"
-              number={7}
-              blocked="true"></Category>
-            <Category
-              imageUri={require('../../../../images/episode/brain.jpg')}
-              name="붉은 낙엽"
-              number={8}
-              blocked="true"></Category>
           </ScrollView>
         </View>
       </View>

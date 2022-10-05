@@ -51,7 +51,9 @@ function FinalePage(props) {
   const [backlogState, setBacklogState] = useState(false);
   const [inventoryState, setInventoryState] = useState(false);
   const [detectState, setDetectState] = useState(false);
-  const [suspectState, setSuspectState] = useState(true);
+  const [suspectState, setSuspectState] = useState(false);
+  const [clueindex, setClueindex] = useState(0);
+  const [trueendcode, setTrueEndCode] = useState(0);
   const items = importJs[0];
   const onFinish = () => setReady(true);
 
@@ -68,27 +70,52 @@ function FinalePage(props) {
   const FinaleData = FinaleimportJs;
   const [suspectImg,setSuspectImg] = useState(FinaleData.suspectimg);
   const [suspectList,setSuspectList] = useState(FinaleData.suspectList);
-  // const [itemList,setItemList] = useState([]);
-  const [itemList,setItemList] = useState([
-    {
-        "idx": 0,
-        "name": "사건 현장에 있던 컵",
-        "userId": "aaa",
-        "description": "현장의 거실 테이블 위에 놓여 있던컵. 많은 술병에 비해 컵은 단 하나만 놓여 있었다.",
-        "index": 1,  // 아이템번호
-        "episode": 1,
-        "chapter": 1
-    },
-    {
-        "idx": 0,
-        "name": "오종오의 전자담배",
-        "userId": "aaa",
-        "description": "피해자가 외투 주머니에 소지하고 있던 전자담배. 평소에도 전자담배를 즐겨 폈던 것으로 보인다.",
-        "index": 2,
-        "episode": 1,
-        "chapter": 1
+  const [itemList,setItemList] = useState([]);
+
+  const checkSelectable = () => {
+    for (var i=0;i<FinaleData.suspectcount;i++) {
+        var k=0;
+        FinaleData.selectable[i].clue.map((data) => {
+            console.log(i," 번 ",data);
+            if (itemList.find(itd=>itd.index==data)) {
+                k += 1
+                console.log("증가증가증가",k);
+            }
+        });
+        if (k>=FinaleData.selectable[i].count) {
+            setClueindex(i);
+            setSuspectList(
+                suspectList.map(it =>
+                  it.index == clueindex ? {...it, value: true} : it,
+                ),
+            );
+        }
     }
-])
+    var m = 0;
+    var n = 0;
+    itemList.map((data)=>{
+        if(FinaleData.cluelist.find(itd=>itd.index==data.index)) {
+            m += 1
+            console.log("노말엔딩 확인",m)
+        }
+        if(FinaleData.truecluelist.find(itd=>itd.index==data.index)) {
+            n += 1
+            console.log("진엔딩 확인",n)
+        }
+    })
+    if (m>=FinaleData.endClueCount[0] && n>=FinaleData.endClueCount[1]) {
+        setTrueEndCode(3)
+        console.log("진엔딩 조건 충족");
+    }
+    else if (m>=FinaleData.endClueCount[0]) {
+        setTrueEndCode(2)
+        console.log("노말엔딩 조건 충족");
+    }
+    else {
+        setTrueEndCode(1)
+        console.log("배드엔딩 조건 충족");
+    }
+  }
 
   const navigation = useNavigation();
   // 클릭할 때마다 다음 대사로 넘어가기
@@ -102,76 +129,58 @@ function FinalePage(props) {
       if (scripts[nameOrder].text == 'end') {
         setDialogState(false);
       }
-      if (scripts[nameOrder].text == 'openSuspect') {
+      if (scripts[nameOrder+1].text == 'openSuspect') {
+        console.log("open suspect 확인");
+        setDialogState(false);
         setSuspectState(true);
-      }
-      if (scripts[nameOrder].text == 'RouteSystem') {
-        for (var i=0;i<FinaleData.suspectcount;i++) {
-            var k=0;
-            FinaleData.selectable[i].clue.map((data) => {
-                if (data in itemList.index) {
-                    k += 1
-                }
-                // var iindex = scripts.findIndex(i => i.index == index);
-            });
-            if (k>=FinaleData.selectable[i].count) {
-                setSuspectList(
-                    suspectList.map(it =>
-                      it.index == i ? {...it, value: true} : it,
-                    ),
-                  );
-            }
-            if (FinaleData.selectable[i].clue) {
-                // 여기에 selectable의 단서리스트와 clue의 갯수를 비교하는 함수 작성이 필요함
-                console.log("false",i);
-            }
-        }
       }
     }
     if (scripts[nameOrder + 1].text == 'gotoMain') {
-      // chapterClear();
+    //   chapterClear();
       Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
       navigation.navigate('ChapterPage', {name: props.route.params.episode});
     }
     if (scripts[nameOrder].getItem > 0) {
       console.log("아이템 획득해야함! 번호 : ",scripts[nameOrder].getItem);
     }
+    if (scripts[nameOrder].moveIndex > 0) {
+        // setNameOrder(scripts[nameOrder].moveIndex);
+        // setImageOrder(scripts[nameOrder].moveIndex);
+        goIndexDialog(scripts[nameOrder].moveIndex);
+    }
+    if (scripts[nameOrder].moveIndex == -1) {
+        if (suspectList.find(sus=>sus.value==true)) {
+            goIndexDialog(10)
+        } else {
+            goIndexDialog(100)
+        }
+    }
   };
 
   //챕터 완료하면서 아이템 저장, 메인화면으로 가기
-  const chapterClear = async() => {
+  const chapterClear = async () => {
     try {
-      const response = await axios.post('http://j7e102.p.ssafy.io:8080/users/items',{
-        "userId" : userID,
-        "episode" : props.route.params.episodeNumber,
-        "chapter" : props.route.params.order,
-        "items" : itemList,
-      });
+      const response = await axios.post(
+        'http://j7e102.p.ssafy.io:8080/users/items',
+        {
+          userId: userID,
+          episode: props.route.params.episodeNumber,
+          chapter: props.route.params.order,
+          items: itemList,
+        },
+      );
       if (response.status == 200) {
-        const saveProgress = async()=>{
-          try {
-            const response2 = await axios.put('http://j7e102.p.ssafy.io:8080/users/progress',{
-              "userId" : userID,
-              "episode" : props.route.params.episodeNumber,
-              "chapter" : props.route.params.order,
-            });
-            if (response2.status == 200) {
-              Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
-              navigation.navigate('ChapterPage', {name: props.route.params.episode});
-            }
-          } catch(error2) {
-            console.log(error2);
-          }
-        };
+        console.log("저장완료");
+        navigation.navigate('ChapterPage', {name: props.route.params.episode});
+      } else {
+        console.log("저장실패!");
+        setNameOrder(nameOrder - 1);
+        setImageOrder(imageOrder - 1);
       }
-      else {
-        setNameOrder(nameOrder-1);
-        setImageOrder(imageOrder-1);
-      }
-    } catch(error) {
-      console.log(error)
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
 
   const orderSkip = () => {
     console.log('orderSkip 실행', nameOrder, imageOrder);
@@ -197,7 +206,8 @@ function FinalePage(props) {
     }
     if (scripts[nameOrder + 1].text == 'gotoMain') {
       Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
-      navigation.navigate('ChapterPage', {name: props.route.params.episode});
+      chapterClear();
+      // navigation.navigate('ChapterPage', {name: props.route.params.episode});
     }
   };
 
@@ -230,10 +240,12 @@ function FinalePage(props) {
   const epiImgBg = dataa.setting.chapterbg;
 
   useEffect(() => {
-    // getItemList();
+    getItemList();
+    checkSelectable();
     setTimeout(() => {
       onFinish();
     }, 1000);
+    console.log("nameorder",nameOrder);
   }, []);
 
   return isReady ? (
@@ -275,6 +287,9 @@ function FinalePage(props) {
             goFunc={goIndexDialog}
             close={setSuspectState}
             visible={suspectState}
+            suspectList={suspectList}
+            trueendcode={trueendcode}
+            trsus={FinaleData.truesuspect}
         />
 
         {scripts[nameOrder].text === 'end'

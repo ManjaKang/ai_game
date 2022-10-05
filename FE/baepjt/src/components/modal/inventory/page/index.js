@@ -7,13 +7,20 @@ import ModalInventoryCard from '../card';
 function ModalInventory(props) {
   console.log(props.items);
   const [selectedItem, setSelectedItem] = useState(0);
-  const [displayName,setDisplayName] = useState('');
-  const [displayText,setDisplayText] = useState('');
+  const [displayName, setDisplayName] = useState('');
+  const [displayText, setDisplayText] = useState('');
 
   function setIndex(index) {
-    console.log(index,"값으로 실행되었음");
+    console.log(index, '값으로 실행되었음');
     var iindex = props.items.findIndex(i => i.index == index);
-    console.log(iindex,"값이 입력되어",props.items[iindex].name,"이 이름이고",props.items[iindex].description,"이 내용임");
+    console.log(
+      iindex,
+      '값이 입력되어',
+      props.items[iindex].name,
+      '이 이름이고',
+      props.items[iindex].description,
+      '이 내용임',
+    );
     setDisplayName(props.items[iindex].name);
     setDisplayText(props.items[iindex].description);
   }
@@ -28,17 +35,11 @@ function ModalInventory(props) {
           <View style={styles.view}>
             <View style={styles.left}>
               <View style={styles.buttontab}>
-                <TouchableOpacity style={styles.tab}>
-                  {/* <Text>정보</Text> */}
-                </TouchableOpacity>
-                {/* <TouchableOpacity style={styles.tab}><Text>사진</Text></TouchableOpacity> */}
+                <TouchableOpacity style={styles.tab}></TouchableOpacity>
               </View>
               <View style={styles.document}>
-                {/* <Text style={styles.infotext}>내용!</Text> */}
-                {/* {props.item && (<Text>{displayName}</Text>)} */}
                 <Text style={styles.name}>{displayName}</Text>
                 <Text style={styles.description}>{displayText}</Text>
-                {/* {props.item && (<Text>{displayText}</Text>)} */}
               </View>
             </View>
             <View style={styles.right}>
@@ -72,7 +73,13 @@ function ModalInventory(props) {
                   <View style={styles.grid} />
                 </View>
                 {props.items &&
-                  props.items.map(I => <ModalInventoryCard item={I} itemImg={props.itemImg} setItem={setIndex}/>)}
+                  props.items.map(I => (
+                    <ModalInventoryCard
+                      item={I}
+                      itemImg={props.itemImg}
+                      setItem={setIndex}
+                    />
+                  ))}
               </View>
             </View>
           </View>
@@ -157,10 +164,12 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 20,
     fontFamily: 'AssetBold',
+    color: 'white',
   },
   description: {
     fontSize: 16,
     fontFamily: 'ChosunKm',
+    color: 'black',
   },
 });
 
