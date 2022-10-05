@@ -67,6 +67,7 @@ function FinalePage(props) {
 
   const FinaleData = FinaleimportJs;
   const [suspectImg,setSuspectImg] = useState(FinaleData.suspectimg);
+  const [suspectList,setSuspectList] = useState(FinaleData.suspectList);
   // const [itemList,setItemList] = useState([]);
   const [itemList,setItemList] = useState([
     {
@@ -106,7 +107,21 @@ function FinalePage(props) {
       }
       if (scripts[nameOrder].text == 'RouteSystem') {
         for (var i=0;i<FinaleData.suspectcount;i++) {
-            if (FinaleData.selectable[i].bool == false) {
+            var k=0;
+            FinaleData.selectable[i].clue.map((data) => {
+                if (data in itemList.index) {
+                    k += 1
+                }
+                // var iindex = scripts.findIndex(i => i.index == index);
+            });
+            if (k>=FinaleData.selectable[i].count) {
+                setSuspectList(
+                    suspectList.map(it =>
+                      it.index == i ? {...it, value: true} : it,
+                    ),
+                  );
+            }
+            if (FinaleData.selectable[i].clue) {
                 // 여기에 selectable의 단서리스트와 clue의 갯수를 비교하는 함수 작성이 필요함
                 console.log("false",i);
             }

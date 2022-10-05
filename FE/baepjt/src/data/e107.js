@@ -106,8 +106,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/happy/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/happy/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 0,
@@ -122,8 +121,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/happy/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/happy/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 0,
@@ -138,9 +136,8 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/happy/left.png
-        require('../images/character/limsy/body/whole.png'),
-        require('../images/character/prof/body/angry/right.png'),
+        require('../images/character/limsy/body/happy/left.png'),
+        require('../images/character/prof/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -154,8 +151,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/surprise/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 0,
@@ -170,9 +166,8 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
-        require('../images/character/prof/body/angry/right.png'),
+        require('../images/character/limsy/body/surprise/left.png'),
+        require('../images/character/prof/body/less/right.png'),
       ],
       bg: 0,
     },
@@ -186,8 +181,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/less/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 0,
@@ -346,7 +340,7 @@ const e107 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [3],
+      position: [2],
       character: [require('../images/character/prof/body/less/right.png')],
       bg: 2,
     },
@@ -358,7 +352,7 @@ const e107 = {
       audio: '',
       sfx: '',
       index: 0,
-      position: [3],
+      position: [2],
       character: [require('../images/character/prof/body/less/right.png')],
       bg: 2,
     },
@@ -388,10 +382,10 @@ const e107 = {
     },
     {
       name: '임시윤',
-      text: ' ',
+      text: '골탕 먹이고 싶었던 마음에 충전기를 훔쳐 왔던 거에요.',
       img: require('../images/character/limsy/face/emotionless.png'),
       type: 0,
-      audio: '골탕 먹이고 싶었던 마음에 충전기를 훔쳐 왔던 거에요.',
+      audio: '',
       sfx: '',
       index: 0,
       position: [2],
@@ -431,8 +425,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/less/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -447,8 +440,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/less/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -463,8 +455,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/surprise/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -479,8 +470,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -495,8 +485,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/sad/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -511,8 +500,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -527,8 +515,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -543,8 +530,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -559,8 +545,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -575,8 +560,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -591,8 +575,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -607,8 +590,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -623,15 +605,14 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
     },
     {
       name: '임시윤',
-      text: ' 그때 판매하던 싸이트에서 구매자가 나타났는데, 그 사람이 바로 종오였어요.',
+      text: ' 그때 판매하던 사이트에서 구매자가 나타났는데, 그 사람이 바로 종오였어요.',
       img: require('../images/character/limsy/face/emotionless.png'),
       type: 0,
       audio: '',
@@ -639,8 +620,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -655,8 +635,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/angry/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/angry/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -671,8 +650,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/angry/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/angry/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -687,8 +665,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/angry/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/angry/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -703,8 +680,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/angry/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/angry/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -719,8 +695,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/less/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/angry/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -735,8 +710,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/angry/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -751,8 +725,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/sad/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/angry/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -767,8 +740,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/less/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/angry/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -783,8 +755,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/less/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/angry/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -799,8 +770,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/less/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -815,8 +785,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/less/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -831,8 +800,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/less/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 2,
@@ -887,6 +855,18 @@ const e107 = {
     {
       name: '임시윤',
       text: '강박적인 생각과 행동을 할 때는 떨쳐버리거나 중단하고 싶지만 그렇게 할 수 없기 때문에 불편함을 느끼고 고통스러워하게 되는 상태를 겪게 되기도 합니다.. ',
+      img: require('../images/character/limsy/face/emotionless.png'),
+      type: 0,
+      audio: '',
+      sfx: '',
+      index: 0,
+      position: [2],
+      character: [require('../images/character/limsy/body/whole.png')],
+      bg: 2,
+    },
+    {
+      name: '임시윤',
+      text: '이러한 행위들이 한 가지만 있는 경우도 있지만 몇 개가 같이 나타나는 경우도 있죠.',
       img: require('../images/character/limsy/face/emotionless.png'),
       type: 0,
       audio: '',
@@ -955,8 +935,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/less/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -971,8 +950,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        // limsy/body/less/left.png
-        require('../images/character/limsy/body/whole.png'),
+        require('../images/character/limsy/body/less/left.png'),
         require('../images/character/prof/body/less/right.png'),
       ],
       bg: 1,
@@ -1034,8 +1012,7 @@ const e107 = {
       index: 7,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/right.png'),
-        // limsy/body/less/left.png
+        require('../images/character/prof/body/less/left.png'),
         require('../images/character/limsy/body/whole.png'),
       ],
       bg: 1,
@@ -1050,8 +1027,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/right.png'),
-        // limsy/body/less/left.png
+        require('../images/character/prof/body/less/left.png'),
         require('../images/character/limsy/body/whole.png'),
       ],
       bg: 1,
@@ -1066,8 +1042,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/right.png'),
-        // limsy/body/less/left.png
+        require('../images/character/prof/body/less/left.png'),
         require('../images/character/limsy/body/whole.png'),
       ],
       bg: 1,
@@ -1082,8 +1057,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/right.png'),
-        // limsy/body/less/left.png
+        require('../images/character/prof/body/less/left.png'),
         require('../images/character/limsy/body/whole.png'),
       ],
       bg: 1,
@@ -1098,8 +1072,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/right.png'),
-        // limsy/body/less/left.png
+        require('../images/character/prof/body/less/left.png'),
         require('../images/character/limsy/body/whole.png'),
       ],
       bg: 1,
@@ -1114,8 +1087,7 @@ const e107 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/right.png'),
-        // limsy/body/less/left.png
+        require('../images/character/prof/body/less/left.png'),
         require('../images/character/limsy/body/whole.png'),
       ],
       bg: 1,

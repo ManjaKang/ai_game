@@ -540,7 +540,7 @@ const e105 = {
       index: 4,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png'),
+        require('../images/character/prof/body/surprise/left.png'),
         require('../images/character/limij/body/less/right.png'),
       ],
       bg: 2,
@@ -571,7 +571,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/happy/right.png'),
       ],
       bg: 2,
     },
@@ -586,7 +586,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/happy/right.png'),
       ],
       bg: 2,
     },
@@ -601,7 +601,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/happy/right.png'),
       ],
       bg: 2,
     },
@@ -616,7 +616,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/happy/right.png'),
       ],
       bg: 2,
     },
@@ -818,7 +818,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -833,7 +833,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -848,7 +848,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -863,7 +863,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/happy/right.png'),
       ],
       bg: 1,
     },
@@ -878,7 +878,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/happy/right.png'),
       ],
       bg: 1,
     },
@@ -908,7 +908,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -938,7 +938,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -953,7 +953,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -968,7 +968,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -1013,7 +1013,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -1028,7 +1028,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -1043,7 +1043,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -1118,7 +1118,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/sad/right.png'),
       ],
       bg: 1,
     },
@@ -1133,7 +1133,7 @@ const e105 = {
       position: [1, 3],
       character: [
         require('../images/character/prof/body/less/left.png'),
-        require('../images/character/limij/body/less/right.png'),
+        require('../images/character/limij/body/sad/right.png'),
       ],
       bg: 1,
     },
