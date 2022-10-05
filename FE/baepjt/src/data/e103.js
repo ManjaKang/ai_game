@@ -965,6 +965,7 @@ const e103 = {
       position: [1],
       character: [require('../images/character/prof/body/less/left.png')],
       bg: 3,
+      getItem: 5,
     },
     {
       name: '배교수',
