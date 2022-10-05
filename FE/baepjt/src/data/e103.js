@@ -807,6 +807,7 @@ const e103 = {
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 5,
+      getItem: 4,
     },
     {
       name: '배교수',

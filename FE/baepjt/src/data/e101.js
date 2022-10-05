@@ -917,6 +917,7 @@ const e101 = {
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
+      getItem: 2,
     },
     {
       name: 'end',
@@ -1049,6 +1050,7 @@ const e101 = {
       position: [1],
       character: [require('../images/character/prof/body/less/left.png')],
       bg: 1,
+      getItem: 3,
     },
     {
       name: '배교수',
