@@ -53,6 +53,7 @@ function FinalePage(props) {
   const [detectState, setDetectState] = useState(false);
   const [suspectState, setSuspectState] = useState(true);
   const [clueindex, setClueindex] = useState(0);
+  const [trueendcode, setTrueEndCode] = useState(0);
   const items = importJs[0];
   const onFinish = () => setReady(true);
 
@@ -125,6 +126,36 @@ function FinalePage(props) {
         }
     }
     console.log(suspectList);
+    var m = 0;
+    var n = 0;
+    // FinaleData.truecluelist.map((data)=>{
+    //     if(itemList.find(itd=>itd.index==data)) {
+    //         m += 1
+    //         console.log("확인주우우웅",m);
+    //     }
+    // });
+    itemList.map((data)=>{
+        if(FinaleData.cluelist.find(itd=>itd.index==data.index)) {
+            m += 1
+            console.log("노말엔딩 확인",m)
+        }
+        if(FinaleData.truecluelist.find(itd=>itd.index==data.index)) {
+            n += 1
+            console.log("진엔딩 확인",n)
+        }
+    })
+    if (m>=FinaleData.endClueCount[0] && n>=FinaleData.endClueCount[1]) {
+        setTrueEndCode(3)
+        console.log("진엔딩 조건 충족");
+    }
+    else if (m>=FinaleData.endClueCount[0]) {
+        setTrueEndCode(2)
+        console.log("노말엔딩 조건 충족");
+    }
+    else {
+        setTrueEndCode(1)
+        console.log("배드엔딩 조건 충족");
+    }
   }
 
   const navigation = useNavigation();
@@ -144,7 +175,7 @@ function FinalePage(props) {
       }
     }
     if (scripts[nameOrder + 1].text == 'gotoMain') {
-      chapterClear();
+    //   chapterClear();
       Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
     //   navigation.navigate('ChapterPage', {name: props.route.params.episode});
     }
@@ -237,9 +268,9 @@ function FinalePage(props) {
 
   useEffect(() => {
     // getItemList();
+    checkSelectable();
     setTimeout(() => {
       onFinish();
-      checkSelectable();
     }, 1000);
   }, []);
 
@@ -283,6 +314,8 @@ function FinalePage(props) {
             close={setSuspectState}
             visible={suspectState}
             suspectList={suspectList}
+            trueendcode={trueendcode}
+            trsus={FinaleData.truesuspect}
         />
 
         {scripts[nameOrder].text === 'end'
