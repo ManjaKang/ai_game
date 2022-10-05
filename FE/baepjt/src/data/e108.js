@@ -105,6 +105,7 @@ const e108 = {
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
+      moveIndex: -1
     },
     {
       name: 'end',
@@ -179,6 +180,7 @@ const e108 = {
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
+      moveIndex: 110,
     },
     {
       name: 'end',
@@ -221,13 +223,12 @@ const e108 = {
     },
     {
       name: 'end',
-      text: 'opensuspect',
+      text: 'openSuspect',
       bg: 1,
-
     },
     {
       name: 'end',
-      text: 'opensuspect',
+      text: 'openSuspect',
       bg: 1,
     },
     // 범인 지목 화면
@@ -730,6 +731,7 @@ const e108 = {
         require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
+      moveIndex: 102
     },
     {
       name: 'end',
@@ -1246,6 +1248,7 @@ const e108 = {
         require('../images/character/limij/body/less/right.png'),
       ],
       bg: 1,
+      moveIndex: 102,
     },
     {
       name: 'end',
@@ -1711,6 +1714,7 @@ const e108 = {
         require('../images/character/limsy/body/angry/right.png'),
       ],
       bg: 1,
+      moveIndex: 102,
     },
     {
       name: 'end',
@@ -2143,6 +2147,7 @@ const e108 = {
         require('../images/character/prof/body/less/right_camera.png'),
       ],
       bg: 1,
+      moveIndex: 310,
     },
     {
       name: 'end',
@@ -3225,6 +3230,7 @@ const e108 = {
       position: [2],
       character: [require('../images/character/kimsy/body/whole.png')],
       bg: 1,
+      moveIndex: 320,
     },
     {
       name: 'end',
@@ -4525,6 +4531,7 @@ const e108 = {
         require('../images/character/kimsy/body/whole.png'),
       ],
       bg: 1,
+      moveIndex: 330
     },
     {
       name: 'end',
@@ -4664,12 +4671,12 @@ const e108 = {
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'gotoMain',
       bg: 9,
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'gotoMain',
       bg: 9,
     },
 
@@ -5027,12 +5034,17 @@ const e108 = {
     },
     {
       name: 'end',
-      text: 'end',
+      text: '',
       bg: 10,
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'gotoMain',
+      bg: 10,
+    },
+    {
+      name: 'end',
+      text: 'gotoMain',
       bg: 10,
     },
 
@@ -5410,12 +5422,12 @@ const e108 = {
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'gotoMain',
       bg: 11,
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'gotoMain',
       bg: 11,
     },
 
@@ -5553,12 +5565,12 @@ const e108 = {
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'gotoMain',
       bg: 12,
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'gotoMain',
       bg: 12,
     },
 
@@ -5716,12 +5728,12 @@ const e108 = {
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'gotoMain',
       bg: 13,
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'gotoMain',
       bg: 13,
     },
   ],

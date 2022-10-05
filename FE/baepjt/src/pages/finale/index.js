@@ -51,7 +51,7 @@ function FinalePage(props) {
   const [backlogState, setBacklogState] = useState(false);
   const [inventoryState, setInventoryState] = useState(false);
   const [detectState, setDetectState] = useState(false);
-  const [suspectState, setSuspectState] = useState(true);
+  const [suspectState, setSuspectState] = useState(false);
   const [clueindex, setClueindex] = useState(0);
   const [trueendcode, setTrueEndCode] = useState(0);
   const items = importJs[0];
@@ -125,7 +125,7 @@ function FinalePage(props) {
             console.log("false",i);
         }
     }
-    console.log(suspectList);
+    // console.log(suspectList);
     var m = 0;
     var n = 0;
     // FinaleData.truecluelist.map((data)=>{
@@ -170,7 +170,8 @@ function FinalePage(props) {
       if (scripts[nameOrder].text == 'end') {
         setDialogState(false);
       }
-      if (scripts[nameOrder].text == 'openSuspect') {
+      if (scripts[nameOrder+1].text == 'openSuspect') {
+        console.log("open suspect 확인");
         setDialogState(false);
         setSuspectState(true);
       }
@@ -178,14 +179,15 @@ function FinalePage(props) {
     if (scripts[nameOrder + 1].text == 'gotoMain') {
     //   chapterClear();
       Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
-    //   navigation.navigate('ChapterPage', {name: props.route.params.episode});
+      navigation.navigate('ChapterPage', {name: props.route.params.episode});
     }
     if (scripts[nameOrder].getItem > 0) {
       console.log("아이템 획득해야함! 번호 : ",scripts[nameOrder].getItem);
     }
     if (scripts[nameOrder].moveIndex > 0) {
-        setNameOrder(scripts[nameOrder].moveIndex);
-        setImageOrder(scripts[nameOrder].moveIndex);
+        // setNameOrder(scripts[nameOrder].moveIndex);
+        // setImageOrder(scripts[nameOrder].moveIndex);
+        goIndexDialog(scripts[nameOrder].moveIndex);
     }
     if (scripts[nameOrder].moveIndex == -1) {
         if (suspectList.find(sus=>sus.value==true)) {
