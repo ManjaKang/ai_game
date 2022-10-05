@@ -70,36 +70,7 @@ function FinalePage(props) {
   const FinaleData = FinaleimportJs;
   const [suspectImg,setSuspectImg] = useState(FinaleData.suspectimg);
   const [suspectList,setSuspectList] = useState(FinaleData.suspectList);
-  // const [itemList,setItemList] = useState([]);
-  const [itemList,setItemList] = useState([
-    {
-        "idx": 0,
-        "name": "사건 현장에 있던 컵",
-        "userId": "aaa",
-        "description": "현장의 거실 테이블 위에 놓여 있던컵. 많은 술병에 비해 컵은 단 하나만 놓여 있었다.",
-        "index": 1,  // 아이템번호
-        "episode": 1,
-        "chapter": 1
-    },
-    {
-        "idx": 0,
-        "name": "오종오의 전자담배",
-        "userId": "aaa",
-        "description": "피해자가 외투 주머니에 소지하고 있던 전자담배. 평소에도 전자담배를 즐겨 폈던 것으로 보인다.",
-        "index": 2,
-        "episode": 1,
-        "chapter": 1
-    },
-    {
-        "index": 5,
-    },
-    {
-        "index": 14,
-    },
-    {
-        "index": 17,
-    }
-])
+  const [itemList,setItemList] = useState([]);
 
   const checkSelectable = () => {
     for (var i=0;i<FinaleData.suspectcount;i++) {
@@ -110,7 +81,6 @@ function FinalePage(props) {
                 k += 1
                 console.log("증가증가증가",k);
             }
-            // var iindex = scripts.findIndex(i => i.index == index);
         });
         if (k>=FinaleData.selectable[i].count) {
             setClueindex(i);
@@ -120,20 +90,9 @@ function FinalePage(props) {
                 ),
             );
         }
-        if (FinaleData.selectable[i].clue) {
-            // 여기에 selectable의 단서리스트와 clue의 갯수를 비교하는 함수 작성이 필요함
-            console.log("false",i);
-        }
     }
-    // console.log(suspectList);
     var m = 0;
     var n = 0;
-    // FinaleData.truecluelist.map((data)=>{
-    //     if(itemList.find(itd=>itd.index==data)) {
-    //         m += 1
-    //         console.log("확인주우우웅",m);
-    //     }
-    // });
     itemList.map((data)=>{
         if(FinaleData.cluelist.find(itd=>itd.index==data.index)) {
             m += 1
@@ -281,7 +240,7 @@ function FinalePage(props) {
   const epiImgBg = dataa.setting.chapterbg;
 
   useEffect(() => {
-    // getItemList();
+    getItemList();
     checkSelectable();
     setTimeout(() => {
       onFinish();
