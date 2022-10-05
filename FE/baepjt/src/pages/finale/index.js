@@ -52,6 +52,7 @@ function FinalePage(props) {
   const [inventoryState, setInventoryState] = useState(false);
   const [detectState, setDetectState] = useState(false);
   const [suspectState, setSuspectState] = useState(true);
+  const [clueindex, setClueindex] = useState(0);
   const items = importJs[0];
   const onFinish = () => setReady(true);
 
@@ -87,6 +88,15 @@ function FinalePage(props) {
         "index": 2,
         "episode": 1,
         "chapter": 1
+    },
+    {
+        "index": 5,
+    },
+    {
+        "index": 14,
+    },
+    {
+        "index": 17,
     }
 ])
 
@@ -94,17 +104,20 @@ function FinalePage(props) {
     for (var i=0;i<FinaleData.suspectcount;i++) {
         var k=0;
         FinaleData.selectable[i].clue.map((data) => {
-            if (data == itemList.index) {
+            console.log(i," 번 ",data);
+            if (itemList.find(itd=>itd.index==data)) {
                 k += 1
+                console.log("증가증가증가",k);
             }
             // var iindex = scripts.findIndex(i => i.index == index);
         });
         if (k>=FinaleData.selectable[i].count) {
+            setClueindex(i);
             setSuspectList(
                 suspectList.map(it =>
-                  it.index == i ? {...it, value: true} : it,
+                  it.index == clueindex ? {...it, value: true} : it,
                 ),
-              );
+            );
         }
         if (FinaleData.selectable[i].clue) {
             // 여기에 selectable의 단서리스트와 clue의 갯수를 비교하는 함수 작성이 필요함
@@ -128,28 +141,6 @@ function FinalePage(props) {
       }
       if (scripts[nameOrder].text == 'openSuspect') {
         setSuspectState(true);
-      }
-      if (scripts[nameOrder].text == 'RouteSystem') {
-        for (var i=0;i<FinaleData.suspectcount;i++) {
-            var k=0;
-            FinaleData.selectable[i].clue.map((data) => {
-                if (itemList.find((item)=>item.index==data)) {
-                    k += 1
-                }
-                // var iindex = scripts.findIndex(i => i.index == index);
-            });
-            if (k>=FinaleData.selectable[i].count) {
-                setSuspectList(
-                    suspectList.map(it =>
-                      it.index == i ? {...it, value: true} : it,
-                    ),
-                  );
-            }
-            if (FinaleData.selectable[i].clue) {
-                // 여기에 selectable의 단서리스트와 clue의 갯수를 비교하는 함수 작성이 필요함
-                console.log("false",i);
-            }
-        }
       }
     }
     if (scripts[nameOrder + 1].text == 'gotoMain') {
@@ -291,6 +282,7 @@ function FinalePage(props) {
             goFunc={goIndexDialog}
             close={setSuspectState}
             visible={suspectState}
+            suspectList={suspectList}
         />
 
         {scripts[nameOrder].text === 'end'
