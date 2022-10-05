@@ -110,11 +110,13 @@ const e108 = {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: -1
     },
     {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: -1
     },
 
     // 만약 여기서 범인 선택 가능 단서를 4명 모두 충족하지 못했을 경우 or 니코틴 액상(중요 단서 1)을 발견하지 못했을 경우
@@ -182,11 +184,13 @@ const e108 = {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 110,
     },
     {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 110
     },
     // 무능한 탐정으로 결말
 
@@ -217,12 +221,13 @@ const e108 = {
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'opensuspect',
       bg: 1,
+
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'opensuspect',
       bg: 1,
     },
     // 범인 지목 화면
@@ -242,12 +247,12 @@ const e108 = {
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'openSuspect',
       bg: 1,
     },
     {
       name: 'end',
-      text: 'end',
+      text: 'opeSsuspect',
       bg: 1,
     },
 
@@ -730,11 +735,13 @@ const e108 = {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 102
     },
     {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 102
     },
     // 결말 bad ending 무고로 이동
 
@@ -1244,11 +1251,13 @@ const e108 = {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 102,
     },
     {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 102
     },
     // 결말 bad ending : 무고로 이동
 
@@ -1707,11 +1716,13 @@ const e108 = {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 102,
     },
     {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 102,
     },
     // 결말 bad ending 무고로 이동
 
@@ -2137,11 +2148,13 @@ const e108 = {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 310,
     },
     {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 310,
     },
 
     // 결말 normal ending : 동기가 무엇이었을까
@@ -3217,11 +3230,13 @@ const e108 = {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 320,
     },
     {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 320,
     },
 
     // 김세영을 범인으로 지목하고 중요 단서 8개와 진엔딩 단서를 모두 찾은 경우
@@ -4515,11 +4530,13 @@ const e108 = {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 330
     },
     {
       name: 'end',
       text: 'end',
       bg: 1,
+      moveIndex: 330
     },
 
     // 게임이 끝나고 난 후,
@@ -4533,6 +4550,7 @@ const e108 = {
       position: [],
       character: [],
       bg: 4,
+      index: 110,
     },
     {
       name: '',
@@ -4665,6 +4683,7 @@ const e108 = {
       position: [],
       character: [],
       bg: 3,
+      index: 102
     },
     {
       name: '',
@@ -5027,6 +5046,7 @@ const e108 = {
       position: [],
       character: [],
       bg: 3,
+      index: 310
     },
     {
       name: '',
@@ -5409,6 +5429,7 @@ const e108 = {
       position: [],
       character: [],
       bg: 4,
+      index: 320
     },
     {
       name: '',
@@ -5551,6 +5572,7 @@ const e108 = {
       position: [],
       character: [],
       bg: 4,
+      index: 330
     },
     {
       name: '',
