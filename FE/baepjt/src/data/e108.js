@@ -248,7 +248,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -274,7 +274,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -288,7 +288,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -302,7 +302,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -316,7 +316,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -330,7 +330,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -344,7 +344,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -358,7 +358,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -384,7 +384,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -398,7 +398,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -412,7 +412,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/angry/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -426,7 +426,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/angry/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -440,7 +440,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/angry/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -454,7 +454,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/angry/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -468,7 +468,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/angry/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -482,7 +482,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/angry/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -496,7 +496,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/angry/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -510,7 +510,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/angry/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -524,7 +524,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/angry/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -538,7 +538,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/angry/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -552,7 +552,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/angry/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/angry/right.png'),
       ],
       bg: 1,
     },
@@ -566,7 +566,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -580,7 +580,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -594,7 +594,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -608,7 +608,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/less/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/less/right.png'),
       ],
       bg: 1,
     },
@@ -622,7 +622,7 @@ const e108 = {
       index: 0,
       position: [1, 3],
       character: [
-        require('../images/character/prof/body/less/left.png', require('../images/character/baekjh/body/sad/right.png')),
+        require('../images/character/prof/body/less/left.png'), require('../images/character/baekjh/body/sad/right.png'),
       ],
       bg: 1,
     },
