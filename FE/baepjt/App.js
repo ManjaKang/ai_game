@@ -31,6 +31,7 @@ import ChapterPage from './src/pages/chapter';
 import IngamePage from './src/pages/ingame';
 import CameraPage from './src/pages/camera';
 import FinalePage from './src/pages/finale';
+import SoundPlayer from 'react-native-sound-player';
 
 // import MainButtonNew from './android/app/src/test/index.js';
 
@@ -76,6 +77,12 @@ const App: () => Node = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  try {
+    SoundPlayer.playSoundFile('main','mp3');
+  } catch (e) {
+      console.log(`cannot play the sound file`, e)
+  }
 
   return (
     <Provider store={store}>
