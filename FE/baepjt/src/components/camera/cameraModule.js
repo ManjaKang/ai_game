@@ -35,7 +35,7 @@ function CameraPage() {
           base64: data.base64,
           fileName: arr[arr.length - 1], // 파일 이
         });
-        console.log('사진 분석 결과', res.data);
+        console.log('사진 분석 결과..?', res.data);
         // 여기서 비교하기
         //  [{"name": "camera", "percent": 0.7951256}, {"name": "bed", "percent": 0.157654}, {"name": "table", "percent": 0.985215}]
         dispatch(setresValue(res.data));

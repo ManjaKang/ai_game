@@ -90,6 +90,30 @@ function FinalePage(props) {
     }
 ])
 
+  const checkSelectable = () => {
+    for (var i=0;i<FinaleData.suspectcount;i++) {
+        var k=0;
+        FinaleData.selectable[i].clue.map((data) => {
+            if (data == itemList.index) {
+                k += 1
+            }
+            // var iindex = scripts.findIndex(i => i.index == index);
+        });
+        if (k>=FinaleData.selectable[i].count) {
+            setSuspectList(
+                suspectList.map(it =>
+                  it.index == i ? {...it, value: true} : it,
+                ),
+              );
+        }
+        if (FinaleData.selectable[i].clue) {
+            // 여기에 selectable의 단서리스트와 clue의 갯수를 비교하는 함수 작성이 필요함
+            console.log("false",i);
+        }
+    }
+    console.log(suspectList);
+  }
+
   const navigation = useNavigation();
   // 클릭할 때마다 다음 대사로 넘어가기
   const orderIncrease = () => {
@@ -109,7 +133,7 @@ function FinalePage(props) {
         for (var i=0;i<FinaleData.suspectcount;i++) {
             var k=0;
             FinaleData.selectable[i].clue.map((data) => {
-                if (data in itemList.index) {
+                if (itemList.find((item)=>item.index==data)) {
                     k += 1
                 }
                 // var iindex = scripts.findIndex(i => i.index == index);
@@ -129,9 +153,9 @@ function FinalePage(props) {
       }
     }
     if (scripts[nameOrder + 1].text == 'gotoMain') {
-      // chapterClear();
+      chapterClear();
       Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
-      navigation.navigate('ChapterPage', {name: props.route.params.episode});
+    //   navigation.navigate('ChapterPage', {name: props.route.params.episode});
     }
     if (scripts[nameOrder].getItem > 0) {
       console.log("아이템 획득해야함! 번호 : ",scripts[nameOrder].getItem);
@@ -139,39 +163,29 @@ function FinalePage(props) {
   };
 
   //챕터 완료하면서 아이템 저장, 메인화면으로 가기
-  const chapterClear = async() => {
+  const chapterClear = async () => {
     try {
-      const response = await axios.post('http://j7e102.p.ssafy.io:8080/users/items',{
-        "userId" : userID,
-        "episode" : props.route.params.episodeNumber,
-        "chapter" : props.route.params.order,
-        "items" : itemList,
-      });
+      const response = await axios.post(
+        'http://j7e102.p.ssafy.io:8080/users/items',
+        {
+          userId: userID,
+          episode: props.route.params.episodeNumber,
+          chapter: props.route.params.order,
+          items: itemList,
+        },
+      );
       if (response.status == 200) {
-        const saveProgress = async()=>{
-          try {
-            const response2 = await axios.put('http://j7e102.p.ssafy.io:8080/users/progress',{
-              "userId" : userID,
-              "episode" : props.route.params.episodeNumber,
-              "chapter" : props.route.params.order,
-            });
-            if (response2.status == 200) {
-              Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
-              navigation.navigate('ChapterPage', {name: props.route.params.episode});
-            }
-          } catch(error2) {
-            console.log(error2);
-          }
-        };
+        console.log("저장완료");
+        navigation.navigate('ChapterPage', {name: props.route.params.episode});
+      } else {
+        console.log("저장실패!");
+        setNameOrder(nameOrder - 1);
+        setImageOrder(imageOrder - 1);
       }
-      else {
-        setNameOrder(nameOrder-1);
-        setImageOrder(imageOrder-1);
-      }
-    } catch(error) {
-      console.log(error)
+    } catch (error) {
+      console.log(error);
     }
-  }
+  };
 
   const orderSkip = () => {
     console.log('orderSkip 실행', nameOrder, imageOrder);
@@ -197,7 +211,8 @@ function FinalePage(props) {
     }
     if (scripts[nameOrder + 1].text == 'gotoMain') {
       Alert.alert(`Chapter ${props.route.params.order} CLEAR!`);
-      navigation.navigate('ChapterPage', {name: props.route.params.episode});
+      chapterClear();
+      // navigation.navigate('ChapterPage', {name: props.route.params.episode});
     }
   };
 
@@ -233,6 +248,7 @@ function FinalePage(props) {
     // getItemList();
     setTimeout(() => {
       onFinish();
+      checkSelectable();
     }, 1000);
   }, []);
 

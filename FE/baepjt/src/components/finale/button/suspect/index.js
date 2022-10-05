@@ -26,7 +26,7 @@ const Fstyles = (width) => StyleSheet.create({
         borderColor: 'rgba(0,0,0,1)',
         borderWidth: 1,
         borderRadius: 1000,
-        backgroundColor: 'rgba(255,255,255,1)',
+        backgroundColor: 'rgba(192,192,192,1)',
         justifyContent: 'center',
         alignItems: 'center'
     }
