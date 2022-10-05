@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
     margin: 8,
     fontFamily: 'HeirofLightRegular',
+    color: 'white',
   },
   textepisode: {
     fontSize: 30,

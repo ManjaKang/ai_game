@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import Category from './Category';
 import Finale from './Finale';
 
@@ -53,7 +53,7 @@ function ChapterButton(props) {
               order={7}></Category>
             <Finale
               name="범인은 바로 너"
-              imageUri={require('../../../../images/character/prof/face/emotionless.png')}
+              imageUri={require('../../../../images/character/prof/you.png')}
               episode={props.name}
               number={props.number}
               order={8}></Finale>

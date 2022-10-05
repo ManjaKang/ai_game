@@ -11,7 +11,7 @@ function IngameButtonSkip(props) {
         console.log('skip 버튼 누름', props);
         props.orderSkip();
       }}>
-      <Text>skip</Text>
+      <Text style={styles.text}>skip</Text>
       <Icon name="play-forward-sharp" size={20} />
     </TouchableOpacity>
   );
@@ -23,6 +23,9 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     position: 'absolute',
     right: 2,
+  },
+  text: {
+    color: 'white',
   },
 });
 

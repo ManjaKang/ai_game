@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     marginLeft: '15%',
     fontSize: 20,
     fontFamily: 'HeirofLightRegular',
+    color: 'white',
   },
 });
 export default ModalDetectFinishButton;
