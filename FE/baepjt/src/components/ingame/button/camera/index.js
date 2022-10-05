@@ -8,6 +8,7 @@ import axios from 'axios';
 import {useSelector, useDispatch} from 'react-redux';
 import {setresValue} from '../../../../redux/camres'
 import {setcameraValue} from '../../../../redux/iscamera';
+import SoundPlayer from 'react-native-sound-player';
 
 const imagePickerOption = {
   mediaType: 'photo',
@@ -24,6 +25,7 @@ function IngameButtonCamera() {
   const dispatch = useDispatch();
   // 안드로이드를 위한 모달 visible 상태값
   const [modalVisible, setModalVisible] = useState(false);
+  const sound = useSelector(state => state.sound);
 
   const onPickImage = async res => {
     if (res.didCancel || !res) {
