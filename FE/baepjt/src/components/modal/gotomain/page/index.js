@@ -1,9 +1,12 @@
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet, Modal, TouchableOpacity} from 'react-native';
+import SoundPlayer from 'react-native-sound-player';
+import { useSelector } from 'react-redux';
 
 function ModalGotomain(props) {
   const navigation = useNavigation();
+  const sound = useSelector(state => state.sound);
   return (
     <Modal
       style={styles.modal}
@@ -18,7 +21,10 @@ function ModalGotomain(props) {
           <View style={styles.boxset}>
             <TouchableOpacity
               style={styles.ok}
-              onPress={() => navigation.navigate('Main')}>
+              onPress={() => {
+                SoundPlayer.setVolume(sound.value.bgm/100)
+                SoundPlayer.playSoundFile('main', 'mp3');
+                navigation.navigate('Main')}}>
               <Text style={styles.yesorno}>예!</Text>
             </TouchableOpacity>
             <TouchableOpacity

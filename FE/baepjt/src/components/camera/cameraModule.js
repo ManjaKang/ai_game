@@ -14,6 +14,8 @@ import axios from 'axios';
 import {useSelector, useDispatch} from 'react-redux';
 import {setresValue} from '../../redux/camres';
 import {setcameraValue} from '../../redux/iscamera';
+import SoundPlayer from 'react-native-sound-player';
+import { stat } from 'react-native-fs';
 
 function CameraPage() {
   const cameraResult = useSelector(state => state.cameraResult.value);
@@ -21,8 +23,11 @@ function CameraPage() {
   const [camera, setCamera] = useState(null);
   const navigation = useNavigation();
   const dispatch = useDispatch();
+  const sound = useSelector(state => state.sound);
 
   const takePicture = async () => {
+    SoundPlayer.setVolume(sound.value.sfx/100);
+    SoundPlayer.playSoundFile('camera','mp3');
     console.log('camera taken : ' + camera);
     if (camera !== null) {
       const options = {quality: 0.5, base64: true};
