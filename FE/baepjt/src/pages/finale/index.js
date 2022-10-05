@@ -171,6 +171,7 @@ function FinalePage(props) {
         setDialogState(false);
       }
       if (scripts[nameOrder].text == 'openSuspect') {
+        setDialogState(false);
         setSuspectState(true);
       }
     }
@@ -185,6 +186,13 @@ function FinalePage(props) {
     if (scripts[nameOrder].moveIndex > 0) {
         setNameOrder(scripts[nameOrder].moveIndex);
         setImageOrder(scripts[nameOrder].moveIndex);
+    }
+    if (scripts[nameOrder].moveIndex == -1) {
+        if (suspectList.find(sus=>sus.value==true)) {
+            goIndexDialog(10)
+        } else {
+            goIndexDialog(100)
+        }
     }
   };
 
