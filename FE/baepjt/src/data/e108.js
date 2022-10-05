@@ -4671,6 +4671,11 @@ const e108 = {
     },
     {
       name: 'end',
+      text: '',
+      bg: 9,
+    },
+    {
+      name: 'end',
       text: 'gotoMain',
       bg: 9,
     },
