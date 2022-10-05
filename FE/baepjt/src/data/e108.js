@@ -11,6 +11,11 @@ const e108 = {
       require('../images/background/chapter8/blackblur.png'),
       require('../images/background/chapter8/blur.png'),
       require('../images/background/chapter8/notblur.png'),
+      require('../images/background/chapter8/001.png'),
+      require('../images/background/chapter8/002.png'),
+      require('../images/background/chapter8/003.png'),
+      require('../images/background/chapter8/004.png'),
+      require('../images/background/chapter8/005.png'),
     ],
     episode: 1,
     chapter: 8,
@@ -3226,7 +3231,7 @@ const e108 = {
       img: require('../images/character/prof/face/emotionless.png'),
       type: 2,
       audio: '',
-      index:33,
+      index: 33,
       position: [2],
       character: [require('../images/character/prof/body/whole.png')],
       bg: 1,
@@ -4642,16 +4647,13 @@ const e108 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 9,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 9,
     },
-    // bad ending: 무능한 탐정
-    // 단서를 찾을 때 배경에 보이는 물건을 자세히 살펴보도록 하자.
-    // 최종 추리 때 용의자를 지목하기 위해서는 chapter4 ~ chapter7까지 해당 용의자의 방에서 각 2개씩의 단서 아이템이 필요하다.
 
     // 2. 무고 (다른 사람을 범인으로 선택시)
     {
@@ -5007,16 +5009,13 @@ const e108 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 10,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 10,
     },
-    // > - Bad Ending: 무고 -
-    // 단서를 찾을 때 배경에 보이는 물건을 자세히 살펴보도록 하자.
-    //(최종 추리 때 용의자를 지목하기 위해서는 4~7 챕터의 해당 용의자의 방에서 용의자 선택 가능 단서 아이템(함정 아이템 제외)을 각 2개씩 찾아야 한다.)
 
     // 3. 김세영 - 증거불충분
     {
@@ -5392,17 +5391,13 @@ const e108 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 11,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 11,
     },
-    // > - Bad Ending: 증거불충분 -
-    //단서를 찾을 때 배경에 보이는 물건을 자세히 살펴보도록 하자.
-    // 김세영의 방이 아닌 다른 곳에서도 김세영과 관련된 단서가 발견될지도 모른다.
-    // Normal Ending을 위한 필수 단서 아이템(함정 아이템 제외)이 부족하다.
 
     // 4. 동기가 무엇일까
     {
@@ -5538,17 +5533,13 @@ const e108 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 12,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 12,
     },
-    //> - Normal Ending: 동기가 무엇이었을까 -
-    //단서를 찾을 때 배경에 보이는 물건을 자세히 살펴보도록 하자.
-    //김세영의 방이 아닌 다른 곳에서도 김세영과 관련된 단서가 발견될지도 모른다.
-    //True Ending을 위한 필수 단서 아이템(함정 아이템 제외)이 1개 부족하다. (Chapter 4에서 1개)
 
     // 5. true ending
     {
@@ -5704,15 +5695,13 @@ const e108 = {
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 13,
     },
     {
       name: 'end',
       text: 'end',
-      bg: 1,
+      bg: 13,
     },
-    //> -True Ending: 사건 해결 -
-    // 축하드립니다. 당신은 완벽하게 사건을 해결했습니다.
   ],
 };
 
