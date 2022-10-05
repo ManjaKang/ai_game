@@ -158,6 +158,8 @@ function IngamePage(props) {
       );
       if (response.status == 200) {
         console.log("저장완료");
+        SoundPlayer.setVolume(sound.value.bgm)
+        SoundPlayer.playSoundFile('main', 'mp3');
         navigation.navigate('ChapterPage', {name: props.route.params.episode});
       } else {
         console.log("저장실패!");
