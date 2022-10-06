@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   View,
   Text,
@@ -11,12 +11,22 @@ import ModalBacklogButtonBack from '../button/back';
 import ModalBacklogCard from '../card';
 
 function ModalBacklog(props) {
+  // const [scrollEnd,setScrollEnd] = useState(true);
+  // useEffect(()=>{
+  //   if (props.visible && scrollEnd) {
+  //     setScrollEnd(false);
+
+  //   }
+  // })
+
   return (
     props.visible && (
       <View style={styles.FullView}>
         <ScrollView
           showsHorizontalScrollIndicator={false}
-          style={styles.scroll}>
+          style={styles.scroll}
+          ref={ref => {this.scrollView = ref}}
+          onContentSizeChange={() => this.scrollView.scrollToEnd({animated: false})}>
           {props.data &&
             props.data.map((D, index) => (
               <ModalBacklogCard key={index} data={D} />

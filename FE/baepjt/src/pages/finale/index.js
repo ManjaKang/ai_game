@@ -134,6 +134,9 @@ function FinalePage(props) {
         setDialogState(false);
         setSuspectState(true);
       }
+      if (scripts[nameOrder].name != 'end'){
+        updateBacklog(nameOrder);
+      }
     }
     if (scripts[nameOrder + 1].text == 'gotoMain') {
     //   chapterClear();
@@ -211,6 +214,24 @@ function FinalePage(props) {
     }
   };
 
+    // 백로그 업데이트
+    const updateBacklog = (index) => {
+        // console.log("업데이트로그",index,backlogList.find(i=>i==index));
+        if (backlogList.find(idx=>idx==index)) {
+            // console.log(backlogList.find(idx=>idx==index));
+            return
+        }
+        else {
+            setBacklogDialog(backlogDialog=>[...backlogDialog, {
+            name: dialog[index].name,
+            text: dialog[index].text,
+            img: dialog[index].img,
+            type: dialog[index].type
+            }])
+            setBacklogList(backlogList=>[...backlogList, index])
+        }
+    }
+
   //아이템 불러오기
   const getItemList = async() => {
     console.log("ID 값!",userID);
@@ -237,6 +258,8 @@ function FinalePage(props) {
     setDetectState(false);
   }
   const [dialog, setDialog] = useState(scripts);
+  const [backlogDialog, setBacklogDialog] = useState([]);
+  const [backlogList, setBacklogList] = useState([]);
   const epiImgBg = dataa.setting.chapterbg;
 
   useEffect(() => {
@@ -352,7 +375,7 @@ function FinalePage(props) {
           visible={backlogState}
           hideModalContentWhileAnimating={true}
           setter={setBacklogState}
-          data={dialog}
+          data={backlogDialog}
         />
 
         <ModalInventory
