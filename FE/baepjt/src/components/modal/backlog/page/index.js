@@ -11,22 +11,18 @@ import ModalBacklogButtonBack from '../button/back';
 import ModalBacklogCard from '../card';
 
 function ModalBacklog(props) {
-  // const [scrollEnd,setScrollEnd] = useState(true);
-  // useEffect(()=>{
-  //   if (props.visible && scrollEnd) {
-  //     setScrollEnd(false);
-
-  //   }
-  // })
-
   return (
     props.visible && (
       <View style={styles.FullView}>
         <ScrollView
           showsHorizontalScrollIndicator={false}
           style={styles.scroll}
-          ref={ref => {this.scrollView = ref}}
-          onContentSizeChange={() => this.scrollView.scrollToEnd({animated: false})}>
+          ref={ref => {
+            this.scrollView = ref;
+          }}
+          onContentSizeChange={() =>
+            this.scrollView.scrollToEnd({animated: false})
+          }>
           {props.data &&
             props.data.map((D, index) => (
               <ModalBacklogCard key={index} data={D} />
@@ -45,6 +41,7 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    zIndex: 1,
   },
   scroll: {
     width: '80%',

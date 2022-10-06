@@ -21,24 +21,24 @@ const e101 = {
   allclue: [
     [
       {
-        location: ['60%', '86%'], // 버튼 위치
+        location: ['45%', '50%'], // 버튼 위치
       },
       {
-        location: ['68%', '80%'], // 버튼 위치
+        location: ['51%', '78%'], // 버튼 위치
       },
       {
-        location: ['45%', '55%'], // 버튼 위치
+        location: ['50%', '75%'], // 버튼 위치
       },
       {
-        location: ['33%', '33%'], // 버튼 위치
+        location: ['8%', '33%'], // 버튼 위치
       },
     ],
     [
       {
-        location: ['52%', '15%'], // 버튼 위치
+        location: ['52%', '20%'], // 버튼 위치
       },
       {
-        location: ['33%', '50%'], // 버튼 위치
+        location: ['25%', '50%'], // 버튼 위치
       },
     ],
     [
@@ -46,7 +46,7 @@ const e101 = {
         location: ['55%', '50%'], // 버튼 위치
       },
       {
-        location: ['40%', '77%'], // 버튼 위치
+        location: ['35%', '69%'], // 버튼 위치
       },
     ],
   ],
@@ -101,20 +101,20 @@ const e101 = {
   backgroundsetting: [
     {
       index: 0,
-      location: ['55%', '20%'], // 버튼 위치
-      size: ['10%', '25%'], // 버튼 사이즈
+      location: ['60%', '25%'], // 버튼 위치
+      size: ['10%', '10%'], // 버튼 사이즈
       bgimage: require('../images/background/chapter1/death.png'),
     },
     {
       index: 1,
-      location: ['47%', '45%'],
-      size: ['40%', '20%'],
+      location: ['52%', '59%'],
+      size: ['10%', '10%'],
       bgimage: require('../images/background/chapter1/table.jpg'),
     },
     {
       index: 2,
-      location: ['24%', '2%'],
-      size: ['12%', '40%'],
+      location: ['30%', '5%'],
+      size: ['10%', '10%'],
       bgimage: require('../images/background/chapter1/door.png'),
     },
   ],

@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   modal: {
     // backgroundColor: 'rgba(192,192,192,1)',
     width: '100%',
-    height: '28%',
+    height: '40%',
     position: 'absolute',
     bottom: 0,
     left: 0,

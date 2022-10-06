@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {TouchableOpacity, StyleSheet, View} from 'react-native';
-import { stat } from 'react-native-fs';
+import {stat} from 'react-native-fs';
 import SoundPlayer from 'react-native-sound-player';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useSelector, useDispatch} from 'react-redux';
@@ -35,7 +35,7 @@ function IngameButtonBackground(props) {
         dispatch(setbgValue(index));
         props.goIndexDialog(7);
       }}>
-      <Icon name="search" size={30}></Icon>
+      <Icon name="search" size={30} style={styles.icon}></Icon>
     </TouchableOpacity>
   ) : (
     <TouchableOpacity
@@ -51,9 +51,9 @@ function IngameButtonBackground(props) {
         // borderColor: 'red',
       }}
       onPress={() => {
-        if(props.chapterOrder == 4 && (index == 0 || index == 1)){
+        if (props.chapterOrder == 4 && (index == 0 || index == 1)) {
           SoundPlayer.playSoundFile('door', 'mp3');
-          SoundPlayer.setVolume(sound.value.sfx/100);
+          SoundPlayer.setVolume(sound.value.sfx / 100);
         }
         props.setSearchStart(true);
         dispatch(setbgValue(index));
@@ -65,7 +65,7 @@ function IngameButtonBackground(props) {
 
         dispatch(setbgValue(index));
       }}>
-      <Icon name="search" size={30}></Icon>
+      <Icon name="search" size={30} style={styles.icon}></Icon>
     </TouchableOpacity>
   );
 }
@@ -75,6 +75,9 @@ const styles = StyleSheet.create({
   button: {
     borderWidth: 5,
     borderColor: 'black',
+  },
+  icon: {
+    color: 'rgba(255, 255, 204, 1)',
   },
 });
 
