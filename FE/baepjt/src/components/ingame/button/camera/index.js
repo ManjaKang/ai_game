@@ -6,7 +6,7 @@ import UploadModeModal from '../../../camera/cameraModal';
 import Icon from 'react-native-vector-icons/Ionicons';
 import axios from 'axios';
 import {useSelector, useDispatch} from 'react-redux';
-import {setresValue} from '../../../../redux/camres'
+import {setresValue} from '../../../../redux/camres';
 import {setcameraValue} from '../../../../redux/iscamera';
 import SoundPlayer from 'react-native-sound-player';
 
@@ -32,8 +32,8 @@ function IngameButtonCamera() {
       return;
     }
     console.log('PickImage', res);
-    SoundPlayer.setVolume(sound.value.sfx/100);
-    SoundPlayer.playSoundFile('camera','mp3');
+    SoundPlayer.setVolume(sound.value.sfx / 100);
+    SoundPlayer.playSoundFile('camera', 'mp3');
     const result = await axios.post('http://j7e102.p.ssafy.io:8080/image', {
       // localhost 환경
       base64: res.assets[0].base64,
