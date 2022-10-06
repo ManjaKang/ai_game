@@ -36,7 +36,7 @@ function ChapterPage(props) {
             />
             <View style={styles.setboxback}>
               {/* <EpisodeButtonBack></EpisodeButtonBack> */}
-              <ChapterButtonBack></ChapterButtonBack>
+              {/* <ChapterButtonBack></ChapterButtonBack> */}
             </View>
           </View>
         </View>
