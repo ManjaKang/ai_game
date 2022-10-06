@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     fontFamily: 'AssetLight',
     color: 'black',
     fontSize: 30,
+    marginTop: '30%',
   },
 });
 
