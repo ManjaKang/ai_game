@@ -113,7 +113,7 @@ function IngamePage(props) {
       if (scripts[nameOrder].text == 'end') {
         setDialogState(false);
       }
-      if (scripts[nameOrder].name != 'end'){
+      if (scripts[nameOrder].name != 'end') {
         updateBacklog(nameOrder);
       }
     }
@@ -187,7 +187,7 @@ function IngamePage(props) {
     let imageOrderTmp = imageOrder;
     if (dialogState) {
       while (true) {
-        if (scripts[nameOrderTmp].name != 'end'){
+        if (scripts[nameOrderTmp].name != 'end') {
           updateBacklog(nameOrderTmp);
         }
         if (scripts[nameOrderTmp + 1].text == 'gotoMain') {
@@ -213,22 +213,24 @@ function IngamePage(props) {
   };
 
   // 백로그 업데이트
-  const updateBacklog = (index) => {
+  const updateBacklog = index => {
     // console.log("업데이트로그",index,backlogList.find(i=>i==index));
-    if (backlogList.find(idx=>idx==index)) {
+    if (backlogList.find(idx => idx == index)) {
       // console.log(backlogList.find(idx=>idx==index));
-      return
+      return;
+    } else {
+      setBacklogDialog(backlogDialog => [
+        ...backlogDialog,
+        {
+          name: dialog[index].name,
+          text: dialog[index].text,
+          img: dialog[index].img,
+          type: dialog[index].type,
+        },
+      ]);
+      setBacklogList(backlogList => [...backlogList, index]);
     }
-    else {
-      setBacklogDialog(backlogDialog=>[...backlogDialog, {
-        name: dialog[index].name,
-        text: dialog[index].text,
-        img: dialog[index].img,
-        type: dialog[index].type
-      }])
-      setBacklogList(backlogList=>[...backlogList, index])
-    }
-  }
+  };
 
   // 아이템 획득
   const getItemList = async () => {
@@ -327,7 +329,8 @@ function IngamePage(props) {
       <View>
         <ImageBackground
           source={setting.background_just[scripts[imageOrder].bg]}
-          style={{height: '100%', width: '100%'}}>
+          style={{height: '100%', width: '100%'}}
+          resizeMode="stretch">
           <ModalDetectFinish
             visible={detectState}
             hideModalContentWhileAnimating={true}
@@ -385,6 +388,15 @@ function IngamePage(props) {
                 ))
             : null}
 
+          <View style={styles.toolbox}>
+            <IngameButtonToolbar state={toolState} setstate={setToolState} />
+            <ModalTool
+              state={toolState}
+              titlestate={setTitleState}
+              backlogstate={setBacklogState}
+              inventorystate={setInventoryState}
+            />
+          </View>
           {backgroundsetting &&
             backgroundsetting.map((BC, index) => (
               <ModalBackground
@@ -423,15 +435,6 @@ function IngamePage(props) {
             setter={setOptionState}
           />
 
-          <View style={styles.toolbox}>
-            <IngameButtonToolbar state={toolState} setstate={setToolState} />
-            <ModalTool
-              state={toolState}
-              titlestate={setTitleState}
-              backlogstate={setBacklogState}
-              inventorystate={setInventoryState}
-            />
-          </View>
           <ModalBacklog
             visible={backlogState}
             hideModalContentWhileAnimating={true}
@@ -457,7 +460,8 @@ function IngamePage(props) {
       <View>
         <ImageBackground
           source={setting.background_just[scripts[imageOrder].bg]}
-          style={{height: '100%', width: '100%'}}>
+          style={{height: '100%', width: '100%'}}
+          resizeMode="stretch">
           <ModalDetectFinish
             visible={detectState}
             hideModalContentWhileAnimating={true}
@@ -502,7 +506,15 @@ function IngamePage(props) {
                   />
                 ))
             : null}
-
+          {/* <View style={styles.toolbox}>
+            <IngameButtonToolbar state={toolState} setstate={setToolState} />
+            <ModalTool
+              state={toolState}
+              titlestate={setTitleState}
+              backlogstate={setBacklogState}
+              inventorystate={setInventoryState}
+            />
+          </View> */}
           {backgroundsetting &&
             backgroundsetting.map((BC, index) => (
               <ModalBackground
@@ -550,15 +562,6 @@ function IngamePage(props) {
             setter={setOptionState}
           />
 
-          <View style={styles.toolbox}>
-            <IngameButtonToolbar state={toolState} setstate={setToolState} />
-            <ModalTool
-              state={toolState}
-              titlestate={setTitleState}
-              backlogstate={setBacklogState}
-              inventorystate={setInventoryState}
-            />
-          </View>
           <ModalBacklog
             visible={backlogState}
             hideModalContentWhileAnimating={true}
@@ -566,17 +569,17 @@ function IngamePage(props) {
             data={dialog}
           />
 
-          <ModalGotomain
-            visible={titleState}
-            hideModalContentWhileAnimating={true}
-            setter={setTitleState}
-          />
           <ModalInventory
             visible={inventoryState}
             hideModalContentWhileAnimating={true}
             setter={setInventoryState}
             items={itemList}
             itemImg={items}
+          />
+          <ModalGotomain
+            visible={titleState}
+            hideModalContentWhileAnimating={true}
+            setter={setTitleState}
           />
         </ImageBackground>
       </View>

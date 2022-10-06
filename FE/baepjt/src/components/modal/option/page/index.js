@@ -15,32 +15,44 @@ function ModalOption(props) {
   const Sound = useSelector(state => state.sound.value);
   return (
     <Modal
-      style={styles.modal}
       // isVisible={props.isVisible}
       visible={props.visible}
       animationType={'fade'}
       hideModalContentWhileAnimating={props.hideModalContentWhileAnimating}
       transparent={true}>
-      <ImageBackground
-        source={require('../../../../images/modal/optionbackground.png')}
+      <View
         style={{
-          height: '90%',
-          width: '90%',
-          marginLeft: '10%',
-          marginTop: '5%',
-        }}
-        imageStyle={{borderRadius: 20}}>
-        <ModalOptionButtonBack setter={props.setter} />
-        <View style={styles.container}>
-          <Text style={styles.volumetext}>음향조절</Text>
-          <ModalOptionTextAudio text="배경음" />
-          <ModalSliderAudio volume={Sound.bgm} sound={'bgm'} />
-          <ModalOptionTextAudio text="효과음" />
-          <ModalSliderAudio volume={Sound.sfx} sound={'sfx'} />
-          <ModalOptionTextAudio text="음성" />
-          <ModalSliderAudio volume={Sound.voice} sound={'voice'} />
+          width: '100%',
+          height: '100%',
+        }}>
+        <View
+          style={{
+            width: '100%',
+            height: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <ImageBackground
+            source={require('../../../../images/modal/optionbackground.png')}
+            style={{
+              marginTop: '3%',
+              padding: '15%',
+            }}
+            resizeMode="stretch"
+            imageStyle={{borderRadius: 20}}>
+            <ModalOptionButtonBack setter={props.setter} />
+            <View style={styles.container}>
+              <Text style={styles.volumetext}>음향조절</Text>
+              <ModalOptionTextAudio text="배경음" />
+              <ModalSliderAudio volume={Sound.bgm} sound={'bgm'} />
+              <ModalOptionTextAudio text="효과음" />
+              <ModalSliderAudio volume={Sound.sfx} sound={'sfx'} />
+              <ModalOptionTextAudio text="음성" />
+              <ModalSliderAudio volume={Sound.voice} sound={'voice'} />
+            </View>
+          </ImageBackground>
         </View>
-      </ImageBackground>
+      </View>
     </Modal>
   );
 }
@@ -49,12 +61,14 @@ const styles = StyleSheet.create({
   volumetext: {
     color: 'black',
     fontFamily: 'HeirofLightRegular',
-    fontSize: 30,
-    marginLeft: '27%',
+    fontSize: 25,
   },
   container: {
-    marginLeft: '10%',
-    marginTop: '7%',
+    height: '80%',
+    width: '80%',
+    marginTop: '1%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
