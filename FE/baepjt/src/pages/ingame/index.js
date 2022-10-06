@@ -113,6 +113,9 @@ function IngamePage(props) {
       if (scripts[nameOrder].text == 'end') {
         setDialogState(false);
       }
+      if (scripts[nameOrder].name != 'end'){
+        updateBacklog(nameOrder);
+      }
     }
     if (
       scripts[imageOrder + 1].audio != undefined &&
@@ -184,6 +187,9 @@ function IngamePage(props) {
     let imageOrderTmp = imageOrder;
     if (dialogState) {
       while (true) {
+        if (scripts[nameOrderTmp].name != 'end'){
+          updateBacklog(nameOrderTmp);
+        }
         if (scripts[nameOrderTmp + 1].text == 'gotoMain') {
           setNameOrder(nameOrderTmp);
           setImageOrder(imageOrderTmp);
@@ -206,6 +212,25 @@ function IngamePage(props) {
     }
   };
 
+  // 백로그 업데이트
+  const updateBacklog = (index) => {
+    // console.log("업데이트로그",index,backlogList.find(i=>i==index));
+    if (backlogList.find(idx=>idx==index)) {
+      // console.log(backlogList.find(idx=>idx==index));
+      return
+    }
+    else {
+      setBacklogDialog(backlogDialog=>[...backlogDialog, {
+        name: dialog[index].name,
+        text: dialog[index].text,
+        img: dialog[index].img,
+        type: dialog[index].type
+      }])
+      setBacklogList(backlogList=>[...backlogList, index])
+    }
+  }
+
+  // 아이템 획득
   const getItemList = async () => {
     try {
       const response = await axios.get(
@@ -235,6 +260,8 @@ function IngamePage(props) {
     }
   }
   const [dialog, setDialog] = useState(scripts);
+  const [backlogDialog, setBacklogDialog] = useState([]);
+  const [backlogList, setBacklogList] = useState([]);
   const epiImgBg = dataa.setting.chapterbg;
   const [itemChecker, setItemChecker] = useState(false);
 
@@ -409,7 +436,7 @@ function IngamePage(props) {
             visible={backlogState}
             hideModalContentWhileAnimating={true}
             setter={setBacklogState}
-            data={dialog}
+            data={backlogDialog}
           />
 
           <ModalInventory
