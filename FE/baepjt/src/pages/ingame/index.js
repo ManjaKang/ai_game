@@ -75,7 +75,7 @@ function IngamePage(props) {
   const dispatch = useDispatch();
   const isCamera = useSelector(state => state.isCamera.value);
 
-  const [itemList,setItemList] = useState([]);
+  const [itemList, setItemList] = useState([]);
   const sound = useSelector(state => state.sound);
   // const [itemList, setItemList] = useState([
   //   {
@@ -114,9 +114,12 @@ function IngamePage(props) {
         setDialogState(false);
       }
     }
-    if(scripts[imageOrder+1].audio != undefined && scripts[imageOrder+1].audio!=''){
-      SoundPlayer.setVolume(sound.value.voice/100);
-      SoundPlayer.playSoundFile(scripts[imageOrder+1].audio, 'mp3');
+    if (
+      scripts[imageOrder + 1].audio != undefined &&
+      scripts[imageOrder + 1].audio != ''
+    ) {
+      SoundPlayer.setVolume(sound.value.voice / 100);
+      SoundPlayer.playSoundFile(scripts[imageOrder + 1].audio, 'mp3');
     }
     if (scripts[nameOrder + 1].text == 'gotoMain') {
       // chapterClear();
@@ -127,19 +130,21 @@ function IngamePage(props) {
     if (scripts[nameOrder].getItem > 0) {
       const findNumber = scripts[nameOrder].getItem;
       if (itemList.find(F => F.index == findNumber)) {
-        console.log("이미 있는 아이템입니다");
-      }
-      else {
-        setItemList(item=>[...item,{
-          idx: itemData[findNumber].idx,
-          name: itemData[findNumber].name,
-          userId: userID,
-          description: itemData[findNumber].description,
-          index: itemData[findNumber].index,
-          episode: itemData[findNumber].episode,
-          chapter: itemData[findNumber].chapter,
-        }]);
-        console.log("이제 아이템 리스트가!", itemList);
+        console.log('이미 있는 아이템입니다');
+      } else {
+        setItemList(item => [
+          ...item,
+          {
+            idx: itemData[findNumber].idx,
+            name: itemData[findNumber].name,
+            userId: userID,
+            description: itemData[findNumber].description,
+            index: itemData[findNumber].index,
+            episode: itemData[findNumber].episode,
+            chapter: itemData[findNumber].chapter,
+          },
+        ]);
+        console.log('이제 아이템 리스트가!', itemList);
       }
     }
   };
@@ -157,12 +162,12 @@ function IngamePage(props) {
         },
       );
       if (response.status == 200) {
-        console.log("저장완료");
-        SoundPlayer.setVolume(sound.value.bgm)
+        console.log('저장완료');
+        SoundPlayer.setVolume(sound.value.bgm);
         SoundPlayer.playSoundFile('main', 'mp3');
         navigation.navigate('ChapterPage', {name: props.route.params.episode});
       } else {
-        console.log("저장실패!");
+        console.log('저장실패!');
         setNameOrder(nameOrder - 1);
         setImageOrder(imageOrder - 1);
       }
@@ -224,20 +229,20 @@ function IngamePage(props) {
     setImageOrder(iindex);
     setDialogState(true);
     setDetectState(false);
-    if(scripts[iindex].sfx != undefined && scripts[iindex].sfx!=''){
-      SoundPlayer.setVolume(sound.value.sfx/100);
+    if (scripts[iindex].sfx != undefined && scripts[iindex].sfx != '') {
+      SoundPlayer.setVolume(sound.value.sfx / 100);
       SoundPlayer.playSoundFile(scripts[iindex].sfx, 'mp3');
     }
   }
   const [dialog, setDialog] = useState(scripts);
   const epiImgBg = dataa.setting.chapterbg;
-  const [itemChecker,setItemChecker] = useState(false);
+  const [itemChecker, setItemChecker] = useState(false);
 
   useEffect(() => {
-    if (itemChecker==false) {
+    if (itemChecker == false) {
       getItemList();
       setItemChecker(true);
-      console.log("아이템 불러오기 종료");
+      console.log('아이템 불러오기 종료');
     }
     // isCamera가 True 라면 cameralist와 cluelist 비교해서 그 때에 맞는 스크립트 불러오기
     if (isCamera == true) {
@@ -281,13 +286,13 @@ function IngamePage(props) {
   });
 
   useEffect(() => {
-    setTimeout(() =>{
-      if(scripts[0].audio != undefined && scripts[0].audio!=''){
-        SoundPlayer.setVolume(sound.value.voice/100);
+    setTimeout(() => {
+      if (scripts[0].audio != undefined && scripts[0].audio != '') {
+        SoundPlayer.setVolume(sound.value.voice / 100);
         SoundPlayer.playSoundFile(scripts[0].audio, 'mp3');
       }
-    }, 1000)
-  }, [])
+    }, 1000);
+  }, []);
 
   return isReady ? (
     // 조사 시작전
@@ -381,6 +386,7 @@ function IngamePage(props) {
               state={nameOrder}
               setstate={setNameOrder}
               orderSkip={orderSkip}
+              chapterOrder={chapterOrder}
             />
           )}
 
@@ -533,17 +539,17 @@ function IngamePage(props) {
             data={dialog}
           />
 
+          <ModalGotomain
+            visible={titleState}
+            hideModalContentWhileAnimating={true}
+            setter={setTitleState}
+          />
           <ModalInventory
             visible={inventoryState}
             hideModalContentWhileAnimating={true}
             setter={setInventoryState}
             items={itemList}
             itemImg={items}
-          />
-          <ModalGotomain
-            visible={titleState}
-            hideModalContentWhileAnimating={true}
-            setter={setTitleState}
           />
         </ImageBackground>
       </View>
