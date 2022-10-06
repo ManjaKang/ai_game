@@ -12,7 +12,6 @@ import IngameTextName from '../../../ingame/text/name';
 import IngameButtonSkip from '../../../ingame/button/skip';
 
 function ModalDialog(props) {
-  console.log("props",props.data[props.state]);
   return (
     props.visible && (
       <View style={styles.modal}>
@@ -21,7 +20,15 @@ function ModalDialog(props) {
           <IngameTextName dialog={props.data[props.state].name} />
           <IngameTextDialog dialog={props.data[props.state].text} />
         </View>
-        <IngameButtonSkip orderSkip={props.orderSkip}></IngameButtonSkip>
+        {(props.chapterOrder == 1) |
+        (props.chapterOrder == 2) |
+        (props.chapterOrder == 3) |
+        (props.chapterOrder == 4) |
+        (props.chapterOrder == 5) |
+        (props.chapterOrder == 6) |
+        (props.chapterOrder == 7) ? (
+          <IngameButtonSkip orderSkip={props.orderSkip}></IngameButtonSkip>
+        ) : null}
       </View>
     )
   );
