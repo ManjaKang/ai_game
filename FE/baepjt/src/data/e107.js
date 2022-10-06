@@ -17,15 +17,15 @@ const e107 = {
   },
   allclue: [
     [
-      {location: ['25%', '10%']},
-      {location: ['75%', '10%']},
-      {location: ['52%', '32%']},
-      {location: ['55%', '85%']},
+      {location: ['30%', '21%']},
+      {location: ['75%', '20%']},
+      {location: ['35%', '38%']},
+      {location: ['35%', '72%']},
     ],
     [
-      {location: ['60%', '30%']},
-      {location: ['38%', '44%']},
-      {location: ['25%', '48%']},
+      {location: ['60%', '35%']},
+      {location: ['29%', '46%']},
+      {location: ['18%', '52%']},
     ],
   ],
   clue: [
@@ -72,14 +72,14 @@ const e107 = {
   backgroundsetting: [
     {
       index: 0,
-      location: ['14%', '58%'], // 버튼 위치
-      size: ['20%', '20%'], // 버튼 사이즈
+      location: ['34%', '58%'], // 버튼 위치
+      size: ['10%', '10%'], // 버튼 사이즈
       bgimage: require('../images/background/chapter7/balcony.png'),
     },
     {
       index: 1,
-      location: ['14%', '22%'],
-      size: ['20%', '80%'],
+      location: ['55%', '40%'],
+      size: ['10%', '10%'],
       bgimage: require('../images/background/chapter7/desk.png'),
     },
   ],

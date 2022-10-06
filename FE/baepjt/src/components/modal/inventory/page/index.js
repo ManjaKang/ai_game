@@ -30,56 +30,30 @@ function ModalInventory(props) {
       <View style={styles.full}>
         <ImageBackground
           source={require('../../../../images/modal/inventorybg.png')}
-          style={{width: '90%', height: '94%', marginLeft: '8%'}}>
+          style={{width: '100%', height: '100%'}}
+          resizeMode="stretch">
           <ModalInventoryButtonBack setter={props.setter} />
           <View style={styles.view}>
             <View style={styles.left}>
-              <View style={styles.buttontab}>
-                <TouchableOpacity style={styles.tab}></TouchableOpacity>
-              </View>
-              <View style={styles.document}>
-                <Text style={styles.name}>{displayName}</Text>
-                <Text style={styles.description}>{displayText}</Text>
+              <View style={styles.leftview}>
+                <View style={styles.document}>
+                  <Text style={styles.name}>{displayName}</Text>
+                  <Text style={styles.description}>{displayText}</Text>
+                </View>
               </View>
             </View>
             <View style={styles.right}>
-              <View style={styles.itembox}>
-                <View style={styles.cssbox}>
-                  {/* 테스트용 부분입니다. 이미지를 넣으면 아래부분은 제거할것 */}
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
-                  <View style={styles.grid} />
+              <View style={styles.rightview}>
+                <View style={styles.itembox}>
+                  {props.items &&
+                    props.items.map(I => (
+                      <ModalInventoryCard
+                        item={I}
+                        itemImg={props.itemImg}
+                        setItem={setIndex}
+                      />
+                    ))}
                 </View>
-                {props.items &&
-                  props.items.map(I => (
-                    <ModalInventoryCard
-                      item={I}
-                      itemImg={props.itemImg}
-                      setItem={setIndex}
-                    />
-                  ))}
               </View>
             </View>
           </View>
@@ -99,29 +73,49 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.9)',
   },
   view: {
-    width: '90%',
+    width: '100%',
     height: '100%',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-end',
   },
+  leftview: {
+    padding: '10%',
+  },
   left: {
     flex: 1,
-    height: '90%',
+    height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   },
   right: {
     flex: 1,
-    height: '90%',
+    height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
   },
+  rightview: {
+    paddingTop: '26%',
+    paddingLeft: '1%',
+    paddingRight: '20%',
+    paddingBottom: '15%',
+  },
   document: {
-    marginTop: '10%',
+    marginTop: '7%',
     width: '70%',
     height: '65%',
-    marginRight: '10%',
+    textAlign: 'center',
+  },
+  name: {
+    fontSize: 20,
+    fontFamily: 'AssetBold',
+    color: 'black',
+  },
+  description: {
+    marginTop: '1%',
+    fontSize: 16,
+    fontFamily: 'AssetBold',
+    color: 'black',
   },
   infotext: {
     color: 'black',
@@ -139,8 +133,6 @@ const styles = StyleSheet.create({
     width: '90%',
     // height: "80%",
     aspectRatio: 1,
-    // borderWidth: 3,
-    // borderColor: 'red',
     flexDirection: 'row',
   },
   cssbox: {
@@ -160,16 +152,6 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     borderWidth: 1,
     borderColor: 'black',
-  },
-  name: {
-    fontSize: 20,
-    fontFamily: 'AssetBold',
-    color: 'white',
-  },
-  description: {
-    fontSize: 16,
-    fontFamily: 'ChosunKm',
-    color: 'black',
   },
 });
 

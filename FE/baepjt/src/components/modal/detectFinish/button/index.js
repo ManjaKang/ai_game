@@ -14,7 +14,13 @@ function ModalDetectFinishButton(props) {
       onPress={() => props.setstate(true)}>
       <ImageBackground
         source={require('../../../../images/modal/button.png')}
-        style={{width: '100%', height: '100%'}}>
+        style={{
+          width: '100%',
+          height: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+        resizeMode="stretch">
         <Text style={styles.text}>조사 마치기</Text>
       </ImageBackground>
     </TouchableOpacity>
@@ -31,8 +37,6 @@ const styles = StyleSheet.create({
     height: '16%',
   },
   text: {
-    marginTop: '15%',
-    marginLeft: '15%',
     fontSize: 20,
     fontFamily: 'HeirofLightRegular',
     color: 'white',

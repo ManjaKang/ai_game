@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   View,
   Text,
@@ -16,7 +16,13 @@ function ModalBacklog(props) {
       <View style={styles.FullView}>
         <ScrollView
           showsHorizontalScrollIndicator={false}
-          style={styles.scroll}>
+          style={styles.scroll}
+          ref={ref => {
+            this.scrollView = ref;
+          }}
+          onContentSizeChange={() =>
+            this.scrollView.scrollToEnd({animated: false})
+          }>
           {props.data &&
             props.data.map((D, index) => (
               <ModalBacklogCard key={index} data={D} />
@@ -35,6 +41,7 @@ const styles = StyleSheet.create({
     height: '100%',
     justifyContent: 'center',
     alignItems: 'center',
+    zIndex: 1,
   },
   scroll: {
     width: '80%',

@@ -17,14 +17,14 @@ const e106 = {
   },
   allclue: [
     [
-      {location: ['54%', '71%']},
-      {location: ['63%', '25%']},
-      {location: ['65%', '46%']},
+      {location: ['53%', '65%']},
+      {location: ['60%', '35%']},
+      {location: ['46%', '46%']},
     ],
     [
-      {location: ['60%', '2%']},
+      {location: ['60%', '15%']},
       {location: ['75%', '50%']},
-      {location: ['35%', '73%']},
+      {location: ['20%', '65%']},
     ],
   ],
   clue: [
@@ -66,15 +66,15 @@ const e106 = {
   backgroundsetting: [
     {
       index: 0,
-      location: ['14%', '10%'], // 버튼 위치
-      size: ['20%', '80%'], // 버튼 사이즈
+      location: ['35%', '25%'], // 버튼 위치
+      size: ['10%', '10%'], // 버튼 사이즈
       bgimage: require('../images/background/chapter6/paintingroom.png'),
     },
     {
       index: 1,
 
-      location: ['5%', '80%'],
-      size: ['20%', '75%'],
+      location: ['35%', '75%'],
+      size: ['10%', '10%'],
       bgimage: require('../images/background/chapter6/sy_room.png'),
     },
   ],

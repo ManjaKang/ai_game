@@ -17,16 +17,16 @@ const e105 = {
   },
   allclue: [
     [
-      {location: ['45%', '5%']},
-      {location: ['42%', '55%']},
-      {location: ['50%', '43%']},
-      {location: ['20%', '88%']},
+      {location: ['35%', '15%']},
+      {location: ['35%', '53%']},
+      {location: ['30%', '43%']},
+      {location: ['-8%', '80%']},
     ],
     [
       {location: ['40%', '50%']},
-      {location: ['55%', '10%']},
-      {location: ['60%', '75%']},
-      {location: ['60%', '49%']},
+      {location: ['50%', '20%']},
+      {location: ['41%', '69%']},
+      {location: ['35%', '49%']},
     ],
   ],
   clue: [
@@ -79,13 +79,13 @@ const e105 = {
     {
       index: 0,
       location: ['50%', '58%'], // 버튼 위치
-      size: ['20%', '20%'], // 버튼 사이즈
+      size: ['10%', '10%'], // 버튼 사이즈
       bgimage: require('../images/background/chapter5/bathroom.png'),
     },
     {
       index: 1,
-      location: ['50%', '22%'],
-      size: ['20%', '20%'],
+      location: ['50%', '36%'],
+      size: ['10%', '10%'],
       bgimage: require('../images/background/chapter5/kitchen.png'),
     },
   ],
@@ -94,7 +94,7 @@ const e105 = {
       name: '배교수',
       text: '임이지씨, 방을 조사하겠습니다.',
       img: require('../images/character/prof/face/emotionless.png'),
-      type: 2,
+      type: 0,
       audio: '',
       sfx: '',
       index: 0,

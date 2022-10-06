@@ -119,7 +119,13 @@ const LoginPage = () => {
               onPress={() => navigation.navigate('SignUp')}>
               <ImageBackground
                 source={require('../../images/modal/button.png')}
-                style={{height: '100%', width: '100%'}}>
+                style={{
+                  height: '100%',
+                  width: '100%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                resizeMode="stretch">
                 <Text style={styles.signuptext}>회원가입</Text>
               </ImageBackground>
             </TouchableOpacity>
@@ -128,7 +134,13 @@ const LoginPage = () => {
               onPress={() => axiosLogin()}>
               <ImageBackground
                 source={require('../../images/modal/button.png')}
-                style={{height: '100%', width: '100%'}}>
+                style={{
+                  height: '100%',
+                  width: '100%',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+                resizeMode="stretch">
                 <Text style={styles.logintext}>로그인</Text>
               </ImageBackground>
             </TouchableOpacity>
@@ -145,7 +157,7 @@ const styles = StyleSheet.create({
   },
   logintextcontainer: {
     marginLeft: '42%',
-    marginTop: '10%',
+    marginTop: '5%',
   },
   inputcontainer: {
     marginLeft: '15%',
@@ -161,9 +173,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   button: {
+    justifyContent: 'center',
+    alignItems: 'center',
     width: '30%',
     height: '30%',
-    marginTop: '3%',
   },
   text: {
     fontFamily: 'HeirofLightRegular',
@@ -171,15 +184,11 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   logintext: {
-    marginLeft: '20%',
-    marginTop: '14%',
     fontFamily: 'HeirofLightRegular',
     fontSize: 19,
     color: 'white',
   },
   signuptext: {
-    marginLeft: '15%',
-    marginTop: '14%',
     fontFamily: 'HeirofLightRegular',
     fontSize: 19,
     color: 'white',
