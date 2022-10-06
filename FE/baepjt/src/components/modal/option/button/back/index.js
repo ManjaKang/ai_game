@@ -15,9 +15,9 @@ function ModalOptionButtonBack(props) {
 
 const styles = StyleSheet.create({
   button: {
-    top: 10,
-    right: 80,
     position: 'absolute',
+    top: '5%',
+    right: '2%',
   },
 });
 

@@ -2,7 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet, Modal, TouchableOpacity} from 'react-native';
 import SoundPlayer from 'react-native-sound-player';
-import { useSelector } from 'react-redux';
+import {useSelector} from 'react-redux';
 
 function ModalGotomain(props) {
   const navigation = useNavigation();
@@ -22,9 +22,10 @@ function ModalGotomain(props) {
             <TouchableOpacity
               style={styles.ok}
               onPress={() => {
-                SoundPlayer.setVolume(sound.value.bgm/100)
+                SoundPlayer.setVolume(sound.value.bgm / 100);
                 SoundPlayer.playSoundFile('main', 'mp3');
-                navigation.navigate('Main')}}>
+                navigation.navigate('EpisodePage');
+              }}>
               <Text style={styles.yesorno}>예!</Text>
             </TouchableOpacity>
             <TouchableOpacity

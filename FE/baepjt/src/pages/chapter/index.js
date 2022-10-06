@@ -47,7 +47,7 @@ function ChapterPage(props) {
 
 const styles = StyleSheet.create({
   viewcontainer: {
-    marginTop: '10%',
+    marginTop: '5%',
     height: '86%',
   },
   setbox: {

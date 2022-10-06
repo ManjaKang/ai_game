@@ -55,16 +55,19 @@ const styles = StyleSheet.create({
     height: '100%',
     left: '2%',
     position: 'absolute',
+    resizeMode: 'contain',
   },
   image2: {
     width: '50%',
     height: '100%',
+    resizeMode: 'contain',
   },
   image3: {
     width: '50%',
     height: '100%',
     right: '2%',
     position: 'absolute',
+    resizeMode: 'contain',
   },
 });
 export default ModalCharacter;

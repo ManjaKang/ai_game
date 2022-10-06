@@ -10,7 +10,7 @@ function ModalTool(props) {
     props.state && (
       <View style={styles.view}>
         <IngameButtonGotomain setter={props.titlestate} />
-        <Text style={styles.text}>메인으로</Text>
+        <Text style={styles.text}>나가기</Text>
         {/* <IngameButtonCamera />
         <Text style={styles.text}>카메라</Text> */}
         <IngameButtonBacklog setter={props.backlogstate} />

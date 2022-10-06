@@ -113,11 +113,19 @@ const SignUpPage = () => {
     }
   };
 
+  const onClick = () => {
+    navigation.navigate('Login');
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
         source={require('../../images/start_page/background.jpg')}
-        style={{height: '100%', width: '100%'}}>
+        style={{
+          height: '100%',
+          width: '100%',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
         <View style={styles.signuptextcontainer}>
           <Text style={styles.text}>회원가입</Text>
         </View>
@@ -154,11 +162,32 @@ const SignUpPage = () => {
           <View style={styles.errormessagecontainer}>
             <Text style={styles.errormessagetext}>{errorMessagePwCheck}</Text>
           </View>
+        </View>
+        <View style={styles.buttoncontainer}>
           <TouchableOpacity style={styles.button} onPress={axiosSignup}>
             <ImageBackground
               source={require('../../images/modal/button.png')}
-              style={{height: '100%', width: '100%'}}>
+              style={{
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: '100%',
+                height: '100%',
+              }}
+              resizeMode="stretch">
               <Text style={styles.signuptext}>회원가입</Text>
+            </ImageBackground>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.button} onPress={onClick}>
+            <ImageBackground
+              source={require('../../images/modal/button.png')}
+              style={{
+                height: '100%',
+                width: '100%',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+              resizeMode="stretch">
+              <Text style={styles.signuptext}>뒤로가기</Text>
             </ImageBackground>
           </TouchableOpacity>
         </View>
@@ -172,21 +201,17 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   signuptextcontainer: {
-    marginLeft: '38%',
-    marginTop: '7%',
+    marginTop: '20%',
   },
   inputcontainer: {
-    marginLeft: '15%',
     marginTop: '2%',
+    width: '70%',
   },
   input: {
-    height: 40,
-    width: '80%',
-    margin: 12,
-    marginTop: 5,
-    marginBottom: 5,
+    width: '100%',
+    marginTop: '1%',
     borderWidth: 1,
-    padding: 10,
+    padding: 5,
     color: 'black',
     borderColor: 'white',
     backgroundColor: 'white',
@@ -202,26 +227,20 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   button: {
-    marginLeft: '30%',
     width: '20%',
     height: '20%',
-    marginTop: '0%',
   },
   text: {
     fontFamily: 'HeirofLightRegular',
-    fontSize: 40,
+    fontSize: 35,
     color: 'white',
   },
   signuptext: {
-    marginLeft: '15%',
-    marginTop: '14%',
     fontFamily: 'HeirofLightRegular',
-    fontSize: 19,
+    fontSize: 15,
     color: 'white',
   },
-  spaceEvenlyContainer: {
-    marginTop: '2%',
-    marginLeft: '12%',
+  buttoncontainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '60%',
