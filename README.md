@@ -118,7 +118,7 @@ AI를 통해 사진에서 인식한 사물을 증거로 모아 사건의 실마�
 
 #### **UCC**
 
-[탐정: 렌즈 속 비밀 UCC](https://youtu.be/ICfLxPCzNR0) 
+[탐정: 렌즈 속 비밀 UCC](https://youtu.be/DEYNBQHZ5vk) 
 
 
 
