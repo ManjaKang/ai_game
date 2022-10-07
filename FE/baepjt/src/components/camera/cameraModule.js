@@ -45,16 +45,17 @@ function CameraPage() {
         //  [{"name": "camera", "percent": 0.7951256}, {"name": "bed", "percent": 0.157654}, {"name": "table", "percent": 0.985215}]
         dispatch(setresValue(res.data));
         dispatch(setcameraValue(true));
+        exitButton();
         // res.data.map(d =>
         //   dispatch(setresValue({name: d.name, percentage: d.percent})),
         // );
-        CameraRoll.save(data.uri, 'photo')
-          .then(onfulfilled => {
-            ToastAndroid.show(onfulfilled, ToastAndroid.SHORT);
-          })
-          .catch(error => {
-            ToastAndroid.show(`${error.message}`, ToastAndroid.SHORT);
-          });
+        // CameraRoll.save(data.uri, 'photo')
+        //   .then(onfulfilled => {
+        //     ToastAndroid.show(onfulfilled, ToastAndroid.SHORT);
+        //   })
+        //   .catch(error => {
+        //     ToastAndroid.show(`${error.message}`, ToastAndroid.SHORT);
+        //   });
       }
     }
   };

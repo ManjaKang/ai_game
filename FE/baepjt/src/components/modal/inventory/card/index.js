@@ -18,7 +18,7 @@ function ModalInventoryCard(props) {
 
 const styles = StyleSheet.create({
   button: {
-    width: '20%',
+    width: '18%',
     aspectRatio: 1,
     borderColor: 'white',
     borderWidth: 1,
