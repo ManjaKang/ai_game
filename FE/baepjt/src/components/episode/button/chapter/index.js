@@ -9,7 +9,7 @@ const EpisodeButton = () => {
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <Category
               imageUri={require('../../../../images/episode/brain.jpg')}
-              name="OCD 살인"
+              name="틀린그림찾기"
               number={1}
               blocked="false"></Category>
             <Category
