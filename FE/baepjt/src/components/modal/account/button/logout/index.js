@@ -19,11 +19,13 @@ function ModalAccountButtonLogout() {
 
   return (
     <View>
-      <TouchableOpacity onPress={() => logout()}>
-        <Text style={styles.text}>
-          <Icon size={35} name="log-out" color="black" />
-          로그아웃
-        </Text>
+      <TouchableOpacity style={{marginTop:20}} onPress={() => logout()}>
+        <View>
+          <Text style={styles.text}>
+            <Icon size={35} name="log-out" color="black" />
+            로그아웃
+          </Text>
+        </View>
       </TouchableOpacity>
     </View>
   );
@@ -31,10 +33,12 @@ function ModalAccountButtonLogout() {
 
 const styles = StyleSheet.create({
   text: {
+    // borderColor: 'red',
+    // borderWidth: 1,
     fontFamily: 'AssetLight',
     color: 'black',
     fontSize: 30,
-    marginTop: '30%',
+    // marginTop: '10%',
   },
 });
 
