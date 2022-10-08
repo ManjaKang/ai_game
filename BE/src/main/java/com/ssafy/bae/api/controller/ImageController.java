@@ -45,6 +45,8 @@ public class ImageController {
             String filePath =null;
             String file = imageDto.getBase64();
             String filename = imageDto.getFileName();
+            int episode = imageDto.getEpisode();
+            int chapter = imageDto.getChapter();
             System.out.println(filename);
             //System.out.println(file);
 
@@ -56,7 +58,7 @@ public class ImageController {
                 filePath = directoryName+File.separator+"img"+File.separator+uuid+"_"+filename;
                 makeFileWithString(file,filename,uuid);
 //                String result = pythonProcessbuilder(filePath);
-                String result = execPython(filePath, filename);
+                String result = execPython(filePath, filename, episode, chapter);
 
                 File finishedFile = new File(filePath);
                 if (finishedFile.exists()) {
@@ -112,12 +114,14 @@ public class ImageController {
 
         return result;
     }
-    public static String execPython(String filePath, String filename) throws IOException, InterruptedException {
-        String[] command = new String[4];
+    public static String execPython(String filePath, String filename, int episode, int chapter) throws IOException, InterruptedException {
+        String[] command = new String[6];
         command[0] = "python3";
         command[1] = "/home/ubuntu/ai/yolov5/aiDetect.py";
         command[2] = filePath;
         command[3] = filename;
+        command[4] = String.valueOf(episode);
+        command[5] = String.valueOf(chapter);
         CommandLine commandLine = CommandLine.parse(command[0]);
         for (int i = 1, n = command.length; i < n; i++) {
             commandLine.addArgument(command[i]);
@@ -131,7 +135,7 @@ public class ImageController {
         System.out.println("result: " + result);
         System.out.println("output: " + outputStream.toString());
         String[] strings = outputStream.toString().split("\n");
-        System.out.println("strings : " + strings[strings.length-3]);
+        System.out.println("strings : " + strings[strings.length-1]);
         return strings[strings.length-1].split(" : ")[1];
     }
 }
