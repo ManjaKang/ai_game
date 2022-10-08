@@ -36,6 +36,7 @@ import {useNavigation} from '@react-navigation/native';
 import IngameTextIdle from '../../components/ingame/text/idle';
 import {useSelector, useDispatch} from 'react-redux';
 import iscamera, {setcameraValue} from '../../redux/iscamera';
+import { setEpisode } from '../../redux/episode';
 import itemdata from './itemdata';
 import SoundPlayer from 'react-native-sound-player';
 function IngamePage(props) {
@@ -320,6 +321,7 @@ function IngamePage(props) {
         SoundPlayer.setVolume(sound.value.voice / 100);
         SoundPlayer.playSoundFile(scripts[0].audio, 'mp3');
       }
+      dispatch(setEpisode({episode:props.route.params.number ,chapter:props.route.params.order}))
     }, 1000);
   }, []);
 
