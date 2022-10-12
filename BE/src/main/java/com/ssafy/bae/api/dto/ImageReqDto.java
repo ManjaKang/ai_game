@@ -10,4 +10,6 @@ import lombok.*;
 public class ImageReqDto {
     String base64;
     String fileName;
+    int episode;
+    int chapter;
 }
