@@ -18,6 +18,7 @@ const imagePickerOption = {
 };
 
 function IngameButtonCamera() {
+  const episodeinfo = useSelector(state => state.episode.value);
   const cameraResult = useSelector(state => state.cameraResult.value);
   const isCamera = useSelector(state => state.isCamera.value);
   const [camera, setCamera] = useState(null);
@@ -38,6 +39,8 @@ function IngameButtonCamera() {
       // localhost 환경
       base64: res.assets[0].base64,
       fileName: res.assets[0].fileName, // 파일 이름
+      chapter: episodeinfo.chapter,
+      episode: episodeinfo.episode,
     });
     console.log('사진 분석 결과 : ', result.data);
     dispatch(setresValue(result.data));

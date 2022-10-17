@@ -18,6 +18,7 @@ import SoundPlayer from 'react-native-sound-player';
 import { stat } from 'react-native-fs';
 
 function CameraPage() {
+  const episodeinfo = useSelector(state => state.episode.value);
   const cameraResult = useSelector(state => state.cameraResult.value);
   const isCamera = useSelector(state => state.isCamera.value);
   const [camera, setCamera] = useState(null);
@@ -39,6 +40,8 @@ function CameraPage() {
           // localhost 환경
           base64: data.base64,
           fileName: arr[arr.length - 1], // 파일 이
+          chapter: episodeinfo.chapter,
+          episode: episodeinfo.episode,
         });
         console.log('사진 분석 결과..?', res.data);
         // 여기서 비교하기
